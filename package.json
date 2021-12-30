@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --mode=development"
+    "webpack": "webpack --watch --mode=development"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +24,7 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
     "redux": "^4.1.2",
+    "redux-logger": "^3.0.6",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1"
   }
