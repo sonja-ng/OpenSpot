@@ -18,7 +18,7 @@ class Api::SessionsController < ApplicationController
             render json: ['Must be signed in first'], status: 404
         else
             logout
-            render json: {}
+            render json: ['You have logged out!']
         end
     end    
 
