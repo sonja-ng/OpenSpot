@@ -19,14 +19,14 @@ const receiveErrors = errors => ({
 });
 
 export const login = user => dispatch => (
-    SessionUtils.login(user).then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors)))
+    SessionUtils.login(user).then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const logout = () => dispatch => (
-    SessionUtils.logout().then(() => dispatch(logoutCurrentUser()), errors => dispatch(receiveErrors(errors)))
+    SessionUtils.logout().then(() => dispatch(logoutCurrentUser()), errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
 export const signup = user => dispatch => (
-    SessionUtils.signup(user).then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors)))
+    SessionUtils.signup(user).then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
