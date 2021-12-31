@@ -7,21 +7,14 @@ class LoginForm extends React.Component {
             username: "",
             password: ""
         }
-
-        this.updateUsername = this.updateUsername.bind(this);
-        this.updatePassword = this.updatePassword.bind(this);
+        
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     }
 
-    updateUsername(e){
-        this.setState({
-            username: e.target.value
-        })
-    }
-
-    updatePassword(e){
-        this.setState({
-            password: e.target.value
+    update(field){
+        return e => this.setState({
+            [field]: e.target.value
         })
     }
 
@@ -29,6 +22,14 @@ class LoginForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.login(user);
+    }
+
+    handleDemoSubmit(e){
+        e.preventDefault();
+        this.props.login({
+            username: "Demo User",
+            password: "password"
+        });
     }
 
     renderErrors(){
@@ -49,14 +50,15 @@ class LoginForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <h1>Login</h1>
                 <label>Username
-                    <input type="text" value={this.state.username} onChange={this.updateUsername}/>
+                    <input type="text" value={this.state.username} onChange={this.update("username")}/>
                 </label>
                 <label>Password
-                    <input type="password" value={this.state.password} onChange={this.updatePassword}/>
+                    <input type="password" value={this.state.password} onChange={this.update("password")}/>
                 </label>
                 {this.renderErrors()}
                 <input type="submit" value="Login"/>
             </form>
+                <button onClick={this.handleDemoSubmit}>Sign in as Demo User</button>
         </div>
         )
     }
