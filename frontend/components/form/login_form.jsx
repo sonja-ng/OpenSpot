@@ -25,21 +25,25 @@ class LoginForm extends React.Component {
         })
     }
 
-    handleSubmit(){
-        this.props.login(this.state);
+    handleSubmit(e){
+        e.preventDefault();
+        const user = Object.assign({}, this.state);
+        this.props.login(user);
     }
 
     renderErrors(){
         return (
             <ul>
                 {this.props.errors.map((error, idx) => (
-                    <li key={idx}>{error}</li>
-                ))}
+                   <li key={idx}>{error}</li>
+                   )
+                )}
             </ul>
         );
     }
 
     render(){
+        // debugger
         return (
         <div>
             <form onSubmit={this.handleSubmit}>

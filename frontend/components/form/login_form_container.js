@@ -6,8 +6,10 @@ const mSTP = state => ({
     errors: state.errors.session
 });
 
-const mDTP = dispatch => ({
+const mDTP = dispatch => {
+    // debugger
+   return {
     login: user => dispatch(login(user))
-});
+}};
 
 export default connect(mSTP, mDTP)(LoginForm);
