@@ -23,7 +23,7 @@ export const login = user => dispatch => (
 );
 
 export const logout = () => dispatch => (
-    SessionUtils.logout().then(() => dispatch(logoutCurrentUser()), errors => dispatch(receiveErrors(errors.responseJSON)))
+    SessionUtils.logout().then(() => dispatch(logoutCurrentUser()))
 );
 
 export const signup = user => dispatch => (
