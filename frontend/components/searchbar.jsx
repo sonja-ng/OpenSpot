@@ -1,5 +1,4 @@
 import React from 'react';
-// import banner from '../../app/assets/images/searchbanner.jpg'; this path works
 
 class SearchBar extends React.Component {
     constructor(props){

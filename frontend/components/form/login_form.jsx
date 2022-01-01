@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import smallLogo from '../../../app/assets/images/smallheaderlogo.png'; 
 
 class LoginForm extends React.Component {
     constructor(props){
@@ -13,6 +14,7 @@ class LoginForm extends React.Component {
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
         this.resetUserErrors = this.resetUserErrors.bind(this);
         this.goBack = this.goBack.bind(this);
+        this.enableScrolling = this.enableScrolling.bind(this);
     }
 
     update(field){
@@ -27,12 +29,18 @@ class LoginForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
+        this.enableScrolling();
         const user = Object.assign({}, this.state);
         this.props.login(user);
     }
 
+    enableScrolling(){
+        document.body.classList.remove("disable_scroll");
+    }
+
     handleDemoSubmit(e){
         e.preventDefault();
+        this.enableScrolling();
         this.props.login({
             username: "demo user",
             password: "password"
@@ -60,7 +68,8 @@ class LoginForm extends React.Component {
         <div className="form_background">
             <form onSubmit={this.handleSubmit} className="session_form_login">
                 <div className="form_logo_header">
-                    <Link to="/" className="x_button"><i className="fas fa-times"></i></Link>
+                    <img src={smallLogo}/>
+                    <Link to="/" className="x_button" onClick={this.enableScrolling}><i className="fas fa-times"></i></Link>
                 </div>
                 <div className="form_header"><h2>Login</h2></div>
                 <div className="form_body_login">
