@@ -17,11 +17,18 @@ body {
 #root {
     height: inherit;
 }
+
+.main_index {
+    background-color: #ffffff;
+    width: 1282px;
+    height: inherit;
+    margin: 0 auto;
+}
 //font
 
 h1 {
     font-family: $main_font;
-    size: 50px;
+    size: 80px;
 }
 
 h2 {
@@ -40,6 +47,15 @@ p {
 }
 
 // header navbar
+
+header {
+    width: 1282px;
+    height: 68px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 
 .top_bar {
     background-color: $html_greytop;
@@ -107,34 +123,88 @@ p {
     margin-left: 5px;
 }
 
-
-.main_index {
-    background-color: #ffffff;
-    width: 1282px;
-    height: inherit;
-    margin: 0 auto;
-}
-
-header {
-    width: 1282px;
-    height: 68px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-
-
-.search_bar {
-    width: inherit;
-    height: 332px;
-    background: grey;
-}
+//search bar
 
 .main_content {
     width: inherit;
     height: 500px;
 }
+
+.search_bar {
+    width: inherit;
+    height: 332px;
+    background: grey;
+    padding-top: 126px;
+    box-sizing: border-box;
+}
+
+.search_submit {
+    background-color: $red;
+    color: white;
+    font-family: $main_font;
+    font-size: 12px;
+    border: none;
+    width: 114px;
+    margin-top: 10px;
+    border-radius: 3px;
+    height: 38px;
+    cursor: pointer;
+}
+
+.slogan {
+    font-family: $main_font;
+    font-size: 34px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.dropdown {
+    height: 38px;
+    width: 127px;
+    border: none;
+}
+
+.party {
+    border-radius: 0px 3px 3px 0px;
+    border-left: 1px solid $border-color;
+    margin-right: 12px;
+    box-sizing: border-box;
+}
+
+.time {
+    border-left: 1px solid $border-color;
+}
+
+.search_date_main {
+    height: 38px;
+    border-radius: 3px 0px 0px 3px;
+    border: 0px ;
+    width: 137px;
+}
+
+.search_input {
+    height: 38px;
+    border: none;
+    border-radius: 3px;
+    width: 232px;
+    padding-left: 25px;
+    margin-right: 12px;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.font_search {
+    position: relative;
+}
+
+.font_search i {
+    position: absolute;
+    left: 5px;
+    top: 2px;
+}
+
+
+//footer
 
 footer {
     height: 489px;
