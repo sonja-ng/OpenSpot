@@ -1,0 +1,99 @@
+$main_font: 'DM Sans', sans-serif;
+$border-color: #d2d4d6;
+$background-color: #f6f6f6;
+$red: #e03744;
+
+
+.form_background {
+    // display: none;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+form {
+    position: absolute;
+    width: 360px;
+    height: 840px;
+    background-color: $background-color;
+    top: 20px;
+    left: 800px;
+}
+
+.form_header{
+    font-family: $main_font;
+    font-size: 32px;
+    height: 71px;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    background-color: white;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.form_logo_header{
+    height: 34px;
+    background-color: white;
+}
+
+label {
+    font-family: $main_font;
+    font-size: 13px;
+}
+
+.form_body {
+    background-color: white;
+    height: inherit;
+    width: 330px;
+    height: 649px;
+    margin: 30px auto;
+    padding: 20px 20px 10px 32px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.form_body_header {
+    margin-bottom: 30px;
+}
+
+input[type=text], input[type=password] {
+    margin: 5px 5px 13px 0px;
+    border: 1px solid $border-color;
+    color: gray;
+    border-radius: 3px;
+    padding: 10px 7px 10px 7px;
+    width: 260px;
+    font-family: $main_font;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.require {
+    color: $red;
+    font-family: $main_font;
+    font-size: 10px;
+}
+
+input[type=submit], .demo_button{
+    background-color: $red;
+    color: white;
+    font-family: $main_font;
+    font-size: 12px;
+    border: none;
+    width: 260px;
+    margin-top: 10px;
+    border-radius: 3px;
+    height: 38px;
+    cursor: pointer;
+}
+
+.form_buttons {
+    position: absolute;
+    bottom: 10px;
+    left: 32px;
+}

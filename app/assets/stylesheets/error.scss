@@ -1,0 +1,10 @@
+$main_font: 'DM Sans', sans-serif;
+$border-color: #d2d4d6;
+$background-color: #f6f6f6;
+$red: #e03744;
+
+.form_errors > li {
+    font-family: $main_font;
+    color: $red;
+    font-size: 11px;
+}

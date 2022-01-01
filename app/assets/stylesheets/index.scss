@@ -1,0 +1,77 @@
+$background-color: #f6f6f6;
+$html_greytop: #eff0f2;
+$main_font: 'DM Sans', sans-serif;
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: $background-color;
+    height: 100%;
+}
+
+#root {
+    height: inherit;
+}
+
+h1 {
+    font-family: $main_font;
+    size: 50px;
+}
+
+h2 {
+    font-family: $main_font;
+    font-size: 32px;
+}
+
+h3 {
+    font-family: $main_font;
+    font-size: 20px;
+}
+
+
+.main_index {
+    background-color: #ffffff;
+    width: 1282px;
+    height: inherit;
+    margin: 0 auto;
+}
+
+header {
+    width: 1282px;
+    height: 68px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.top_bar {
+    background-color: $html_greytop;
+    height: 23px;
+    width: inherit;
+    
+}
+
+.logo {
+    width: 131px;
+    height: 29px;
+    background-color: #ff0000;
+}
+
+.search_bar {
+    width: inherit;
+    height: 332px;
+    background: grey;
+}
+
+.main_content {
+    width: inherit;
+    height: 500px;
+}
+
+footer {
+    height: 489px;
+    width: inherit;
+    background-color: #272d37;
+}

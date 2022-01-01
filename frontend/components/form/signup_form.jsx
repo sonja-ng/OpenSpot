@@ -1,12 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SignupForm extends React.Component {
     constructor(props){
         super(props);
-        debugger
         this.state = {
             username: "",
+            fname: "",
+            lname: "",
             email: "",
+            phone: "",
             password: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -20,7 +23,7 @@ class SignupForm extends React.Component {
     handleDemoSubmit(e){
         e.preventDefault();
         this.props.login({
-            username: "Demo User",
+            username: "demo user",
             password: "password"
         });
     }
@@ -33,7 +36,7 @@ class SignupForm extends React.Component {
 
     renderErrors(){
         return (
-            <ul>
+            <ul className="form_errors">
                 {this.props.errors.map((error, idx) => (
                     <li key={idx}>{error}</li>
                 ))}
@@ -43,22 +46,40 @@ class SignupForm extends React.Component {
 
     render(){
         return (
-        <div>
+        <div className="form_background">
             <form onSubmit={this.handleSubmit}>
-                <h1>Sign Up</h1>
-                <label>Username
-                    <input type="text" value={this.state.username} onChange={this.update("username")}/>
-                </label>
+                <div className="form_logo_header">
+                    <Link to="/">X</Link>
+                </div>
+                <div className="form_header"><h2>Sign Up</h2></div>
+                <div className="form_body">
+                    <div className="form_body_header"><h3>About Me</h3></div>
+                <label>First name
+                    <br></br><input type="text" value={this.state.fname} onChange={this.update("fname")}/>
+                    <span className="require">*</span></label><br/>
+                <label>Last name
+                    <br></br><input type="text" value={this.state.lname} onChange={this.update("lname")}/>
+                    <span className="require">*</span></label><br/>
+                <label>Review display name
+                    <br></br><input type="text" value={this.state.username} onChange={this.update("username")}/>
+                    <span className="require">*</span></label><br/>
                 <label>Email
-                    <input type="text" value={this.state.email} onChange={this.update("email")}/>
-                </label>
+                    <br></br><input type="text" value={this.state.email} onChange={this.update("email")}/>
+                    <span className="require">*</span></label><br/>
+                <label>Phone
+                    <br></br><input type="text" value={this.state.phone} onChange={this.update("phone")}/>
+                    <span className="require">*</span></label><br/>
                 <label>Password
-                    <input type="password" value={this.state.password} onChange={this.update("password")}/>
-                </label>
+                    <br></br><input type="password" value={this.state.password} onChange={this.update("password")}/>
+                    <span className="require">*</span></label><br/>
                 {this.renderErrors()}
-                <input type="submit" value="Sign Up!"/>
+                <div className="form_buttons">
+                    <input type="submit" value="Sign Up"/><br></br>
+                    <button className="demo_button" onClick={this.handleDemoSubmit}>Login as Demo User</button>
+                </div>
+                </div>
             </form>
-                <button onClick={this.handleDemoSubmit}>Sign in as Demo User</button>
+                
         </div>
         )
     }

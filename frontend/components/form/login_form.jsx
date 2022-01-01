@@ -7,7 +7,7 @@ class LoginForm extends React.Component {
             username: "",
             password: ""
         }
-        
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
     }
@@ -46,7 +46,7 @@ class LoginForm extends React.Component {
     render(){
         // debugger
         return (
-        <div>
+        <div className="form">
             <form onSubmit={this.handleSubmit}>
                 <h1>Login</h1>
                 <label>Username
