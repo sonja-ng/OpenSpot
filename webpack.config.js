@@ -21,6 +21,19 @@ module.exports = {
             presets: ['@babel/env', '@babel/react']
           }
         },
+      },
+      { //testing file loader
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name][md5:hash].[ext]',
+              outputPath: 'webpack-assets/',
+              publicPath: '/assets/webpack-assets/'
+            }
+          }
+        ]
       }
     ]
   },

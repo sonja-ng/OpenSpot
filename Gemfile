@@ -20,6 +20,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'jquery-rails'
 
+gem 'aws-sdk-s3'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
