@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
     constructor(props){
@@ -27,14 +28,14 @@ class LoginForm extends React.Component {
     handleDemoSubmit(e){
         e.preventDefault();
         this.props.login({
-            username: "Demo User",
+            username: "demo user",
             password: "password"
         });
     }
 
     renderErrors(){
         return (
-            <ul>
+            <ul className="form_errors">
                 {this.props.errors.map((error, idx) => (
                    <li key={idx}>{error}</li>
                    )
@@ -46,19 +47,28 @@ class LoginForm extends React.Component {
     render(){
         // debugger
         return (
-        <div className="form">
+        <div className="form_background">
             <form onSubmit={this.handleSubmit}>
-                <h1>Login</h1>
-                <label>Username
-                    <input type="text" value={this.state.username} onChange={this.update("username")}/>
-                </label>
-                <label>Password
-                    <input type="password" value={this.state.password} onChange={this.update("password")}/>
-                </label>
-                {this.renderErrors()}
-                <input type="submit" value="Login"/>
+                <div className="form_logo_header">
+                    <Link to="/">X</Link>
+                </div>
+                <div className="form_header"><h2>Login</h2></div>
+                <div className="form_body">
+                    <label>Username
+                        <br></br>
+                        <input type="text" value={this.state.username} onChange={this.update("username")}/>
+                    </label>
+                    <label>Password
+                        <br></br>
+                        <input type="password" value={this.state.password} onChange={this.update("password")}/>
+                    </label>
+                    {this.renderErrors()}
+                    <div className="form_buttons_login">
+                        <input type="submit" value="Login"/>
+                        <button className="demo_button" onClick={this.handleDemoSubmit}>Sign in as Demo User</button>
+                    </div>
+                </div>
             </form>
-                <button onClick={this.handleDemoSubmit}>Sign in as Demo User</button>
         </div>
         )
     }

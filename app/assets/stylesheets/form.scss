@@ -50,7 +50,7 @@ label {
     background-color: white;
     height: inherit;
     width: 330px;
-    height: 649px;
+    height: 657px;
     margin: 30px auto;
     padding: 20px 20px 10px 32px;
     box-sizing: border-box;
@@ -94,6 +94,13 @@ input[type=submit], .demo_button{
 
 .form_buttons {
     position: absolute;
-    bottom: 10px;
+    bottom: 30px;
     left: 32px;
+}
+
+.form_buttons_login {
+    position: absolute;
+    left: 32px;
+    top: 200px;
+  
 }

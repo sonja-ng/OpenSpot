@@ -1,6 +1,9 @@
 $background-color: #f6f6f6;
 $html_greytop: #eff0f2;
 $main_font: 'DM Sans', sans-serif;
+$red: #e03744;
+$border-color: #d2d4d6;
+$turquoise: #007492;
 
 html {
     height: 100%;
@@ -14,6 +17,7 @@ body {
 #root {
     height: inherit;
 }
+//font
 
 h1 {
     font-family: $main_font;
@@ -28,6 +32,79 @@ h2 {
 h3 {
     font-family: $main_font;
     font-size: 20px;
+}
+
+p {
+    font-family: $main_font;
+    font-size: 10px;
+}
+
+// header navbar
+
+.top_bar {
+    background-color: $html_greytop;
+    height: 23px;
+    width: inherit;
+}
+
+.left_navbar {
+    display: flex;
+    margin-left: 23px;
+}
+
+.logo_bar {
+    width: 131px;
+    height: 29px;
+    background-color: $red;   
+    border-right: 1px solid $border-color; 
+    margin-right: 10px;
+}
+
+.location_nav {
+    height: 30px;
+    line-height: 30px;
+}
+
+.right_navbar {
+    display: flex;
+    margin-right: 24px;
+}
+
+.login_button, .signup_button {
+    text-decoration: none;
+    display: block;
+    font-family: $main_font;
+    text-align: center;
+    font-size: 10px;
+    width: 62px;
+    height: 28px;
+    border-radius: 3px;
+    line-height: 28px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.login_button {
+    border: 1px solid $border-color;
+    background: white;
+    color: grey;
+    
+}
+
+.signup_button {
+    border: 1px solid $turquoise;
+    background: $turquoise;
+    color: white;
+    margin-right: 6px;
+}
+
+.search_icon {
+    display: block;
+    height: 28px;
+    width: 30px;
+    line-height: 28px;
+    text-align: center;
+    margin-left: 5px;
 }
 
 
@@ -46,18 +123,7 @@ header {
     justify-content: space-between;
 }
 
-.top_bar {
-    background-color: $html_greytop;
-    height: 23px;
-    width: inherit;
-    
-}
 
-.logo {
-    width: 131px;
-    height: 29px;
-    background-color: #ff0000;
-}
 
 .search_bar {
     width: inherit;

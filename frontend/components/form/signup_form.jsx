@@ -55,12 +55,13 @@ class SignupForm extends React.Component {
                 <div className="form_body">
                     <div className="form_body_header"><h3>About Me</h3></div>
                 <label>First name
-                    <br></br><input type="text" value={this.state.fname} onChange={this.update("fname")}/>
+                    <br></br>
+                    <input type="text" value={this.state.fname} onChange={this.update("fname")}/>
                     <span className="require">*</span></label><br/>
                 <label>Last name
                     <br></br><input type="text" value={this.state.lname} onChange={this.update("lname")}/>
                     <span className="require">*</span></label><br/>
-                <label>Review display name
+                <label>Username
                     <br></br><input type="text" value={this.state.username} onChange={this.update("username")}/>
                     <span className="require">*</span></label><br/>
                 <label>Email

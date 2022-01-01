@@ -11,7 +11,15 @@ const App = () => (
     <div className="main_index">
         <header>
             <div className="top_bar"></div>
-            <div className="logo"><h1>Open Spot</h1></div>
+            <div className="left_navbar">
+                <div className="logo_bar">
+                    <h1>Open Spot</h1>
+                </div>
+                <span className="search_icon">
+                    <i className="fas fa-map-marker-alt"></i>
+                </span>
+                <div className="location_nav"><p>New York / Tri-State Area</p></div>
+            </div>
             <NavBarContainer />
         </header>
         <SearchBar />

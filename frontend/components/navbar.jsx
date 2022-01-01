@@ -26,9 +26,16 @@ class Navbar extends React.Component {
             </div>
         ) : 
         (
-            <div>
-                <Link to="/signup" onClick={this.resetUserErrors}>Sign Up</Link>
-                <Link to="/login" onClick={this.resetSessionErrors}>Login</Link>
+            <div className="right_navbar">
+                <div>
+                    <Link to="/signup" className="signup_button" onClick={this.resetUserErrors}>Sign Up</Link>
+                </div>
+                <div>
+                    <Link to="/login" className="login_button" onClick={this.resetSessionErrors}>Login</Link>
+                </div>
+                <div>
+                    <span className="search_icon"><i className="fas fa-search"></i></span>
+                </div>
             </div>
         )
         return (
