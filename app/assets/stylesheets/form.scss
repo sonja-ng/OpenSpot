@@ -25,6 +25,15 @@ $red: #e03744;
     left: 800px;
 }
 
+.session_form_login {
+    position: absolute;
+    width: 360px;
+    height: 540px;
+    background-color: $background-color;
+    top: 20px;
+    left: 800px;
+}
+
 .form_header{
     font-family: $main_font;
     font-size: 32px;
@@ -59,6 +68,17 @@ label {
     position: relative;
 }
 
+.form_body_login {
+    background-color: white;
+    height: inherit;
+    width: 330px;
+    height: 365px;
+    margin: 25px auto;
+    padding: 15px 20px 10px 32px;
+    box-sizing: border-box;
+    position: relative;
+}
+
 .form_body_header {
     margin-bottom: 18px;
 }
@@ -81,29 +101,56 @@ label {
     font-size: 10px;
 }
 
-.session_button, .demo_button{
+.session_button {
     background-color: $red;
     color: white;
     font-family: $main_font;
     font-size: 12px;
     border: none;
     width: 260px;
-    margin-top: 10px;
     border-radius: 3px;
     height: 38px;
     cursor: pointer;
+}
+
+.demo_button {
+    display: inline;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: $main_font;
+    color: $red;
+    width: 110px;
+    padding: 0px;
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.form_msg {
+    font-family: $main_font;
+    font-size: 11px;
+    line-height: 1.5;
 }
 
 .form_buttons {
     position: absolute;
     bottom: 10px;
     left: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 105px;
 }
 
 .form_buttons_login {
     position: absolute;
     left: 32px;
     top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px;
   
 }
 
@@ -115,7 +162,13 @@ label {
 
 .x_button {
     position: absolute;
-    right: 8px;
+    right: 7px;
     top: 5px;
     text-decoration: none;
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: none;
+    text-shadow: 1px 2px 5px #888888;
+    cursor: pointer;
 }
