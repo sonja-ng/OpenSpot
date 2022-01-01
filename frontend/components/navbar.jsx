@@ -26,9 +26,13 @@ class Navbar extends React.Component {
     render(){
         const { currentUser, logout } = this.props;
         const display = currentUser ? (
-            <div>
-                <h1>hello {currentUser.username}</h1>
-                <button onClick={logout}>Logout</button>
+            <div className="right_navbar">
+                <button onClick={logout} className="user_icon"><i className="fas fa-user-circle"></i></button>
+                <span className="icon"><i className="far fa-calendar"></i></span>
+                <span className="icon"><i className="far fa-bell"></i></span>
+                <div>
+                    <span className="search_icon"><i className="fas fa-search"></i></span>
+                </div>
             </div>
         ) : 
         (

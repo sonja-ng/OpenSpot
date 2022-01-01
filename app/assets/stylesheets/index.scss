@@ -126,6 +126,37 @@ header {
     line-height: 28px;
     text-align: center;
     margin-left: 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.user_icon {
+    display: block;
+    height: 30px;
+    width: 30px;
+    font-size: 20px;
+    color: grey;
+    line-height: 28px;
+    text-align: center;
+    margin-left: 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.icon {
+    display: block;
+    height: 28px;
+    width: 25px;
+    font-size: 16px;
+    color: grey;
+    line-height: 28px;
+    text-align: center;
+    margin-left: 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 //search bar
