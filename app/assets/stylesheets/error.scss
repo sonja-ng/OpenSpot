@@ -3,8 +3,11 @@ $border-color: #d2d4d6;
 $background-color: #f6f6f6;
 $red: #e03744;
 
-.form_errors > li {
+.form_errors {
     font-family: $main_font;
     color: $red;
     font-size: 11px;
+    position: absolute;
+    left: 0px;
+    bottom: -25px;
 }
