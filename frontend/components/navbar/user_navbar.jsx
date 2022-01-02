@@ -1,6 +1,7 @@
 import React from 'react';
 
 class UserNavBar extends React.Component {
+
     componentDidMount(){
         this.props.enableScrolling();
     }
