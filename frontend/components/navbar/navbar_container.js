@@ -1,7 +1,7 @@
 import Navbar from './navbar';
 import { connect } from 'react-redux';
-import { logout, removeSessionErrors } from '../actions/session_actions';
-import { removeUserErrors } from '../actions/user_actions';
+import { logout, removeSessionErrors } from '../../actions/session_actions';
+import { removeUserErrors } from '../../actions/user_actions';
 
 const mSTP = state => ({
     currentUser: state.entities.users[state.session.id],

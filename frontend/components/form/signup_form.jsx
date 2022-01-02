@@ -18,6 +18,7 @@ class SignupForm extends React.Component {
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
         this.resetSessionErrors = this.resetSessionErrors.bind(this);
         this.goBack = this.goBack.bind(this);
+        this.enableScrolling = this.enableScrolling.bind(this);
     }
 
     update(field){
@@ -44,13 +45,16 @@ class SignupForm extends React.Component {
     renderNameError(field, newField){
         const error = this.props.errors.filter(error => error.includes(field));
         if (error.length > 0) {
-            debugger
             return (
                 <div className="form_errors">
                     {error[0].replace(field, newField)}
                 </div>
             )
         } 
+    }
+
+    enableScrolling(){
+        document.body.classList.remove("disable_scroll");
     }
 
     resetSessionErrors(){
@@ -73,7 +77,7 @@ class SignupForm extends React.Component {
             <form onSubmit={this.handleSubmit} className="signup">
                 <div className="form_logo_header">
                     <img src={smallLogo}/>
-                    <Link to="/" className="x_button"><i className="fas fa-times"></i></Link>   
+                    <Link to="/" className="x_button" onClick={this.enableScrolling}><i className="fas fa-times"></i></Link>   
                 </div>
                 <div className="form_header"><h2>Sign Up</h2></div>
                 <div className="signup_form">

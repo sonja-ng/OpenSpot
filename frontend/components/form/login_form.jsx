@@ -14,12 +14,17 @@ class LoginForm extends React.Component {
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
         this.resetUserErrors = this.resetUserErrors.bind(this);
         this.goBack = this.goBack.bind(this);
+        this.enableScrolling = this.enableScrolling.bind(this);
     }
 
     update(field){
         return e => this.setState({
             [field]: e.target.value
         })
+    }
+
+    enableScrolling(){
+        document.body.classList.remove("disable_scroll");
     }
 
     resetUserErrors(){
@@ -62,7 +67,7 @@ class LoginForm extends React.Component {
             <form onSubmit={this.handleSubmit} className="login">
                 <div className="form_logo_header">
                     <img src={smallLogo}/>
-                    <Link to="/" className="x_button"><i className="fas fa-times"></i></Link>
+                    <Link to="/" className="x_button" onClick={this.enableScrolling}><i className="fas fa-times"></i></Link>
                 </div>
                 <div className="form_header"><h2>Login</h2></div>
                 <div className="login_form">

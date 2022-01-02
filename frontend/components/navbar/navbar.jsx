@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import UserNavBar from "./user_navbar";
 
 class Navbar extends React.Component {
     constructor(props){
@@ -10,13 +11,13 @@ class Navbar extends React.Component {
         this.enableScrolling = this.enableScrolling.bind(this);
     }
 
-    componentDidMount(){
-        this.enableScrolling();
-    }
-
     resetSessionErrors(){
         this.props.removeSessionErrors();
         this.preventScrolling();
+    }
+
+    componentDidMount(){
+        this.enableScrolling();
     }
 
     enableScrolling(){
@@ -35,14 +36,7 @@ class Navbar extends React.Component {
     render(){
         const { currentUser, logout } = this.props;
         const display = currentUser ? (
-            <div className="right_navbar">
-                <button onClick={logout} className="user_icon"><i className="fas fa-user-circle"></i></button>
-                <span className="calendar_icon"><i className="far fa-calendar"></i></span>
-                <span className="bell_icon"><i className="far fa-bell"></i></span>
-                <div>
-                    <span className="search_icon"><i className="fas fa-search"></i></span>
-                </div>
-            </div>
+            <UserNavBar logout={logout} enableScrolling={this.enableScrolling}/>
         ) : 
         (
             <div className="right_navbar">

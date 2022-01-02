@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBarContainer from './navbar_container';
+import NavBarContainer from './navbar/navbar_container';
 import LoginFormContainer from './form/login_form_container';
 import SignupFormContainer from './form/signup_form_container';
 import { Link } from 'react-router-dom';
