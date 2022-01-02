@@ -28,6 +28,7 @@ body {
     height: inherit;
     margin: 0 auto;
 }
+
 //font
 
 h1 {
@@ -91,7 +92,7 @@ header {
     margin-right: 24px;
 }
 
-.login_button, .signup_button {
+%rightnav_button {
     text-decoration: none;
     display: block;
     font-family: $main_font;
@@ -106,6 +107,7 @@ header {
 }
 
 .login_button {
+    @extend %rightnav_button;
     border: 1px solid $border-color;
     background: white;
     color: grey;
@@ -113,51 +115,51 @@ header {
 }
 
 .signup_button {
+    @extend %rightnav_button;
     border: 1px solid $turquoise;
     background: $turquoise;
     color: white;
     margin-right: 6px;
 }
 
-.search_icon {
+%icon {
     display: block;
-    height: 28px;
-    width: 30px;
     line-height: 28px;
     text-align: center;
     margin-left: 5px;
     border: none;
     background-color: transparent;
+    cursor: pointer;
+}
+
+.search_icon, .marker_icon {
+    @extend %icon;
+    width: 30px;
+    height: 28px;
+    font-size: 16px;
+    line-height: 28px;
+    color: black;
+    cursor: not-allowed;
+}
+
+.calendar_icon, .bell_icon {
+    @extend %icon;
+    width: 25px;
+    height: 28px;
+    font-size: 16px;
+    color: grey;
     cursor: not-allowed;
 }
 
 .user_icon {
-    display: block;
+    @extend %icon;
     height: 30px;
     width: 30px;
     font-size: 20px;
     color: grey;
-    line-height: 28px;
-    text-align: center;
-    margin-left: 5px;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
 }
 
-.icon {
-    display: block;
-    height: 28px;
-    width: 25px;
-    font-size: 16px;
-    color: grey;
-    line-height: 28px;
-    text-align: center;
-    margin-left: 5px;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
+
 
 //search bar
 
@@ -200,15 +202,19 @@ header {
     border: none;
 }
 
-.party {
-    border-radius: 0px 3px 3px 0px;
+%dropdown_input {
     border-left: 1px solid $border-color;
+}
+
+.party {
+    @extend %dropdown_input;
+    border-radius: 0px 3px 3px 0px;
     margin-right: 12px;
     box-sizing: border-box;
 }
 
 .time {
-    border-left: 1px solid $border-color;
+    @extend %dropdown_input;
 }
 
 .search_date_main {
@@ -285,15 +291,17 @@ footer {
     align-items: space-between;
 }
 
-.footer_col_left {
+%footer_col {
     width: 50%;
     padding-top: 30px;
     height: 60%;
 }
 
+.footer_col_left {
+    @extend %footer_col;
+}
+
 .footer_col_right {
-    width: 50%;
-    padding-top: 30px;
+    @extend %footer_col;
     border-left: 1px solid grey;
-    height: 60%;
 }

@@ -16,7 +16,7 @@ const App = () => (
                 <Link to="/" className="logo_bar">
                     <img src={smallLogo}/>
                 </Link>
-                <span className="search_icon">
+                <span className="marker_icon">
                     <i className="fas fa-map-marker-alt"></i>
                 </span>
                 <div className="location_nav"><p>New York / Tri-State Area</p></div>

@@ -65,13 +65,13 @@ class SignupForm extends React.Component {
     render(){
         return (
         <div className="form_background" >
-            <form onSubmit={this.handleSubmit} className="session_form">
+            <form onSubmit={this.handleSubmit} className="signup">
                 <div className="form_logo_header">
                     <img src={smallLogo}/>
                     <Link to="/" className="x_button" onClick={this.enableScrolling}><i className="fas fa-times"></i></Link>   
                 </div>
                 <div className="form_header"><h2>Sign Up</h2></div>
-                <div className="form_body">
+                <div className="signup_form">
                     <div className="form_body_header"><h3>About Me</h3></div>
                     <label>First name
                         <br></br>
@@ -107,7 +107,7 @@ class SignupForm extends React.Component {
                         {this.renderError("Password")}
                     </label>
                         <br/>
-                    <div className="form_buttons">
+                    <div className="signup_buttons">
                         <input type="submit" value="Sign Up" className="session_button"/><br></br>
                         <div className="form_msg">Already have an account?  <Link to="/login" className="demo_button" onClick={this.resetSessionErrors} >Login here</Link>
                             <br></br>

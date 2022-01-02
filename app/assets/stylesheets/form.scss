@@ -15,23 +15,23 @@ $red: #e03744;
     overflow: hidden;
 }
 
-.session_form {
+%session_form {
     position: fixed;
     width: 360px;
-    height: 840px;
     background-color: $background-color;
     top: 5%;
     left: 40%;
     margin: 0 auto;
 }
 
-.session_form_login {
-    position: fixed;
-    width: 360px;
+.login {
+    @extend %session_form;
     height: 540px;
-    background-color: $background-color;
-    top: 5%;
-    left: 40%;
+}
+
+.signup {
+    @extend %session_form;
+    height: 840px;
 }
 
 .form_header{
@@ -59,26 +59,24 @@ label {
     position: relative;
 }
 
-.form_body {
+%form_body {
     background-color: white;
     height: inherit;
     width: 330px;
-    height: 665px;
     margin: 25px auto;
     padding: 15px 20px 10px 32px;
     box-sizing: border-box;
     position: relative;
 }
 
-.form_body_login {
-    background-color: white;
-    height: inherit;
-    width: 330px;
+.login_form {
+    @extend %form_body;
     height: 365px;
-    margin: 25px auto;
-    padding: 15px 20px 10px 32px;
-    box-sizing: border-box;
-    position: relative;
+}
+
+.signup_form {
+    @extend %form_body;
+    height: 665px;
 }
 
 .form_body_header {
@@ -135,25 +133,25 @@ label {
     line-height: 1.5;
 }
 
-.form_buttons {
+%form_buttons {
     position: absolute;
-    bottom: 10px;
     left: 32px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 105px;
 }
 
-.form_buttons_login {
-    position: absolute;
-    left: 32px;
+.login_buttons {
+    @extend %form_buttons;
     top: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 80px;
-  
+    height: 80px; 
+}
+
+.signup_buttons {
+    @extend %form_buttons;
+    left: 32px;
+    height: 105px;
+    bottom: 10px;
 }
 
 .form_container {

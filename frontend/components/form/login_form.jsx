@@ -66,13 +66,13 @@ class LoginForm extends React.Component {
         // debugger
         return (
         <div className="form_background">
-            <form onSubmit={this.handleSubmit} className="session_form_login">
+            <form onSubmit={this.handleSubmit} className="login">
                 <div className="form_logo_header">
                     <img src={smallLogo}/>
                     <Link to="/" className="x_button" onClick={this.enableScrolling}><i className="fas fa-times"></i></Link>
                 </div>
                 <div className="form_header"><h2>Login</h2></div>
-                <div className="form_body_login">
+                <div className="login_form">
                     <label>Username
                         <br></br>
                         <input type="text" className="session_form_input" value={this.state.username} onChange={this.update("username")}/>
@@ -82,7 +82,7 @@ class LoginForm extends React.Component {
                         <input type="password" className="session_form_input" value={this.state.password} onChange={this.update("password")}/>
                         {this.renderErrors()}
                     </label>
-                    <div className="form_buttons_login">
+                    <div className="login_buttons">
                         <input type="submit" className="session_button" value="Login"/>
                         <div className="form_msg">Don't have an account?  <Link to="/signup" className="demo_button" onClick={this.resetUserErrors}>Signup here</Link>
                             <br></br>
