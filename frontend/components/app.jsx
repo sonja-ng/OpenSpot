@@ -38,6 +38,7 @@ const App = () => (
                         <li>Redux</li>
                         <li>Ruby on Rails</li>
                         <li>AWS S3</li>
+                        <li>SASS HTML5</li>
                     </ul>
                 </div>
                 <div className="footer_col_right">

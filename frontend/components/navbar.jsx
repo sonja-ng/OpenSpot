@@ -7,11 +7,20 @@ class Navbar extends React.Component {
 
         this.resetSessionErrors = this.resetSessionErrors.bind(this);
         this.resetUserErrors = this.resetUserErrors.bind(this);
+        this.enableScrolling = this.enableScrolling.bind(this);
+    }
+
+    componentDidMount(){
+        this.enableScrolling();
     }
 
     resetSessionErrors(){
         this.props.removeSessionErrors();
         this.preventScrolling();
+    }
+
+    enableScrolling(){
+        document.body.classList.remove("disable_scroll");
     }
 
     resetUserErrors(){
