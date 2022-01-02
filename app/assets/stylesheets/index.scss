@@ -89,7 +89,7 @@ header {
 
 .right_navbar {
     display: flex;
-    margin-right: 24px;
+    margin-right: 20px;
 }
 
 %rightnav_button {
@@ -111,7 +111,6 @@ header {
     border: 1px solid $border-color;
     background: white;
     color: grey;
-    
 }
 
 .signup_button {
@@ -126,13 +125,12 @@ header {
     display: block;
     line-height: 28px;
     text-align: center;
-    margin-left: 5px;
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
 
-.search_icon, .marker_icon {
+%search_and_marker_icon {
     @extend %icon;
     width: 30px;
     height: 28px;
@@ -141,12 +139,25 @@ header {
     color: black;
     cursor: not-allowed;
 }
+.search_icon {
+    @extend %search_and_marker_icon;
+    border-left: 1px solid $border-color;
+    margin-left: 10px;
+    padding-left: 8px;
+}
+
+
+.marker_icon {
+    @extend %search_and_marker_icon;
+    margin-left: 5px; 
+}
 
 .calendar_icon, .bell_icon {
     @extend %icon;
     width: 25px;
     height: 28px;
     font-size: 16px;
+    margin-left: 10px;
     color: grey;
     cursor: not-allowed;
 }

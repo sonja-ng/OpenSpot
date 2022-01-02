@@ -41,6 +41,18 @@ class SignupForm extends React.Component {
         )
     }
 
+    renderNameError(field, newField){
+        const error = this.props.errors.filter(error => error.includes(field));
+        if (error.length > 0) {
+            debugger
+            return (
+                <div className="form_errors">
+                    {error[0].replace(field, newField)}
+                </div>
+            )
+        } 
+    }
+
     resetSessionErrors(){
         this.props.removeSessionErrors();
     }
@@ -70,12 +82,12 @@ class SignupForm extends React.Component {
                         <br></br>
                         <input type="text" className="session_form_input" value={this.state.fname} onChange={this.update("fname")}/>
                         <span className="require">*</span>
-                        {this.renderError("Fname")}
+                        {this.renderNameError("Fname", "First name")}
                     </label><br/>
                     <label>Last name
                         <br></br><input type="text" className="session_form_input" value={this.state.lname} onChange={this.update("lname")}/>
                         <span className="require">*</span>
-                        {this.renderError("Lname")}
+                        {this.renderNameError("Lname", "Last name")}
                     </label><br/>
                     <label>Username
                         <br></br><input type="text" className="session_form_input" value={this.state.username} onChange={this.update("username")}/>
