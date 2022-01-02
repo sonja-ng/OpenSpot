@@ -28,7 +28,7 @@ class SearchBar extends React.Component {
                                 <input type="text" className="search_input" placeholder="Location, Restaurant, or Cuisine"/>
                                 <i className="fas fa-search"></i>
                             </span>
-                            <input className="search_submit" type="submit" value="let's go" />
+                            <input className="search_submit" type="submit" value="Let's go" />
                     </form>
                 </div>
             </div>
