@@ -9,11 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Manrope:wght@600&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f9fe52499d.js" crossorigin="anonymous"></script>
+    <%= javascript_include_tag 'application' %>
     <script type="text/javascript">
         window.logoURL = "<%= image_url('smallheaderlogo.png') %>";
         window.searchbannerURL = "<%= image_url('mainbanner.jpg') %>";
     </script>
-    <%= javascript_include_tag 'application' %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
   <body>
