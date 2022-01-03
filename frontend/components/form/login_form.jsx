@@ -80,7 +80,7 @@ class LoginForm extends React.Component {
         <div className="form_background">
             <form onSubmit={this.handleSubmit} className="login" ref={this.formRef}>
                 <div className="form_logo_header">
-                    <img src={smallLogo}/>
+                    <img src={window.logoURL}/>
                     <Link to="/" className="x_button" onClick={this.enableScrolling}><i className="fas fa-times"></i></Link>
                 </div>
                 <div className="form_header"><h2>Login</h2></div>

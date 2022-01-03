@@ -16,7 +16,7 @@ const App = () => (
             <div className="top_bar"></div>
             <div className="left_navbar">
                 <Link to="/" className="logo_bar">
-                    <img src={smallLogo}/>
+                    <img src={window.logoURL}/>
                 </Link>
                 <span className="marker_icon">
                     <i className="fas fa-map-marker-alt"></i>
