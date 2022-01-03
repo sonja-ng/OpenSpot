@@ -1,0 +1,57 @@
+$background-color: #f6f6f6;
+$html_greytop: #eff0f2;
+$main_font: 'DM Sans', sans-serif;
+$red: #e03744;
+$border-color: #d2d4d6;
+$turquoise: #007492;
+$roboto: 'Roboto', sans-serif;
+$manrope: 'Manrope', sans-serif;
+
+.show_header {
+    height: 66px;
+    background: white;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    font-family: $main_font;
+    font-size: 25px;
+    padding-left: 232px;
+    padding-top: 17px;
+    box-sizing: border-box;
+}
+
+.flex_container {
+    display: flex;
+}
+
+.flex_container section {
+    background-color: white;
+    height: 500px;
+    width: 660px;
+}
+
+.user_show_main .left {
+    background-color: $background-color;
+    width: 392px;
+    height: 500px;
+    font-family: $roboto;
+    font-weight: 300;
+    font-size: 13px;
+    padding-left: 232px;
+    padding-top: 37px;
+    box-sizing: border-box;
+}
+
+.user_show_main .right {
+    background-color: $background-color;
+    width: 230px;
+    height: 500px;
+}
+
+.left li {
+    padding-bottom: 24px;
+}
+
+.edit_form {
+    
+}
+

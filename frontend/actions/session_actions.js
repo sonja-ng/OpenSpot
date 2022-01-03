@@ -10,10 +10,12 @@ export const removeSessionErrors = () => {
     type: REMOVE_SESSION_ERRORS
 }};
 
-export const receiveCurrentUser = user => ({
+export const receiveCurrentUser = user => {
+    // debugger
+    return {
     type: RECEIVE_CURRENT_USER,
     user
-});
+}};
 
 const logoutCurrentUser = () => ({
     type: LOGOUT_CURRENT_USER,

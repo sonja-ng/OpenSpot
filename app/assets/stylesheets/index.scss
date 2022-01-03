@@ -33,6 +33,7 @@ body {
     width: 1282px;
     height: inherit;
     margin: 0 auto;
+    position: relative;
 }
 
 //font
@@ -190,6 +191,7 @@ header {
     top: 30px;
     right: 0px;
     position: absolute;
+    z-index: 100;
 }
 
 .dropdown_ul li {
@@ -225,7 +227,6 @@ header {
 
 .main_content {
     width: inherit;
-    height: 500px;
 }
 
 .search_bar {
