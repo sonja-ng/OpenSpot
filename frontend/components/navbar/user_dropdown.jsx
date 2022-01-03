@@ -6,11 +6,11 @@ class UserDropDown extends React.Component{
     }
 
     render(){
-        const { selected, logout, currentUser, removeDropDown, innerRef } = this.props;
+        const { selected, logout, currentUser } = this.props;
            const klass = selected ? "dropdown_ul" : "hidden";
            
            return (
-               <div className={klass} ref={innerRef}>
+               <div className={klass}>
                    <div className="dropdown_title">Hello, {currentUser.fname}!</div>
                    <ul>
                    <li>My Profile</li>

@@ -17,6 +17,10 @@ class UserNavBar extends React.Component {
         document.addEventListener("click", this.removeDropDown);
     }
 
+    componentWillUnmount(){
+        document.removeEventListener("click", this.removeDropDown);
+    }
+
     removeDropDown(e){
         e.preventDefault();
         // debugger

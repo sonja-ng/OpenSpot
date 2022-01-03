@@ -10,17 +10,29 @@ class LoginForm extends React.Component {
             password: ""
         }
 
+        this.formRef = React.createRef();
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
         this.resetUserErrors = this.resetUserErrors.bind(this);
         this.goBack = this.goBack.bind(this);
         this.enableScrolling = this.enableScrolling.bind(this);
+        this.disableScrolling = this.disableScrolling.bind(this);
+    }
+
+    componentDidMount(){
+        // debugger
+        // document.addEventListener("click", this.goBack);
+        this.disableScrolling();
     }
 
     update(field){
         return e => this.setState({
             [field]: e.target.value
         })
+    }
+
+    disableScrolling(){
+        document.body.classList.add("disable_scroll");
     }
 
     enableScrolling(){
@@ -45,8 +57,12 @@ class LoginForm extends React.Component {
         });
     }
 
-    goBack(){
-        this.props.history.goBack();
+    goBack(e){
+        e.preventDefault();
+        // debugger
+        // if (this.formRef && !this.formRef.current.contains(e.target)){
+        //     return this.props.history.goBack();
+        // };
      }
 
     renderErrors(){
@@ -64,7 +80,7 @@ class LoginForm extends React.Component {
         // debugger
         return (
         <div className="form_background">
-            <form onSubmit={this.handleSubmit} className="login">
+            <form onSubmit={this.handleSubmit} className="login" ref={this.formRef}>
                 <div className="form_logo_header">
                     <img src={smallLogo}/>
                     <Link to="/" className="x_button" onClick={this.enableScrolling}><i className="fas fa-times"></i></Link>
@@ -82,7 +98,7 @@ class LoginForm extends React.Component {
                     </label>
                     <div className="login_buttons">
                         <input type="submit" className="session_button" value="Login"/>
-                        <div className="form_msg">Don't have an account?  <Link to="/signup" className="demo_button" onClick={this.resetUserErrors}>Signup here</Link>
+                        <div className="form_msg">Don't have an account?  <Link to="/signup" className="demo_button" onClick={this.resetUserErrors}>Signup</Link>
                             <br></br>
                             Don't want to create an account?
                             <button className="demo_button" onClick={this.handleDemoSubmit}>Login as Demo User</button>

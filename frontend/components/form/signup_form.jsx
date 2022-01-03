@@ -19,6 +19,17 @@ class SignupForm extends React.Component {
         this.resetSessionErrors = this.resetSessionErrors.bind(this);
         this.goBack = this.goBack.bind(this);
         this.enableScrolling = this.enableScrolling.bind(this);
+        this.disableScrolling = this.disableScrolling.bind(this);
+    }
+
+    componentDidMount(){
+        // debugger
+        // document.addEventListener("click", this.goBack);
+        this.disableScrolling();
+    }
+
+    disableScrolling(){
+        document.body.classList.add("disable_scroll");
     }
 
     update(field){
@@ -118,7 +129,7 @@ class SignupForm extends React.Component {
                         <br/>
                     <div className="signup_buttons">
                         <input type="submit" value="Sign Up" className="session_button"/><br></br>
-                        <div className="form_msg">Already have an account?  <Link to="/login" className="demo_button" onClick={this.resetSessionErrors} >Login here</Link>
+                        <div className="form_msg">Already have an account?  <Link to="/login" className="demo_button" onClick={this.resetSessionErrors} >Login</Link>
                             <br></br>
                             Don't want to create an account?
                             <button className="demo_button" onClick={this.handleDemoSubmit}>Login as Demo User</button>
