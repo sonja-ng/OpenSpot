@@ -14,10 +14,10 @@ const UserShow = ({ currentUser }) => {
                         <li>Reviews</li>
                     </ul>
                 </aside>
-                <section>
+                <div className="form_section">
                     <div className="user_row"></div>
                     <UserEditFormContainer />
-                </section>
+                </div>
                 <aside className="right">
                 </aside >
             </div>
