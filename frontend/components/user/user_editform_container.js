@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import { receiveUserInfo } from '../../actions/user_actions'
-import { updateUser } from '../../actions/user_actions';
+import { receiveUserInfo, updateUser } from '../../actions/user_actions'
 import UserEditForm from './user_edit_form';
 import { withRouter } from 'react-router-dom';
 

@@ -1,6 +1,7 @@
 import React from "react";
 
 class UserEditForm extends React.Component {
+
     constructor(props){
         super(props);
         this.state = this.props.currentUser;
@@ -8,7 +9,6 @@ class UserEditForm extends React.Component {
     }
 
     componentDidMount(){
-        // debugger
         this.props.receiveUserInfo(this.props.match.params.userId);
     }
 
@@ -16,15 +16,22 @@ class UserEditForm extends React.Component {
         return e => this.setState({[field]: e.target.value})
     }
 
-    handleSubmit(){
-        this.props.updateUser(this.state);
+    handleSubmit(e){
+        console.log(e.target);
+        e.preventDefault();
+        const user = Object.assign({}, this.state);
+        return this.props.signup(user);
+    }
+
+    test(e){
+        e.preventDefault();
+        console.log(test);
     }
 
     render(){
-        // debugger
         return (
             <div>
-                <form onSubmit={this.handleSubmit} className="edit_form">
+                <form onSubmit={this.test.bind(this)} className="edit_form">
                     <h3>About me</h3>
                     <div className="form_row">
                     <label>First name
@@ -47,7 +54,7 @@ class UserEditForm extends React.Component {
                     <label>Change password
                         <input type="password" className="edit_form_input" value={this.state.password} onChange={this.update("password")}/>
                     </label>
-                    <input type="submit" className="long_submit" value="Save Changes"/>
+                    <input type="button" className="long_submit" value="Save Changes"/>
                 </form>
             </div>
         )
