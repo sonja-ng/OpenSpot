@@ -2,6 +2,8 @@ $main_font: 'DM Sans', sans-serif;
 $border-color: #d2d4d6;
 $background-color: #f6f6f6;
 $red: #e03744;
+$roboto: 'Roboto', sans-serif;
+$manrope: 'Manrope', sans-serif;
 
 
 .form_background {
@@ -125,6 +127,7 @@ label {
     font-size: 11px;
     font-weight: 500;
     text-decoration: none;
+    font-weight: 700;
 }
 
 .form_msg {

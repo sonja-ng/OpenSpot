@@ -15,4 +15,4 @@ user3 = User.create(username:'billy', fname:'Bill', lname:'Omaha', email:'bill@g
 user4 = User.create(username:'roselyn', fname:'Lara', lname:'Mendelssohn', email:'cool@gmail.com', phone:'2222222', password: 'password')
 user5 = User.create(username:'aime888', fname:'Amy', lname:'Toby', email:'amytoby@gmail.com', phone:'3333333', password: 'password')
 user6 = User.create(username:'opencafe', fname:'Nancy', lname:'King', email:'nancy@gmail.com', phone:'4444444', password: 'password')
-demo = User.create(username:'demo user', fname:'Demo', lname:'User', email:'demo@gmail.com', phone:'909090', password: 'password')
+demo = User.create(username:'demo user', fname:'Demo User', lname:'User', email:'demo@gmail.com', phone:'909090', password: 'password')

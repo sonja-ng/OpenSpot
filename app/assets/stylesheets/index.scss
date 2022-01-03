@@ -4,6 +4,8 @@ $main_font: 'DM Sans', sans-serif;
 $red: #e03744;
 $border-color: #d2d4d6;
 $turquoise: #007492;
+$roboto: 'Roboto', sans-serif;
+$manrope: 'Manrope', sans-serif;
 
 html {
     height: 100%;
@@ -174,7 +176,48 @@ header {
     color: grey;
 }
 
+.dropdown_container {
+    position: relative;
+}
 
+.dropdown_ul {
+    display: block;
+    width: 253px;
+    height: 300x;
+    background-color: white;
+    border: 1px solid $border-color;
+    border-radius: 3px;
+    top: 30px;
+    right: 0px;
+    position: absolute;
+}
+
+.dropdown_ul li {
+    height: 27px;
+    margin-left: 11px;
+    font-family: $roboto;
+    font-weight: 300;
+    font-size: 13px;
+    margin-right: 11px;
+}
+
+.dropdown_ul li:first-child {
+    border-top: 1px solid $border-color;
+    padding-top: 20px;
+}
+
+.dropdown_ul li:last-child {
+    color: $red;
+    cursor: pointer;
+}
+
+.dropdown_title {
+    font-family: $manrope;
+    font-weight: 600;
+    color: rgb(59, 59, 59);
+    font-size: 13px;
+    margin: 15px 0 30px 11px;
+}
 
 //search bar
 

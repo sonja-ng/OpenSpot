@@ -36,7 +36,7 @@ class Navbar extends React.Component {
     render(){
         const { currentUser, logout } = this.props;
         const display = currentUser ? (
-            <UserNavBar logout={logout} enableScrolling={this.enableScrolling}/>
+            <UserNavBar logout={logout} enableScrolling={this.enableScrolling} currentUser={currentUser}/>
         ) : 
         (
             <div className="right_navbar">
