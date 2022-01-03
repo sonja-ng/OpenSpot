@@ -6,6 +6,7 @@ class UserEditForm extends React.Component {
         super(props);
         this.state = this.props.currentUser;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.test = this.test.bind(this);
     }
 
     componentDidMount(){
@@ -25,13 +26,13 @@ class UserEditForm extends React.Component {
 
     test(e){
         e.preventDefault();
-        console.log(test);
+        console.log('test');
     }
 
     render(){
         return (
             <div>
-                <form onSubmit={this.test.bind(this)} className="edit_form">
+                 <form onSubmit={this.test} className="edit_form">
                     <h3>About me</h3>
                     <div className="form_row">
                     <label>First name
@@ -54,7 +55,8 @@ class UserEditForm extends React.Component {
                     <label>Change password
                         <input type="password" className="edit_form_input" value={this.state.password} onChange={this.update("password")}/>
                     </label>
-                    <input type="button" className="long_submit" value="Save Changes"/>
+                    <input type="submit" className="long_submit" value="Save Changes"/>
+                    {/* <button onClick={this.test}>test</button> */}
                 </form>
             </div>
         )
