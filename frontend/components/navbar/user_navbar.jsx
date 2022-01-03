@@ -27,7 +27,6 @@ class UserNavBar extends React.Component {
         if (this.dropRef && !this.dropRef.current.contains(e.target)) {
             return this.setState({selected: false});
         }
-
     }
 
     toggleDropDown(){
@@ -44,7 +43,7 @@ class UserNavBar extends React.Component {
             <div className="right_navbar">
                 <div className="dropdown_container" ref={this.dropRef}>
                     <button onClick={this.toggleDropDown} className="user_icon"><i className="fas fa-user-circle"></i></button>
-                    <UserDropDown selected={this.state.selected} logout={this.props.logout} currentUser={this.props.currentUser} />
+                    <UserDropDown selected={this.state.selected} logout={this.props.logout} currentUser={this.props.currentUser} toggle={this.toggleDropDown} />
                 </div>
                 <span className="calendar_icon"><i className="far fa-calendar"></i></span>
                 <span className="bell_icon"><i className="far fa-bell"></i></span>

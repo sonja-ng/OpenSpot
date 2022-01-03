@@ -37,6 +37,12 @@ ol, ul {
 blockquote, q {
 	quotes: none;
 }
+
+a {
+	text-decoration: none;
+	color: rgb(59, 59, 59);
+}
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';

@@ -2,8 +2,10 @@ import React from 'react';
 import NavBarContainer from './navbar/navbar_container';
 import LoginFormContainer from './form/login_form_container';
 import SignupFormContainer from './form/signup_form_container';
-import { Link } from 'react-router-dom';
+import UserShowContainer from './user/user_show_container';
+import { Link, Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
+import { ProtectedRoute } from '../util/protected_route_util';
 import SearchBar from './searchbar';
 import smallLogo from '../../app/assets/images/smallheaderlogo.png'; 
 
@@ -23,10 +25,11 @@ const App = () => (
             </div>
             <NavBarContainer />
         </header>
-        <SearchBar />
         <div className="main_content">
+            <Route exact path={["/", "/login", "/signup"]} component={SearchBar} />
             <AuthRoute path="/login" component={LoginFormContainer}/>
             <AuthRoute path="/signup" component={SignupFormContainer}/>
+            <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
         </div>
         <footer>
             <div className="footer_maintitle">This project is a clone of OpenTable.</div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter, Link } from 'react-router-dom';
 
 class UserDropDown extends React.Component{
     constructor(props){
@@ -6,16 +7,16 @@ class UserDropDown extends React.Component{
     }
 
     render(){
-        const { selected, logout, currentUser } = this.props;
+        const { selected, logout, currentUser, toggle } = this.props;
            const klass = selected ? "dropdown_ul" : "hidden";
-           
+        //    debugger
            return (
                <div className={klass}>
                    <div className="dropdown_title">Hello, {currentUser.fname}!</div>
                    <ul>
-                   <li>My Profile</li>
-                   <li>My Dining History</li>
-                   <li>My Saved Restaurants</li>
+                   <li><Link to={`/users/${currentUser.id}`} onClick={toggle}>My Profile</Link></li>
+                   <li onClick={toggle}>My Dining History</li>
+                   <li onClick={toggle}>My Saved Restaurants</li>
                    <li onClick={logout}>Sign Out</li>
                    </ul>
                </div>
@@ -24,4 +25,4 @@ class UserDropDown extends React.Component{
 }
 
 
-export default UserDropDown;
+export default withRouter(UserDropDown);
