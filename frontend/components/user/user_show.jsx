@@ -15,6 +15,7 @@ const UserShow = ({ currentUser }) => {
                     </ul>
                 </aside>
                 <section>
+                    <div className="user_row"></div>
                     <UserEditFormContainer />
                 </section>
                 <aside className="right">
