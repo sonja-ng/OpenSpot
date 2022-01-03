@@ -14,13 +14,12 @@ class LoginForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
         this.resetUserErrors = this.resetUserErrors.bind(this);
-        this.goBack = this.goBack.bind(this);
+        // this.goBack = this.goBack.bind(this);
         this.enableScrolling = this.enableScrolling.bind(this);
         this.disableScrolling = this.disableScrolling.bind(this);
     }
 
     componentDidMount(){
-        // debugger
         // document.addEventListener("click", this.goBack);
         this.disableScrolling();
     }
@@ -57,13 +56,13 @@ class LoginForm extends React.Component {
         });
     }
 
-    goBack(e){
-        e.preventDefault();
-        // debugger
-        // if (this.formRef && !this.formRef.current.contains(e.target)){
-        //     return this.props.history.goBack();
-        // };
-     }
+    // goBack(e){
+    //     e.preventDefault();
+    //     // debugger
+    //     // if (this.formRef && !this.formRef.current.contains(e.target)){
+    //     //     return this.props.history.goBack();
+    //     // };
+    //  }
 
     renderErrors(){
         return (
@@ -77,7 +76,6 @@ class LoginForm extends React.Component {
     }
 
     render(){
-        // debugger
         return (
         <div className="form_background">
             <form onSubmit={this.handleSubmit} className="login" ref={this.formRef}>

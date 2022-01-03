@@ -10,7 +10,6 @@ const mSTP = (state, ownProps) => {
 }};
 
 const mDTP = dispatch => {
-    // debugger
     return {
         receiveUserInfo: (user) => dispatch(receiveUserInfo(user)),
         updateUser: (user) => dispatch(updateUser(user))

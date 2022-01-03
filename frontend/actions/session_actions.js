@@ -11,7 +11,6 @@ export const removeSessionErrors = () => {
 }};
 
 export const receiveCurrentUser = user => {
-    // debugger
     return {
     type: RECEIVE_CURRENT_USER,
     user
@@ -22,14 +21,12 @@ const logoutCurrentUser = () => ({
 });
 
 const receiveSessionErrors = errors => {
-    // debugger
     return {
     type: RECEIVE_SESSION_ERRORS,
     errors
 }};
 
 export const login = user => dispatch => {
-    // debugger
     return SessionUtils.login(user)
     .then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveSessionErrors(errors.responseJSON)))
 };

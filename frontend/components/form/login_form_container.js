@@ -8,7 +8,6 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => {
-    // debugger
    return {
     login: user => dispatch(login(user)),
     removeUserErrors: ()=> dispatch(removeUserErrors())

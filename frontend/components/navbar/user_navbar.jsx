@@ -23,14 +23,12 @@ class UserNavBar extends React.Component {
 
     removeDropDown(e){
         e.preventDefault();
-        // debugger
         if (this.dropRef && !this.dropRef.current.contains(e.target)) {
             return this.setState({selected: false});
         }
     }
 
     toggleDropDown(){
-        // debugger
         if (this.state.selected === false) {
           return  this.setState({ selected: true })
         } else {

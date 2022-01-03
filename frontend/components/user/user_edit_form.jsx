@@ -18,7 +18,6 @@ class UserEditForm extends React.Component {
     }
 
     handleSubmit(e){
-        console.log(e.target);
         e.preventDefault();
         const user = Object.assign({}, this.state);
         return this.props.signup(user);
@@ -56,7 +55,6 @@ class UserEditForm extends React.Component {
                         <input type="password" className="edit_form_input" value={this.state.password} onChange={this.update("password")}/>
                     </label>
                     <input type="submit" className="long_submit" value="Save Changes"/>
-                    {/* <button onClick={this.test}>test</button> */}
                 </form>
             </div>
         )

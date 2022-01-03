@@ -9,7 +9,6 @@ class UserDropDown extends React.Component{
     render(){
         const { selected, logout, currentUser, toggle } = this.props;
            const klass = selected ? "dropdown_ul" : "hidden";
-        //    debugger
            return (
                <div className={klass}>
                    <div className="dropdown_title">Hello, {currentUser.fname}!</div>
