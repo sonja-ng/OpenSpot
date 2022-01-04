@@ -6,6 +6,7 @@ import UserShowContainer from './user/user_show_container';
 import { Link, Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import { ProtectedRoute } from '../util/protected_route_util';
+import RestShowContainer from './rest/rest_show_container';
 import SearchBar from './searchbar';
 import smallLogo from '../../app/assets/images/smallheaderlogo.png'; 
 
@@ -30,6 +31,7 @@ const App = () => (
             <AuthRoute path="/login" component={LoginFormContainer}/>
             <AuthRoute path="/signup" component={SignupFormContainer}/>
             <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
+            <Route path="/rests/:restId" component={RestShowContainer} />
         </div>
         <footer>
             <div className="footer_maintitle">This project is a clone of OpenTable.</div>

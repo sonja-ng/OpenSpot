@@ -46,10 +46,10 @@ class UserEditForm extends React.Component {
         return this.props.updateUser(user).then(()=> <div className="test">Success!</div>);
     }
 
-    test(e){
-        e.preventDefault();
-        console.log('test');
-    }
+    // test(e){
+    //     e.preventDefault();
+    //     console.log('test');
+    // }
 
     render(){
         // debugger
