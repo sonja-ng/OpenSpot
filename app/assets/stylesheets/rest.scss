@@ -1,0 +1,35 @@
+@import './index.scss';
+
+.rest_index {
+    position: relative;
+}
+
+.rest_header {
+    width: inherit;
+    height: 490px;
+    background-color: grey;
+}
+
+.rest_body {
+    width: 100%;
+    position: absolute;
+    height: 300px;
+    background-color: transparent;
+    margin-left: 243px;
+    bottom: -260px;
+    display: flex;
+}
+
+.main_rest_content {
+    width: 513px;
+    background-color: purple;
+    height: 300px;
+    margin-right: 27px;
+}
+
+
+.rsvp_container {
+    width: 243px;
+    height: 256px;
+    background-color: yellow;
+}

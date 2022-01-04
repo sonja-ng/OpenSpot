@@ -5,7 +5,7 @@ export const RECEIVE_REST = 'RECEIVE_REST';
 export const RECEIVE_REST_ERRORS = 'RECEIVE_REST_ERRORS';
 
 const receiveRests = rests => {
-    debugger
+    // debugger
     return {
     type: RECEIVE_RESTS,
     rests
