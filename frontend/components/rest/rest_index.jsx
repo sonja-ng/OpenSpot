@@ -12,15 +12,17 @@ class RestIndex extends React.Component {
 
     render(){
         if (this.props.rests.length === 0) return null;
-        const list = this.props.rests.map(rest => <li>{rest.name}</li>)
+        const list = this.props.rests.slice(0, 5);
+        const list1 = list.map(rest => <RestIndexItem rest={rest} />);
+
         // debugger
         return (
             <div>
                 <h1>hello</h1>
-                <ul>
-                    {list}
+                <ul className="index-row">
+                    {list1}
                 </ul>
-                <RestIndexItem />
+                {/* <RestIndexItem /> */}
             </div>
         )   
     }

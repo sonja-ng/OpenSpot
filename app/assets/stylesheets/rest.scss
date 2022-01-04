@@ -33,3 +33,23 @@
     height: 256px;
     background-color: yellow;
 }
+
+.rest-index-thumbnail {
+    width: 237px;
+    height: 270px;
+    background: purple;
+    margin-left: 16px;
+        .thumbnail-img {
+            height: 132px;
+            background-color: grey;
+        }
+}
+
+.rest-index-thumbnail:first-child {
+    margin-left: 0;
+}
+
+.index-row {
+    display: flex;
+    justify-content: center;
+}

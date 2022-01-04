@@ -1,8 +1,13 @@
 import React from 'react';
 
-const RestIndexItem = (props) => {
+const RestIndexItem = ( {rest}) => {
     return (
-        <h1>hello from item</h1>
+        <li className="rest-index-thumbnail">
+            <div className="thumbnail-img">thumbnail image</div>
+            <h1>{rest.name}</h1>
+            <p>{rest.cuisine}</p>
+            <p>{rest.neighborhood}</p>
+        </li>
     )
 };
 
