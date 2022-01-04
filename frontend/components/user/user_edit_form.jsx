@@ -43,10 +43,11 @@ class UserEditForm extends React.Component {
         // debugger
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        return this.props.updateUser(user).then(()=> <div className="test">Success!</div>);
+        return this.props.updateUser(user).then();
     }
 
     // test(e){
+    //     debugger
     //     e.preventDefault();
     //     console.log('test');
     // }
@@ -58,18 +59,17 @@ class UserEditForm extends React.Component {
                   <form onSubmit={this.test} className="edit_form">
                         <h3>About me</h3>
                     <div className="form_row">
-                    
-                    <label>First name
-                        <input type="text" className="edit_form_input" value={this.state.fname} onChange={this.update("fname")}/>
-                        {this.renderNameError("Fname", "First name")}
-                    </label>
-                    
-                    <label>Last name
-                        <input type="text" className="edit_form_input" value={this.state.lname} onChange={this.update("lname")}/>
-                        {this.renderNameError("Lname", "Last name")}
-                    </label>
-                    
-                    </div><br></br>
+                        <label>First name
+                            <input type="text" className="edit_form_input" value={this.state.fname} onChange={this.update("fname")}/>
+                            {this.renderNameError("Fname", "First name")}
+                        </label>
+                        <label>Last name
+                            <input type="text" className="edit_form_input" value={this.state.lname} onChange={this.update("lname")}/>
+                            {this.renderNameError("Lname", "Last name")}
+                        </label>
+                    </div>
+                    <br>
+                    </br>
                     <label>Username
                         <input type="text" className="edit_form_input" value={this.state.username} onChange={this.update("username")}/>
                         {this.renderError("Username")}
@@ -94,7 +94,7 @@ class UserEditForm extends React.Component {
                         {this.renderError("Password")}
                     </label> 
                     
-                    {/* <input type="submit" value="Save Changes"/>  */}
+                        {/* <input type="submit" value="Save Changes"/>   */}
                     <button onClick={this.handleSubmit} className="long_submit">Save Changes</button>
                 </form> 
             </div>

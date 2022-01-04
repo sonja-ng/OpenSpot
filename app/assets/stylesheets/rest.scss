@@ -38,7 +38,7 @@
     width: 237px;
     height: 270px;
     background: purple;
-    margin-left: 16px;
+    margin-left: 18px;
         .thumbnail-img {
             height: 132px;
             background-color: grey;
@@ -52,4 +52,17 @@
 .index-row {
     display: flex;
     justify-content: center;
+    margin-top: 18px;
+}
+
+.theme-header {
+    height: 109px;
+    width: 1216px;
+    background-color: white;
+    font-size: 28px;
+    font-family: $manrope;
+    margin-left: 170px;
+    padding-top: 56px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $border-color;
 }

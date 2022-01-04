@@ -14,7 +14,7 @@ $manrope: 'Manrope', sans-serif;
     border-bottom: 1px solid $border-color;
     font-family: $main_font;
     font-size: 25px;
-    padding-left: 232px;
+    padding-left: 289px;
     padding-top: 17px;
     box-sizing: border-box;
 }
@@ -26,24 +26,24 @@ $manrope: 'Manrope', sans-serif;
 .flex_container .form_section {
     background-color: white;
     height: 500px;
-    width: 660px;
+    width: 824px;
 }
 
 .user_show_main .left {
     background-color: $background-color;
-    width: 392px;
+    width: 490px;
     height: 734px;
     font-family: $roboto;
     font-weight: 300;
     font-size: 13px;
-    padding-left: 232px;
+    padding-left: 289px;
     padding-top: 37px;
     box-sizing: border-box;
 }
 
 .user_show_main .right {
     background-color: $background-color;
-    width: 230px;
+    width: 289px;
     height: 734px;
 }
 
@@ -57,8 +57,8 @@ $manrope: 'Manrope', sans-serif;
 }
 
 .user_row {
-    height: 19px;
-    width: 660px;
+    height: 24px;
+    width: 824px;
     background-color: $background-color;
 }
 
@@ -70,7 +70,7 @@ $manrope: 'Manrope', sans-serif;
 
 .form_row {
     display: flex;
-    width: 620px;
+    width: 776px;
     justify-content: space-between;
     margin-top: 23px;
 }
@@ -87,16 +87,18 @@ $manrope: 'Manrope', sans-serif;
 
 .edit_form_input {
     @extend %form_input_shared;
-    width: 620px;
+    width: 776px;
     margin-bottom: 18px;
+    margin-top: 15px;
 }
 
 .form_row .edit_form_input {
-    width: 307px;
+    width: 383px;
+    margin-top: 15px;
 }
 
 .long_submit {
-    width: 620px;
+    width: 776px;
     background-color: $red;
     color: white;
     font-family: $main_font;
