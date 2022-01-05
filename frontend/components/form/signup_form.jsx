@@ -22,8 +22,6 @@ class SignupForm extends React.Component {
     }
 
     componentDidMount(){
-        // debugger
-        // document.addEventListener("click", this.goBack);
         this.disableScrolling();
     }
 

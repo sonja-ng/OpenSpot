@@ -47,7 +47,18 @@ class RestShow extends React.Component {
                             20 Photos
                         </div>
                         <div className="gallery">
-
+                            <input type="image" src={rest.photos[1].url} className="m-photo-1"/>
+                            <div className="m-photo-2"></div>
+                            <div className="big-photo"></div>
+                            <div className="s-photo-container">
+                                <div className="sm-photo-1"></div>
+                                <div className="sm-photo-2"></div>
+                                <div className="sm-photo-3"></div>
+                                <div className="sm-photo-4"></div>
+                                <div className="sm-photo-5"></div>
+                                <div className="sm-photo-6"></div>
+                            </div>
+                            
                         </div>
                         <div className="subheader">
                             Menu

@@ -1,7 +1,7 @@
 import React from 'react';
-import { render } from 'react-dom/cjs/react-dom.development';
 import LoginFormContainer from './form/login_form_container';
 import SignupFormContainer from './form/signup_form_container';
+import Gallery from './rest/gallery';
 
 class Modal extends React.Component {
     constructor(props){
@@ -28,6 +28,9 @@ class Modal extends React.Component {
             break;
           case 'signup':
             component = <SignupFormContainer />;
+            break;
+          case 'gallery':
+            component = <Gallery />;
             break;
           default:
             return null;

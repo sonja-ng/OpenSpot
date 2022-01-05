@@ -71,7 +71,7 @@ rest3.photos.attach(io: file3, filename: 'angel_thumbnail.jpg')
 
 rest4 = Rest.create!(
     name: 'Anything At All', 
-    description: 'Recharge with tasty offerings including coffee drinks, bottled cocktails and more at Graduate Roosevelt Island lobby cafe', 
+    description: 'Recharge with tasty offerings including coffee drinks, bottled cocktails and more at Graduate Roosevelt Island lobby cafe.', 
     address: '22 N Loop Rd', 
     city: 'New York', 
     state: 'NY', 
@@ -82,8 +82,10 @@ rest4 = Rest.create!(
 )
 
 file4 = open('https://openspot-seeds.s3.amazonaws.com/anythingatall_thumbnail.jpg')
-
 rest4.photos.attach(io: file4, filename: 'anythingatall_thumbnail.jpg')
+
+file4a = open('https://openspot-seeds.s3.amazonaws.com/anythingatall/anything1.jpg')
+rest4.photos.attach(io: file4a, filename: 'anythingatall_gallery1.jpg')
 
 rest5 = Rest.create!(
     name: 'As You Are', 

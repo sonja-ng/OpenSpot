@@ -90,6 +90,84 @@
         line-height: 1.5;
     }
 
+    .gallery {
+        display: grid;
+        height: 280px;
+        width: 608px;
+        grid-template-rows: [first] 140px [second] 140px;
+        grid-template-columns: [col1] 138px [col2] 282px [col3] 186px;
+        column-gap: 2px;
+        row-gap: 2px;
+
+        .m-photo-1{
+            grid-column-start: 1;
+            grid-column-end: span 1;
+            grid-row-start: 1;
+            grid-row-end: span 1;
+            background-color: purple;
+            width: 138px;
+            height: 140px;
+            cursor: pointer;
+        }
+
+        .m-photo-2 {
+            background-color: orange;
+            grid-column: 1 / span 1;
+            grid-row: second / span 1;
+        }
+
+        .big-photo {
+            background-color: green;
+            grid-row: first / span 2;
+        }
+    }
+
+    .gallery .s-photo-container {
+        display: grid;
+        grid-column: col3 / span 1;
+        grid-row: first / span 2;
+        grid-template-rows: 92.6px 92.6px 92.6px;
+        grid-template-columns: 93px 93px;
+        column-gap: 2px;
+        row-gap: 2px;
+
+        .sm-photo-1 {
+            grid-column: 1, span 1;
+            grid-row: 1, span 1;
+            background-color: red;
+        }
+
+        .sm-photo-2 {
+            grid-column: 2, span 1;
+            grid-row: 1, span 1;
+            background-color: blue;
+        }
+
+        .sm-photo-3 {
+            grid-column: 1, span 1;
+            grid-row: 2, span 1;
+            background-color: rgb(152, 214, 211);
+        }
+
+        .sm-photo-4 {
+            grid-column: 2, span 1;
+            grid-row: 2, span 1;
+            background-color: rgb(149, 99, 207);
+        }
+
+        .sm-photo-5 {
+            grid-column: 1, span 1;
+            grid-row: 2, span 1;
+            background-color: rgb(5, 53, 50);
+        }
+
+        .sm-photo-6 {
+            grid-column: 1, span 1;
+            grid-row: 2, span 1;
+            background-color: rgb(117, 17, 67);
+        }
+    }
+
     .subheader {
         font-size: 25px;
         margin-bottom: 25px;
@@ -98,8 +176,6 @@
         padding-bottom: 25px;
     }
 }
-
-
 
 //right sidebar
 
@@ -115,6 +191,8 @@
         width: 322px;
         height: 256px;
         background-color: yellow;
+        position: sticky;
+        top: 0;
     }
 
     .order-takeout {
@@ -123,6 +201,8 @@
         box-shadow: 5px, 5px, 5px, 5px, grey;
         background-color: hotpink;
         margin-top: 23px;
+        position: sticky;
+        top: 279px;
     }
 
     .map {
