@@ -31,13 +31,10 @@ const App = () => (
             <NavBarContainer />
         </header>
         <div className="main_content">
-            <Route exact path={["/", "/login", "/signup"]} component={SearchBar} />
-            <AuthRoute path="/login" component={LoginFormContainer}/>
-            <AuthRoute path="/signup" component={SignupFormContainer}/>
+            <Route exact path={"/"} component={SearchBar} />
             <Route exact path={"/"} component={RestIndexContainer} />
             <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
             <Route path={"/rests/:restId"} component={RestShowContainer} />
-            {/* <ProtectedRoute path="/users/:userId/rests/new" component={CreateRestFormContainer} /> */}
         </div>
         <footer>
             <div className="footer_maintitle">This project is a clone of OpenTable.</div>

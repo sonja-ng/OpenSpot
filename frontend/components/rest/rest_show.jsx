@@ -30,9 +30,24 @@ class RestShow extends React.Component {
                             <Link to="/" className="content-button">Menu</Link>
                             <Link to="/" className="content-button">Reviews</Link>
                         </div>
-                        {rest.name}
+                        <div className="rest-title">
+                            {rest.name}
+                        </div>
+                        <div className="rest-info">
+                            <img src={window.starsURL}/>
+                            <div>4.5</div>
+                            <div className="rest-icons"><i className="far fa-comment-alt"></i><div className="text">50 reviews</div></div>
+                            <div className="rest-icons"><i className="far fa-money-bill-alt"></i><div className="text">30 and under</div></div>
+                            <div className="rest-icons"><i className="fas fa-utensils"></i><div className="text">{rest.cuisine}</div></div>
+                        </div>
+                        <div className="description">
+                            {rest.description}
+                        </div>
                         <div className="subheader">
                             20 Photos
+                        </div>
+                        <div className="gallery">
+
                         </div>
                         <div className="subheader">
                             Menu

@@ -37,14 +37,57 @@
         display: flex;
         border-bottom: 1px solid $border-color;
         font-size: 15px;
-        color: black;
+        color: rgb(80, 80, 80);
+        height: 32px;
         margin-bottom: 44px;
     
         .content-button {
             margin-right: 36px;
-            margin-bottom: 18px;
+            padding-bottom: 10px;
             color: black;
         }
+
+        .content-button:hover {
+            border-bottom: 2px solid $red;
+            color: $red;
+        }
+
+        .content-button:active {
+            border-bottom: 2px solid $red;
+            color: $red;
+        }
+    }
+
+    .rest-title {
+        padding-bottom: 32px;
+        height: max-content;
+        border-bottom: 1px solid $border-color;
+    }
+
+    .rest-info {
+        display: flex;
+        font-size: 14px;
+        align-items: center;
+        width: inherit;
+        margin-top: 19px;
+        margin-bottom: 28px;
+
+        .text {
+            margin-left: 9px;
+        }
+    }
+
+    .rest-icons {
+        margin-left: 12px;
+        display: flex;
+    
+    }
+
+    .description {
+        font-family: $roboto;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 1.5;
     }
 
     .subheader {
