@@ -146,6 +146,11 @@
 .thumbnail-text {
     padding-left: 8px;
     padding-top: 13px;
+    padding-bottom: 10px;
+}
+
+.stars {
+    margin-top: 5px;
 }
 
 .thumbnail-detail {
@@ -167,7 +172,7 @@
     display: flex;
     justify-content: center;
     position: absolute;
-    bottom: 23px;   
+    bottom: 15px;
 
     .thumbnail-button {
         width: 70px;

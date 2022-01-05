@@ -10,6 +10,7 @@ const RestIndexItem = ( {rest}) => {
             <img src={image} className="thumbnail-img"/>
             <div className="thumbnail-text">
                 <h1>{rest.name}</h1>
+                <div className="stars"><img src={window.starsURL}/></div>
                 <div className="thumbnail-detail">
                     <span>{rest.cuisine}</span>
                     <div className="price">$$$</div>
