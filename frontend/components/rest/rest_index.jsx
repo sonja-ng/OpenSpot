@@ -18,7 +18,7 @@ class RestIndex extends React.Component {
         const list2 = this.props.rests.slice(5, 10);
         const list2a = list2.map(rest => <RestIndexItem rest={rest} />);
 
-        const list3 = this.props.rests.slice(10, 13);
+        const list3 = this.props.rests.slice(10, 15);
         const list3a = list3.map(rest => <RestIndexItem rest={rest} />);
 
         // debugger

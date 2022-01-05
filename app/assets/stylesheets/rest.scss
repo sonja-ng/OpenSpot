@@ -37,8 +37,12 @@
 .rest-index-thumbnail {
     width: 237px;
     height: 270px;
-    background: purple;
+    background: white;
     margin-left: 18px;
+    border-radius: 3px;
+    position: relative;
+    border: 1px solid $border-color;
+    
         .thumbnail-img {
             height: 132px;
             background-color: grey;
@@ -49,10 +53,18 @@
     margin-left: 0;
 }
 
+.rest-index-thumbnail:hover {
+    box-shadow: 2px 2px 6px 1px rgb(212, 212, 212);
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
 .index-row {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 18px;
+    width: 1216px;
+    margin-left: 170px;
 }
 
 .theme-header {
@@ -66,3 +78,47 @@
     box-sizing: border-box;
     border-bottom: 1px solid $border-color;
 }
+
+.thumbnail-text {
+    padding-left: 8px;
+    padding-top: 13px;
+}
+
+.thumbnail-detail {
+    display: flex;
+    justify-content: start;
+    font-family: $roboto;
+    font-weight: 300;
+    font-size: 13px;
+    margin-top: 14px;
+}
+
+.price {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.button-row {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 23px;   
+
+    .thumbnail-button {
+        width: 70px;
+        height: 30px;
+        background-color: $red;
+        margin-left: 5px;
+        border-radius: 3px;
+        color: white;
+        font-family: $main-font;
+        border: none;
+        cursor: pointer;
+    }
+
+    .thumbnail-button:first-child {
+        margin-left: 0;
+    }
+}
+

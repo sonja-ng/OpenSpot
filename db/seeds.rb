@@ -45,7 +45,7 @@ rest3 = Rest.create!(
     name: 'Angel Indian Restaurant', 
     description: 'Compact, unassuming eatery specializing in vegetarian North Indian dishes & street food staples.', 
     address: '7414 37th Rd', 
-    city: 'Jackson Heights', 
+    city: 'Queens', 
     state: 'NY', 
     zip: '11372', 
     cuisine:'Indian', 
@@ -149,5 +149,41 @@ rest12 = Rest.create!(
     zip: '11238', 
     cuisine:'Japanese', 
     neighborhood:'Prospect Heights', 
+    owner_id: user5.id
+)
+
+rest13 = Rest.create!(
+    name: 'Dhamaka', 
+    description: 'Innovative, energetic eatery offering provincial Indian cuisine in a colorful dining room.', 
+    address: '119 Delancey St', 
+    city: 'New York', 
+    state: 'NY', 
+    zip: '10002', 
+    cuisine:'Indian', 
+    neighborhood:'Lower East Side', 
+    owner_id: user5.id
+)
+
+rest14 = Rest.create!(
+    name: 'Pecking House', 
+    description: 'Chili Fried Chicken Dinners Delivered to Your Doorstep. Pecking House is the reimagining of Peking House, a longstanding Chinese dining institution in Queens.', 
+    address: '185-23 Union Turnpike', 
+    city: 'Fresh Meadows', 
+    state: 'NY', 
+    zip: '11366', 
+    cuisine:'Fusion', 
+    neighborhood:'Fresh Meadows', 
+    owner_id: user5.id
+)
+
+rest15 = Rest.create!(
+    name: 'Soothr', 
+    description: 'Intimate space with al fresco dining offering Thai noodles & soups, plus cocktails.', 
+    address: '204 E 13th St', 
+    city: 'New York', 
+    state: 'NY', 
+    zip: '10003', 
+    cuisine:'Thai', 
+    neighborhood:'East Village', 
     owner_id: user5.id
 )
