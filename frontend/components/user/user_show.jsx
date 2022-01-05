@@ -12,6 +12,7 @@ const UserShow = ({ currentUser }) => {
                         <li>Reservations</li>
                         <li>Saved Restaurants</li>
                         <li>Reviews</li>
+                        <Link to={`/users/${currentUser.id}/rests/`}>My Restaurants</Link>
                     </ul>
                 </aside>
                 <div className="form_section">

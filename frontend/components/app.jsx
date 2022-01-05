@@ -4,6 +4,7 @@ import LoginFormContainer from './form/login_form_container';
 import SignupFormContainer from './form/signup_form_container';
 import UserShowContainer from './user/user_show_container';
 import RestIndexContainer from './rest/rest_index_container';
+// import CreateRestFormContainer from './rest/create_restform_container';
 import { Link, Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import { ProtectedRoute } from '../util/protected_route_util';
@@ -34,6 +35,7 @@ const App = () => (
             <Route exact path={"/"} component={RestIndexContainer} />
             <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
             <Route path={"/rests/:restId"} component={RestShowContainer} />
+            {/* <ProtectedRoute path="/users/:userId/rests/new" component={CreateRestFormContainer} /> */}
         </div>
         <footer>
             <div className="footer_maintitle">This project is a clone of OpenTable.</div>

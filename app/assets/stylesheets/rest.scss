@@ -1,7 +1,9 @@
 @import './index.scss';
 
+//restaurant show page
 .rest_index {
-    position: relative;
+    // position: relative;
+    height: max-content;
 }
 
 .rest_header {
@@ -12,27 +14,89 @@
 
 .rest_body {
     width: 100%;
-    position: absolute;
-    height: 300px;
+    position: relative;
+    height: 800px;
     background-color: transparent;
-    margin-left: 243px;
-    bottom: -260px;
-    display: flex;
+    // margin-left: 302px;
+    // bottom: -200px;
 }
 
 .main_rest_content {
-    width: 513px;
-    background-color: purple;
-    height: 300px;
-    margin-right: 27px;
+    width: 642px;
+    background-color: white;
+    margin-right: 32px;
+    position: absolute;
+    left: 302px;
+    top: -50px;
+    font-size: 60px;
+    font-family: $manrope;
+    padding: 17px;
+    box-sizing: border-box;
+
+    .rest-navbar {
+        display: flex;
+        border-bottom: 1px solid $border-color;
+        font-size: 15px;
+        color: black;
+        margin-bottom: 44px;
+    
+        .content-button {
+            margin-right: 36px;
+            margin-bottom: 18px;
+            color: black;
+        }
+    }
+
+    .subheader {
+        font-size: 25px;
+        margin-bottom: 25px;
+        margin-top: 25px;
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 25px;
+    }
 }
 
 
-.rsvp_container {
-    width: 243px;
-    height: 256px;
-    background-color: yellow;
+
+//right sidebar
+
+.right-content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -50px;
+    right: 302px;
+    height: 800px;
+
+    .rsvp-container {
+        width: 322px;
+        height: 256px;
+        background-color: yellow;
+    }
+
+    .order-takeout {
+        width: 322px;
+        height: 231px;
+        box-shadow: 5px, 5px, 5px, 5px, grey;
+        background-color: hotpink;
+        margin-top: 23px;
+    }
+
+    .map {
+        width: 322px;
+        height: 210px;
+        border: 1px solid $border-color;
+        border-radius: 2px;
+        margin-top: 23px;
+    }
 }
+
+
+
+
+
+
+//rest index page
 
 .rest-index-thumbnail {
     width: 237px;

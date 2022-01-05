@@ -34,6 +34,9 @@ rest1 = Rest.create!(
 file1 = open('https://openspot-seeds.s3.amazonaws.com/albadawi_thumbnail.jpg')
 rest1.photos.attach(io: file1, filename: 'albadawi_thumbnail.jpg')
 
+file12 = open('https://openspot-seeds.s3.amazonaws.com/AlBadawi_header.jpg')
+rest1.photos.attach(io: file12, filename: 'albadawi_header.jpg')
+
 rest2 = Rest.create!(
     name: 'Aldama', 
     description: 'Contemporary, upscale takes on Mexican classics in an unpretentious venue with outdoor seating.', 
