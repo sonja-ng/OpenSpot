@@ -20,7 +20,8 @@ class RestShow extends React.Component {
        const { rest } = this.props;
         return (
             <div className="rest_index">
-                <img src={rest.photos[1].url} className="rest_header"/>
+                <div className="rest_header"></div>
+                {/* <img src={rest.photos[1].url} className="rest_header"/> */}
                 <div className="rest_body">
                     <div className="main_rest_content">
                         <div className="rest-navbar">

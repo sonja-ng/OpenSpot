@@ -35,21 +35,24 @@ class LoginForm extends React.Component {
     }
 
     enableScrolling(){
-        document.body.classList.remove("disable_scroll");
+        this.props.closeModal();
+        document.body.classList.remove("disable_scroll"); 
     }
 
     resetUserErrors(){
         this.props.removeUserErrors();
+        this.props.otherForm('signup');
     }
 
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.login(user);
+        this.props.login(user).then(()=>this.props.closeModal());
     }
 
     handleDemoSubmit(e){
         e.preventDefault();
+        this.props.closeModal();
         this.props.login({
             username: "demo user",
             password: "password"
@@ -77,11 +80,10 @@ class LoginForm extends React.Component {
 
     render(){
         return (
-        <div className="form_background">
             <form onSubmit={this.handleSubmit} className="login" ref={this.formRef}>
                 <div className="form_logo_header">
                     <img src={smallLogo}/>
-                    <Link to="/" className="x_button" onClick={this.enableScrolling}><i className="fas fa-times"></i></Link>
+                    <div className="x_button" onClick={this.enableScrolling}><i className="fas fa-times"></i></div>
                 </div>
                 <div className="form_header"><h2>Login</h2></div>
                 <div className="login_form">
@@ -96,7 +98,7 @@ class LoginForm extends React.Component {
                     </label>
                     <div className="login_buttons">
                         <input type="submit" className="session_button" value="Login"/>
-                        <div className="form_msg">Don't have an account?  <Link to="/signup" className="demo_button" onClick={this.resetUserErrors}>Signup</Link>
+                        <div className="form_msg">Don't have an account? <button className="demo_button" onClick={this.resetUserErrors}>Signup</button>
                             <br></br>
                             Don't want to create an account?
                             <button className="demo_button" onClick={this.handleDemoSubmit}>Login as Demo User</button>
@@ -104,7 +106,6 @@ class LoginForm extends React.Component {
                     </div>
                 </div>
             </form>
-        </div>
         )
     }
 }

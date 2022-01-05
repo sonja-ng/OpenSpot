@@ -14,6 +14,7 @@ class Navbar extends React.Component {
     resetSessionErrors(){
         this.props.removeSessionErrors();
         this.preventScrolling();
+        this.props.openModal("login");
     }
 
     componentDidMount(){
@@ -27,11 +28,14 @@ class Navbar extends React.Component {
     resetUserErrors(){
         this.props.removeUserErrors();
         this.preventScrolling();
+        this.props.openModal("signup");
     }
 
     preventScrolling(){
         document.body.classList.add("disable_scroll");
     }
+
+
 
     render(){
         const { currentUser, logout } = this.props;
@@ -41,10 +45,10 @@ class Navbar extends React.Component {
         (
             <div className="right_navbar">
                 <div>
-                    <Link to="/signup" className="signup_button" onClick={this.resetUserErrors}>Sign Up</Link>
+                    <button className="signup_button" onClick={this.resetUserErrors}>Sign Up</button>
                 </div>
                 <div>
-                    <Link to="/login" className="login_button" onClick={this.resetSessionErrors}>Login</Link>
+                    <button className="login_button" onClick={this.resetSessionErrors}>Login</button>
                 </div>
                 <div>
                     <span className="search_icon"><i className="fas fa-search"></i></span>

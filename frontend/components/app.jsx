@@ -4,6 +4,7 @@ import LoginFormContainer from './form/login_form_container';
 import SignupFormContainer from './form/signup_form_container';
 import UserShowContainer from './user/user_show_container';
 import RestIndexContainer from './rest/rest_index_container';
+import ModalContainer from './modal_container';
 // import CreateRestFormContainer from './rest/create_restform_container';
 import { Link, Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
@@ -15,6 +16,7 @@ import smallLogo from '../../app/assets/images/smallheaderlogo.png';
 
 const App = () => (
     <div className="main_index">
+        <ModalContainer />
         <header>
             <div className="top_bar"></div>
                 <div className="left_navbar">
