@@ -13,13 +13,13 @@ class RestIndex extends React.Component {
     render(){
         if (this.props.rests.length === 0) return null;
         const list1 = this.props.rests.slice(0, 5);
-        const list1a = list1.map(rest => <RestIndexItem rest={rest} />);
+        const list1a = list1.map(rest => <RestIndexItem key={rest.id} rest={rest} />);
 
         const list2 = this.props.rests.slice(5, 10);
-        const list2a = list2.map(rest => <RestIndexItem rest={rest} />);
+        const list2a = list2.map(rest => <RestIndexItem key={rest.id} rest={rest} />);
 
         const list3 = this.props.rests.slice(10, 15);
-        const list3a = list3.map(rest => <RestIndexItem rest={rest} />);
+        const list3a = list3.map(rest => <RestIndexItem key={rest.id} rest={rest} />);
 
         // debugger
         return (

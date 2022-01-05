@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const RestIndexItem = ( {rest}) => {
+    if (rest.photos.length === 0) return null; 
+    const image = rest.photos[0].url;
     return (
         <Link to={`rests/${rest.id}`}>
         <li className="rest-index-thumbnail">
-            <div className="thumbnail-img">thumbnail image</div>
+            <img src={image} className="thumbnail-img"/>
             <div className="thumbnail-text">
                 <h1>{rest.name}</h1>
                 <div className="thumbnail-detail">

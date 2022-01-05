@@ -22,10 +22,10 @@ const receiveRestErrors = errors => ({
 });
 
 export const fetchRests = () => dispatch => (
-    RestUtils.fetchRests().then(rests => dispatch(receiveRests(rests)), errors => dispatch(receiveRestErrors(errors)))
+    RestUtils.fetchRests().then(rests => dispatch(receiveRests(rests)))
 );
 
 export const fetchRest = restId => dispatch => (
-    RestUtils.fetchRest(restId).then(rest => dispatch(receiveRest(rest)), errors => dispatch(receiveRestErrors(errors)))
+    RestUtils.fetchRest(restId).then(rest => dispatch(receiveRest(rest)))
 );
 
