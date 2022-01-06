@@ -109,6 +109,10 @@
             height: 140px;
             cursor: pointer;
         }
+            .img {
+                width: 138px;
+                height: 140px;
+            }
 
         .m-photo-2 {
             background-color: orange;
@@ -165,6 +169,36 @@
             grid-column: 1, span 1;
             grid-row: 2, span 1;
             background-color: rgb(117, 17, 67);
+        }
+    }
+
+    
+
+    .gallery-background {
+        z-index: 20;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        
+        button {
+            position: absolute;
+            top: 100px;
+            right: 200px;
+            border: none;
+            background: transparent;
+            font-size: 40px;
+            font-family: $roboto;
+            color: grey;
+            cursor: pointer;
+        }
+
+        .large-photo {
+            position: absolute;
+            top: 25%;
+            left: 40%;
         }
     }
 
