@@ -2,7 +2,6 @@ import * as RestUtils from '../util/rest_api_utils';
 
 export const RECEIVE_RESTS = 'RECEIVE_RESTS';
 export const RECEIVE_REST = 'RECEIVE_REST';
-export const RECEIVE_REST_ERRORS = 'RECEIVE_REST_ERRORS';
 
 const receiveRests = rests => {
     // debugger
@@ -16,13 +15,8 @@ const receiveRest = rest => ({
     rest
 });
 
-const receiveRestErrors = errors => ({
-    type: RECEIVE_REST_ERRORS,
-    errors
-});
-
-export const fetchRests = () => dispatch => (
-    RestUtils.fetchRests().then(rests => dispatch(receiveRests(rests)))
+export const fetchRests = (data) => dispatch => (
+    RestUtils.fetchRests(data).then(rests => dispatch(receiveRests(rests)))
 );
 
 export const fetchRest = restId => dispatch => (

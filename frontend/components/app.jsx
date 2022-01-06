@@ -1,16 +1,14 @@
 import React from 'react';
 import NavBarContainer from './navbar/navbar_container';
-import LoginFormContainer from './form/login_form_container';
-import SignupFormContainer from './form/signup_form_container';
 import UserShowContainer from './user/user_show_container';
 import RestIndexContainer from './rest/rest_index_container';
 import ModalContainer from './modal_container';
-// import CreateRestFormContainer from './rest/create_restform_container';
+import SearchIndexContainer from './search/search_index_container';
 import { Link, Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import { ProtectedRoute } from '../util/protected_route_util';
 import RestShowContainer from './rest/rest_show_container';
-import SearchBar from './searchbar';
+import SearchBarContainer from './search/searchbar_container';
 import smallLogo from '../../app/assets/images/smallheaderlogo.png'; 
 
 
@@ -31,10 +29,11 @@ const App = () => (
             <NavBarContainer />
         </header>
         <div className="main_content">
-            <Route exact path={"/"} component={SearchBar} />
+            <Route exact path={"/"} component={SearchBarContainer} />
             <Route exact path={"/"} component={RestIndexContainer} />
             <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
             <Route path={"/rests/:restId"} component={RestShowContainer} />
+            <Route path={"/search"} component={SearchIndexContainer} />
         </div>
         <footer>
             <div className="footer_maintitle">This project is a clone of OpenTable.</div>

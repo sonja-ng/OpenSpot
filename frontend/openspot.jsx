@@ -4,6 +4,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 import { updateUser } from './actions/user_actions';
 import { fetchRests, fetchRest } from './actions/rest_actions';
+import { fetchRestsTest } from './util/rest_api_utils';
+import { updateFilter, changeFilter } from './actions/search_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;
@@ -25,6 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.updateUser = updateUser;
     window.fetchRests = fetchRests;
     window.fetchRest = fetchRest;
+    window.updateFilter = updateFilter;
+    window.changeFilter = changeFilter;
+    window.fetchRestsTest = fetchRestsTest;
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={ store }/>, root)
 });

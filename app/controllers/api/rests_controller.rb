@@ -1,6 +1,10 @@
 class Api::RestsController < ApplicationController
     def index
-        @rests = Rest.all
+        # debugger
+        rests = cuisine ? Rest.match_cuisine(cuisine) : Rest.all 
+        rests = neighborhood ? Rest.match_neighborhood(neighborhood) : Rest.all
+
+        @rests = rests
         render :index
     end
 
@@ -22,6 +26,14 @@ class Api::RestsController < ApplicationController
 
     def rest_params
         params.require(:rest).permit(:name, :description, :address, :city, :state, :zip, :cuisine, :neighborhood, :owner_id)
+    end
+
+    def cuisine
+        params[:cuisine]
+    end
+
+    def neighborhood
+        params[:neighborhood]
     end
 
 end

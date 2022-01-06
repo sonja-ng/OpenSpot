@@ -7,4 +7,12 @@ class Rest < ApplicationRecord
         foreign_key: :owner_id,
         class_name: :User
 
+    
+    def self.match_cuisine(cuisine)
+        self.where("cuisine = ?", cuisine)
+    end
+
+    def self.match_neighborhood(neighborhood)
+        self.where("neighborhood = ?", neighborhood)
+    end
 end
