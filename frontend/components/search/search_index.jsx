@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchIndexItem from './search_index_item';
 
 class SearchIndex extends React.Component {
     constructor(props){
@@ -66,19 +67,34 @@ class SearchIndex extends React.Component {
         if(!this.props.rests) return null;
         const { rests } = this.props;
         
-        const restList = rests.map(rest => <li key={rest.id}>{rest.name}</li>)
+        const restList = rests.map(rest => <SearchIndexItem key={rest.id} rest={rest}/>);
         return (
             <div>
-                <h1>hello from search index</h1>
-                <form className="search_form" onClick={this.handleSubmit}>
-                    <span className="font_search">
-                        <input type="text" className="search_input" placeholder="Neighborhood, Restaurant, or Cuisine" value={this.state.general} onChange={this.update}/>
-                        <i className="fas fa-search"></i>
-                    </span>
-                    <input className="search_submit" type="submit" value="Let's go" />
-                </form>
-                <div>
-                    {restList}
+                <div className="search-header">
+                    <form className="search-form" onClick={this.handleSubmit}>
+                        <input type="date" className="search_date_main"/>
+                        <select name="time" className="dropdown time" id="time">
+                            <option value="1:00">1:00pm</option>
+                            <option value="2:00">2:00pm</option>
+                        </select>
+                        <label>
+                        <select className="dropdown party" name="party" id="party">
+                                <option value="2">2 people</option>
+                                <option value="3">3 people</option>
+                                <option value="4">4 people</option>    
+                        </select>
+                        </label>
+                        <span className="font_search" >
+                            <input type="text" className="banner-input" placeholder="Neighborhood, Restaurant, or Cuisine" value={this.state.general} onChange={this.update}/>
+                            <i className="fas fa-search"></i>
+                        </span>
+                        <input type="submit" className="banner-submit" value="Find a table" />
+                    </form>
+                </div>
+                <div className="search-result">
+                    <ul>
+                        {restList}
+                    </ul>
                 </div>
             </div>
         )

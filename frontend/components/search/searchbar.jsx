@@ -10,7 +10,7 @@ class SearchBar extends React.Component {
             <div className="search_bar">
                 <div className="form_container">
                     <div className="slogan">Find your table for any occasion</div>
-                    <form className="search_form">
+                    <form>
                         <input type="date" className="search_date_main"/>
                         <select name="time" id="time" className="dropdown time">
                             <option value="1:00">1:00pm</option>

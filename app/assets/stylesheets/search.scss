@@ -1,0 +1,107 @@
+@import './index.scss';
+
+.search-header {
+    width: 1600px;
+    height: 80px;
+    background-image: image_url('wood.png');
+    padding: 15px 0;
+    box-sizing: border-box;
+    
+    .search-form {
+        height: 50px;
+        width: max-content;
+        margin: 0 auto;
+
+
+        .banner-submit {
+            background-color: $red;
+            color: white;
+            font-family: $main_font;
+            font-size: 15px;
+            border: none;
+            width: 144px;
+            border-radius: 3px;
+            height: 48px;
+            cursor: pointer;
+        }
+
+        .banner-input {
+            height: 50px;
+            border: none;
+            border-radius: 3px;
+            width: 292px;
+            padding-left: 25px;
+            margin-right: 12px;
+            font-size: 12px;
+            box-sizing: border-box;
+        }
+    }
+}
+
+.search-result {
+    width: 803px;
+    height: 800px;
+    margin: 0 auto;
+}
+
+.search-result-index {
+    width: 797px;
+    height: 277px;
+    display: flex;
+    // background: yellow;
+    border-bottom: 1px solid $border-color;
+
+    .result-img {
+        height: 206px;
+        width: 204px;
+        margin-top: 28px;
+        margin-right: 18px;
+        border-radius: 3px;
+        background-color: grey;
+    }
+
+    .result {
+        margin-top: 28px;
+        height: 206px;
+        width: 577px;
+    }
+
+    .result-text {
+        font-family: $main_font;
+        font-size: 18px;
+        color: #007492;
+    }
+
+    .result-stars {
+        margin-top: 13px;
+    }
+
+    .booked {
+        font-family: $manrope;
+        font-size: 13px;
+        margin-top: 19px;
+
+        i {
+            margin-right: 10px;
+        }
+    }
+
+
+    .result-button-row {
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .result-button {
+        background-color: $red;
+        color: white;
+        border-radius: 3px;
+        border: none;
+        width: 109px;
+        height: 32px;
+        margin-right: 8px;
+        font-family: $main-font;
+        cursor: pointer;
+    }
+}
+
