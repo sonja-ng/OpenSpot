@@ -22,4 +22,3 @@ export const fetchRests = (data) => dispatch => (
 export const fetchRest = restId => dispatch => (
     RestUtils.fetchRest(restId).then(rest => dispatch(receiveRest(rest)))
 );
-
