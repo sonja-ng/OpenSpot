@@ -1,8 +1,16 @@
 class Api::RestsController < ApplicationController
     def index
         # debugger
-        rests = cuisine ? Rest.match_cuisine(cuisine) : Rest.all 
-        rests = neighborhood ? Rest.match_neighborhood(neighborhood) : Rest.all
+
+        if cuisine
+            rests = Rest.match_cuisine(cuisine)
+        elsif neighborhood
+            rests = Rest.match_neighborhood(neighborhood)
+        elsif name
+            rests = Rest.match_name(name)
+        else 
+            rests = Rest.all
+        end
 
         @rests = rests
         render :index
@@ -34,6 +42,10 @@ class Api::RestsController < ApplicationController
 
     def neighborhood
         params[:neighborhood]
+    end
+
+    def name
+        params[:name]
     end
 
 end
