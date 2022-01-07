@@ -99,16 +99,16 @@ class SearchIndex extends React.Component {
         e.preventDefault();
         // console.log('test');
         // debugger
-
+        this.setState({suggestion: false});
         if (this.state.cuisine) {
             this.props.updateFilter("cuisine", this.state.cuisine);
-            this.setState({ general: ""});
+            this.setState({ general: "", cuisine: ""});
         } else if (this.state.neighborhood) {
             this.props.updateFilter("neighborhood", this.state.neighborhood);
-            this.setState({ general: ""});
+            this.setState({ general: "", neighborhood: "" });
         } else if (this.state.name) {
             this.props.updateFilter("name", this.state.name);
-            this.setState({ general: ""});
+            this.setState({ general: "", name: "" });
         } else {
             this.props.updateFilter("general", this.state.general);
             this.setState({ general: ""});
@@ -127,7 +127,7 @@ class SearchIndex extends React.Component {
         )
 
         const matches = this.findMatch().map((item, idx) => <li onClick={this.selectMatch} key={idx}>{item}</li>)
-
+            console.log(this.state);
         return (
             <div>
                 <div className="search-header">
