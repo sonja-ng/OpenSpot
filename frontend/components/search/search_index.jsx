@@ -78,15 +78,23 @@ class SearchIndex extends React.Component {
         } else if (this.state.name) {
             this.props.updateFilter("name", this.state.name);
             this.setState({ general: ""});
+        } else {
+            this.props.updateFilter("general", this.state.general);
+            this.setState({ general: ""});
         }
     }
 
 
     render(){
         if(!this.props.rests) return null;
+     
         const { rests } = this.props;
-        
         const restList = rests.map(rest => <SearchIndexItem key={rest.id} rest={rest}/>);
+        const msg = rests.length === 15 ? (
+            <h1>Your search did not return any results, see below for suggestions!</h1>
+        ) : (
+            null
+        )
         return (
             <div>
                 <div className="search-header">
@@ -111,6 +119,7 @@ class SearchIndex extends React.Component {
                     </form>
                 </div>
                 <div className="search-result">
+                    {msg}
                     {/* {this.renderSearch()} */}
                     <ul>
                         {restList}

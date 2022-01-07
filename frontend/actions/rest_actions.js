@@ -15,9 +15,10 @@ const receiveRest = rest => ({
     rest
 });
 
-export const fetchRests = (data) => dispatch => (
-    RestUtils.fetchRests(data).then(rests => dispatch(receiveRests(rests)))
-);
+export const fetchRests = (data) => dispatch => {
+    // debugger
+    return RestUtils.fetchRests(data).then(rests => dispatch(receiveRests(rests)))
+};
 
 export const fetchRest = restId => dispatch => (
     RestUtils.fetchRest(restId).then(rest => dispatch(receiveRest(rest)))

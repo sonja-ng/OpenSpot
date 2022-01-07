@@ -40,10 +40,11 @@
 
 .search-result {
     width: 803px;
-    height: 800px;
+    height: max-content;
     margin: 0 auto;
     font-family: $main_font;
     font-size: 20px;
+    padding-bottom: 200px;
 }
 
 .search-result-index {

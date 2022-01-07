@@ -59,7 +59,7 @@ class SearchBar extends React.Component {
             this.props.history.push('/search/');
             this.props.updateFilter("name", this.state.name);
             this.setState({ general: ""});
-        }
+        } 
     }
 
     render(){

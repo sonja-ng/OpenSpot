@@ -1,6 +1,7 @@
 import { CHANGE_FILTER } from "../actions/search_actions";
 
 const DEFAULT = {
+    general: null,
     cuisine: null,
     neighborhood: null,
     name: null
