@@ -13,7 +13,7 @@ class SearchIndex extends React.Component {
             suggestion: false,
         }
 
-        this.cuisineList = ["american", "middle Eastern", "mexican", "indian", "bakery", "bar", "mediterranean", "soul food", "venezuelan",
+        this.cuisineList = ["american", "middle eastern", "mexican", "indian", "bakery", "bar", "mediterranean", "soul food", "venezuelan",
         "chinese", "japanese", "thai", "fusion"];
 
         this.neighborhoodList = ["noho", "williamsburg", "jackson heights", "roosevelt island", "boerum hill", "midtown", "upper west side",
@@ -22,10 +22,10 @@ class SearchIndex extends React.Component {
         this.nameList = ["al badawi", "aldama", "angel indian restaurant", "anything at all", "as you are", "bar blondeau", "borrachito", "boulud sud", "cadence",
         "casa ora", "cheli", "chuko", "dhamaka", "soothr", "pecking house"];
 
-        this.allItems = ["american", "middle Eastern", "mexican", "indian", "bakery", "bar", "mediterranean", "soul food", "venezuelan",
-        "chinese", "japanese", "thai", "fusion", "noho", "williamsburg", "jackson heights", "roosevelt island", "boerum hill", "midtown", "upper west side",
-        "east village", "prospect heights", "lower east side", "fresh meadows", "al badawi", "aldama", "angel indian restaurant", "anything at all", "as you are", 
-        "bar blondeau", "borrachito", "boulud sud", "cadence", "casa ora", "cheli", "chuko", "dhamaka", "soothr", "pecking house" ];
+        this.allItems = ["American", "Middle Eastern", "Mexican", "Indian", "Bakery", "Bar", "Mediterranean", "Soul food", "Venezuelan",
+        "Chinese", "Japanese", "Thai", "Fusion", "NoHo", "Williamsburg", "Jackson Heights", "Roosevelt Island", "Boerum Hill", "Midtown", "Upper West Side",
+        "East Village", "Prospect Heights", "Lower East Side", "Fresh Meadows", "Al Badawi", "Aldama", "Angel Indian Restaurant", "Anything At All", "As You Are", 
+        "Bar Blondeau", "Borrachito", "Boulud Sud", "Cadence", "Casa Ora", "Cheli", "Chuko", "Dhamaka", "Soothr", "Pecking House" ];
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
@@ -34,27 +34,19 @@ class SearchIndex extends React.Component {
         // this.renderSuggestion = this.renderSuggestion.bind(this);
     }
 
-    componentDidMount(){
-        // this.props.fetchRests();
-    }
-
     update(e){
         // debugger
         this.setState({suggestion: true});
         this.setState({ general: e.target.value }, ()=> {
                 const lowerCase = this.state.general.toLowerCase();
             if (this.cuisineList.includes(lowerCase)) {
-                this.setState({ cuisine: lowerCase });
-                this.setState({ neighborhood: "" });
-                this.setState({ name: "" });
+                this.setState({ cuisine: lowerCase, neighborhood: "", name: "" });
             } else if (this.neighborhoodList.includes(lowerCase)) {
-                this.setState({ neighborhood: lowerCase });
-                this.setState({ cuisine: "" });
-                this.setState({ name: "" });
+                this.setState({ neighborhood: lowerCase, cuisine: "", name: "" });
             } else if (this.nameList.includes(lowerCase)) {
-                this.setState({ name: lowerCase });
-                this.setState({ cuisine: "" });
-                this.setState({ neighborhood: "" });
+                this.setState({ name: lowerCase, cuisine: "", neighborhood: "" });
+            } else if (this.state.general === "") {
+                this.setState({suggestion: false});
             }
         });
     }
@@ -79,17 +71,11 @@ class SearchIndex extends React.Component {
         this.setState({ general: e.currentTarget.innerText, suggestion: false }, ()=> {
                 const lowerCase = this.state.general.toLowerCase();
             if (this.cuisineList.includes(lowerCase)) {
-                this.setState({ cuisine: lowerCase });
-                this.setState({ neighborhood: "" });
-                this.setState({ name: "" });
+                this.setState({ cuisine: lowerCase, neighborhood: "", name: "" });
             } else if (this.neighborhoodList.includes(lowerCase)) {
-                this.setState({ neighborhood: lowerCase });
-                this.setState({ cuisine: "" });
-                this.setState({ name: "" });
+                this.setState({ neighborhood: lowerCase, cuisine: "", name: "" });
             } else if (this.nameList.includes(lowerCase)) {
-                this.setState({ name: lowerCase });
-                this.setState({ cuisine: "" });
-                this.setState({ neighborhood: "" });
+                this.setState({ name: lowerCase, cuisine: "", neighborhood: "" });
             }
         });
     }

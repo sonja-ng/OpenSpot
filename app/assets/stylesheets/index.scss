@@ -306,6 +306,10 @@ header {
     box-sizing: border-box;
 }
 
+.search_input:focus {
+    outline: none;
+}
+
 .search_input::placeholder {
     font-size: 13px;
     font-family: $manrope;
@@ -321,6 +325,45 @@ header {
     left: 5px;
     top: 2px;
 }
+
+.main-search-form {
+    position: relative;
+    width: max-content;
+}
+
+.main-search-suggestion {
+    height: max-content;
+    width: 292px;
+    position: absolute;
+    right: 156px;
+    top: 56px;
+    border-radius: 3px;
+    background-color: white;
+    border-left: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    box-sizing: border-box;
+    z-index: 3;
+
+    li {
+        background-color: white;
+        color: grey;
+        font-family: $roboto;
+        font-weight: 300;
+        padding: 10px;
+        height: 30px;
+        line-height: 30px;
+        cursor: pointer;
+    }
+
+    li:hover {
+        background-color: $red;
+        color: white;
+        font-family: $main_font;
+    }
+}
+
+////for WHITE SEARCH POPUP
 
 .white-searchbar {
     width: 1600px;
@@ -411,7 +454,47 @@ header {
         color: rgb(163, 163, 163);
     }
 
+    .white-search_input:focus {
+        outline: none;
+    }
 }
+
+.white-search-form {
+    position: relative;
+}
+
+.white-search-suggestion {
+    height: max-content;
+    width: 289px;
+    position: absolute;
+    right: 160px;
+    top: 56px;
+    border-radius: 3px;
+    background-color: white;
+    border-left: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    box-sizing: border-box;
+    z-index: 3;
+    
+    li {
+        background-color: white;
+        color: grey;
+        font-family: $roboto;
+        font-weight: 300;
+        padding: 10px;
+        height: 30px;
+        line-height: 30px;
+        cursor: pointer;
+    }
+
+    li:hover {
+        background-color: $red;
+        color: white;
+        font-family: $main_font;
+    }
+}
+
 
 //footer
 footer {
