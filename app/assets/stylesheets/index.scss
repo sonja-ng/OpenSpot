@@ -150,7 +150,7 @@ header {
     line-height: 28px;
     margin-top: 5px;
     color: black;
-    cursor: not-allowed;
+    cursor: pointer;
 }
 .search_icon {
     @extend %search_and_marker_icon;
@@ -292,6 +292,7 @@ header {
     border-radius: 3px 0px 0px 3px;
     border: 0px ;
     width: 170px;
+    padding-left: 10px;
 }
 
 .search_input {
@@ -299,10 +300,16 @@ header {
     border: none;
     border-radius: 3px;
     width: 292px;
-    padding-left: 25px;
+    padding-left: 30px;
     margin-right: 12px;
-    font-size: 12px;
+    font-size: 14px;
     box-sizing: border-box;
+}
+
+.search_input::placeholder {
+    font-size: 13px;
+    font-family: $manrope;
+    color:rgb(163, 163, 163);
 }
 
 .font_search {
@@ -315,6 +322,96 @@ header {
     top: 2px;
 }
 
+.white-searchbar {
+    width: 1600px;
+    height: 416px;
+    position: absolute;
+    top: 28px;
+    left: 8%;
+    padding-top: 140px;
+    // padding-left: 329px;
+    background-color: white;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.search-background {
+    z-index: 20;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(52, 58, 77, 0.637);
+
+    .search-x {
+        position: absolute;
+        top: 25px;
+        right: 50px;
+        z-index: 3;
+        border: none;
+        background: transparent;
+        font-size: 35px;
+        font-family: $roboto;
+        color: #272d37;
+        cursor: pointer;
+    }
+
+    .search-slogan {
+        font-family: $main_font;
+        font-size: 50px;
+        color: #272d37;
+        margin-bottom: 32px;
+    }
+
+    .search-date-white {
+        height: 50px;
+        border-radius: 3px 0px 0px 3px;
+        width: 172px;
+        border: 1px solid $border-color;
+        box-sizing: border-box;
+        padding-left: 5px;
+    }
+
+    .white-dropdown.party {
+        height: 50px;
+        border-radius: 0px 3px 3px 0px;
+        width: 158px;
+        border: 1px solid $border-color;
+    }
+
+    .white-dropdown.clock {
+        height: 50px;
+        width: 151px;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        border-left: none;
+        border-right: none;
+    }
+
+    .white-search_input {
+        height: 50px;
+        border-radius: 3px;
+        width: 289px;
+        border: 1px solid $border-color;
+        padding-left: 30px;
+        box-sizing: border-box;
+        margin-right: 16px;
+        font-family: $manrope;
+        font-size: 14px;
+        color: #272d37;
+    }
+
+    .white-search_input::placeholder {
+        font-family: $manrope;
+        font-size: 13px;
+        color: rgb(163, 163, 163);
+    }
+
+}
 
 //footer
 footer {

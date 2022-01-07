@@ -23,6 +23,7 @@ class SearchBar extends React.Component {
     }
 
     update(e){
+        // debugger
         this.setState({ general: e.target.value }, ()=> {
                 const lowerCase = this.state.general.toLowerCase();
             if (this.cuisineList.includes(lowerCase)) {
@@ -49,12 +50,15 @@ class SearchBar extends React.Component {
         if (this.state.cuisine) {
             this.props.history.push('/search/');
             this.props.updateFilter("cuisine", this.state.cuisine);
+            this.setState({ general: ""});
         } else if (this.state.neighborhood) {
             this.props.history.push('/search/');
             this.props.updateFilter("neighborhood", this.state.neighborhood);
+            this.setState({ general: ""});
         } else if (this.state.name) {
             this.props.history.push('/search/');
             this.props.updateFilter("name", this.state.name);
+            this.setState({ general: ""});
         }
     }
 
@@ -63,7 +67,7 @@ class SearchBar extends React.Component {
             <div className="search_bar">
                 <div className="form_container">
                     <div className="slogan">Find your table for any occasion</div>
-                    <form onClick={this.handleSubmit}>
+                    <form >
                         <input type="date" className="search_date_main"/>
                         <select name="time" id="time" className="dropdown time">
                             <option value="1:00">1:00pm</option>
@@ -82,7 +86,7 @@ class SearchBar extends React.Component {
                                 value={this.state.general} onChange={this.update}/>
                                 <i className="fas fa-search"></i>
                             </span>
-                            <input className="search_submit" type="submit" value="Let's go" />
+                            <button onClick={this.handleSubmit} className="search_submit">Let's go</button>
                     </form>
                 </div>
             </div>

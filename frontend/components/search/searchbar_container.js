@@ -7,7 +7,7 @@ import { updateFilter } from '../../actions/search_actions';
 // });
 
 const mDTP = dispatch => ({
-    updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+    updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
 });
 
 export default connect(null, mDTP)(SearchBar);

@@ -21,6 +21,7 @@ class SearchIndex extends React.Component {
         "casa ora", "cheli", "chuko", "dhamaka", "soothr", "pecking house"];
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
+        // this.renderSearch = this.renderSearch.bind(this);
     }
 
 
@@ -47,6 +48,21 @@ class SearchIndex extends React.Component {
         });
     }
 
+    // renderSearch(){
+    //     if (!this.state.general) {
+    //         return null;
+    //     } else {
+    //         return (
+    //             <div>You searched for "{this.state.general}" in New York / Tri-State Area</div>
+    //         )
+    //     }
+    // }
+
+    // componentDidUpdate(prevProps, prevState){
+    //     if (this.state !== prevState){
+    //         this.renderSearch();
+    //     }
+    // }
 
     handleSubmit(e){
         e.preventDefault();
@@ -55,10 +71,13 @@ class SearchIndex extends React.Component {
 
         if (this.state.cuisine) {
             this.props.updateFilter("cuisine", this.state.cuisine);
+            this.setState({ general: ""});
         } else if (this.state.neighborhood) {
             this.props.updateFilter("neighborhood", this.state.neighborhood);
+            this.setState({ general: ""});
         } else if (this.state.name) {
             this.props.updateFilter("name", this.state.name);
+            this.setState({ general: ""});
         }
     }
 
@@ -71,7 +90,7 @@ class SearchIndex extends React.Component {
         return (
             <div>
                 <div className="search-header">
-                    <form className="search-form" onClick={this.handleSubmit}>
+                    <form className="search-form">
                         <input type="date" className="search_date_main"/>
                         <select name="time" className="dropdown time" id="time">
                             <option value="1:00">1:00pm</option>
@@ -88,10 +107,11 @@ class SearchIndex extends React.Component {
                             <input type="text" className="banner-input" placeholder="Neighborhood, Restaurant, or Cuisine" value={this.state.general} onChange={this.update}/>
                             <i className="fas fa-search"></i>
                         </span>
-                        <input type="submit" className="banner-submit" value="Find a table" />
+                        <button onClick={this.handleSubmit} className="banner-submit">Find a table</button>
                     </form>
                 </div>
                 <div className="search-result">
+                    {/* {this.renderSearch()} */}
                     <ul>
                         {restList}
                     </ul>
