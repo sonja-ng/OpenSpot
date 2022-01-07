@@ -13,6 +13,7 @@ class Api::RestsController < ApplicationController
         end
 
         @rests = rests
+        
         render :index
     end
 
