@@ -13,6 +13,8 @@ class SearchIndex extends React.Component {
             suggestion: false,
         }
 
+        this.dropRef = React.createRef();
+
         this.cuisineList = ["american", "middle eastern", "mexican", "indian", "bakery", "bar", "mediterranean", "soul food", "venezuelan",
         "chinese", "japanese", "thai", "fusion"];
 
@@ -30,8 +32,22 @@ class SearchIndex extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
         this.selectMatch = this.selectMatch.bind(this);
-        // this.renderSearch = this.renderSearch.bind(this);
-        // this.renderSuggestion = this.renderSuggestion.bind(this);
+        this.removeDropDown = this.removeDropDown.bind(this);
+    }
+
+    componentDidMount(){
+        document.addEventListener("click", this.removeDropDown);
+    }
+
+    componentWillUnmount(){
+        document.removeEventListener("click", this.removeDropDown);
+    }
+
+    removeDropDown(e){
+        e.preventDefault();
+        if (this.dropRef && !this.dropRef.current.contains(e.target)) {
+            return this.setState({suggestion: false});
+        }
     }
 
     update(e){
@@ -135,7 +151,7 @@ class SearchIndex extends React.Component {
                             onChange={this.update}/>
                             <i className="fas fa-search"></i>
                         </span>
-                        <ul className={klass}>
+                        <ul className={klass} ref={this.dropRef}>
                                 {matches}
                         </ul>
                         <button onClick={this.handleSubmit} className="banner-submit">Find a table</button>

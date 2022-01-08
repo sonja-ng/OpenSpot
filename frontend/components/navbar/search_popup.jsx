@@ -30,6 +30,24 @@ class SearchPopup extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
         this.selectMatch = this.selectMatch.bind(this);
+        this.reset = this.reset.bind(this);
+        this.removeDropDown = this.removeDropDown.bind(this);
+        this.dropRef = React.createRef();
+    }
+
+    componentDidMount(){
+        document.addEventListener("click", this.removeDropDown);
+    }
+
+    componentWillUnmount(){
+        document.removeEventListener("click", this.removeDropDown);
+    }
+
+    removeDropDown(e){
+        e.preventDefault();
+        if (this.dropRef && !this.dropRef.current.contains(e.target)) {
+            return this.setState({suggestion: false});
+        }
     }
 
     update(e){
@@ -45,7 +63,7 @@ class SearchPopup extends React.Component {
                 this.setState({ name: lowerCase, cuisine: "", neighborhood: "" });
             } else if (this.state.general === "") {
                 this.setState({suggestion: false});
-            }
+            } 
         });
     }
 
@@ -77,10 +95,18 @@ class SearchPopup extends React.Component {
         });
     }
 
+    reset(){
+        // debugger
+        this.setState({ general: "", suggestion: false});
+        this.props.closeSearch();
+    }
+
     handleSubmit(e){
         e.preventDefault();
         // console.log('test');
         // debugger
+
+        this.props.closeSearch();
         this.setState({suggestion: false});
         if (this.state.cuisine) {
             this.props.history.push('/search/');
@@ -114,7 +140,7 @@ class SearchPopup extends React.Component {
         return (
             <div className={klass}>
                     <div className={klass2}>
-                            <button onClick={this.props.closeSearch} className="search-x">X</button>
+                            <button onClick={this.reset} className="search-x">X</button>
                         <div className="search-slogan">Find your table for any occasion</div>
                             <form className="white-search-form">
                                 <input type="date" className="search-date-white"/>
@@ -134,7 +160,7 @@ class SearchPopup extends React.Component {
                                         value={this.state.general} onChange={this.update}/>
                                     <i className="fas fa-search"></i>
                                 </span>
-                                <ul className={klass3}>
+                                <ul className={klass3} ref={this.dropRef}>
                                     {matches}
                                 </ul>
                                 <button className="search_submit" onClick={this.handleSubmit}>Let's go</button>

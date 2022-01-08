@@ -11,6 +11,7 @@ class SearchBar extends React.Component {
             name: "",
             suggestion: false,
         }
+
         this.cuisineList = ["american", "middle eastern", "mexican", "indian", "bakery", "bar", "mediterranean", "soul food", "venezuelan",
         "chinese", "japanese", "thai", "fusion"];
 
@@ -28,6 +29,23 @@ class SearchBar extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
         this.selectMatch = this.selectMatch.bind(this);
+        this.removeDropDown = this.removeDropDown.bind(this);
+        this.dropRef = React.createRef();
+    }
+
+    componentDidMount(){
+        document.addEventListener("click", this.removeDropDown);
+    }
+
+    componentWillUnmount(){
+        document.removeEventListener("click", this.removeDropDown);
+    }
+
+    removeDropDown(e){
+        e.preventDefault();
+        if (this.dropRef && !this.dropRef.current.contains(e.target)) {
+            return this.setState({suggestion: false});
+        }
     }
 
     update(e){
@@ -67,17 +85,11 @@ class SearchBar extends React.Component {
         this.setState({ general: e.currentTarget.innerText, suggestion: false }, ()=> {
                 const lowerCase = this.state.general.toLowerCase();
             if (this.cuisineList.includes(lowerCase)) {
-                this.setState({ cuisine: lowerCase });
-                this.setState({ neighborhood: "" });
-                this.setState({ name: "" });
+                this.setState({ cuisine: lowerCase, neighborhood: "", name: "" });
             } else if (this.neighborhoodList.includes(lowerCase)) {
-                this.setState({ neighborhood: lowerCase });
-                this.setState({ cuisine: "" });
-                this.setState({ name: "" });
+                this.setState({ neighborhood: lowerCase, cuisine: "", name: "" });
             } else if (this.nameList.includes(lowerCase)) {
-                this.setState({ name: lowerCase });
-                this.setState({ cuisine: "" });
-                this.setState({ neighborhood: "" });
+                this.setState({ name: lowerCase, cuisine: "", neighborhood: "" });
             }
         });
     }
@@ -134,7 +146,7 @@ class SearchBar extends React.Component {
                                 value={this.state.general} onChange={this.update}/>
                                 <i className="fas fa-search"></i>
                             </span>
-                            <ul className={klass}>
+                            <ul className={klass} ref={this.dropRef}>
                                 {matches}
                             </ul>
                             <button onClick={this.handleSubmit} className="search_submit">Let's go</button>
