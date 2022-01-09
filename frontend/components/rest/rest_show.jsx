@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import Gallery from './gallery';
 
 class RestShow extends React.Component {
@@ -22,13 +23,14 @@ class RestShow extends React.Component {
                 <img src={rest.photos[1].url} className="rest_header"/> 
                 <div className="rest_body">
                     <div className="main_rest_content">
+                    <div id="overview"></div>
                         <div className="rest-navbar">
-                            <Link to={{hash: "#overview"}} className="content-button">Overview</Link>
-                            <Link to={{hash: "#photos"}}  className="content-button">Photos</Link>
-                            <Link to="#menu" className="content-button">Menu</Link>
-                            <Link to="#reviews" className="content-button">Reviews</Link>
+                            <HashLink to={`/rests/${rest.id}#overview`} className="content-button">Overview</HashLink>
+                            <HashLink to={`/rests/${rest.id}#photos`}  className="content-button">Photos</HashLink>
+                            <HashLink to={`/rests/${rest.id}#menu`} className="content-button">Menu</HashLink>
+                            <HashLink to={`/rests/${rest.id}#reviews`} className="content-button">Reviews</HashLink>
                         </div>
-                        <div className="rest-title" id="overview">
+                        <div className="rest-title">
                             {rest.name}
                         </div>
                         <div className="rest-info">
@@ -41,11 +43,13 @@ class RestShow extends React.Component {
                         <div className="description">
                             {rest.description}
                         </div>
-                        <div className="subheader" id="photos">
+                        <div id="photos"></div>
+                        <div className="subheader">
                             9 Photos
                         </div>
                         <Gallery images={rest.photos} />
-                        <div className="subheader" id="menu">
+                        <div id="menu"></div>
+                        <div className="subheader">
                             Menu
                         </div>
                         <div className="item-cat">Popular Dishes</div>
@@ -63,7 +67,8 @@ class RestShow extends React.Component {
                             <div className="item-name">{rest.menu.main}</div>
                             <div className="item-price">{rest.menu.m_price}</div>
                         </div>
-                        <div className="subheader" id="reviews">
+                        <div id="reviews"></div>
+                        <div className="subheader">
                             What 50 people are saying
                         </div>
                     </div>

@@ -30,7 +30,7 @@
     top: -50px;
     font-size: 60px;
     font-family: $manrope;
-    padding: 17px;
+    padding: 0px 13px 17px 17px;
     box-sizing: border-box;
 
     .rest-navbar {
@@ -38,8 +38,11 @@
         border-bottom: 1px solid $border-color;
         font-size: 15px;
         color: rgb(80, 80, 80);
+        background-color: white;
+        padding-top: 17px;
         height: 32px;
-        margin-bottom: 44px;
+        position: sticky;
+        top: 0;
     
         .content-button {
             margin-right: 36px;
@@ -47,15 +50,15 @@
             color: black;
         }
 
-        .content-button:hover {
+        .content-button:hover, .content-button:active, .content-button:focus {
             border-bottom: 2px solid $red;
             color: $red;
         }
 
-        .content-button:active {
-            border-bottom: 2px solid $red;
-            color: $red;
-        }
+        // .content-button:active {
+        //     border-bottom: 2px solid $red;
+        //     color: $red;
+        // }
     }
 
     .rest-title {
@@ -230,6 +233,7 @@
         margin-top: 25px;
         border-bottom: 1px solid $border-color;
         padding-bottom: 25px;
+        padding-top: 30px;
     }
 }
 
