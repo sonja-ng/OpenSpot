@@ -90,6 +90,33 @@ rest2.photos.attach(io: file2a, filename: 'aldama_header.jpg')
 file2b = open('https://openspot-seeds.s3.amazonaws.com/search-thumbnail/aldama_1002Gary-He-Eater.jpg')
 rest2.photos.attach(io: file2b, filename: 'aldama_sheader.jpg')
 
+file2c = open('https://openspot-seeds.s3.amazonaws.com/aldama/aldama1.jpg')
+rest2.photos.attach(io: file2c, filename: 'aldama1.jpg')
+
+file2d = open('https://openspot-seeds.s3.amazonaws.com/aldama/aldama2.jpg')
+rest2.photos.attach(io: file2d, filename: 'aldama2.jpg')
+
+file2e = open('https://openspot-seeds.s3.amazonaws.com/aldama/aldama3.jpg')
+rest2.photos.attach(io: file2e, filename: 'aldama3.jpg')
+
+file2f = open('https://openspot-seeds.s3.amazonaws.com/aldama/aldama4.jpg')
+rest2.photos.attach(io: file2f, filename: 'aldama4.jpg')
+
+file2g = open('https://openspot-seeds.s3.amazonaws.com/aldama/aldama5.jpg')
+rest2.photos.attach(io: file2g, filename: 'aldama5.jpg')
+
+file2h = open('https://openspot-seeds.s3.amazonaws.com/aldama/aldama6.jpg')
+rest2.photos.attach(io: file2h, filename: 'aldama6.jpg')
+
+file2i = open('https://openspot-seeds.s3.amazonaws.com/aldama/aldama7.jpg')
+rest2.photos.attach(io: file2i, filename: 'aldama7.jpg')
+
+file2j = open('https://openspot-seeds.s3.amazonaws.com/aldama/aldama8.jpg')
+rest2.photos.attach(io: file2j, filename: 'aldama8.jpg')
+
+file2k = open('https://openspot-seeds.s3.amazonaws.com/aldama/aldama9.jpg')
+rest2.photos.attach(io: file2k, filename: 'aldama9.jpg')
+
 rest3 = Rest.create!(
     name: 'Angel Indian Restaurant', 
     description: 'Compact, unassuming eatery specializing in vegetarian North Indian dishes & street food staples.', 
@@ -111,6 +138,33 @@ rest3.photos.attach(io: file3a, filename: 'angel_header.jpg')
 
 file3b = open('https://openspot-seeds.s3.amazonaws.com/search-thumbnail/angel-indian-James-Park-Eater-NY-2.jpg')
 rest3.photos.attach(io: file3b, filename: 'angel_sheader.jpg')
+
+file3c = open('https://openspot-seeds.s3.amazonaws.com/angel/angel1.jpg')
+rest3.photos.attach(io: file3c, filename: 'angel1.jpg')
+
+file3d = open('https://openspot-seeds.s3.amazonaws.com/angel/angel2.jpg')
+rest3.photos.attach(io: file3d, filename: 'angel2.jpg')
+
+file3e = open('https://openspot-seeds.s3.amazonaws.com/angel/angel3.jpg')
+rest3.photos.attach(io: file3e, filename: 'angel3.jpg')
+
+file3f = open('https://openspot-seeds.s3.amazonaws.com/angel/angel4.jpg')
+rest3.photos.attach(io: file3f, filename: 'angel4.jpg')
+
+file3g = open('https://openspot-seeds.s3.amazonaws.com/angel/angel5.jpg')
+rest3.photos.attach(io: file3g, filename: 'angel5.jpg')
+
+file3h = open('https://openspot-seeds.s3.amazonaws.com/angel/angel6.jpg')
+rest3.photos.attach(io: file3h, filename: 'angel6.jpg')
+
+file3i = open('https://openspot-seeds.s3.amazonaws.com/angel/angel7.jpg')
+rest3.photos.attach(io: file3i, filename: 'angel7.jpg')
+
+file3j = open('https://openspot-seeds.s3.amazonaws.com/angel/angel8.jpg')
+rest3.photos.attach(io: file3j, filename: 'angel8.jpg')
+
+file3k = open('https://openspot-seeds.s3.amazonaws.com/angel/angel9.jpg')
+rest3.photos.attach(io: file3k, filename: 'angel9.jpg')
 
 rest4 = Rest.create!(
     name: 'Anything At All', 
@@ -137,6 +191,32 @@ rest4.photos.attach(io: file4b, filename: 'anything_sheader.jpg')
 file4c = open('https://openspot-seeds.s3.amazonaws.com/anythingatall/anything1.jpg')
 rest4.photos.attach(io: file4c, filename: 'anythingatall_gallery1.jpg')
 
+file4d = open('https://openspot-seeds.s3.amazonaws.com/anythingatall/anything2.jpg')
+rest4.photos.attach(io: file4d, filename: 'anythingatall_gallery2.jpg')
+
+file4e = open('https://openspot-seeds.s3.amazonaws.com/anythingatall/anything3.jpg')
+rest4.photos.attach(io: file4e, filename: 'anythingatall_gallery3.jpg')
+
+file4f = open('https://openspot-seeds.s3.amazonaws.com/anythingatall/anything4.jpg')
+rest4.photos.attach(io: file4f, filename: 'anythingatall_gallery4.jpg')
+
+file4g = open('https://openspot-seeds.s3.amazonaws.com/anythingatall/anything5.jpg')
+rest4.photos.attach(io: file4g, filename: 'anythingatall_gallery5.jpg')
+
+file4h = open('https://openspot-seeds.s3.amazonaws.com/anythingatall/anything6.jpg')
+rest4.photos.attach(io: file4h, filename: 'anythingatall_gallery6.jpg')
+
+file4i = open('https://openspot-seeds.s3.amazonaws.com/anythingatall/anything7.jpg')
+rest4.photos.attach(io: file4i, filename: 'anythingatall_gallery7.jpg')
+
+file4j = open('https://openspot-seeds.s3.amazonaws.com/anythingatall/anything8.jpg')
+rest4.photos.attach(io: file4j, filename: 'anythingatall_gallery8.jpg')
+
+file4k = open('https://openspot-seeds.s3.amazonaws.com/anythingatall/anything9.jpg')
+rest4.photos.attach(io: file4k, filename: 'anythingatall_gallery9.jpg')
+
+
+
 
 
 rest5 = Rest.create!(
@@ -161,6 +241,33 @@ rest5.photos.attach(io: file5a, filename: 'asyouare_header.jpg')
 file5b = open('https://openspot-seeds.s3.amazonaws.com/search-thumbnail/As_You_Are_Alex-Staniloff_Eater-NY-2.jpg')
 rest5.photos.attach(io: file5b, filename: 'asyouare_sheader.jpg')
 
+file5c = open('https://openspot-seeds.s3.amazonaws.com/asyouare/aya1.jpg')
+rest5.photos.attach(io: file5c, filename: 'aya1.jpg')
+
+file5d = open('https://openspot-seeds.s3.amazonaws.com/asyouare/aya2.jpg')
+rest5.photos.attach(io: file5d, filename: 'aya2.jpg')
+
+file5e = open('https://openspot-seeds.s3.amazonaws.com/asyouare/aya3.jpg')
+rest5.photos.attach(io: file5e, filename: 'aya3.jpg')
+
+file5f = open('https://openspot-seeds.s3.amazonaws.com/asyouare/aya4.jpg')
+rest5.photos.attach(io: file5f, filename: 'aya4.jpg')
+
+file5g = open('https://openspot-seeds.s3.amazonaws.com/asyouare/aya5.jpg')
+rest5.photos.attach(io: file5g, filename: 'aya5.jpg')
+
+file5h = open('https://openspot-seeds.s3.amazonaws.com/asyouare/aya6.jpg')
+rest5.photos.attach(io: file5h, filename: 'aya6.jpg')
+
+file5i = open('https://openspot-seeds.s3.amazonaws.com/asyouare/aya7.jpg')
+rest5.photos.attach(io: file5i, filename: 'aya7.jpg')
+
+file5j = open('https://openspot-seeds.s3.amazonaws.com/asyouare/aya8.jpg')
+rest5.photos.attach(io: file5j, filename: 'aya8.jpg')
+
+file5k = open('https://openspot-seeds.s3.amazonaws.com/asyouare/aya9.jpg')
+rest5.photos.attach(io: file5k, filename: 'aya9.jpg')
+
 rest6 = Rest.create!(
     name: 'Bar Blondeau', 
     description: 'Bar Blondeau is a French-style bar from chef partners Aidan ONeal and Jake Leiber (Le Crocodile, Chez Ma Tante), located on the 6th floor of Wythe Hotel, in the heart of Williamsburg.', 
@@ -182,6 +289,33 @@ rest6.photos.attach(io: file6a, filename: 'blondeau_header.jpg')
 
 file6b = open('https://openspot-seeds.s3.amazonaws.com/search-thumbnail/BarBlondeau_0721_LizClayman_029.jpg')
 rest6.photos.attach(io: file6b, filename: 'blondeau_sheader.jpg')
+
+file6c = open('https://openspot-seeds.s3.amazonaws.com/bar/bar1.jpg')
+rest6.photos.attach(io: file6c, filename: 'bar1.jpg')
+
+file6d = open('https://openspot-seeds.s3.amazonaws.com/bar/bar2.jpg')
+rest6.photos.attach(io: file6d, filename: 'bar2.jpg')
+
+file6e = open('https://openspot-seeds.s3.amazonaws.com/bar/bar3.jpg')
+rest6.photos.attach(io: file6e, filename: 'bar3.jpg')
+
+file6f = open('https://openspot-seeds.s3.amazonaws.com/bar/bar4.jpg')
+rest6.photos.attach(io: file6f, filename: 'bar4.jpg')
+
+file6g = open('https://openspot-seeds.s3.amazonaws.com/bar/bar5.jpg')
+rest6.photos.attach(io: file6g, filename: 'bar5.jpg')
+
+file6h = open('https://openspot-seeds.s3.amazonaws.com/bar/bar6.jpg')
+rest6.photos.attach(io: file6h, filename: 'bar6.jpg')
+
+file6i = open('https://openspot-seeds.s3.amazonaws.com/bar/bar7.jpg')
+rest6.photos.attach(io: file6i, filename: 'bar7.jpg')
+
+file6j = open('https://openspot-seeds.s3.amazonaws.com/bar/bar8.jpg')
+rest6.photos.attach(io: file6j, filename: 'bar8.jpg')
+
+file6k = open('https://openspot-seeds.s3.amazonaws.com/bar/bar9.jpg')
+rest6.photos.attach(io: file6k, filename: 'bar9.jpg')
 
 
 rest7 = Rest.create!(
@@ -206,6 +340,34 @@ rest7.photos.attach(io: file7a, filename: 'borrachito_header.jpg')
 file7b = open('https://openspot-seeds.s3.amazonaws.com/search-thumbnail/borrachito_conde_nast-2.jpg')
 rest7.photos.attach(io: file7b, filename: 'blondeau_sheader.jpg')
 
+file7c = open('https://openspot-seeds.s3.amazonaws.com/borrachito/borra1.jpg')
+rest7.photos.attach(io: file7c, filename: 'borrachito1.jpg')
+
+file7d = open('https://openspot-seeds.s3.amazonaws.com/borrachito/borra2.jpg')
+rest7.photos.attach(io: file7d, filename: 'borrachito2.jpg')
+
+file7e = open('https://openspot-seeds.s3.amazonaws.com/borrachito/borra3.jpg')
+rest7.photos.attach(io: file7e, filename: 'borrachito3.jpg')
+
+file7f = open('https://openspot-seeds.s3.amazonaws.com/borrachito/borra4.jpg')
+rest7.photos.attach(io: file7f, filename: 'borrachito4.jpg')
+
+file7g = open('https://openspot-seeds.s3.amazonaws.com/borrachito/borra5.jpg')
+rest7.photos.attach(io: file7g, filename: 'borrachito5.jpg')
+
+file7h = open('https://openspot-seeds.s3.amazonaws.com/borrachito/borra6.jpg')
+rest7.photos.attach(io: file7h, filename: 'borrachito6.jpg')
+
+file7i = open('https://openspot-seeds.s3.amazonaws.com/borrachito/borra7.jpg')
+rest7.photos.attach(io: file7i, filename: 'borrachito7.jpg')
+
+file7j = open('https://openspot-seeds.s3.amazonaws.com/borrachito/borra8.jpg')
+rest7.photos.attach(io: file7j, filename: 'borrachito8.jpg')
+
+file7k = open('https://openspot-seeds.s3.amazonaws.com/borrachito/borra9.jpg')
+rest7.photos.attach(io: file7k, filename: 'borrachito9.jpg')
+
+
 rest8 = Rest.create!(
     name: 'Boulud Sud', 
     description: 'Refined Mediterranean dining via chef Daniel Boulud with convenience to Lincoln Center.', 
@@ -227,6 +389,34 @@ rest8.photos.attach(io: file8a, filename: 'bouludsud_header.jpg')
 
 file8b = open('https://openspot-seeds.s3.amazonaws.com/search-thumbnail/boulud_sud_Evan-Sung-search.jpg')
 rest8.photos.attach(io: file8b, filename: 'bouludsud_sheader.jpg')
+
+file8c = open('https://openspot-seeds.s3.amazonaws.com/boulud/boulud1.jpg')
+rest8.photos.attach(io: file8c, filename: 'boulud1.jpg')
+
+file8d = open('https://openspot-seeds.s3.amazonaws.com/boulud/boulud2.jpg')
+rest8.photos.attach(io: file8d, filename: 'boulud2.jpg')
+
+file8e = open('https://openspot-seeds.s3.amazonaws.com/boulud/boulud3.jpg')
+rest8.photos.attach(io: file8e, filename: 'boulud3.jpg')
+
+file8f = open('https://openspot-seeds.s3.amazonaws.com/boulud/boulud4.jpg')
+rest8.photos.attach(io: file8f, filename: 'boulud4.jpg')
+
+file8g = open('https://openspot-seeds.s3.amazonaws.com/boulud/boulud5.jpg')
+rest8.photos.attach(io: file8g, filename: 'boulud5.jpg')
+
+file8h = open('https://openspot-seeds.s3.amazonaws.com/boulud/boulud6.jpg')
+rest8.photos.attach(io: file8h, filename: 'boulud6.jpg')
+
+file8i = open('https://openspot-seeds.s3.amazonaws.com/boulud/boulud7.jpg')
+rest8.photos.attach(io: file8i, filename: 'boulud7.jpg')
+
+file8j = open('https://openspot-seeds.s3.amazonaws.com/boulud/boulud8.jpg')
+rest8.photos.attach(io: file8j, filename: 'boulud8.jpg')
+
+file8k = open('https://openspot-seeds.s3.amazonaws.com/boulud/boulud9.jpg')
+rest8.photos.attach(io: file8k, filename: 'boulud9.jpg')
+
 
 rest9 = Rest.create!(
     name: 'Cadence', 
@@ -250,6 +440,33 @@ rest9.photos.attach(io: file9a, filename: 'cadence_header.jpg')
 file9b = open('https://openspot-seeds.s3.amazonaws.com/search-thumbnail/cadence.jpg')
 rest9.photos.attach(io: file9b, filename: 'cadence_sheader.jpg')
 
+file9c = open('https://openspot-seeds.s3.amazonaws.com/cadence/cad1.jpg')
+rest9.photos.attach(io: file9c, filename: 'cadence1.jpg')
+
+file9d = open('https://openspot-seeds.s3.amazonaws.com/cadence/cad2.jpg')
+rest9.photos.attach(io: file9d, filename: 'cadence2.jpg')
+
+file9e = open('https://openspot-seeds.s3.amazonaws.com/cadence/cad3.jpg')
+rest9.photos.attach(io: file9e, filename: 'cadence3.jpg')
+
+file9f = open('https://openspot-seeds.s3.amazonaws.com/cadence/cad4.jpg')
+rest9.photos.attach(io: file9f, filename: 'cadence4.jpg')
+
+file9g = open('https://openspot-seeds.s3.amazonaws.com/cadence/cad5.jpg')
+rest9.photos.attach(io: file9g, filename: 'cadence5.jpg')
+
+file9h = open('https://openspot-seeds.s3.amazonaws.com/cadence/cad6.jpg')
+rest9.photos.attach(io: file9h, filename: 'cadence6.jpg')
+
+file9i = open('https://openspot-seeds.s3.amazonaws.com/cadence/cad7.jpg')
+rest9.photos.attach(io: file9i, filename: 'cadence7.jpg')
+
+file9j = open('https://openspot-seeds.s3.amazonaws.com/cadence/cad8.jpg')
+rest9.photos.attach(io: file9j, filename: 'cadence8.jpg')
+
+file9k = open('https://openspot-seeds.s3.amazonaws.com/cadence/cad9.jpg')
+rest9.photos.attach(io: file9k, filename: 'cadence9.jpg')
+
 rest10 = Rest.create!(
     name: 'Casa Ora', 
     description: 'Elevated takes on classic Venezuelan plates are served in a stylish space with an intimate vibe.', 
@@ -271,6 +488,33 @@ rest10.photos.attach(io: file10a, filename: 'casaora_header.jpg')
 
 file10b = open('https://openspot-seeds.s3.amazonaws.com/search-thumbnail/casa-ora.jpg')
 rest10.photos.attach(io: file10b, filename: 'casaora_sheader.jpg')
+
+file10c = open('https://openspot-seeds.s3.amazonaws.com/casaora/casa1.jpg')
+rest10.photos.attach(io: file10c, filename: 'casaora1.jpg')
+
+file10d = open('https://openspot-seeds.s3.amazonaws.com/casaora/casa2.jpg')
+rest10.photos.attach(io: file10d, filename: 'casaora2.jpg')
+
+file10e = open('https://openspot-seeds.s3.amazonaws.com/casaora/casa3.jpg')
+rest10.photos.attach(io: file10e, filename: 'casaora3.jpg')
+
+file10f = open('https://openspot-seeds.s3.amazonaws.com/casaora/casa4.jpg')
+rest10.photos.attach(io: file10f, filename: 'casaora4.jpg')
+
+file10g = open('https://openspot-seeds.s3.amazonaws.com/casaora/casa5.jpg')
+rest10.photos.attach(io: file10g, filename: 'casaora5.jpg')
+
+file10h = open('https://openspot-seeds.s3.amazonaws.com/casaora/casa6.jpg')
+rest10.photos.attach(io: file10h, filename: 'casaora6.jpg')
+
+file10i = open('https://openspot-seeds.s3.amazonaws.com/casaora/casa7.jpg')
+rest10.photos.attach(io: file10i, filename: 'casaora7.jpg')
+
+file10j = open('https://openspot-seeds.s3.amazonaws.com/casaora/casa8.jpg')
+rest10.photos.attach(io: file10j, filename: 'casaora8.jpg')
+
+file10k = open('https://openspot-seeds.s3.amazonaws.com/casaora/casa9.jpg')
+rest10.photos.attach(io: file10k, filename: 'casaora9.jpg')
 
 rest11 = Rest.create!(
     name: 'CheLi', 
@@ -294,6 +538,33 @@ rest11.photos.attach(io: file11a, filename: 'cheli_header.jpg')
 file11b = open('https://openspot-seeds.s3.amazonaws.com/search-thumbnail/Bao-Ong_Eater-NY_CheLi.jpg')
 rest11.photos.attach(io: file11b, filename: 'cheli_sheader.jpg')
 
+file11c = open('https://openspot-seeds.s3.amazonaws.com/cheli/cheli1.jpg')
+rest11.photos.attach(io: file11c, filename: 'cheli1.jpg')
+
+file11d = open('https://openspot-seeds.s3.amazonaws.com/cheli/cheli2.jpg')
+rest11.photos.attach(io: file11d, filename: 'cheli2.jpg')
+
+file11e = open('https://openspot-seeds.s3.amazonaws.com/cheli/cheli3.jpg')
+rest11.photos.attach(io: file11e, filename: 'cheli3.jpg')
+
+file11f = open('https://openspot-seeds.s3.amazonaws.com/cheli/cheli4.jpg')
+rest11.photos.attach(io: file11f, filename: 'cheli4.jpg')
+
+file11g = open('https://openspot-seeds.s3.amazonaws.com/cheli/cheli5.jpg')
+rest11.photos.attach(io: file11g, filename: 'cheli5.jpg')
+
+file11h = open('https://openspot-seeds.s3.amazonaws.com/cheli/cheli6.jpg')
+rest11.photos.attach(io: file11h, filename: 'cheli6.jpg')
+
+file11i = open('https://openspot-seeds.s3.amazonaws.com/cheli/cheli7.jpg')
+rest11.photos.attach(io: file11i, filename: 'cheli7.jpg')
+
+file11j = open('https://openspot-seeds.s3.amazonaws.com/cheli/cheli8.jpg')
+rest11.photos.attach(io: file11j, filename: 'cheli8.jpg')
+
+file11k = open('https://openspot-seeds.s3.amazonaws.com/cheli/cheli9.jpg')
+rest11.photos.attach(io: file11k, filename: 'cheli9.jpg')
+
 rest12 = Rest.create!(
     name: 'Chuko', 
     description: 'Ramen bowls & Asian-accented appetizers, plus beer & sake, are served at this hip eatery.', 
@@ -316,6 +587,36 @@ rest12.photos.attach(io: file12a, filename: 'chuko_header.jpg')
 file12b = open('https://openspot-seeds.s3.amazonaws.com/search-thumbnail/chuko_ramen.jpg')
 rest12.photos.attach(io: file12b, filename: 'chuko_sheader.jpg')
 
+file12c = open('https://openspot-seeds.s3.amazonaws.com/chuko/chuko1.jpg')
+rest12.photos.attach(io: file12c, filename: 'chuko1.jpg')
+
+file12d = open('https://openspot-seeds.s3.amazonaws.com/chuko/chuko2.jpg')
+rest12.photos.attach(io: file12d, filename: 'chuko2.jpg')
+
+file12e = open('https://openspot-seeds.s3.amazonaws.com/chuko/chuko3.jpg')
+rest12.photos.attach(io: file12e, filename: 'chuko3.jpg')
+
+file12f = open('https://openspot-seeds.s3.amazonaws.com/chuko/chuko4.jpg')
+rest12.photos.attach(io: file12f, filename: 'chuko4.jpg')
+
+file12g = open('https://openspot-seeds.s3.amazonaws.com/chuko/chuko5.jpg')
+rest12.photos.attach(io: file12g, filename: 'chuko5.jpg')
+
+file12h = open('https://openspot-seeds.s3.amazonaws.com/chuko/chuko6.jpg')
+rest12.photos.attach(io: file12h, filename: 'chuko6.jpg')
+
+file12i = open('https://openspot-seeds.s3.amazonaws.com/chuko/chuko7.jpg')
+rest12.photos.attach(io: file12i, filename: 'chuko7.jpg')
+
+file12j = open('https://openspot-seeds.s3.amazonaws.com/chuko/chuko8.jpg')
+rest12.photos.attach(io: file12j, filename: 'chuko8.jpg')
+
+file12k = open('https://openspot-seeds.s3.amazonaws.com/chuko/chuko9.jpg')
+rest12.photos.attach(io: file12k, filename: 'chuko9.jpg')
+
+
+
+
 rest13 = Rest.create!(
     name: 'Dhamaka', 
     description: 'Innovative, energetic eatery offering provincial Indian cuisine in a colorful dining room.', 
@@ -329,6 +630,7 @@ rest13 = Rest.create!(
     owner_id: user5.id
 )
 
+
 file13 = open('https://openspot-seeds.s3.amazonaws.com/dhamaka_thumbnail.jpg')
 rest13.photos.attach(io: file13, filename: 'dhamaka_thumbnail.jpg')
 
@@ -337,6 +639,33 @@ rest13.photos.attach(io: file13a, filename: 'dhamaka_header.jpg')
 
 file13b = open('https://openspot-seeds.s3.amazonaws.com/search-thumbnail/dhamaka.jpg')
 rest13.photos.attach(io: file13b, filename: 'dhamaka_sheader.jpg')
+
+file13c = open('https://openspot-seeds.s3.amazonaws.com/dhamaka/dha1.jpg')
+rest13.photos.attach(io: file13c, filename: 'dha1.jpg')
+
+file13d = open('https://openspot-seeds.s3.amazonaws.com/dhamaka/dha2.jpg')
+rest13.photos.attach(io: file13d, filename: 'dha2.jpg')
+
+file13e = open('https://openspot-seeds.s3.amazonaws.com/dhamaka/dha3.jpg')
+rest13.photos.attach(io: file13e, filename: 'dha3.jpg')
+
+file13f = open('https://openspot-seeds.s3.amazonaws.com/dhamaka/dha4.jpg')
+rest13.photos.attach(io: file13f, filename: 'dha4.jpg')
+
+file13g = open('https://openspot-seeds.s3.amazonaws.com/dhamaka/dha5.jpg')
+rest13.photos.attach(io: file13g, filename: 'dha5.jpg')
+
+file13h = open('https://openspot-seeds.s3.amazonaws.com/dhamaka/dha6.jpg')
+rest13.photos.attach(io: file13h, filename: 'dha6.jpg')
+
+file13i = open('https://openspot-seeds.s3.amazonaws.com/dhamaka/dha7.jpg')
+rest13.photos.attach(io: file13i, filename: 'dha7.jpg')
+
+file13j = open('https://openspot-seeds.s3.amazonaws.com/dhamaka/dha8.jpg')
+rest13.photos.attach(io: file13j, filename: 'dha8.jpg')
+
+file13k = open('https://openspot-seeds.s3.amazonaws.com/dhamaka/dha9.jpg')
+rest13.photos.attach(io: file13k, filename: 'dha9.jpg')
 
 rest14 = Rest.create!(
     name: 'Pecking House', 
@@ -360,6 +689,35 @@ rest14.photos.attach(io: file14a, filename: 'pecking_header.jpg')
 file14b = open('https://openspot-seeds.s3.amazonaws.com/search-thumbnail/Pecking_House.jpg')
 rest14.photos.attach(io: file14b, filename: 'pecking_sheader.jpg')
 
+file14c = open('https://openspot-seeds.s3.amazonaws.com/pecking/ph1.jpg')
+rest14.photos.attach(io: file14c, filename: 'ph1.jpg')
+
+file14d = open('https://openspot-seeds.s3.amazonaws.com/pecking/ph2.jpg')
+rest14.photos.attach(io: file14d, filename: 'ph2.jpg')
+
+file14e = open('https://openspot-seeds.s3.amazonaws.com/pecking/ph3.jpg')
+rest14.photos.attach(io: file14e, filename: 'ph3.jpg')
+
+file14f = open('https://openspot-seeds.s3.amazonaws.com/pecking/ph4.jpg')
+rest14.photos.attach(io: file14f, filename: 'ph4.jpg')
+
+file14g = open('https://openspot-seeds.s3.amazonaws.com/pecking/ph5.jpg')
+rest14.photos.attach(io: file14g, filename: 'ph5.jpg')
+
+file14h = open('https://openspot-seeds.s3.amazonaws.com/pecking/ph6.jpg')
+rest14.photos.attach(io: file14h, filename: 'ph6.jpg')
+
+file14i = open('https://openspot-seeds.s3.amazonaws.com/pecking/ph7.jpg')
+rest14.photos.attach(io: file14i, filename: 'ph7.jpg')
+
+file14j = open('https://openspot-seeds.s3.amazonaws.com/pecking/ph8.jpg')
+rest14.photos.attach(io: file14j, filename: 'ph8.jpg')
+
+file14k = open('https://openspot-seeds.s3.amazonaws.com/pecking/ph9.jpg')
+rest14.photos.attach(io: file14k, filename: 'ph9.jpg')
+
+
+
 rest15 = Rest.create!(
     name: 'Soothr', 
     description: 'Intimate space with al fresco dining offering Thai noodles & soups, plus cocktails.', 
@@ -381,4 +739,31 @@ rest15.photos.attach(io: file15a, filename: 'soothr_header.jpg')
 
 file15b = open('https://openspot-seeds.s3.amazonaws.com/search-thumbnail/soothr.jpg')
 rest15.photos.attach(io: file15b, filename: 'soothr_sheader.jpg')
+
+file15c = open('https://openspot-seeds.s3.amazonaws.com/soothr/soo1.jpg')
+rest15.photos.attach(io: file15c, filename: 'soo1.jpg')
+
+file15d = open('https://openspot-seeds.s3.amazonaws.com/soothr/soo2.jpg')
+rest15.photos.attach(io: file15d, filename: 'soo2.jpg')
+
+file15e = open('https://openspot-seeds.s3.amazonaws.com/soothr/soo3.jpg')
+rest15.photos.attach(io: file15e, filename: 'soo3.jpg')
+
+file15f = open('https://openspot-seeds.s3.amazonaws.com/soothr/soo4.jpg')
+rest15.photos.attach(io: file15f, filename: 'soo4.jpg')
+
+file15g = open('https://openspot-seeds.s3.amazonaws.com/soothr/soo5.jpg')
+rest15.photos.attach(io: file15g, filename: 'soo5.jpg')
+
+file15h = open('https://openspot-seeds.s3.amazonaws.com/soothr/soo6.jpg')
+rest15.photos.attach(io: file15h, filename: 'soo6.jpg')
+
+file15i = open('https://openspot-seeds.s3.amazonaws.com/soothr/soo7.jpg')
+rest15.photos.attach(io: file15i, filename: 'soo7.jpg')
+
+file15j = open('https://openspot-seeds.s3.amazonaws.com/soothr/soo8.jpg')
+rest15.photos.attach(io: file15j, filename: 'soo8.jpg')
+
+file15k = open('https://openspot-seeds.s3.amazonaws.com/soothr/soo9.jpg')
+rest15.photos.attach(io: file15k, filename: 'soo9.jpg')
 
