@@ -129,7 +129,6 @@ class SearchIndex extends React.Component {
         )
 
         const matches = this.findMatch().map((item, idx) => <li onClick={this.selectMatch} key={idx}>{item}</li>)
-            console.log(this.state);
         return (
             <div>
                 <div className="search-header">

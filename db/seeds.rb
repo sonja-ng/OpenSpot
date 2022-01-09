@@ -26,8 +26,10 @@ rest1 = Rest.create!(
     city: 'Brooklyn', 
     state: 'NY', 
     zip: '11201', 
-    cuisine:'Middle Eastern', 
-    neighborhood:'NoHo',
+    cuisine:'Middle Eastern',
+    lat: 40.69026565551758,
+    lng: -73.99446105957031,
+    neighborhood:'Brooklyn Heights',
     menu: {popular: "Chicken Shawarma Platter", pop_price: "$15.00", app: "Hummus", app_price: "$7.00", main: "Fattat Lahma", m_price: "$30+"},
     owner_id: user1.id
 )
@@ -76,6 +78,8 @@ rest2 = Rest.create!(
     state: 'NY', 
     zip: '11249', 
     cuisine:'Mexican',
+    lat: 40.7109906,
+    lng: -73.9649151,
     menu: {popular: "Pork Belly Taco", pop_price: "$9.00", app: "Guacamole", app_price: "$12.00", main: "Roasted Chicken", m_price: "$32.00"},
     neighborhood:'Williamsburg', 
     owner_id:user2.id
@@ -124,7 +128,9 @@ rest3 = Rest.create!(
     city: 'Queens', 
     state: 'NY', 
     zip: '11372', 
-    cuisine:'Indian', 
+    cuisine:'Indian',
+    lat: 40.7474445,
+    lng: -73.8896507,
     menu: {popular: "Chicken Dum Briyani", pop_price: "$17.99", app: "Vegan Lassuni Gobi", app_price: "$8.99", main: "Chicken Bhuna", m_price: "$14.99"},
     neighborhood:'Jackson Heights', 
     owner_id: user3.id
@@ -173,7 +179,9 @@ rest4 = Rest.create!(
     city: 'New York', 
     state: 'NY', 
     zip: '10044', 
-    cuisine:'American', 
+    cuisine:'American',
+    lat: 40.75621032714844,
+    lng: -73.95504760742188, 
     menu: {popular: "Cornell Chicken", pop_price: "$28.00", app: "Broccolini", app_price: "$11.00", main: "Grilled Hanger Steak", m_price: "$38.00"},
     neighborhood:'Roosevelt Island', 
     owner_id: user3.id
@@ -217,8 +225,6 @@ rest4.photos.attach(io: file4k, filename: 'anythingatall_gallery9.jpg')
 
 
 
-
-
 rest5 = Rest.create!(
     name: 'As You Are', 
     description: 'A restaurant, bakery and bar in Boerum Hill, Brooklyn.', 
@@ -226,7 +232,9 @@ rest5 = Rest.create!(
     city: 'Brooklyn', 
     state: 'NY', 
     zip: '11217', 
-    cuisine:'Bakery', 
+    cuisine:'Bakery',
+    lat: 40.6888427734375,
+    lng: -73.98573303222656, 
     menu: {popular: "Avocado Toast", pop_price: "$14.00", app: "Rum Loaf", app_price: "$4.00", main: "Poached Eggs", m_price: "$17.00"},
     neighborhood:'Boerum Hill', 
     owner_id: user4.id
@@ -275,7 +283,9 @@ rest6 = Rest.create!(
     city: 'Brooklyn', 
     state: 'NY', 
     zip: '11249', 
-    cuisine:'Bar', 
+    cuisine:'Bar',
+    lat: 40.72209930419922,
+    lng: -73.9576644897461,
     menu: {popular: "Tuna Tartare", pop_price: "$19.00", app: "Fries", app_price: "$11.00", main: "Steak Frites au Poivre", m_price: "$42.00"},
     neighborhood:'Williamsburg', 
     owner_id:user4.id
@@ -325,7 +335,9 @@ rest7 = Rest.create!(
     city: 'New York', 
     state: 'NY', 
     zip: '10009', 
-    cuisine:'Mexican', 
+    cuisine:'Mexican',
+    lat: 40.7294825,
+    lng: -73.9807969, 
     menu: {popular: "Carnitas Taco", pop_price: "$5.00", app: "Chips and Salsas", app_price: "$5.00", main: "Wild Mix Mushroom Quesadillas", m_price: "$10.00"},
     neighborhood:'Midtown', 
     owner_id: user5.id
@@ -375,7 +387,9 @@ rest8 = Rest.create!(
     city: 'New York', 
     state: 'NY', 
     zip: '10023', 
-    cuisine:'Mediterranean', 
+    cuisine:'Mediterranean',
+    lat: 40.7718633,
+    lng: -73.9815969, 
     menu: {popular: "Braised Double R Ranch Flat Iron", pop_price: "$42.00", app: "Citrus Cured Faroe Island Salmon", app_price: "$23.00", main: "Seared Dayboat Scallops", m_price: "$40.00"},
     neighborhood:'Upper West Side', 
     owner_id: user6.id
@@ -425,7 +439,9 @@ rest9 = Rest.create!(
     city: 'New York', 
     state: 'NY', 
     zip: '10009', 
-    cuisine:'Soul Food', 
+    cuisine:'Soul Food',
+    lat: 40.7261826,
+    lng: -73.9842717,
     menu: {popular: "Palm Cake", pop_price: "$16.00", app: "Fried Okra", app_price: "$5.00", main: "Southern Fried Lasagna", m_price: "$24.00"},
     neighborhood:'East Village', 
     owner_id:user6.id
@@ -474,7 +490,9 @@ rest10 = Rest.create!(
     city: 'Brooklyn', 
     state: 'NY', 
     zip: '11206', 
-    cuisine:'Venezuelan', 
+    cuisine:'Venezuelan',
+    lat: 40.707801818847656,
+    lng: -73.94615173339844,
     menu: {popular: "Paella De Pulpo", pop_price: "$28.00", app: "Ceviche", app_price: "$18.00", main: "Scallops", m_price: "$32.00"},
     neighborhood:'Williamsburg', 
     owner_id: demo.id
@@ -523,7 +541,9 @@ rest11 = Rest.create!(
     city: 'New York', 
     state: 'NY', 
     zip: '10003', 
-    cuisine:'Chinese', 
+    cuisine:'Chinese',
+    lat: 40.7291201,
+    lng: -73.9885912, 
     menu: {popular: "Crispy eel", pop_price: "$26.00", app: "Sliced chilled chicken", app_price: "$15", main: "Steamed Dungeness crab w. steamed egg", m_price: "$65.00"},
     neighborhood:'East Village', 
     owner_id: demo.id
@@ -572,7 +592,9 @@ rest12 = Rest.create!(
     city: 'Brooklyn', 
     state: 'NY', 
     zip: '11238', 
-    cuisine:'Japanese', 
+    cuisine:'Japanese',
+    lat: 40.67764663696289,
+    lng: -73.96882629394531,
     menu: {popular: "Miso Ramen", pop_price: "$16.00", app: "Wings", app_price: "$12.00", main: "Kimchi Ramen", m_price: "$16.00"},
     neighborhood:'Prospect Heights', 
     owner_id: user5.id
@@ -615,8 +637,6 @@ file12k = open('https://openspot-seeds.s3.amazonaws.com/chuko/chuko9.jpg')
 rest12.photos.attach(io: file12k, filename: 'chuko9.jpg')
 
 
-
-
 rest13 = Rest.create!(
     name: 'Dhamaka', 
     description: 'Innovative, energetic eatery offering provincial Indian cuisine in a colorful dining room.', 
@@ -624,7 +644,9 @@ rest13 = Rest.create!(
     city: 'New York', 
     state: 'NY', 
     zip: '10002', 
-    cuisine:'Indian', 
+    cuisine:'Indian',
+    lat: 40.71833,
+    lng: -73.9881031,
     menu: {popular: "Goat Neck Dum Biryani", pop_price: "$39.00", app: "Ragda Pattice", app_price: "$13", main: "Champaran Meat", m_price: "$34.00"},
     neighborhood:'Lower East Side', 
     owner_id: user5.id
@@ -676,7 +698,9 @@ rest14 = Rest.create!(
     zip: '11366', 
     cuisine:'Fusion', 
     menu: {popular: "Chili Fried Chicken", pop_price: "$35.00", app: "Orange Pepper Wet Wings", app_price: "$12.00", main: "Chicken Sandwich #14", m_price: "$14.00"},
-    neighborhood:'Fresh Meadows', 
+    neighborhood:'Fresh Meadows',
+    lat: 40.728485107421875,
+    lng: -73.7835693359375, 
     owner_id: user5.id
 )
 
@@ -727,7 +751,9 @@ rest15 = Rest.create!(
     zip: '10003', 
     cuisine:'Thai', 
     menu: {popular: "Dry Crab Noodles", pop_price: "$26.00", app: "Soothr Jeeb Dumplines", app_price: "$12.00", main: "Pla Tod", m_price: "$33.00"},
-    neighborhood:'East Village', 
+    neighborhood:'East Village',
+    lat: 40.7322692,
+    lng: -73.9873518, 
     owner_id: user5.id
 )
 

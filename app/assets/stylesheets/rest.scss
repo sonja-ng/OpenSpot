@@ -274,6 +274,7 @@
         background-color: yellow;
         position: sticky;
         top: 0;
+        z-index: 10;
     }
 
     .order-takeout {
@@ -282,6 +283,7 @@
         box-shadow: 5px, 5px, 5px, 5px, grey;
         background-color: hotpink;
         margin-top: 23px;
+        z-index: 10;
         position: sticky;
         top: 279px;
     }
@@ -292,6 +294,12 @@
         border: 1px solid $border-color;
         border-radius: 2px;
         margin-top: 23px;
+    }
+
+    .address {
+        font-family: $manrope;
+        font-size: 14px;
+        margin-top: 10px;
     }
 }
 

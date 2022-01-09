@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import Gallery from './gallery';
+import Map from './map';
 
 class RestShow extends React.Component {
     constructor(props){
@@ -52,7 +53,7 @@ class RestShow extends React.Component {
                         <div className="subheader">
                             Menu
                         </div>
-                        <div className="item-cat">Popular Dishes</div>
+                        <div className="item-cat">Popular Dish</div>
                         <div className="menu-items">
                             <div className="item-name">{rest.menu.popular}</div>
                             <div className="item-price">{rest.menu.pop_price}</div>
@@ -79,11 +80,11 @@ class RestShow extends React.Component {
                         <div className="order-takeout">
                             Takeout?
                         </div>
-                        <div className="map">
-                        Map
+                        <div>
+                        <Map rest={rest} />
+                        <div className="address">{rest.address}&#160;{rest.city}&#160;{rest.state}&#160;{rest.zip}</div>
                         </div>
                         <div className="misc">
-                        Misc
                         </div>
                     </aside>
                 </div>
