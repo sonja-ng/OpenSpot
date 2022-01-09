@@ -131,7 +131,7 @@ class SignupForm extends React.Component {
                         <div className="form_msg">Have an account?  <button className="demo_button" onClick={this.resetSessionErrors}>Login</button>
                             <br></br>
                             Don't want to create an account?
-                            <button className="demo_button" onClick={this.handleDemoSubmit}>Login as Demo User</button>
+                            <button className="demo_button" onClick={this.handleDemoSubmit}>&#160;Login as Guest</button>
                         </div>
                     </div>
                 </div>

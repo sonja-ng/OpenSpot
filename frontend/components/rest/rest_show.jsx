@@ -82,7 +82,7 @@ class RestShow extends React.Component {
                         </div>
                         <div>
                         <Map rest={rest} />
-                        <div className="address">{rest.address}&#160;{rest.city}&#160;{rest.state}&#160;{rest.zip}</div>
+                        <div className="address">{rest.address},&#160;{rest.city},&#160;{rest.state}&#160;{rest.zip}</div>
                         </div>
                         <div className="misc">
                         </div>
