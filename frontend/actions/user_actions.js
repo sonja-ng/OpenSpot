@@ -10,10 +10,12 @@ const receiveUserErrors = errors => ({
     errors
 });
 
-export const receiveUserInfo = user => ({
+export const receiveUserInfo = user => {
+    // debugger
+    return {
     type: RECEIVE_USER_INFO,
     user
-})
+}};
 
 export const removeUserErrors = () => ({
     type: REMOVE_USER_ERRORS
@@ -23,7 +25,8 @@ export const signup = user => dispatch => (
     UserUtils.signup(user).then(user => dispatch(receiveCurrentUser(user)), errors => dispatch(receiveUserErrors(errors.responseJSON)))
 );
 
-export const updateUser = user => dispatch => (
-    UserUtils.updateUser(user).then(user => dispatch(receiveUserInfo(user)), errors => dispatch(receiveUserErrors(errors.responseJSON)))
-);
+export const updateUser = user => dispatch => {
+    // debugger
+    return UserUtils.updateUser(user).then(user => dispatch(receiveUserInfo(user)), errors => dispatch(receiveUserErrors(errors.responseJSON)))
+};
 

@@ -1,0 +1,149 @@
+@import './index.scss';
+
+.search-header {
+    width: 1600px;
+    height: 80px;
+    background-image: image_url('wood.png');
+    padding: 15px 0;
+    box-sizing: border-box;
+    
+    .search-form {
+        height: 50px;
+        width: max-content;
+        margin: 0 auto;
+        position: relative;
+
+
+        .banner-submit {
+            background-color: $red;
+            color: white;
+            font-family: $main_font;
+            font-size: 15px;
+            border: none;
+            width: 144px;
+            border-radius: 3px;
+            height: 48px;
+            cursor: pointer;
+        }
+
+        .banner-input {
+            height: 50px;
+            border: none;
+            border-radius: 3px;
+            width: 292px;
+            padding-left: 25px;
+            margin-right: 12px;
+            font-size: 12px;
+            box-sizing: border-box;
+        }
+
+        .banner-input:focus {
+            outline: none;
+        }
+    }
+}
+
+.search-suggestion {
+    height: max-content;
+    width: 292px;
+    position: absolute;
+    right: 156px;
+    top: 50px;
+    background-color: white;
+    border-left: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    box-sizing: border-box;
+
+    li {
+        background-color: white;
+        color: grey;
+        font-family: $roboto;
+        font-weight: 300;
+        padding: 10px;
+        height: 30px;
+        line-height: 30px;
+        cursor: pointer;
+    }
+
+    li:hover {
+        background-color: $red;
+        color: white;
+        font-family: $main_font;
+    }
+}
+
+.search-result {
+    width: 803px;
+    height: max-content;
+    margin: 0 auto;
+    font-family: $main_font;
+    font-size: 20px;
+    padding-bottom: 200px;
+}
+
+.search-result-index {
+    width: 797px;
+    height: 277px;
+    display: flex;
+    // background: yellow;
+    border-bottom: 1px solid $border-color;
+
+    .result-img {
+        height: 206px;
+        width: 204px;
+        margin-top: 28px;
+        margin-right: 18px;
+        border-radius: 3px;
+        // background-color: grey;
+    }
+
+    .result {
+        margin-top: 28px;
+        height: 206px;
+        width: 577px;
+    }
+
+    .result-text {
+        font-family: $main_font;
+        font-size: 18px;
+        color: #007492;
+    }
+
+    .result-stars {
+        margin-top: 13px;
+    }
+
+    .booked {
+        font-family: $manrope;
+        font-size: 13px;
+        margin-top: 19px;
+
+        i {
+            margin-right: 10px;
+        }
+    }
+
+
+    .result-button-row {
+        display: flex;
+        margin-top: 10px;
+    }
+
+    .result-button {
+        background-color: $red;
+        color: white;
+        border-radius: 3px;
+        border: none;
+        width: 109px;
+        height: 32px;
+        margin-right: 8px;
+        font-family: $main-font;
+        cursor: pointer;
+    }
+
+    .result-button:hover {
+        background-color: rgb(150, 0, 0);
+    }
+}
+

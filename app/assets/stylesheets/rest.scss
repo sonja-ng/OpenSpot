@@ -1,0 +1,409 @@
+@import './index.scss';
+
+//restaurant show page
+.rest_index {
+    // position: relative;
+    height: max-content;
+}
+
+.rest_header {
+    width: inherit;
+    height: 490px;
+    background-color: grey;
+}
+
+.rest_body {
+    width: 100%;
+    position: relative;
+    height: 1300px;
+    background-color: transparent;
+    // margin-left: 302px;
+    // bottom: -200px;
+}
+
+.main_rest_content {
+    width: 642px;
+    background-color: white;
+    margin-right: 32px;
+    position: absolute;
+    left: 302px;
+    top: -50px;
+    font-size: 60px;
+    font-family: $manrope;
+    padding: 0px 13px 17px 17px;
+    box-sizing: border-box;
+
+    .rest-navbar {
+        display: flex;
+        border-bottom: 1px solid $border-color;
+        font-size: 15px;
+        color: rgb(80, 80, 80);
+        background-color: white;
+        padding-top: 17px;
+        height: 32px;
+        position: sticky;
+        top: 0;
+    
+        .content-button {
+            margin-right: 36px;
+            padding-bottom: 10px;
+            color: black;
+        }
+
+        .content-button:hover, .content-button:active, .content-button:focus {
+            border-bottom: 2px solid $red;
+            color: $red;
+        }
+
+        // .content-button:active {
+        //     border-bottom: 2px solid $red;
+        //     color: $red;
+        // }
+    }
+
+    .rest-title {
+        padding-bottom: 32px;
+        height: max-content;
+        border-bottom: 1px solid $border-color;
+    }
+
+    .rest-info {
+        display: flex;
+        font-size: 14px;
+        align-items: center;
+        width: inherit;
+        margin-top: 19px;
+        margin-bottom: 28px;
+
+        .text {
+            margin-left: 9px;
+        }
+    }
+
+    .rest-icons {
+        margin-left: 12px;
+        display: flex;
+    
+    }
+
+    .description {
+        font-family: $roboto;
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .gallery {
+        display: grid;
+        height: 280px;
+        width: 608px;
+        grid-template-rows: [first] 140px [second] 140px;
+        grid-template-columns: [col1] 138px [col2] 282px [col3] 186px;
+        column-gap: 2px;
+        row-gap: 2px;
+
+        .m-photo-1{
+            grid-column-start: 1;
+            grid-column-end: span 1;
+            grid-row-start: 1;
+            grid-row-end: span 1;
+            background-color: purple;
+            width: 138px;
+            height: 140px;
+            cursor: pointer;
+        }
+            // .img {
+            //     width: 138px;
+            //     height: 140px;
+            // }
+
+        .m-photo-2 {
+            background-color: orange;
+            grid-column: 1 / span 1;
+            grid-row: second / span 1;
+            width: 138px;
+            height: 140px;
+            cursor: pointer;
+        }
+
+        .big-photo {
+            background-color: green;
+            grid-row: first / span 2;
+            width: 282px;
+            height: 282px;
+            cursor: pointer;
+        }
+    }
+
+    .gallery .s-photo-container {
+        display: grid;
+        grid-column: col3 / span 1;
+        grid-row: first / span 2;
+        grid-template-rows: 92.6px 92.6px 92.6px;
+        grid-template-columns: 93px 93px;
+        column-gap: 2px;
+        row-gap: 2px;
+
+        .sm-photo-1 {
+            grid-column: 1, span 1;
+            grid-row: 1, span 1;
+            background-color: red;
+            width: 93px;
+            height: 92.59px;
+            cursor: pointer;
+        }
+
+        .sm-photo-2 {
+            grid-column: 2, span 1;
+            grid-row: 1, span 1;
+            background-color: blue;
+            width: 93px;
+            height: 92.59px;
+            cursor: pointer;
+        }
+
+        .sm-photo-3 {
+            grid-column: 1, span 1;
+            grid-row: 2, span 1;
+            background-color: rgb(152, 214, 211);
+            width: 93px;
+            height: 92.59px;
+            cursor: pointer;
+        }
+
+        .sm-photo-4 {
+            grid-column: 2, span 1;
+            grid-row: 2, span 1;
+            background-color: rgb(149, 99, 207);
+            width: 93px;
+            height: 92.59px;
+            cursor: pointer;
+        }
+
+        .sm-photo-5 {
+            grid-column: 1, span 1;
+            grid-row: 2, span 1;
+            background-color: rgb(5, 53, 50);
+            width: 93px;
+            height: 92.59px;
+            cursor: pointer;
+        }
+
+        .sm-photo-6 {
+            grid-column: 1, span 1;
+            grid-row: 2, span 1;
+            background-color: rgb(117, 17, 67);
+            width: 93px;
+            height: 92.59px;
+            cursor: pointer;
+        }
+    }
+
+    .gallery-background {
+        z-index: 20;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        
+        button {
+            position: absolute;
+            top: 100px;
+            right: 200px;
+            border: none;
+            background: transparent;
+            font-size: 40px;
+            font-family: $roboto;
+            color: grey;
+            cursor: pointer;
+        }
+
+        .large-photo {
+            position: absolute;
+            top: 25%;
+            left: 40%;
+        }
+    }
+
+    .subheader {
+        font-size: 25px;
+        margin-bottom: 25px;
+        margin-top: 25px;
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 25px;
+        padding-top: 30px;
+    }
+}
+
+.item-cat {
+    font-family: $manrope;
+    font-size: 20px;
+}
+
+.menu-items {
+    display: flex;
+    .item-name, .item-price {
+        font-family: $manrope;
+        font-size: 14px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .item-name {
+        margin-right: 10px;
+    }
+}
+
+
+
+//right sidebar
+
+.right-content {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: -50px;
+    right: 302px;
+    height: 800px;
+
+    .rsvp-container {
+        width: 322px;
+        height: 256px;
+        background-color: yellow;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    .order-takeout {
+        width: 322px;
+        height: 231px;
+        box-shadow: 5px, 5px, 5px, 5px, grey;
+        background-color: hotpink;
+        margin-top: 23px;
+        z-index: 10;
+        position: sticky;
+        top: 279px;
+    }
+
+    .map {
+        width: 322px;
+        height: 210px;
+        border: 1px solid $border-color;
+        border-radius: 2px;
+        margin-top: 23px;
+    }
+
+    .address {
+        font-family: $manrope;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}
+
+
+
+
+
+
+//rest index page
+
+.rest-index-thumbnail {
+    width: 237px;
+    height: 270px;
+    background: white;
+    margin-left: 18px;
+    border-radius: 3px;
+    position: relative;
+    border: 1px solid $border-color;
+    
+        .thumbnail-img {
+            height: 132px;
+            background-color: grey;
+        }
+}
+
+.rest-index-thumbnail:first-child {
+    margin-left: 0;
+}
+
+.rest-index-thumbnail:hover {
+    box-shadow: 2px 2px 6px 1px rgb(212, 212, 212);
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+.index-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18px;
+    width: 1216px;
+    margin-left: 170px;
+}
+
+.theme-header {
+    height: 109px;
+    width: 1216px;
+    background-color: white;
+    font-size: 28px;
+    font-family: $manrope;
+    margin-left: 170px;
+    padding-top: 56px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $border-color;
+}
+
+.thumbnail-text {
+    padding-left: 8px;
+    padding-top: 13px;
+    padding-bottom: 10px;
+}
+
+.stars {
+    margin-top: 5px;
+}
+
+.thumbnail-detail {
+    display: flex;
+    justify-content: start;
+    font-family: $roboto;
+    font-weight: 300;
+    font-size: 13px;
+    margin-top: 14px;
+}
+
+.price {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.button-row {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 15px;
+
+    .thumbnail-button {
+        width: 70px;
+        height: 30px;
+        background-color: $red;
+        margin-left: 5px;
+        border-radius: 3px;
+        color: white;
+        font-family: $main-font;
+        border: none;
+        cursor: pointer;
+    }
+
+    .thumbnail-button:first-child {
+        margin-left: 0;
+    }
+
+    .thumbnail-button:hover {
+        background-color: rgb(179, 1, 1);
+    }
+}
+

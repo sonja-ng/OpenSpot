@@ -12,12 +12,13 @@ const UserShow = ({ currentUser }) => {
                         <li>Reservations</li>
                         <li>Saved Restaurants</li>
                         <li>Reviews</li>
+                        {/* <Link to={`/users/${currentUser.id}/rests/`}>My Restaurants</Link> */}
                     </ul>
                 </aside>
-                <section>
+                <div className="form_section">
                     <div className="user_row"></div>
                     <UserEditFormContainer />
-                </section>
+                </div>
                 <aside className="right">
                 </aside >
             </div>

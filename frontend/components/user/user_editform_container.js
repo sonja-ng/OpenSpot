@@ -6,10 +6,12 @@ import { withRouter } from 'react-router-dom';
 const mSTP = (state, ownProps) => {
     // debugger
     return {
-    currentUser: state.entities.users[ownProps.match.params.userId]
+    currentUser: state.entities.users[ownProps.match.params.userId],
+    errors: state.errors.users
 }};
 
 const mDTP = dispatch => {
+    // debugger
     return {
         receiveUserInfo: (user) => dispatch(receiveUserInfo(user)),
         updateUser: (user) => dispatch(updateUser(user))

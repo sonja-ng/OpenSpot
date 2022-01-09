@@ -1,15 +1,21 @@
 import React from 'react';
 import UserDropDown from './user_dropdown';
+import { withRouter } from 'react-router-dom';
+import SearchPopup from './search_popup';
 
 class UserNavBar extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            selected: false
+            selected: false,
+            searchOut: false,
         }
+
         this.dropRef = React.createRef();
         this.toggleDropDown=this.toggleDropDown.bind(this);
         this.removeDropDown = this.removeDropDown.bind(this);
+        this.showSearch = this.showSearch.bind(this);
+        this.closeSearch = this.closeSearch.bind(this);
     }
 
     componentDidMount(){
@@ -36,7 +42,17 @@ class UserNavBar extends React.Component {
         }
     }
 
+    showSearch(){
+        // debugger
+        this.setState({ searchOut: true });
+    }
+
+    closeSearch(){
+        this.setState({ searchOut: false });
+    }
+
     render() {
+
         return (
             <div className="right_navbar">
                 <div className="dropdown_container" ref={this.dropRef}>
@@ -46,11 +62,12 @@ class UserNavBar extends React.Component {
                 <span className="calendar_icon"><i className="far fa-calendar"></i></span>
                 <span className="bell_icon"><i className="far fa-bell"></i></span>
                 <div>
-                    <span className="search_icon"><i className="fas fa-search"></i></span>
+                    <button className="search_icon" onClick={this.showSearch}><i className="fas fa-search"></i></button>
                 </div>
+                <SearchPopup closeSearch={this.closeSearch} searchOut={this.state.searchOut} updateFilter={this.props.updateFilter} />
             </div>
         )
     }
 }
 
-export default UserNavBar;
+export default withRouter(UserNavBar);

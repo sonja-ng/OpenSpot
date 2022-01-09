@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Openspot</title>
+    <title>Open Spot</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Manrope:wght@600&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google[:api_key]}" %>
     <script src="https://kit.fontawesome.com/f9fe52499d.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      window.starsURL = "<%= image_url('stars.png') %>";
+      window.woodURL = "<%= image_url('wood.png') %>";
+      window.googleAPIKey = "<%= Rails.application.credentials.google[:api_key] %>"
+    </script>
     <%= javascript_include_tag 'application' %>
     <script type="text/javascript">
         window.logoURL = "<%= image_url('smallheaderlogo.png') %>";

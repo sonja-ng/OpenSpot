@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import smallLogo from '../../../app/assets/images/smallheaderlogo.png'; 
 
 class SignupForm extends React.Component {
@@ -23,8 +22,6 @@ class SignupForm extends React.Component {
     }
 
     componentDidMount(){
-        // debugger
-        // document.addEventListener("click", this.goBack);
         this.disableScrolling();
     }
 
@@ -38,8 +35,9 @@ class SignupForm extends React.Component {
 
     handleDemoSubmit(e){
         e.preventDefault();
+        this.props.closeModal();
         this.props.login({
-            username: "demo user",
+            username: "Guest",
             password: "password"
         });
     }
@@ -65,11 +63,13 @@ class SignupForm extends React.Component {
     }
 
     enableScrolling(){
+        this.props.closeModal();
         document.body.classList.remove("disable_scroll");
     }
 
     resetSessionErrors(){
         this.props.removeSessionErrors();
+        this.props.otherForm('login');
     }
 
     goBack(){
@@ -79,12 +79,11 @@ class SignupForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.signup(user);
+        this.props.signup(user).then(()=>this.props.closeModal());
     }
 
     render(){
         return (
-        <div className="form_background" >
             <form onSubmit={this.handleSubmit} className="signup">
                 <div className="form_logo_header">
                     <img src={window.logoURL}/>
@@ -129,16 +128,14 @@ class SignupForm extends React.Component {
                         <br/>
                     <div className="signup_buttons">
                         <input type="submit" value="Sign Up" className="session_button"/><br></br>
-                        <div className="form_msg">Already have an account?  <Link to="/login" className="demo_button" onClick={this.resetSessionErrors} >Login</Link>
+                        <div className="form_msg">Have an account?  <button className="demo_button" onClick={this.resetSessionErrors}>Login</button>
                             <br></br>
                             Don't want to create an account?
-                            <button className="demo_button" onClick={this.handleDemoSubmit}>Login as Demo User</button>
+                            <button className="demo_button" onClick={this.handleDemoSubmit}>&#160;Login as Guest</button>
                         </div>
                     </div>
                 </div>
             </form>
-                
-        </div>
         )
     }
 }
