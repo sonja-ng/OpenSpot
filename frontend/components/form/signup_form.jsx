@@ -1,5 +1,6 @@
 import React from 'react';
-import smallLogo from '../../../app/assets/images/smallheaderlogo.png'; 
+import smallLogo from '../../../app/assets/images/smallheaderlogo.png';
+import { Link } from 'react-router-dom';
 
 class SignupForm extends React.Component {
     constructor(props){

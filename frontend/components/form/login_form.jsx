@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import smallLogo from '../../../app/assets/images/smallheaderlogo.png'; 
+import smallLogo from '../../../app/assets/images/smallheaderlogo.png';
 
 class LoginForm extends React.Component {
     constructor(props){
