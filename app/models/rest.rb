@@ -1,6 +1,7 @@
 class Rest < ApplicationRecord
     validates :name, :description, :address, :city, :state, :zip, presence: true
     has_many_attached :photos
+    serialize :menu, Hash
 
     belongs_to :owner,
         primary_key: :id,

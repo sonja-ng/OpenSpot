@@ -37,7 +37,7 @@ class SignupForm extends React.Component {
         e.preventDefault();
         this.props.closeModal();
         this.props.login({
-            username: "demo user",
+            username: "Guest",
             password: "password"
         });
     }

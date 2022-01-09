@@ -33,7 +33,7 @@ const App = () => (
             <Route exact path={"/"} component={RestIndexContainer} />
             <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
             <Route path={"/rests/:restId"} component={RestShowContainer} />
-            <Route path={"/search"} component={SearchIndexContainer} />
+            <Route exact path={"/search"} component={SearchIndexContainer} />
         </div>
         <footer>
             <div className="footer_maintitle">This project is a clone of OpenTable.</div>

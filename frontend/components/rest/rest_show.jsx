@@ -20,8 +20,7 @@ class RestShow extends React.Component {
        const { rest } = this.props;
         return (
             <div className="rest_index">
-                <div className="rest_header"></div>
-                {/* <img src={rest.photos[1].url} className="rest_header"/> */}
+                <img src={rest.photos[1].url} className="rest_header"/> 
                 <div className="rest_body">
                     <div className="main_rest_content">
                         <div className="rest-navbar">
@@ -44,7 +43,7 @@ class RestShow extends React.Component {
                             {rest.description}
                         </div>
                         <div className="subheader">
-                            20 Photos
+                            9 Photos
                         </div>
                         <Gallery images={rest.photos} />
                         <div className="subheader">
