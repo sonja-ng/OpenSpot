@@ -9,27 +9,26 @@ class RestShow extends React.Component {
 
     componentDidMount(){
         // debugger
+        window.scrollTo(0,0);
         this.props.fetchRest(this.props.match.params.restId);
     }
 
     render(){
-        
-       if (!this.props.rest) {
-           return null;
-       }
+       if (!this.props.rest) return null;
        const { rest } = this.props;
+        // debugger
         return (
             <div className="rest_index">
                 <img src={rest.photos[1].url} className="rest_header"/> 
                 <div className="rest_body">
                     <div className="main_rest_content">
                         <div className="rest-navbar">
-                            <Link to="/" className="content-button">Overview</Link>
-                            <Link to="/" className="content-button">Photos</Link>
-                            <Link to="/" className="content-button">Menu</Link>
-                            <Link to="/" className="content-button">Reviews</Link>
+                            <Link to={{hash: "#overview"}} className="content-button">Overview</Link>
+                            <Link to={{hash: "#photos"}}  className="content-button">Photos</Link>
+                            <Link to="#menu" className="content-button">Menu</Link>
+                            <Link to="#reviews" className="content-button">Reviews</Link>
                         </div>
-                        <div className="rest-title">
+                        <div className="rest-title" id="overview">
                             {rest.name}
                         </div>
                         <div className="rest-info">
@@ -42,31 +41,46 @@ class RestShow extends React.Component {
                         <div className="description">
                             {rest.description}
                         </div>
-                        <div className="subheader">
+                        <div className="subheader" id="photos">
                             9 Photos
                         </div>
                         <Gallery images={rest.photos} />
-                        <div className="subheader">
+                        <div className="subheader" id="menu">
                             Menu
                         </div>
-                        <div className="subheader">
+                        <div className="item-cat">Popular Dishes</div>
+                        <div className="menu-items">
+                            <div className="item-name">{rest.menu.popular}</div>
+                            <div className="item-price">{rest.menu.pop_price}</div>
+                        </div>
+                        <div className="item-cat">Appetizer</div>
+                        <div className="menu-items">
+                            <div className="item-name">{rest.menu.app}</div>
+                            <div className="item-price">{rest.menu.app_price}</div>
+                        </div>
+                        <div className="item-cat">Main</div>
+                        <div className="menu-items">
+                            <div className="item-name">{rest.menu.main}</div>
+                            <div className="item-price">{rest.menu.m_price}</div>
+                        </div>
+                        <div className="subheader" id="reviews">
                             What 50 people are saying
                         </div>
                     </div>
-                    <div className="right-content">
+                    <aside className="right-content">
                         <div className="rsvp-container">
                             RSVP component
-                    </div>
-                    <div className="order-takeout">
+                        </div>
+                        <div className="order-takeout">
                             Takeout?
-                    </div>
-                    <div className="map">
+                        </div>
+                        <div className="map">
                         Map
-                    </div>
-                    <div className="misc">
+                        </div>
+                        <div className="misc">
                         Misc
-                    </div>
-                </div>
+                        </div>
+                    </aside>
                 </div>
             </div>
         )

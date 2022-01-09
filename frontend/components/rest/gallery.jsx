@@ -24,7 +24,7 @@ class Gallery extends React.Component {
         const { images } = this.props;
         const klass = this.state.selected ? "gallery-background" : "hidden";
         const klass2 = this.state.selected ? "large-photo" : "hidden";     
-        debugger
+        // debugger
         return (
             <div>
                 <div className="gallery">

@@ -15,7 +15,7 @@
 .rest_body {
     width: 100%;
     position: relative;
-    height: 800px;
+    height: 1300px;
     background-color: transparent;
     // margin-left: 302px;
     // bottom: -200px;
@@ -196,8 +196,6 @@
         }
     }
 
-    
-
     .gallery-background {
         z-index: 20;
         position: fixed;
@@ -234,6 +232,27 @@
         padding-bottom: 25px;
     }
 }
+
+.item-cat {
+    font-family: $manrope;
+    font-size: 20px;
+}
+
+.menu-items {
+    display: flex;
+    .item-name, .item-price {
+        font-family: $manrope;
+        font-size: 14px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .item-name {
+        margin-right: 10px;
+    }
+}
+
+
 
 //right sidebar
 
