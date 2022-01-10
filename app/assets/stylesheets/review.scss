@@ -1,0 +1,34 @@
+@import './index.scss';
+
+.reviewer {
+    width: 116px;
+    height: 170px;
+    background-color: gray;
+    text-align: center;
+}
+
+.review-content {
+    height: 170px;
+    width: 482px;
+    background-color: rgb(194, 194, 194);
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #e4458a;
+    color: white;
+    line-height: 48px;
+    margin-top: 16px;
+    margin-bottom: 11px;
+    font-size: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-row {
+    display: flex;
+    border-top: 1px solid yellow;
+}

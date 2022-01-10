@@ -2,22 +2,17 @@ class Api::RestsController < ApplicationController
     def index
         # debugger
         if cuisine
-            @rests = Rest.match_cuisine(cuisine)
-            render :index
+            rests = Rest.match_cuisine(cuisine)
         elsif neighborhood
-            @rests = Rest.match_neighborhood(neighborhood)
-            render :index
+            rests = Rest.match_neighborhood(neighborhood)
         elsif name
-            @rests = Rest.match_name(name)
-            render :index
+            rests = Rest.match_name(name)
         else 
-            @rests = Rest.all
-            render :index
+            rests = Rest.all
         end
 
-        # @rests = rests
-
-        # render :index
+        @rests = rests.includes(:reviews)
+        render :index
     end
 
     def show

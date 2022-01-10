@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import Gallery from './gallery';
 import Map from './map';
+import ReviewIndexContainer from '../review/review_index_container';
 
 class RestShow extends React.Component {
     constructor(props){
@@ -21,7 +22,8 @@ class RestShow extends React.Component {
         // debugger
         return (
             <div className="rest_index">
-                <img src={rest.photos[1].url} className="rest_header"/> 
+                {/* <img src={rest.photos[1].url} className="rest_header"/>  */}
+                <div className="rest_header"></div>
                 <div className="rest_body">
                     <div className="main_rest_content">
                     <div id="overview"></div>
@@ -70,8 +72,9 @@ class RestShow extends React.Component {
                         </div>
                         <div id="reviews"></div>
                         <div className="subheader">
-                            What 50 people are saying
+                            What people are saying
                         </div>
+                        <ReviewIndexContainer />
                     </div>
                     <aside className="right-content">
                         <div className="rsvp-container">

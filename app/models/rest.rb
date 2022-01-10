@@ -3,10 +3,14 @@ class Rest < ApplicationRecord
     has_many_attached :photos
     serialize :menu, Hash
 
-    belongs_to :owner,
-        primary_key: :id,
-        foreign_key: :owner_id,
-        class_name: :User
+    has_many :reviews,
+    primary_key: :id,
+    foreign_key: :rest_id,
+    class_name: :Review
+
+    has_many :reviewers,
+    through: :reviews,
+    source: :User
 
     
     def self.match_cuisine(cuisine)
