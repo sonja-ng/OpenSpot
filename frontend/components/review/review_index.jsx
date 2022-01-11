@@ -18,6 +18,10 @@ class ReviewIndex extends React.Component {
         }
     }
 
+    componentWillUnmount(){
+        this.props.clearReviews();
+    }
+
     componentDidUpdate(prevProps){
         // debugger
         if (this.props.reviews.length !== prevProps.reviews.length || this.props.history.location.pathname !== prevProps.history.location.pathname) {
@@ -35,8 +39,10 @@ class ReviewIndex extends React.Component {
     
         const { reviews, currentUser, deleteReview } = this.props;
         const reviewList = reviews.map((review, idx) => <ReviewIndexItem key={idx} review={review} currentUser={currentUser} deleteReview={deleteReview} />)
+        const header = !this.props.match.params.restId ? "my-reviews" : "hidden";
         return (
             <ul>
+                <div className={header}><h3>My Reviews</h3></div>
                 {reviewList}
             </ul>
         )

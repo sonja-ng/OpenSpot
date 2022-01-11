@@ -1,5 +1,5 @@
 import { RECEIVE_REST } from "../actions/rest_actions";
-import { RECEIVE_REVIEW, REMOVE_REVIEW, RECEIVE_REVIEWS } from '../actions/review_actions';
+import { RECEIVE_REVIEW, REMOVE_REVIEW, RECEIVE_REVIEWS, CLEAR_REVIEWS } from '../actions/review_actions';
 
 const reviewsReducer = (oldState = {}, action) => {
     // debugger
@@ -16,6 +16,8 @@ const reviewsReducer = (oldState = {}, action) => {
         case REMOVE_REVIEW:
             delete nextState[action.reviewId];
             return nextState;
+        case CLEAR_REVIEWS:
+            return {};
         default:
             return oldState;
     }

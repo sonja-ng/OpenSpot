@@ -4,6 +4,8 @@ import UserShowContainer from './user/user_show_container';
 import RestIndexContainer from './rest/rest_index_container';
 import ModalContainer from './modal_container';
 import SearchIndexContainer from './search/search_index_container';
+import ReviewIndexContainer from './review/review_index_container';
+import UserEditFormContainer from './user/user_editform_container';
 import { Link, Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
 import { ProtectedRoute } from '../util/protected_route_util';
@@ -34,6 +36,7 @@ const App = () => (
             <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
             <Route path={"/rests/:restId"} component={RestShowContainer} />
             <Route exact path={"/search"} component={SearchIndexContainer} />
+           
         </div>
         <footer>
             <div className="footer_maintitle">This project is a clone of OpenTable.</div>

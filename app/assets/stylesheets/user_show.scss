@@ -32,7 +32,7 @@ $manrope: 'Manrope', sans-serif;
 .user_show_main .left {
     background-color: $background-color;
     width: 490px;
-    height: 734px;
+    height: 794px;
     font-family: $roboto;
     font-weight: 300;
     font-size: 13px;
@@ -44,7 +44,7 @@ $manrope: 'Manrope', sans-serif;
 .user_show_main .right {
     background-color: $background-color;
     width: 289px;
-    height: 734px;
+    height: 794px;
 }
 
 .user_show_main {
@@ -52,8 +52,14 @@ $manrope: 'Manrope', sans-serif;
     width: inherit;
 }
 
-.left li {
-    padding-bottom: 24px;
+.left ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.left a {
+    display: block;
+    margin-bottom: 24px;
 }
 
 .user_row {
@@ -66,6 +72,12 @@ $manrope: 'Manrope', sans-serif;
     margin-left: 22px;
     margin-top: 23px;
     margin-right: 22px;
+}
+
+label {
+    font-family: $main_font;
+    font-size: 13px;
+    position: relative;
 }
 
 .form_row {

@@ -1,7 +1,7 @@
 import React from 'react';
 import UserEditFormContainer from './user_editform_container';
 import { Route, Link } from 'react-router-dom';
-import ReviewIndexContainer from '../review/review_index_container';
+import UserReviewIndexContainer from '../review/user_review_index_container';
 
 const UserShow = ({ currentUser }) => {
     return (
@@ -18,8 +18,8 @@ const UserShow = ({ currentUser }) => {
                 </aside>
                 <div className="form_section">
                     <div className="user_row"></div>
-                    <Route exact path={`/users/${currentUser.id}/account`} component={UserEditFormContainer} />
-                    <Route exact path={`/users/${currentUser.id}/reviews`} component={ReviewIndexContainer} />
+                    <Route exact path={`/users/:userId/account`} component={UserEditFormContainer} />
+                    <Route exact path={`/users/:userId/reviews`} component={UserReviewIndexContainer} />
                 </div>
                 <aside className="right">
                 </aside >

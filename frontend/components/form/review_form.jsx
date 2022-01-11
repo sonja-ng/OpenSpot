@@ -26,26 +26,29 @@ class ReviewForm extends React.Component {
         };
     }
 
-    // componentDidUpdate(prevProps){
-    //     if (this.props.currentUser && this.props.currentUser !== prevProps.currentUser) {
-    //         this.setState({author_id: this.props.currentUser.id})
-    //     };
-    // }
+    componentDidUpdate(prevProps){
+        // debugger
+        if (this.props.currentUser) {
+            if (this.props.currentUser !== prevProps.currentUser) {
+                this.setState({author_id: this.props.currentUser.id})
+            }
+        }   
+    }
 
     resetFields(){
-        this.setState = ({
+        this.setState({
             comment: "",
             overall: 1,
             food: 1,
             ambience: 1,
             service: 1
-        })
-
+        });
+        this.props.removeReviewErrors();
         this.props.closeReview();
     }
 
     update(field){
-        debugger
+        // debugger
         return e => this.setState({[field]: e.target.value})
     }
 
@@ -72,7 +75,7 @@ class ReviewForm extends React.Component {
         return (
             <div className={klass2}>
                 <form className={klass}>
-                    <button className="x_button" onClick={this.props.closeReview}><i className="fas fa-times"></i></button>
+                    <button className="x_button" onClick={this.resetFields}><i className="fas fa-times"></i></button>
                     <div className="review-form-header">Leave a review</div>
                     <div className="rating-row">
                     <label>Food

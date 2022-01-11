@@ -7,6 +7,26 @@
     text-align: center;
 }
 
+.restaurant {
+    width: 130px;
+    height: 170px;
+    background-color: white;
+    text-align: center;
+    padding-top: 15px;
+
+    p {
+        font-size: 18px;
+        font-family: $manrope
+    }
+
+    .review-cuisine {
+        font-size: 12px;
+        font-family: $main_font;
+        color: rgb(167, 167, 167);
+        margin-top: 10px;
+    }
+}
+
 .review-content {
     height: 170px;
     width: 482px;
@@ -46,6 +66,10 @@
     }
 }
 
+.my-reviews {
+    margin: 22px;
+}
+
 .icon {
     width: 48px;
     height: 48px;
@@ -75,6 +99,11 @@
     margin: 30px auto 0 auto;
     width: max-content;
     border-bottom: 1px solid $border-color;
+}
+
+.restaurant-link {
+    font-family: $manrope;
+    font-size: 20px;
 }
 
 .review-buttons {

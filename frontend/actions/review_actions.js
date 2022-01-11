@@ -4,6 +4,7 @@ import * as reviewApiUtil from '../util/review_api_utils';
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const REMOVE_REVIEW = 'REMOVE_REVIEW';
+export const CLEAR_REVIEWS = 'CLEAR_REVIEWS';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 export const REMOVE_REVIEW_ERRORS = 'REMOVE_REVIEW_ERRORS';
 
@@ -20,6 +21,10 @@ export const receiveReview = review => {
     type: RECEIVE_REVIEW,
     review
 }};
+
+export const clearReviews = () => ({
+    type: CLEAR_REVIEWS
+});
 
 export const removeReview = reviewId => {
     // debugger

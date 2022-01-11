@@ -10,7 +10,7 @@ class UserEditForm extends React.Component {
     }
 
     componentDidMount(){
-        debugger
+        // debugger
         this.props.receiveUserInfo(this.props.id);
       
     }
