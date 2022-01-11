@@ -10,8 +10,9 @@ class UserEditForm extends React.Component {
     }
 
     componentDidMount(){
-        // debugger
-        this.props.receiveUserInfo(this.props.match.params.userId);
+        debugger
+        this.props.receiveUserInfo(this.props.id);
+      
     }
 
     update(field){
@@ -54,6 +55,9 @@ class UserEditForm extends React.Component {
 
     render(){
         // debugger
+
+        if (!this.props.currentUser) return null;
+
         return (
             <div>
                   <form onSubmit={this.test} className="edit_form">

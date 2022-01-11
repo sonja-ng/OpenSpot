@@ -68,6 +68,15 @@
     border-bottom: 1px solid $border-color;
 }
 
+.user-review-row {
+    display: flex;
+    padding-bottom: 15px;
+    justify-content: center;
+    margin: 30px auto 0 auto;
+    width: max-content;
+    border-bottom: 1px solid $border-color;
+}
+
 .review-buttons {
     display: flex;
     font-size: 13px;

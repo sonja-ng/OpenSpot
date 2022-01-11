@@ -11,13 +11,21 @@ class ReviewIndex extends React.Component {
 
     componentDidMount(){
         // debugger
-        this.props.fetchReviews({["restId"]: this.props.match.params.restId});
+        if (this.props.match.params.restId) {
+            this.props.fetchReviews({["restId"]: this.props.match.params.restId});
+        } else {
+            this.props.fetchReviews({["authorId"]: this.props.currentUser.id});
+        }
     }
 
     componentDidUpdate(prevProps){
         // debugger
         if (this.props.reviews.length !== prevProps.reviews.length || this.props.history.location.pathname !== prevProps.history.location.pathname) {
-            return this.props.fetchReviews({["restId"]: this.props.match.params.restId});
+            if (this.props.match.params.restId) {
+                return this.props.fetchReviews({["restId"]: this.props.match.params.restId});
+            } else {
+                this.props.fetchReviews({["authorId"]: this.props.currentUser.id});
+            }
         }
     }
 

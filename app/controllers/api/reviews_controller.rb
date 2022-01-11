@@ -5,11 +5,16 @@ class Api::ReviewsController < ApplicationController
         # debugger
         if author_id 
             reviews = Review.where("author_id = ?", author_id)
+            reviews.includes(:author, :restaurant)
         elsif rest_id
             reviews = Review.where("rest_id = ?", rest_id)
+            reviews.includes(:author, :restaurant)
+        else
+            render {}
         end
 
-        @reviews = reviews.includes(:author)
+        @reviews = reviews
+        # debugger
         render :index
     end
 

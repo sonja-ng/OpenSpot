@@ -1,6 +1,7 @@
 import React from 'react';
 import { updateReview } from '../../util/review_api_utils';
 import ReviewEditFormContainer from '../form/review_edit_form_container';
+import { withRouter } from 'react-router-dom';
 
 class ReviewIndexItem extends React.Component {
     constructor(props){
@@ -24,6 +25,7 @@ class ReviewIndexItem extends React.Component {
     }
 
     render(){
+        // debugger
         const { review, currentUser, deleteReview } = this.props;
         const edit = !currentUser || currentUser.id !== review.author_id ? (
             null    
@@ -33,12 +35,17 @@ class ReviewIndexItem extends React.Component {
                 <button className="review-delete-button" onClick={()=> deleteReview(review.id)}>Delete</button>
             </div>
         )
+            
+        const sideInfo = !this.props.match.params.restId ? review.restaurant.name : review.author.username;
+
+        const reviewRow = !this.props.match.params.restId ? "user-review-row" : "review-row";
+           
         return (
             <div>
-                <li className="review-row">
+                <li className={reviewRow}>
                     <div className="reviewer">
                         <div className="icon">{review.author.username.slice(0, 1)}</div>
-                        <p>{review.author.username}</p>
+                        <p>{sideInfo}</p>
                     </div>
                     <div className="review-content">
                         <div className="stars"><img src={window.starsURL} alt="stars"/></div>
@@ -63,4 +70,4 @@ class ReviewIndexItem extends React.Component {
     }
 }
 
-export default ReviewIndexItem;
+export default withRouter(ReviewIndexItem);

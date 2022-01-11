@@ -1,5 +1,7 @@
 import React from 'react';
 import UserEditFormContainer from './user_editform_container';
+import { Route, Link } from 'react-router-dom';
+import ReviewIndexContainer from '../review/review_index_container';
 
 const UserShow = ({ currentUser }) => {
     return (
@@ -8,16 +10,16 @@ const UserShow = ({ currentUser }) => {
             <div className="flex_container">
                 <aside className="left">
                     <ul>
-                        <li>Account Details</li>
-                        <li>Reservations</li>
-                        <li>Saved Restaurants</li>
-                        <li>Reviews</li>
-                        {/* <Link to={`/users/${currentUser.id}/rests/`}>My Restaurants</Link> */}
+                        <Link to={`/users/${currentUser.id}/account`}>Account Details</Link>
+                        <Link to={`/users/${currentUser.id}/rsvp`}>Reservations</Link>
+                        <Link to={`/users/${currentUser.id}/fav`}>Saved Restaurants</Link>
+                        <Link to={`/users/${currentUser.id}/reviews`}>Reviews</Link>
                     </ul>
                 </aside>
                 <div className="form_section">
                     <div className="user_row"></div>
-                    <UserEditFormContainer />
+                    <Route exact path={`/users/${currentUser.id}/account`} component={UserEditFormContainer} />
+                    <Route exact path={`/users/${currentUser.id}/reviews`} component={ReviewIndexContainer} />
                 </div>
                 <aside className="right">
                 </aside >
