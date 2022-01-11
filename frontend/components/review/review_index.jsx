@@ -15,15 +15,16 @@ class ReviewIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-        debugger
+        // debugger
         if (this.props.reviews.length !== prevProps.reviews.length) {
             return this.props.fetchReviews({["restId"]: this.props.match.params.restId});
         }
     }
 
     render(){
+        // debugger
         if (!this.props.reviews) return null;
-        debugger
+    
         const { reviews, currentUser, deleteReview } = this.props;
         const reviewList = reviews.map((review, idx) => <ReviewIndexItem key={idx} review={review} currentUser={currentUser} deleteReview={deleteReview} />)
         return (

@@ -2,7 +2,7 @@ import { RECEIVE_REST } from "../actions/rest_actions";
 import { RECEIVE_REVIEW, REMOVE_REVIEW, RECEIVE_REVIEWS } from '../actions/review_actions';
 
 const reviewsReducer = (oldState = {}, action) => {
-    debugger
+    // debugger
     Object.freeze(oldState);
     const nextState = Object.assign({}, oldState);
     switch(action.type) {

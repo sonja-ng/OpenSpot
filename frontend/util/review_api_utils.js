@@ -6,6 +6,13 @@ export const fetchReviews = data => (
     })
 );
 
+export const fetchReview = id => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/reviews/${id}`,
+    })
+);
+
 export const createReview = review => (
     $.ajax({
         method: 'POST',

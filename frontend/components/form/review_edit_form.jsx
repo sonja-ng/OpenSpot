@@ -1,18 +1,17 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-class ReviewForm extends React.Component {
+class ReviewEditForm extends React.Component {
     constructor(props){
         super(props);
 
-        this.state = {
-            author_id: this.props.currentUser.id,
-            rest_id: this.props.match.params.restId,
-            comment: "",
-            rating: 1
-        }
-
+        this.state = this.props.review
+    
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount(){
+        this.props.fetchReview(this.props.review.id);
     }
 
     update(field){
@@ -22,12 +21,13 @@ class ReviewForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         // debugger
-        this.props.closeReview();
-        this.props.createReview(this.state);
+        this.props.closeEditReview();
+        this.props.updateReview(this.state);
     }
 
     render(){
-        const klass = this.props.reviewOut ? "review-form" : "hidden";
+        const klass = this.props.reviewEditOut ? "review-form" : "hidden";
+        // debugger
         return (
             <form className={klass}>
                 <h1>Review Form here</h1>
@@ -43,10 +43,10 @@ class ReviewForm extends React.Component {
                         <option value="5">5</option>
                     </select>
                 </label>
-                <button onClick={this.handleSubmit}>Submit</button>
+                <button onClick={this.handleSubmit}>Update</button>
             </form>
         )
     }
 }
 
-export default withRouter(ReviewForm);
+export default withRouter(ReviewEditForm);

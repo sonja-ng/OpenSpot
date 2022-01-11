@@ -5,7 +5,8 @@ import { fetchRest } from '../../actions/rest_actions';
 const mSTP = (state, ownProps) => {
         // debugger
     return {
-    rest: state.entities.rests[ownProps.match.params.restId]
+    rest: state.entities.rests[ownProps.match.params.restId],
+    currentUser: state.entities.users[state.session.id]
 }};
 
 const mDTP = dispatch => {

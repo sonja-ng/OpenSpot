@@ -5,7 +5,7 @@ import Root from './components/root';
 import { updateUser } from './actions/user_actions';
 import { fetchRests, fetchRest } from './actions/rest_actions';
 import { fetchRestsTest } from './util/rest_api_utils';
-import { fetchReviews, deleteReview } from './actions/review_actions';
+import { createReview } from './actions/review_actions';
 // import { updateFilter, changeFilter } from './actions/search_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -30,10 +30,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.fetchRest = fetchRest;
     // window.updateFilter = updateFilter;
     // window.changeFilter = changeFilter;
-    window.fetchReviews = fetchReviews;
-    // window.createReview = createReview;
+    window.createReview = createReview;
     window.fetchRestsTest = fetchRestsTest;
-    window.deleteReview = deleteReview;
+    // window.deleteReview = deleteReview;
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={ store }/>, root)
 });

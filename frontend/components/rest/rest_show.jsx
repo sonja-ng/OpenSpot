@@ -4,10 +4,20 @@ import { HashLink } from 'react-router-hash-link';
 import Gallery from './gallery';
 import Map from './map';
 import ReviewIndexContainer from '../review/review_index_container';
+import ReviewFormContainer from '../form/review_form_container';
+import ReviewEditFormContainer from '../form/review_edit_form_container';
+import { receiveCurrentUser } from '../../actions/session_actions';
 
 class RestShow extends React.Component {
     constructor(props){
         super(props);
+
+        this.state={
+            reviewOut: false,
+        }
+
+        this.openReview = this.openReview.bind(this);
+        this.closeReview = this.closeReview.bind(this);
     }
 
     componentDidMount(){
@@ -16,10 +26,25 @@ class RestShow extends React.Component {
         this.props.fetchRest(this.props.match.params.restId);
     }
 
+    openReview(){
+        this.setState({reviewOut: true});
+    }
+
+    closeReview(){
+        this.setState({reviewOut: false});
+    }
+
+
     render(){
        if (!this.props.rest) return null;
-       const { rest } = this.props;
+       const { rest, currentUser } = this.props;
+       const createReview = !currentUser ? (
+        null
+       ) : (
+           <button onClick={this.openReview}>Write a review</button>
+       )
         // debugger
+        console.log(this.state);
         return (
             <div className="rest_index">
                 {/* <img src={rest.photos[1].url} className="rest_header"/>  */}
@@ -74,6 +99,8 @@ class RestShow extends React.Component {
                         <div className="subheader">
                             What people are saying
                         </div>
+                        {createReview}
+                        <ReviewFormContainer reviewOut={this.state.reviewOut} closeReview={this.closeReview}/>
                         <ReviewIndexContainer />
                     </div>
                     <aside className="right-content">
