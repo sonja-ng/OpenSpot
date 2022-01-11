@@ -99,7 +99,7 @@ class RestShow extends React.Component {
                         <div className="subheader">
                             What people are saying
                         </div>
-                        {createReview}
+                        <div className="write-review">{createReview}</div>
                         <ReviewFormContainer reviewOut={this.state.reviewOut} closeReview={this.closeReview}/>
                         <ReviewIndexContainer />
                     </div>
