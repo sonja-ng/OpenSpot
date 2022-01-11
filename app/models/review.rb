@@ -1,5 +1,5 @@
 class Review < ApplicationRecord
-    validates :comment, :rating, presence: true
+    validates :comment, :overall, :food, :service, :ambience, presence: true
 
     belongs_to :author,
         primary_key: :id,

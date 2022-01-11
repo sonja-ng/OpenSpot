@@ -46,7 +46,7 @@ class Api::ReviewsController < ApplicationController
     end    
 
     def review_params
-        params.require(:review).permit(:comment, :rating, :rest_id, :author_id)
+        params.require(:review).permit(:comment, :overall, :food, :ambience, :service, :rest_id, :author_id)
     end
 
     def author_id

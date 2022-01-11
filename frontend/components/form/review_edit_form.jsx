@@ -34,8 +34,35 @@ class ReviewEditForm extends React.Component {
                 <label>Comment
                     <input type="text" value={this.state.comment} onChange={this.update("comment")}/>
                 </label>
-                <label>Rating
-                    <select value={this.state.rating} onChange={this.update("rating")}>
+                <label>How was the food?
+                    <select value={this.state.rating} onChange={this.update("food")}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </label>
+                <label>How was the service?
+                    <select value={this.state.rating} onChange={this.update("service")}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </label>
+                <label>How was the ambience?
+                    <select value={this.state.rating} onChange={this.update("ambience")}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </label>
+                <label>Overall Rating
+                    <select value={this.state.rating} onChange={this.update("overall")}>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>

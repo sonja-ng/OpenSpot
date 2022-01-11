@@ -28,9 +28,9 @@ class ReviewIndex extends React.Component {
         const { reviews, currentUser, deleteReview } = this.props;
         const reviewList = reviews.map((review, idx) => <ReviewIndexItem key={idx} review={review} currentUser={currentUser} deleteReview={deleteReview} />)
         return (
-            <div>
+            <ul>
                 {reviewList}
-            </div>
+            </ul>
         )
     }
 

@@ -9,7 +9,10 @@ class ReviewForm extends React.Component {
             author_id: this.props.currentUser.id,
             rest_id: this.props.match.params.restId,
             comment: "",
-            rating: 1
+            overall: 1,
+            food: 1,
+            ambience: 1,
+            service: 1
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,8 +37,35 @@ class ReviewForm extends React.Component {
                 <label>Comment
                     <input type="text" value={this.state.comment} onChange={this.update("comment")}/>
                 </label>
-                <label>Rating
-                    <select value={this.state.rating} onChange={this.update("rating")}>
+                <label>How was the food?
+                    <select value={this.state.rating} onChange={this.update("food")}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </label>
+                <label>How was the service?
+                    <select value={this.state.rating} onChange={this.update("service")}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </label>
+                <label>How was the ambience?
+                    <select value={this.state.rating} onChange={this.update("ambience")}>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </label>
+                <label>Overall Rating
+                    <select value={this.state.rating} onChange={this.update("overall")}>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>

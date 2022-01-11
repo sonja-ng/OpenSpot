@@ -3,14 +3,47 @@
 .reviewer {
     width: 116px;
     height: 170px;
-    background-color: gray;
+    background-color: white;
     text-align: center;
 }
 
 .review-content {
     height: 170px;
     width: 482px;
-    background-color: rgb(194, 194, 194);
+    background-color: white;
+    position: relative;
+
+    .stars {
+        display: flex;
+        padding-top: 10px;
+    }
+
+    .review-header {
+        display: flex;
+        margin: 10px 0 25px 0;
+    }
+
+    .rating-cat {
+        font-family: $main_font;
+        font-size: 13px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .rating-cat:first-child {
+        margin-left: 0;
+    }
+
+    .rating-value {
+        font-family: $roboto;
+        font-size: 13px;
+        color: $red;
+    }
+
+    p {
+        font-size: 15px;
+        font-family: $roboto;
+    }
 }
 
 .icon {
@@ -30,5 +63,33 @@
 
 .review-row {
     display: flex;
-    border-top: 1px solid yellow;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $border-color;
+}
+
+.review-buttons {
+    display: flex;
+    font-size: 13px;
+    justify-content: end;
+    position: absolute;
+    bottom: 3px;
+    right: 0;
+
+    .review-edit-button, .review-delete-button {
+        background-color: $red;
+        width: 70px;
+        height: 30px;
+        border: none;
+        color: white;
+        border-radius: 3px;
+        font-family: $roboto;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+
+    .review-edit-button:hover, .review-delete-button:hover {
+        background-color: rgb(136, 1, 1);
+        cursor: pointer;
+    }
 }

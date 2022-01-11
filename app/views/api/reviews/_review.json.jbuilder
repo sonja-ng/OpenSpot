@@ -1,2 +1,2 @@
-json.extract! review, :id, :comment, :rating, :author_id, :rest_id
+json.extract! review, :id, :comment, :overall, :food, :service, :ambience, :author_id, :rest_id
 # debugger
