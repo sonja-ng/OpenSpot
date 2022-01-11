@@ -70,11 +70,7 @@ $manrope: 'Manrope', sans-serif;
     align-items: center;
 }
 
-label {
-    font-family: $main_font;
-    font-size: 13px;
-    position: relative;
-}
+
 
 %form_body {
     background-color: white;
@@ -89,11 +85,23 @@ label {
 .login_form {
     @extend %form_body;
     height: 365px;
+
+    label {
+        font-family: $main_font;
+        font-size: 13px;
+        position: relative;
+    }
 }
 
 .signup_form {
     @extend %form_body;
     height: 665px;
+
+    label {
+        font-family: $main_font;
+        font-size: 13px;
+        position: relative;
+    }
 }
 
 .form_body_header {

@@ -16,7 +16,7 @@ class ReviewIndex extends React.Component {
 
     componentDidUpdate(prevProps){
         // debugger
-        if (this.props.reviews.length !== prevProps.reviews.length) {
+        if (this.props.reviews.length !== prevProps.reviews.length || this.props.history.location.pathname !== prevProps.history.location.pathname) {
             return this.props.fetchReviews({["restId"]: this.props.match.params.restId});
         }
     }

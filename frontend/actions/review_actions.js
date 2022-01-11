@@ -28,10 +28,12 @@ export const removeReview = reviewId => {
     reviewId
 }};
 
-export const receiveReviewErrors = errors => ({
+export const receiveReviewErrors = errors => {
+    // debugger
+    return {
     type: RECEIVE_REVIEW_ERRORS,
     errors
-});
+}};
 
 export const removeReviewErrors = () => ({
     type: REMOVE_REVIEW_ERRORS
@@ -39,7 +41,7 @@ export const removeReviewErrors = () => ({
 
 export const createReview = review => dispatch => {
     // debugger
-    return reviewApiUtil.createReview(review).then(review => dispatch(receiveReview(review)), error => dispatch(receiveReviewErrors(error.responseJSON)))
+    return reviewApiUtil.createReview(review).then(review => dispatch(receiveReview(review)), errors => dispatch(receiveReviewErrors(errors.responseJSON)))
 }
 
 export const fetchReviews = reviews => dispatch => {

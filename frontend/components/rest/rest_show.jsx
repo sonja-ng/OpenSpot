@@ -38,13 +38,12 @@ class RestShow extends React.Component {
     render(){
        if (!this.props.rest) return null;
        const { rest, currentUser } = this.props;
-       const createReview = !currentUser ? (
-        null
+       const formAction = !currentUser ? (
+        ()=> this.props.openModal("login")
        ) : (
-           <button onClick={this.openReview}>Write a review</button>
+           this.openReview
        )
         // debugger
-        console.log(this.state);
         return (
             <div className="rest_index">
                 {/* <img src={rest.photos[1].url} className="rest_header"/>  */}
@@ -99,7 +98,7 @@ class RestShow extends React.Component {
                         <div className="subheader">
                             What people are saying
                         </div>
-                        <div className="write-review">{createReview}</div>
+                        <div className="write-review"><button className="write-review-button" onClick={formAction}>Write a review</button></div>
                         <ReviewFormContainer reviewOut={this.state.reviewOut} closeReview={this.closeReview}/>
                         <ReviewIndexContainer />
                     </div>

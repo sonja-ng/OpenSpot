@@ -7,20 +7,20 @@ end
 
 # debugger
 
-json.reviews do
-    @rest.reviews.includes(:author).each do |review|
-        # debugger
-        json.set! review.id do
-            json.id review.id
-            json.comment review.comment
-            json.overall review.overall
-            json.food review.food
-            json.ambience review.ambience
-            json.service review.service
-            json.author_id review.author_id 
-            json.rest_id review.rest_id
-            json.author review.author.username
-        end
-    end
-end
+# json.reviews do
+#     @rest.reviews.includes(:author).each do |review|
+#         # debugger
+#         json.set! review.id do
+#             json.id review.id
+#             json.comment review.comment
+#             json.overall review.overall
+#             json.food review.food
+#             json.ambience review.ambience
+#             json.service review.service
+#             json.author_id review.author_id 
+#             json.rest_id review.rest_id
+#             json.author review.author.username
+#         end
+#     end
+# end
 

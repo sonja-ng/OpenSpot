@@ -6,8 +6,8 @@ const reviewsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     const nextState = Object.assign({}, oldState);
     switch(action.type) {
-        // case RECEIVE_REST:
-        //     return Object.assign({}, nextState, action.rest.reviews);
+        case RECEIVE_REST:
+            return {};
         case RECEIVE_REVIEW:
             const { review } = action;
             return Object.assign({}, nextState, { [review.id]: review });

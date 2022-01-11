@@ -144,12 +144,12 @@ class SearchPopup extends React.Component {
                         <div className="search-slogan">Find your table for any occasion</div>
                             <form className="white-search-form">
                                 <input type="date" className="search-date-white"/>
-                                <select name="time" id="time" className="white-dropdown clock">
+                                <select name="time" id="time3" className="white-dropdown clock">
                                     <option value="1:00">1:00pm</option>
                                     <option value="2:00">2:00pm</option>
                                 </select>
                                 <label>
-                                    <select className="white-dropdown party" name="party" id="party">
+                                    <select className="white-dropdown party" name="party" id="party3">
                                         <option value="2">2 people</option>
                                         <option value="3">3 people</option>
                                         <option value="4">4 people</option>        

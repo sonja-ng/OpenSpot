@@ -65,6 +65,7 @@
         padding-bottom: 32px;
         height: max-content;
         border-bottom: 1px solid $border-color;
+        padding-top: 23px;
     }
 
     .rest-info {
@@ -259,7 +260,7 @@
 .write-review {
     display: flex;
 
-    button {
+    .write-review-button {
         background-color: $red;
         border-radius: 3px;
         height: 40px;
@@ -269,11 +270,15 @@
         cursor: pointer;
     }
 
-    button:hover {
+    .write-review-button:hover {
         background-color: rgb(161, 0, 0);
         cursor: pointer;
     }
 }
+
+// .overview {
+//     position: relative;
+// }
 
 
 //right sidebar

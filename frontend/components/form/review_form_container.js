@@ -4,7 +4,8 @@ import { createReview } from '../../actions/review_actions';
 
 const mSTP = (state,ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    reviewOut: ownProps.reviewOut
+    reviewOut: ownProps.reviewOut,
+    errors: state.errors.reviews
 });
 
 

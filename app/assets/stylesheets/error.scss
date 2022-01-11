@@ -27,3 +27,10 @@ $red: #e03744;
     height: 500px;
     background: red;
 }
+
+.review-form-errors {
+    color: $red;
+    font-family: $main_font;
+    font-size: 13px;
+    position: static;
+}

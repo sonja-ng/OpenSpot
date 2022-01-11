@@ -134,12 +134,12 @@ class SearchIndex extends React.Component {
                 <div className="search-header">
                     <form className="search-form">
                         <input type="date" className="search_date_main"/>
-                        <select name="time" className="dropdown time" id="time">
+                        <select name="time" className="dropdown time" id="time2">
                             <option value="1:00">1:00pm</option>
                             <option value="2:00">2:00pm</option>
                         </select>
                         <label>
-                        <select className="dropdown party" name="party" id="party">
+                        <select className="dropdown party" name="party" id="party2">
                                 <option value="2">2 people</option>
                                 <option value="3">3 people</option>
                                 <option value="4">4 people</option>    

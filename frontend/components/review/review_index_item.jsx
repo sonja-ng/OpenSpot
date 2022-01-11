@@ -15,7 +15,7 @@ class ReviewIndexItem extends React.Component {
     }
 
     openEditReview(){
-        debugger
+        // debugger
         this.setState({reviewEditOut: true });
     }
 

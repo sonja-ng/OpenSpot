@@ -88,7 +88,7 @@ class SignupForm extends React.Component {
             <form onSubmit={this.handleSubmit} className="signup">
                 <div className="form_logo_header">
                     <img src={window.logoURL}/>
-                    <Link to="/" className="x_button" onClick={this.enableScrolling}><i className="fas fa-times"></i></Link>   
+                    <button className="x_button" onClick={this.enableScrolling}><i className="fas fa-times"></i></button>   
                 </div>
                 <div className="form_header"><h2>Sign Up</h2></div>
                 <div className="signup_form">

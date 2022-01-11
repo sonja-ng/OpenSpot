@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import RestShow from './rest_show';
 import { fetchRest } from '../../actions/rest_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => {
         // debugger
@@ -12,7 +13,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     // debugger
     return {
-    fetchRest: (id) => dispatch(fetchRest(id))
+    fetchRest: (id) => dispatch(fetchRest(id)),
+    openModal: (modal) => dispatch(openModal(modal))
 }};
 
 export default connect(mSTP, mDTP)(RestShow);
