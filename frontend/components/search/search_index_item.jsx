@@ -5,8 +5,8 @@ const SearchIndexItem = ({ rest }) => {
     const image = rest.photos[2].url;
     return (
             <li className="search-result-index">
-                <img src={image} className="result-img"/>
-                {/* <div className="result-img"></div> */}
+                {/* <img src={image} className="result-img"/> */}
+                <div className="result-img"></div>
                 <div className="result">
                     <Link className="result-text" to={`/rests/${rest.id}`}>{rest.name}</Link>
                     <div className="result-stars"><img src={window.starsURL}/></div>
