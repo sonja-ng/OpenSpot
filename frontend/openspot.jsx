@@ -2,11 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { createBooking, 
-    updateBooking, 
-    deleteBooking, 
-    fetchBooking, 
-    fetchBookings } from './actions/booking_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
     let store;
@@ -25,11 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.store = store;
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.createBooking = createBooking;
-    window.updateBooking = updateBooking;
-    window.deleteBooking = deleteBooking;
-    window.fetchBooking = fetchBooking;
-    window.fetchBookings = fetchBookings;
     
 
     const root = document.getElementById("root");

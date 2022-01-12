@@ -31,7 +31,7 @@ class RestIndex extends React.Component {
                         </ul>
                 </div>
                 <div>
-                    <div className="theme-header">Order takeout</div>
+                    <div className="theme-header">Outdoor Dining</div>
                     <ul className="index-row">
                         {list2a}
                     </ul>
