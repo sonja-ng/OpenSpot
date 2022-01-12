@@ -54,7 +54,7 @@ class LoginForm extends React.Component {
         e.preventDefault();
         this.props.closeModal();
         this.props.login({
-            username: "Guest",
+            username: "guest",
             password: "password"
         });
     }

@@ -1,4 +1,4 @@
-import { RECEIVE_BOOKING, REMOVE_BOOKING, RECEIVE_BOOKINGS, CLEAR_BOOKINGS } from '../actions/booking_actions';
+import { RECEIVE_BOOKING, REMOVE_BOOKING, RECEIVE_BOOKINGS, CLEAR_BOOKINGS, FILL_IN_BOOKING } from '../actions/booking_actions';
 
 const bookingsReducer = (oldState = {}, action) => {
     // debugger
@@ -13,6 +13,8 @@ const bookingsReducer = (oldState = {}, action) => {
         case REMOVE_BOOKING:
             delete nextState[action.bookingId];
             return nextState;
+        case FILL_IN_BOOKING:
+            return action.booking;
         case CLEAR_BOOKINGS:
             return {};
         default:

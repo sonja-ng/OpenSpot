@@ -1,5 +1,8 @@
 import React from 'react';
 import BookingCalendar from '../calendar/calendar';
+import DatePicker from 'react-datepicker';
+
+
 
 class SearchBar extends React.Component {
     constructor(props){
@@ -11,6 +14,9 @@ class SearchBar extends React.Component {
             neighborhood: "",
             name: "",
             suggestion: false,
+            date: new Date(),
+            time: "",
+            party: ""
         }
 
         this.cuisineList = ["american", "middle eastern", "mexican", "indian", "bakery", "bar", "mediterranean", "soul food", "venezuelan",
@@ -32,6 +38,23 @@ class SearchBar extends React.Component {
         this.selectMatch = this.selectMatch.bind(this);
         this.removeDropDown = this.removeDropDown.bind(this);
         this.dropRef = React.createRef();
+        this.updateDate = this.updateDate.bind(this);
+        this.updateTime = this.updateTime.bind(this);
+        this.updateParty = this.updateParty.bind(this);
+    }
+
+    updateDate(d){
+        this.setState({date: d});
+    }
+
+    updateTime(e){
+        e.preventDefault();
+        this.setState({time: e.target.value})
+    }
+
+    updateParty(e){
+        e.preventDefault();
+        this.setState({party: e.target.value})
     }
 
     componentDidMount(){
@@ -97,8 +120,14 @@ class SearchBar extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        // console.log('test');
         // debugger
+        this.props.fillInBooking({
+            date: `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`,
+            time: this.state.time,
+            party_size: parseInt(this.state.party),
+            user_id: this.props.currentUser.id
+        });
+
         this.setState({suggestion: false});
         if (this.state.cuisine) {
             this.props.history.push('/search/');
@@ -122,20 +151,20 @@ class SearchBar extends React.Component {
     render(){
         const klass = this.state.suggestion ? "main-search-suggestion" : "hidden";
         const matches = this.findMatch().map((item, idx) => <li onClick={this.selectMatch} key={idx}>{item}</li>)
-           
+           console.log(this.state);
         // className="search_date_main"
         return (
             <div className="search_bar">
                 <div className="form_container">
                     <div className="slogan">Find your table for any occasion</div>
                     <form className="main-search-form">
-                        <BookingCalendar />
-                        <select name="time" id="time" className="dropdown time">
+                        <DatePicker dateFormat="yyyy-MM-dd" selected={this.state.date} onChange={this.updateDate}/>
+                        <select name="time" id="time" value={this.state.time} className="dropdown time" onChange={this.updateTime}>
                             <option value="1:00">1:00pm</option>
                             <option value="2:00">2:00pm</option>
                         </select>
                             <label>
-                            <select className="dropdown party" name="party" id="party">
+                            <select className="dropdown party" name="party" id="party" value={this.state.party} onChange={this.updateParty}>
                                 <option value="2">2 people</option>
                                 <option value="3">3 people</option>
                                 <option value="4">4 people</option>
