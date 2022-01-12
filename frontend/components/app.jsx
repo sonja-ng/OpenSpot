@@ -12,7 +12,6 @@ import BookingCalendar from './calendar/calendar';
 import { ProtectedRoute } from '../util/protected_route_util';
 import RestShowContainer from './rest/rest_show_container';
 import SearchBarContainer from './search/searchbar_container';
-import smallLogo from '../../app/assets/images/smallheaderlogo.png'; 
 
 
 const App = () => (

@@ -337,6 +337,7 @@ header {
 .main-search-form {
     position: relative;
     width: max-content;
+    display: flex;
 }
 
 .main-search-suggestion {

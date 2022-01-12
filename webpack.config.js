@@ -8,7 +8,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.jsx', '*']
+    extensions: ['.js', '.jsx', '.css', '*']
   },
   module: {
     rules: [
@@ -21,7 +21,10 @@ module.exports = {
             presets: ['@babel/env', '@babel/react']
           }
         }
-      
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
       { //testing file loader
         test: /\.(png|jpe?g|gif)$/i,
@@ -33,7 +36,7 @@ module.exports = {
               outputPath: 'webpack-assets/',
               publicPath: '/assets/webpack-assets/'
             }
-          }
+          },
         ]
       }
     ]

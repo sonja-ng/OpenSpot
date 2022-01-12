@@ -1,16 +1,16 @@
-import DatePicker from 'react-date-picker';
-import Calendar from 'react-calendar';
-import React from 'react';
+import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
-class BookingCalendar extends React.Component {
-    render(){
-        return (
-            <div>
-                {/* <DatePicker /> */}
-                <Calendar />
-            </div>
-        )
-    }
+const BookingCalendar = () => {
+    const [startDate, setStartDate] = useState(new Date());
+    return (
+        <div>
+            {/* <DatePicker />
+            <Calendar /> */}
+            <DatePicker dateFormat="yyyy/MM/dd" selected={startDate} onChange={(date) => setStartDate(date)} />
+        </div>
+    )
 }
 
 export default BookingCalendar;

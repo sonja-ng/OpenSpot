@@ -1,4 +1,5 @@
 import React from 'react';
+import BookingCalendar from '../calendar/calendar';
 
 class SearchBar extends React.Component {
     constructor(props){
@@ -122,13 +123,13 @@ class SearchBar extends React.Component {
         const klass = this.state.suggestion ? "main-search-suggestion" : "hidden";
         const matches = this.findMatch().map((item, idx) => <li onClick={this.selectMatch} key={idx}>{item}</li>)
            
-
+        // className="search_date_main"
         return (
             <div className="search_bar">
                 <div className="form_container">
                     <div className="slogan">Find your table for any occasion</div>
                     <form className="main-search-form">
-                        <input type="date" className="search_date_main"/>
+                        <BookingCalendar />
                         <select name="time" id="time" className="dropdown time">
                             <option value="1:00">1:00pm</option>
                             <option value="2:00">2:00pm</option>

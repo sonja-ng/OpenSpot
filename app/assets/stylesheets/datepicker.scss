@@ -1,0 +1,12 @@
+@import './index.scss';
+
+.react-datepicker__input-container{
+    input {
+        border: none;
+        width: 171px;
+        height: 50px;
+        border-radius: 3px 0 0 3px;
+        padding: 0;
+        }
+}
+
