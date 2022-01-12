@@ -9,7 +9,7 @@ require 'open-uri'
 
 User.destroy_all
 Rest.destroy_all
-
+Review.destroy_all
 
 user1 = User.create(username:'gracie235', fname:'Grace', lname:'See', email:'gsee@gmail.com', phone:'123456', password: 'password')
 user2 = User.create(username:'eloise09', fname:'Eloise', lname:'Koh', email:'ekoh@gmail.com', phone:'0000000', password: 'password')
@@ -18,6 +18,8 @@ user4 = User.create(username:'roselyn', fname:'Lara', lname:'Mendelssohn', email
 user5 = User.create(username:'aime888', fname:'Amy', lname:'Toby', email:'amytoby@gmail.com', phone:'3333333', password: 'password')
 user6 = User.create(username:'opencafe', fname:'Nancy', lname:'King', email:'nancy@gmail.com', phone:'4444444', password: 'password')
 demo = User.create(username:'Guest', fname:'Guest', lname:'User', email:'demo@gmail.com', phone:'909090', password: 'password')
+
+
 
 rest1 = Rest.create!(
     name: 'Al Badawi', 
@@ -793,3 +795,305 @@ rest15.photos.attach(io: file15j, filename: 'soo8.jpg')
 file15k = open('https://openspot-seeds.s3.amazonaws.com/soothr/soo9.jpg')
 rest15.photos.attach(io: file15k, filename: 'soo9.jpg')
 
+review1 = Review.create!(
+    comment: "The best restaurant in NY. Food is amazing, the service, and the price. They are all astonishing. I loved it.", 
+    author_id: user1.id, 
+    rest_id: rest1.id, 
+    food: 5, 
+    service: 5, 
+    ambience: 5,
+    overall: 5 
+)
+
+review2 = Review.create!(
+    comment: "Cute spot, really good choice for date night. Food is albeit pricey but normal for modern Mexican.", 
+    author_id: user1.id, 
+    rest_id: rest2.id, 
+    food: 4, 
+    service: 4, 
+    ambience: 3,
+    overall: 4
+)
+
+
+review3 = Review.create!(
+    comment: "This is my first time trying Indian food, and its really good! Highly recommended. :)", 
+    author_id: user1.id, 
+    rest_id: rest3.id, 
+    food: 5,
+    service: 5,
+    ambience: 3,
+    overall: 5 
+)
+
+
+review4 = Review.create!(
+    comment: "Hands down the best cheeseburger I've ever had! Atmosphere was lovely and the service was great.", 
+    author_id: user1.id, 
+    rest_id: rest4.id, 
+    food: 5, 
+    service: 5, 
+    ambience: 4,
+    overall: 5 
+)
+
+review5 = Review.create!(
+    comment: "Amazing ambience and service. Definitely give the Parker rolls a try!", 
+    author_id: user2.id, 
+    rest_id: rest5.id, 
+    food: 4, 
+    service: 5, 
+    ambience: 5,
+    overall: 4 
+)
+
+review6 = Review.create!(
+    comment: "Will have to go back and put up with the wait times because it is just that good.", 
+    author_id: user2.id, 
+    rest_id: rest11.id, 
+    food: 5, 
+    service: 3, 
+    ambience: 4,
+    overall: 5 
+)
+
+review7 = Review.create!(
+    comment: "This is one of our favorite spots in the neighborhood! My boyfriend and I have brought both of our families here when they come to visit.", 
+    author_id: user2.id, 
+    rest_id: rest7.id, 
+    food: 5, 
+    service: 4, 
+    ambience: 4,
+    overall: 5 
+)
+
+review8 = Review.create!(
+    comment: "Amazing plant-based restaurant. Comfortable outdoor seating. Staff was amazing, courteous, and on point with allergens.", 
+    author_id: user2.id, 
+    rest_id: rest9.id, 
+    food: 5, 
+    service: 5, 
+    ambience: 5,
+    overall: 5 
+)
+
+review9 = Review.create!(
+    comment: "Place is decorated beautifully. The service was superb and the drinks were amazing. Very unique drinks as well. The food was top tier. Highly recommend!", 
+    author_id: user3.id, 
+    rest_id: rest10.id, 
+    food: 5, 
+    service: 5, 
+    ambience: 5,
+    overall: 5 
+)
+
+review10 = Review.create!(
+    comment: "Cute and humble Ramen in a really hip part of BK. Perfect for a date night!", 
+    author_id: user3.id, 
+    rest_id: rest12.id, 
+    food: 5, 
+    service: 4, 
+    ambience: 4,
+    overall: 5 
+)
+
+review11 = Review.create!(
+    comment: "The duck drum-lets here were delicious. They were perfectly crisp and the salt and pepper flavor was there.", 
+    author_id: user3.id, 
+    rest_id: rest14.id, 
+    food: 5, 
+    service: 3, 
+    ambience: 3,
+    overall: 4 
+)
+
+review12 = Review.create!(
+    comment: "Definitely top notch Thai food. I will be a repeater here.", 
+    author_id: demo.id, 
+    rest_id: rest15.id, 
+    food: 5, 
+    service: 5, 
+    ambience: 4,
+    overall: 5 
+)
+
+review13 = Review.create!(
+    comment: "Wonderful food, very efficient service. The cocktails are amazing as well.", 
+    author_id: user4.id, 
+    rest_id: rest15.id, 
+    food: 5, 
+    service: 5, 
+    ambience: 4,
+    overall: 5 
+)
+
+review14 = Review.create!(
+    comment: "Definitely give this place a try if you are in the mood for good Chinese food", 
+    author_id: user4.id, 
+    rest_id: rest11.id, 
+    food: 5, 
+    service: 5, 
+    ambience: 4,
+    overall: 5 
+)
+
+review15 = Review.create!(
+    comment: "Great Indian food. Everything was great. Especially goat neck biryani was amazing. ", 
+    author_id: user4.id, 
+    rest_id: rest13.id, 
+    food: 5, 
+    service: 3, 
+    ambience: 4,
+    overall: 5 
+)
+
+review16 = Review.create!(
+    comment: "Excellent ramen in prospect heights. I got the garlic ramen with pork, and enjoyed it.", 
+    author_id: user4.id, 
+    rest_id: rest12.id, 
+    food: 5, 
+    service: 4, 
+    ambience: 4,
+    overall: 5 
+)
+
+review17 = Review.create!(
+    comment: "After years I visited this place last Sunday. Refreshed and really chick rooftop :) Great drinks.", 
+    author_id: user5.id, 
+    rest_id: rest6.id, 
+    food: 5, 
+    service: 4, 
+    ambience: 5,
+    overall: 5 
+)
+
+review18 = Review.create!(
+    comment: "Upscale restaurant that is vegetarian friendly. Recommend trying during restaurant week!", 
+    author_id: user5.id, 
+    rest_id: rest8.id, 
+    food: 5, 
+    service: 5, 
+    ambience: 5,
+    overall: 5 
+)
+
+review19 = Review.create!(
+    comment: "Wow, I really loved their food and it is most definitely the most unique fried chicken I have ever had.", 
+    author_id: user5.id, 
+    rest_id: rest14.id, 
+    food: 5, 
+    service: 3, 
+    ambience: 3,
+    overall: 5 
+)
+
+review20 = Review.create!(
+    comment: "If you love spicy food this is a great place to stop by. I would recommend ordering the mango lassi as it help with the spice.", 
+    author_id: user5.id, 
+    rest_id: rest13.id, 
+    food: 5, 
+    service: 4, 
+    ambience: 4,
+    overall: 4
+)
+
+review21 = Review.create!(
+    comment: "I have been to Casa Ora twice and I absolutely loved it there. The food is always amazing and the experience is always a plus.", 
+    author_id: user5.id, 
+    rest_id: rest10.id, 
+    food: 5, 
+    service: 5, 
+    ambience: 5,
+    overall: 5
+)
+
+review22 = Review.create!(
+    comment: "Ordered the labneh, grape leaves and mansef. Everything was excellent!", 
+    author_id: user5.id, 
+    rest_id: rest1.id, 
+    food: 5, 
+    service: 5,
+    ambience: 4,
+    overall: 5
+)
+
+review23 = Review.create!(
+    comment: "Awesome atmosphere, authentic Indian meals and amazing customer service.", 
+    author_id: user5.id, 
+    rest_id: rest3.id, 
+    food: 5, 
+    service: 5, 
+    ambience: 4,
+    overall: 5
+)
+
+review24 = Review.create!(
+    comment: "We stopped for drinks the other night. Nice looking space.", 
+    author_id: user5.id, 
+    rest_id: rest5.id, 
+    food: 5, 
+    service: 4, 
+    ambience: 5,
+    overall: 5
+)
+
+review25 = Review.create!(
+    comment: "I got the oyster mushroom burger and cornbread. It was so delicious.", 
+    author_id: user6.id, 
+    rest_id: rest9.id, 
+    food: 5, 
+    service: 4, 
+    ambience: 5,
+    overall: 5
+)
+
+review26 = Review.create!(
+    comment: "On par with price and flavor! Very enjoyable classy environment and delicious meals.", 
+    author_id: user6.id, 
+    rest_id: rest8.id, 
+    food: 5, 
+    service: 5, 
+    ambience: 5,
+    overall: 5
+)
+
+review27 = Review.create!(
+    comment: "First time having tacos at Borrachito. I love their authentic flavor and their service was great.", 
+    author_id: user6.id, 
+    rest_id: rest7.id, 
+    food: 5, 
+    service: 4, 
+    ambience: 5,
+    overall: 5
+)
+
+review28 = Review.create!(
+    comment: "Beautiful indoor space and nice, large rooftop with good view of Manhattan.", 
+    author_id: user6.id, 
+    rest_id: rest6.id, 
+    food: 5, 
+    service: 4, 
+    ambience: 5,
+    overall: 5
+)
+
+review29 = Review.create!(
+    comment: "Go for the surprisingly spacious back patio and excellent guacamole.", 
+    author_id: demo.id, 
+    rest_id: rest2.id, 
+    food: 4, 
+    service: 4, 
+    ambience: 5,
+    overall: 5
+)
+
+
+review30 = Review.create!(
+    comment: "Great stop for some drinks and bites with a swanky library feel.", 
+    author_id: user3.id, 
+    rest_id: rest4.id, 
+    food: 5, 
+    service: 4, 
+    ambience: 5,
+    overall: 5
+)

@@ -79,7 +79,7 @@ class ReviewForm extends React.Component {
                     <div className="review-form-header">Leave a review</div>
                     <div className="rating-row">
                     <label>Food
-                        <select value={this.state.rating} onChange={this.update("food")}>
+                        <select value={this.state.food} onChange={this.update("food")}>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -88,7 +88,7 @@ class ReviewForm extends React.Component {
                         </select>
                     </label>
                     <label>Service
-                        <select value={this.state.rating} onChange={this.update("service")}>
+                        <select value={this.state.service} onChange={this.update("service")}>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -97,7 +97,7 @@ class ReviewForm extends React.Component {
                         </select>
                     </label>
                     <label>Ambience
-                        <select value={this.state.rating} onChange={this.update("ambience")}>
+                        <select value={this.state.ambience} onChange={this.update("ambience")}>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -106,7 +106,7 @@ class ReviewForm extends React.Component {
                         </select>
                     </label>
                     <label>Overall Rating
-                        <select value={this.state.rating} onChange={this.update("overall")}>
+                        <select value={this.state.overall} onChange={this.update("overall")}>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>

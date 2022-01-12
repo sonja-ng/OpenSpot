@@ -33,6 +33,12 @@
     background-color: white;
     position: relative;
 
+    p {
+        font-size: 14px;
+        font-family: $roboto;
+        font-weight: 300;
+    }
+
     .stars {
         display: flex;
         padding-top: 10px;

@@ -46,8 +46,8 @@ class RestShow extends React.Component {
         // debugger
         return (
             <div className="rest_index">
-                {/* <img src={rest.photos[1].url} className="rest_header"/>  */}
-                <div className="rest_header"></div>
+                <img src={rest.photos[1].url} className="rest_header"/> 
+                {/* <div className="rest_header"></div> */}
                 <div className="rest_body">
                     <div className="main_rest_content">
                     <div id="overview"></div>
