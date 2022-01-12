@@ -14,6 +14,9 @@
 #  owner_id     :integer          not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  menu         :text
+#  lat          :float
+#  lng          :float
 #
 require "test_helper"
 

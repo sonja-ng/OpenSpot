@@ -139,7 +139,6 @@ header {
     margin-top: 5px;
     border: none;
     background-color: transparent;
-    cursor: pointer;
 }
 
 %search_and_marker_icon {
@@ -150,20 +149,28 @@ header {
     line-height: 28px;
     margin-top: 5px;
     color: black;
-    cursor: pointer;
 }
 .search_icon {
     @extend %search_and_marker_icon;
     border-left: 1px solid $border-color;
     margin-left: 10px;
     padding-left: 8px;
+    cursor: pointer
 }
 
 
 .marker_icon {
-    @extend %search_and_marker_icon;
-    margin-left: 5px;
+    width: 30px;
+    height: 28px;
+    font-size: 16px;
+    line-height: 28px;
     margin-top: 5px;
+    color: black;
+    display: block;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    cursor: not-allowed;
 }
 
 .calendar_icon, .bell_icon {
@@ -182,6 +189,7 @@ header {
     width: 30px;
     font-size: 20px;
     color: grey;
+    cursor: pointer
 }
 
 .dropdown_container {

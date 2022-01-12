@@ -14,6 +14,9 @@
 #  owner_id     :integer          not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  menu         :text
+#  lat          :float
+#  lng          :float
 #
 
 # This model initially had no columns defined. If you add columns to the
