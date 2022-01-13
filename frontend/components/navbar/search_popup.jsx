@@ -29,7 +29,7 @@ class SearchPopup extends React.Component {
         this.allItems = ["American", "Middle Eastern", "Mexican", "Indian", "Bakery", "Bar", "Mediterranean", "Soul food", "Venezuelan",
         "Chinese", "Japanese", "Thai", "Fusion", "Williamsburg", "Jackson Heights", "Roosevelt Island", "Boerum Hill", "Midtown", "Upper West Side",
         "East Village", "Prospect Heights", "Lower East Side", "Fresh Meadows", "Al Badawi", "Aldama", "Angel Indian Restaurant", "Anything At All", "As You Are", 
-        "Bar Blondeau", "Borrachito", "Boulud Sud", "Cadence", "Casa Ora", "Cheli", "Chuko", "Dhamaka", "Soothr", "Pecking House" ];
+        "Bar Blondeau", "Borrachito", "Boulud Sud", "Cadence", "Casa Ora", "CheLi", "Chuko", "Dhamaka", "Soothr", "Pecking House" ];
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);

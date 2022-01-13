@@ -1,7 +1,7 @@
 import React from 'react';
 import UserDropDown from './user_dropdown';
 import { withRouter } from 'react-router-dom';
-import SearchPopup from './search_popup';
+import SearchPopupContainer from './search_popup_container';
 
 class UserNavBar extends React.Component {
     constructor(props){
@@ -64,7 +64,7 @@ class UserNavBar extends React.Component {
                 <div>
                     <button className="search_icon" onClick={this.showSearch}><i className="fas fa-search"></i></button>
                 </div>
-                <SearchPopup closeSearch={this.closeSearch} searchOut={this.state.searchOut} updateFilter={this.props.updateFilter} />
+                <SearchPopupContainer closeSearch={this.closeSearch} searchOut={this.state.searchOut} />
             </div>
         )
     }
