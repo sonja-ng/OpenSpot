@@ -13,7 +13,7 @@ class UserBookingIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-        debugger
+        // debugger
         if (this.props.bookings.length !== prevProps.bookings.length){
             this.props.fetchBookings({["userId"]: this.props.currentUser.id});
         }    

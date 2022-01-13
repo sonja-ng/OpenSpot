@@ -107,9 +107,9 @@ class RestShow extends React.Component {
                         <div className="rsvp-container">
                             <RestBookingContainer />
                         </div>
-                        <div className="order-takeout">
+                        {/* <div className="order-takeout">
                             Takeout?
-                        </div>
+                        </div> */}
                         <div>
                         <Map rest={rest} />
                         <div className="address">{rest.address},&#160;{rest.city},&#160;{rest.state}&#160;{rest.zip}</div>

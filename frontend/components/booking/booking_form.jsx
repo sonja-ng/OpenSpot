@@ -16,6 +16,11 @@ class BookingForm extends React.Component {
         this.updateOccasion = this.updateOccasion.bind(this);
         this.updateSpecial = this.updateSpecial.bind(this);
     }
+
+    componentDidMount(){
+        window.scrollTo(0, 0);
+    }
+    
     updatePhone(e){
         this.setState({phone: e.target.value})
     }

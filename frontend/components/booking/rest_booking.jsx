@@ -55,44 +55,45 @@ class RestBooking extends React.Component {
         // const whereTo = this.props.currentUser ? "/booking" : `/rests/${this.props.match.params.restId}`;
 
         return (
-            <div>
-                <h1>Make a reservation</h1>
+            <div className="sticky-rsvp">
+                <header>Make a reservation</header>
                 <form className="rest-bookform">                
-                    <label>Party Size
-                        <select className="rest-party" name="rest-party" id="rest-party" value={this.state.party} onChange={this.updateParty}>
-                            <option value="2">For 2</option>
-                            <option value="3">For 3</option>
-                            <option value="4">For 4</option>
-                            <option value="5">For 5</option>
-                            <option value="6">For 6</option>
-                            <option value="7">For 7</option>
-                            <option value="8">For 8</option>
-                            <option value="9">For 9</option>
-                            <option value="10">For 10</option>
-                        </select>
-                    </label>
-                    <div className="date-container">
-                        <label>Date<br></br>
-                            <DatePicker className="rest-date" dateFormat="yyyy-MM-dd" selected={this.state.date} onChange={this.updateDate}/>
+                    <div className="sticky-party">
+                        <label>Party Size
+                            <select className="rest-party" name="rest-party" id="rest-party" value={this.state.party} onChange={this.updateParty}>
+                                <option value="2">For 2</option>
+                                <option value="3">For 3</option>
+                                <option value="4">For 4</option>
+                                <option value="5">For 5</option>
+                                <option value="6">For 6</option>
+                                <option value="7">For 7</option>
+                                <option value="8">For 8</option>
+                                <option value="9">For 9</option>
+                                <option value="10">For 10</option>
+                            </select>
                         </label>
                     </div>
-                    
-                    <label>Time<br></br>
-                        <select name="rest-time" id="rest-time" value={this.state.time} className="rest-time" onChange={this.updateTime}>
-                                <option value="12:00">12:00pm</option>
-                                <option value="01:00">1:00pm</option>
-                                <option value="02:00">2:00pm</option>
-                                <option value="03:00">3:00pm</option>
-                                <option value="04:00">4:00pm</option>
-                                <option value="05:00">5:00pm</option>
-                                <option value="06:00">6:00pm</option>
-                                <option value="07:00">7:00pm</option>
-                                <option value="08:00">8:00pm</option>
-                                <option value="09:00">9:00pm</option>
-                                <option value="10:00">10:00pm</option>
-                        </select>
-                    </label>
-                    <button onClick={this.handleSubmit} className="new-submit">Find a table</button>
+                    <div className="date-time-container">
+                        <label>Date<br></br>
+                            <DatePicker className="rest-date-sticky" dateFormat="yyyy-MM-dd" selected={this.state.date} onChange={this.updateDate}/>
+                        </label>            
+                        <label>Time<br></br>
+                            <select name="rest-time" id="rest-time" value={this.state.time} className="rest-time" onChange={this.updateTime}>
+                                    <option value="12:00">12:00pm</option>
+                                    <option value="01:00">1:00pm</option>
+                                    <option value="02:00">2:00pm</option>
+                                    <option value="03:00">3:00pm</option>
+                                    <option value="04:00">4:00pm</option>
+                                    <option value="05:00">5:00pm</option>
+                                    <option value="06:00">6:00pm</option>
+                                    <option value="07:00">7:00pm</option>
+                                    <option value="08:00">8:00pm</option>
+                                    <option value="09:00">9:00pm</option>
+                                    <option value="10:00">10:00pm</option>
+                            </select>
+                        </label>
+                    </div>
+                    <button onClick={this.handleSubmit} className="sticky-submit">Find a table</button>
                 </form>
             </div>
         )

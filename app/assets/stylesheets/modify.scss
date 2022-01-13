@@ -3,7 +3,7 @@
 .modify-bg {
     width: 1600px;
     margin: 0 auto;
-    height: 500px;
+    height: 300px;
     background-color: white;
     padding-top: 50px;
 }
@@ -40,14 +40,14 @@
 
 
 .modify-form {
-    width: 670px;
+    width: 660px;
     display: flex;
     margin: 0 auto;
     align-items: center;
     background-color: $border-color;
     border-radius: 3px;
     height: 55px;
-    padding-left: 20px;
+    padding-left: 10px;
 
         input {
             height: 50px;
@@ -58,4 +58,9 @@
 
 .mod-details {
     margin-right: 10px;
+}
+
+.mod-bg {
+    height: 500px;
+    width: 1600px;
 }

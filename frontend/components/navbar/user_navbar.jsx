@@ -59,8 +59,8 @@ class UserNavBar extends React.Component {
                     <button onClick={this.toggleDropDown} className="user_icon"><i className="fas fa-user-circle"></i></button>
                     <UserDropDown selected={this.state.selected} logout={this.props.logout} currentUser={this.props.currentUser} toggle={this.toggleDropDown} />
                 </div>
-                <span className="calendar_icon"><i className="far fa-calendar"></i></span>
-                <span className="bell_icon"><i className="far fa-bell"></i></span>
+                {/* <span className="calendar_icon"><i className="far fa-calendar"></i></span>
+                <span className="bell_icon"><i className="far fa-bell"></i></span> */}
                 <div>
                     <button className="search_icon" onClick={this.showSearch}><i className="fas fa-search"></i></button>
                 </div>
