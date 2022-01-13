@@ -403,11 +403,11 @@
 }
 
 .button-row {
-    width: inherit;
     display: flex;
     justify-content: center;
     position: absolute;
     bottom: 15px;
+    margin-left: 3px;
 
     .thumbnail-button {
         width: 70px;

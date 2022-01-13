@@ -37,6 +37,8 @@ class BookingForm extends React.Component {
 
     render(){
         const { currentUser, booking, restaurant } = this.props;
+
+        const formattedDate = typeof booking.date !== "string" ? `${booking.date.getFullYear()}-${booking.date.getMonth()+1}-${booking.date.getDate()}` : booking.date;
         return (
             <div className="rsvp-main">
                 <div className="booking-body">
@@ -44,7 +46,7 @@ class BookingForm extends React.Component {
                     <div className="booking-info">
                         <div className="rest-name">{restaurant.name}</div>
                         <div className="booking-details">
-                            <div className="booking-value"><i className="far fa-calendar"></i>{booking.date}</div>
+                            <div className="booking-value"><i className="far fa-calendar"></i>{formattedDate}</div>
                             <div className="booking-value"><i className="far fa-clock"></i>{booking.time} PM</div>
                             <div className="booking-value"><i className="far fa-user"></i>{booking.party_size} people</div>
                         </div>

@@ -44,17 +44,17 @@ class SearchBar extends React.Component {
     }
 
     updateDate(d){
-        this.setState({date: d});
+        this.setState({date: d}, ()=> this.props.fillInOneFieldBooking("date", `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`));
     }
 
     updateTime(e){
         e.preventDefault();
-        this.setState({time: e.target.value})
+        this.setState({time: e.target.value}, ()=> this.props.fillInOneFieldBooking("time", this.state.time))
     }
 
     updateParty(e){
         e.preventDefault();
-        this.setState({party: e.target.value})
+        this.setState({party: e.target.value}, ()=> this.props.fillInOneFieldBooking("party_size", parseInt(this.state.party)))
     }
 
     componentDidMount(){

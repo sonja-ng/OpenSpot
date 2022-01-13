@@ -1,9 +1,20 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-const Cancel = (props) => {
-    return (
-        <h1>Cancel!</h1>
-    )
+class Cancel extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentDidMount(){
+        setTimeout(()=>this.props.history.push("/"), 5000);
+    }
+
+    render(){
+        return (
+            <h1>Cancel!</h1>
+        )
+    }
 }
 
-export default Cancel;
+export default withRouter(Cancel);
