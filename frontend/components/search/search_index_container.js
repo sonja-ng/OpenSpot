@@ -3,15 +3,18 @@ import SearchIndex from './search_index';
 import { fetchRests } from '../../actions/rest_actions';
 import { updateFilter } from '../../actions/search_actions';
 import { fillInOneFieldBooking } from '../../actions/booking_actions';
+import { openModal } from '../../actions/modal_actions';
 
 const mSTP = state => ({
-    rests: Object.values(state.entities.rests)
+    rests: Object.values(state.entities.rests),
+    currentUser: state.entities.users[state.session.id]
 });
 
 const mDTP = dispatch => ({
     updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
     fetchRests: (data) => dispatch(fetchRests(data)),
-    fillInOneFieldBooking: (cat, value) => dispatch(fillInOneFieldBooking(cat, value))
+    fillInOneFieldBooking: (cat, value) => dispatch(fillInOneFieldBooking(cat, value)),
+    openModal: (modal) => dispatch(openModal(modal))
 });
 
 export default connect(mSTP, mDTP)(SearchIndex);

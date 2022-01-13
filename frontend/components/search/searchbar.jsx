@@ -121,11 +121,13 @@ class SearchBar extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         // debugger
+
+        const user = this.props.currentUser ? this.props.currentUser.id : "";
         this.props.fillInBooking({
             date: `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`,
             time: this.state.time,
             party_size: parseInt(this.state.party),
-            user_id: this.props.currentUser.id
+            user_id: user
         });
 
         this.setState({suggestion: false});

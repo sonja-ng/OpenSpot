@@ -14,26 +14,26 @@ class BookingForm extends React.Component {
     }
 
     render(){
-        // const { currentUser, booking, restaurant } = this.props;
+        const { currentUser, booking, restaurant } = this.props;
         return (
             <div className="rsvp-main">
                 <div className="booking-body">
                     <header>You are almost done!</header>
                     <div className="booking-info">
-                        <div className="rest-name">Che Li</div>
+                        <div className="rest-name">{restaurant.name}</div>
                         <div className="booking-details">
-                            <div className="booking-value"><i className="far fa-calendar"></i>2022/2/2</div>
-                            <div className="booking-value"><i className="far fa-clock"></i>5:00</div>
-                            <div className="booking-value"><i className="far fa-user"></i>2 people</div>
+                            <div className="booking-value"><i className="far fa-calendar"></i>{booking.date}</div>
+                            <div className="booking-value"><i className="far fa-clock"></i>{booking.time}</div>
+                            <div className="booking-value"><i className="far fa-user"></i>{booking.party_size} people</div>
                         </div>
                     </div>
                     <div className="diner-details">
                         <header>Diner Details</header>
                         <form className="rsvp-form">
-                            Sonja Ng
+                            {currentUser.fname}
                             <div className="row-1">
-                                <input className="phone" type="text" value="1234567"/>
-                                <input className="email" type="text" value="guest@gmail.com"/>
+                                <input className="phone" type="text" value={currentUser.phone} />
+                                <input className="email" type="text" value={currentUser.email}/>
                             </div>
                             <div className="row-2">
                                 <select className="occasion" name="occasion" id="occasion">
