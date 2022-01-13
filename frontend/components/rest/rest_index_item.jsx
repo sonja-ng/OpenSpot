@@ -21,15 +21,16 @@ class RestIndexItem extends React.Component {
     }
 
     render(){
-         // if (rest.photos.length === 0) return null; 
-    // const image = rest.photos[0].url;
         const { rest } = this.props;
-    const whereTo = this.props.currentUser ? "/booking" : "/";
+
+        if (rest.photos.length === 0) return null; 
+        const image = rest.photos[0].url;
+        const whereTo = this.props.currentUser ? "/booking" : "/";
         return (
             <li className="rest-index-thumbnail">
                 <Link to={`rests/${rest.id}`}>
-                {/* <img src={image} className="thumbnail-img"/> */}
-                <div className="thumbnail-img"></div>
+                <img src={image} className="thumbnail-img"/>
+                {/* <div className="thumbnail-img"></div> */}
                 <div className="thumbnail-text">
                     <h1>{rest.name}</h1>
                     <div className="stars"><img src={window.starsURL}/></div>

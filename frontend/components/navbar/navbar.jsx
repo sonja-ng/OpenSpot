@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, withRouter } from 'react-router-dom';
 import UserNavBar from "./user_navbar";
-// import SearchPopupContainer from './search_popup_container';
+import SearchPopupContainer from './search_popup_container';
 
 class Navbar extends React.Component {
     constructor(props){
@@ -76,7 +76,7 @@ class Navbar extends React.Component {
         return (
             <div>
                 {display}
-                {/* <SearchPopupContainer closeSearch={this.closeSearch} searchOut={this.state.searchOut} updateFilter={updateFilter}/> */}
+                <SearchPopupContainer closeSearch={this.closeSearch} searchOut={this.state.searchOut} updateFilter={updateFilter}/>
             </div>
         )
     }

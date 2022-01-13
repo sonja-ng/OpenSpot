@@ -89,6 +89,7 @@ class SearchPopup extends React.Component {
     }
 
     findMatch(){
+        // debugger
         const match = [];
         if (this.state.general.length > 0) {
             this.allItems.forEach(el => {
@@ -98,8 +99,8 @@ class SearchPopup extends React.Component {
                 }
             })
         }
-
         return match;
+        
     }
     
     selectMatch(e){
@@ -125,13 +126,13 @@ class SearchPopup extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         // debugger
-
-        // this.props.fillInBooking({
-        //     date: `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`,
-        //     time: this.state.time,
-        //     party_size: parseInt(this.state.party),
-        //     user_id: this.props.currentUser.id
-        // });
+        const user = this.props.currentUser ? this.props.currentUser.id : "";
+        this.props.fillInBooking({
+            date: `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`,
+            time: this.state.time,
+            party_size: parseInt(this.state.party),
+            user_id: user
+        });
 
         this.props.closeSearch();
         this.setState({suggestion: false});
@@ -158,6 +159,7 @@ class SearchPopup extends React.Component {
     }
 
     render(){
+        // debugger
         const klass = this.props.searchOut ? "search-background" : "hidden";
         const klass2 = this.props.searchOut ? "white-searchbar" : "hidden";
 
