@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class BookingForm extends React.Component {
     constructor(props){
@@ -29,8 +30,9 @@ class BookingForm extends React.Component {
 
 
     handleSubmit(e){
+        debugger
         e.preventDefault();
-        this.props.createBooking(this.props.booking)
+        this.props.createBooking(this.props.booking).then(()=>this.props.history.push("/confirmation"))
     }
 
     render(){
@@ -86,4 +88,4 @@ class BookingForm extends React.Component {
     }
 }
 
-export default BookingForm;
+export default withRouter(BookingForm);

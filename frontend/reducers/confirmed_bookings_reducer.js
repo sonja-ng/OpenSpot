@@ -8,8 +8,7 @@ const confirmedBookingsReducer = (oldState = {}, action) => {
         case RECEIVE_BOOKINGS:
             return action.bookings;
         case RECEIVE_BOOKING:
-            const { booking } = action;
-            return Object.assign({}, nextState, { [booking.id]: booking });
+            return action.booking;
         case REMOVE_BOOKING:
             delete nextState[action.bookingId];
             return nextState;
