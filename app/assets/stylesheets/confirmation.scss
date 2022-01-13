@@ -1,0 +1,111 @@
+@import './index.scss';
+
+.confirmation-container {
+    width: 1600px;
+    background-color: #eff0f2;
+    height: 700px;
+    position: relative;
+
+    .confirm-bg {
+        width: 975px;
+        display: flex;
+        height: inherit;
+        margin: 0 auto;
+        padding-top: 34px;
+    }
+
+    .confirm-main {
+        width: 636px;
+        height: 400px;
+        background-color: white;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        box-sizing: border-box;
+        padding: 33px;
+    }
+
+    .user-info {
+        width: 303px;
+        height: 173px;
+        background-color: white;
+        border-radius: 4px;
+        margin-left: 39px;
+        font-size: 15px;
+        font-family: $main_font;
+        padding: 30px;
+    }
+
+    .grey-bg {
+        width: 1600px;
+        height: 60px;
+        position: absolute;
+        background-color: #eff0f2;
+        bottom: -60px;
+        left: 0;
+    }
+}
+.confirm-details {
+    font-size: 15px;
+    font-family: $main_font;
+
+}
+
+.confirm-items {
+    margin-right: 20px;
+}
+
+.flex-details {
+    font-size: 15px;
+    font-family: $main_font;
+    display: flex;
+    margin-top: 15px;
+
+    i {
+        margin-right: 6px;
+        margin-left: 2px;
+    }
+}
+
+.confirm-rest-name {
+    font-size: 30px;
+    font-family: $manrope;
+    margin-bottom: 15px;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+
+    img {
+        margin-right: 5px;
+    }
+}
+.confirm-button-row {
+    display: flex;
+    margin-top: 15px;
+}
+
+.c-button {
+    border: none;
+    background-color: white;
+    color: $red;
+    font-family: $manrope;
+    font-size: 13px;
+    padding: none;
+}
+
+.c-button:first-child {
+    border-right: 1px solid $border-color;
+    padding-right: 5px;
+}
+
+.user-fname {
+    font-size: 28px;
+    font-family: $manrope;
+    margin-bottom: 15px;
+    color: rgb(56, 56, 56);
+
+    i {
+        margin-right: 10px;
+    }
+}
