@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchIndexItem from './search_index_item';
+import DatePicker from 'react-datepicker';
 
 class SearchIndex extends React.Component {
     constructor(props){
@@ -36,6 +37,23 @@ class SearchIndex extends React.Component {
         this.update = this.update.bind(this);
         this.selectMatch = this.selectMatch.bind(this);
         this.removeDropDown = this.removeDropDown.bind(this);
+        this.updateDate = this.updateDate.bind(this);
+        this.updateTime = this.updateTime.bind(this);
+        this.updateParty = this.updateParty.bind(this);
+    }
+
+    updateDate(d){
+        this.setState({date: d}, ()=> this.props.fillInOneFieldBooking("date", `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`));
+    }
+
+    updateTime(e){
+        e.preventDefault();
+        this.setState({time: e.target.value}, ()=> this.props.fillInOneFieldBooking("time", this.state.time))
+    }
+
+    updateParty(e){
+        e.preventDefault();
+        this.setState({party: e.target.value}, ()=> this.props.fillInOneFieldBooking("party_size", parseInt(this.state.party)))
     }
 
     componentDidMount(){
@@ -104,6 +122,15 @@ class SearchIndex extends React.Component {
         e.preventDefault();
         // console.log('test');
         // debugger
+
+        const user = this.props.currentUser ? this.props.currentUser.id : "";
+        this.props.fillInBooking({
+            date: `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`,
+            time: this.state.time,
+            party_size: parseInt(this.state.party),
+            user_id: user
+        });
+
         this.setState({suggestion: false});
         if (this.state.cuisine) {
             this.props.updateFilter("cuisine", this.state.cuisine);
@@ -138,16 +165,31 @@ class SearchIndex extends React.Component {
             <div>
                 <div className="search-header">
                     <form className="search-form">
-                        <input type="date" className="search_date_main"/>
-                        <select name="time" className="dropdown time" id="time2">
-                            <option value="1:00">1:00pm</option>
-                            <option value="2:00">2:00pm</option>
+                    <DatePicker dateFormat="yyyy-MM-dd" className="search-date" selected={this.state.date} onChange={this.updateDate}/>
+                        <select name="time" className="dropdown time" value={this.state.time} id="time2" onChange={this.updateTime}>
+                            <option value="12:00">12:00pm</option>
+                            <option value="01:00">1:00pm</option>
+                            <option value="02:00">2:00pm</option>
+                            <option value="03:00">3:00pm</option>
+                            <option value="04:00">4:00pm</option>
+                            <option value="05:00">5:00pm</option>
+                            <option value="06:00">6:00pm</option>
+                            <option value="07:00">7:00pm</option>
+                            <option value="08:00">8:00pm</option>
+                            <option value="09:00">9:00pm</option>
+                            <option value="10:00">10:00pm</option>
                         </select>
                         <label>
-                        <select className="dropdown party" name="party" id="party2">
+                        <select className="dropdown party" name="party" id="party2" value={this.state.party} onChange={this.updateParty}>
                                 <option value="2">2 people</option>
                                 <option value="3">3 people</option>
-                                <option value="4">4 people</option>    
+                                <option value="4">4 people</option>
+                                <option value="5">5 people</option>
+                                <option value="6">6 people</option>
+                                <option value="7">7 people</option>
+                                <option value="8">8 people</option>
+                                <option value="9">9 people</option>
+                                <option value="10">10 people</option>  
                         </select>
                         </label>
                         <span className="font_search" >
@@ -163,7 +205,6 @@ class SearchIndex extends React.Component {
                 </div>
                 <div className="search-result">
                     {msg}
-                    {/* {this.renderSearch()} */}
                     <ul>
                         {restList}
                     </ul>
