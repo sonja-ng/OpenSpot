@@ -168,7 +168,6 @@ class SearchBar extends React.Component {
                                 <option value="2">2 people</option>
                                 <option value="3">3 people</option>
                                 <option value="4">4 people</option>
-                                
                             </select>
                             </label> 
                             <span className="font_search">

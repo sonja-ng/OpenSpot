@@ -36,7 +36,7 @@ const App = () => (
             <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
             <Route path={"/rests/:restId"} component={RestShowContainer} />
             <Route exact path={"/search"} component={SearchIndexContainer} />
-            <Route exact path={"/booking"} component={BookingFormContainer} />
+            <ProtectedRoute exact path={"/booking"} component={BookingFormContainer} />
            
         </div>
         <footer>

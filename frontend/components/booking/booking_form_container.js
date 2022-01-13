@@ -5,11 +5,8 @@ import { createBooking } from '../../actions/booking_actions';
 
 const mSTP = state => ({
     currentUser: state.entities.users[state.session.id],
-    date: state.entities.bookings.date,
-    time: state.entities.bookings.time,
-    party_size: state.entities.bookings.party_size,
-    restaurant: state.entities.rests[state.entities.bookings.rest_id],
-    booking: state.entities.bookings
+    restaurant: state.entities.rests[state.entities.bookings.tentativeBooking.rest_id],
+    booking: state.entities.bookings.tentativeBooking
 });
 
 const mDTP = dispatch => ({

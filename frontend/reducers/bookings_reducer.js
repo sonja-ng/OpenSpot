@@ -1,28 +1,10 @@
-import { RECEIVE_BOOKING, REMOVE_BOOKING, RECEIVE_BOOKINGS, CLEAR_BOOKINGS, FILL_IN_BOOKING, FILL_IN_ONE_FIELD_BOOKING } from '../actions/booking_actions';
+import { combineReducers } from "redux";
+import tentativeBookingsReducer from "./tentative_bookings_reducer";
+import confirmedBookingsReducer from "./confirmed_bookings_reducer";
 
-const bookingsReducer = (oldState = {}, action) => {
-    // debugger
-    Object.freeze(oldState);
-    const nextState = Object.assign({}, oldState);
-    switch(action.type) {
-        case RECEIVE_BOOKINGS:
-            return action.bookings;
-        case RECEIVE_BOOKING:
-            const { booking } = action;
-            return Object.assign({}, nextState, { [booking.id]: booking });
-        case REMOVE_BOOKING:
-            delete nextState[action.bookingId];
-            return nextState;
-        case FILL_IN_BOOKING:
-            return action.booking;
-        case FILL_IN_ONE_FIELD_BOOKING:
-            nextState[action.cat]= action.value;
-            return nextState;
-        case CLEAR_BOOKINGS:
-            return {};
-        default:
-            return oldState;
-    }
-}
+const bookingsReducer = combineReducers({
+    confirmedBookings: confirmedBookingsReducer,
+    tentativeBooking: tentativeBookingsReducer
+})
 
 export default bookingsReducer;

@@ -1,0 +1,161 @@
+@import './index.scss';
+
+.react-datepicker-wrapper {
+    width: max-content;
+}
+.react-datepicker__input-container{
+    input {
+        border: none;
+        width: 171px;
+        height: 50px;
+        border-radius: 3px 0 0 3px;
+        padding: 0 0 0 10px;
+        box-sizing: border-box;
+        }
+}
+
+.rsvp-main {
+    width: inherit;
+    margin: 0 auto;
+    height: 800px;
+    background-color: white;
+    display: flex;
+    border-top: 1px solid $border-color;
+    justify-content: center;
+
+    header {
+        font-size: 17px;
+        font-family: $manrope;
+        margin-top: 38px;
+        width: 640px;
+        
+    }
+
+    .booking-info {
+        margin-bottom: 20px;
+
+        .rest-name {
+            font-size: 30px;
+            font-family: $manrope;
+            margin-bottom: 24px;
+        }
+
+        .booking-details {
+            display: flex;
+        }
+
+        .booking-value {
+            font-size: 15px;
+            font-family: $main_font;
+            margin-left: 37px;
+            
+            i {
+                margin-right: 14px;
+            }
+        }
+
+        .booking-value:first-child {
+            margin-left: 0px;
+        }
+    }
+
+    .booking-body{
+        width: 669px;
+    }
+
+    .terms {
+        font-family: $roboto;
+        font-size: 13px;
+        width: 314px;
+        height: 800px;
+        color:rgb(59, 59, 59);
+        background-color: white;
+        padding-top: 30px;
+
+        div {
+            margin-bottom: 30px;
+        }
+
+        .light {
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.diner-details {
+    margin-top: 30px;
+    header {
+        height: 30px;
+    }
+}
+
+.rsvp-form {
+    font-family: $manrope;
+    font-size: 15px;
+    border-top: 1px solid $border-color;
+    padding-top: 20px;
+
+    .row-1 {
+        display: flex;
+        margin-bottom: 20px;
+        margin-top: 20px;
+
+        .phone, .email {
+            width: 310px;
+            height: 50px;
+            border: 1px solid $border-color;
+            border-radius: 3px;
+            box-sizing: border-box;
+            padding-left: 8px;
+            font-family: $manrope;
+        }
+
+        .phone {
+            margin-right: 16px;
+        }
+    }
+
+    .row-2 {
+        display: flex;
+        margin-bottom: 50px;
+
+        .occasion, textarea{
+            width: 310px;
+            height: 50px;
+            border: 1px solid $border-color;
+            border-radius: 3px;
+            box-sizing: border-box;
+            padding-left: 8px;
+        }
+
+        .occasion {
+            margin-right: 16px;
+            font-family: $manrope;
+            color:rgb(163, 163, 163);
+        }
+
+        textarea{
+            padding-top: 16px;
+        }
+
+        textarea::placeholder{
+            font-size: 13px;
+            font-family: $manrope;
+            color:rgb(163, 163, 163);
+        }
+    }
+}
+
+
+.rsvp-button {
+    background-color: $red;
+    color: white;
+    border-radius: 3px;
+    border: none;
+    width: 637px;
+    height: 48px;
+    margin-right: 8px;
+    font-family: $main-font;
+    cursor: pointer;
+}
