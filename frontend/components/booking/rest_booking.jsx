@@ -34,7 +34,7 @@ class RestBooking extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        debugger
+        // debugger
         if (this.props.currentUser) {
             this.props.fillInBooking({
                 date: `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`,

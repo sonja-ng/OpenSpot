@@ -23,8 +23,8 @@ class ModifyRsvp extends React.Component {
 
     updateDate(d){
         this.setState({date: d},()=> this.props.fillInOneFieldBooking("date", `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`));
-        
-        this.props.fillInOneFieldBooking("rest_id", this.props.restaurant.id);
+        // debugger
+        this.props.fillInOneFieldBooking("rest_id", this.props.booking.restaurant.id);
         this.props.fillInOneFieldBooking("user_id", this.props.currentUser.id); 
     }
 
@@ -34,7 +34,7 @@ class ModifyRsvp extends React.Component {
         this.setState({time: e.target.value},()=> this.props.fillInOneFieldBooking("time", this.state.time));
         // console.log(this.state.time);
         
-        this.props.fillInOneFieldBooking("rest_id", this.props.restaurant.id);
+        this.props.fillInOneFieldBooking("rest_id", this.props.booking.restaurant.id);
         this.props.fillInOneFieldBooking("user_id", this.props.currentUser.id);
     }
 
@@ -42,7 +42,7 @@ class ModifyRsvp extends React.Component {
         e.preventDefault();
         this.setState({party_size: parseInt(e.target.value)},() => this.props.fillInOneFieldBooking("party", this.state.party_size));
         // console.log(this.state.party_size);
-        this.props.fillInOneFieldBooking("rest_id", this.props.restaurant.id);
+        this.props.fillInOneFieldBooking("rest_id", this.props.booking.restaurant.id);
         this.props.fillInOneFieldBooking("user_id", this.props.currentUser.id);
     }
 
@@ -68,13 +68,19 @@ class ModifyRsvp extends React.Component {
         return (
             <div className="modify-bg">
                 <div>
-                    <div className="flex-row-mod">
-                        <div>{this.props.booking.date}</div>
-                        <div>{this.props.booking.time.slice(12, 16)}</div>
-                        <div>{this.props.booking.party_size}</div>
+                    <div className="mod">
+                    <div>Your reservation Details</div>
+                    <div className="mod-rest-row">
+                        <div className="mod-rest">{this.props.booking.restaurant.name}</div>
                     </div>
-                <form>
-                    <DatePicker dateFormat="yyyy-MM-dd" selected={this.state.date} onChange={this.updateDate}/>
+                    <div className="flex-row-mod">
+                        <div className="mod-details">On {this.props.booking.date}</div>
+                        <div className="mod-details">at {this.props.booking.time.slice(12, 16)}</div>
+                        <div className="mod-details">for {this.props.booking.party_size} people</div>
+                    </div>
+                    </div>
+                <form className="modify-form">
+                    <DatePicker dateFormat="yyyy-MM-dd" className="search-date" selected={this.state.date} onChange={this.updateDate}/>
                     <select name="mod-time" id="mod-time" value={this.state.time} className="dropdown time" onChange={this.updateTime}>
                             <option value="12:00">12:00pm</option>
                             <option value="01:00">1:00pm</option>

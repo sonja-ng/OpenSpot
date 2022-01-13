@@ -7,12 +7,22 @@ class Cancel extends React.Component {
     }
 
     componentDidMount(){
-        setTimeout(()=>this.props.history.push("/"), 3000);
+        setTimeout(()=>this.props.history.push("/"), 5000);
     }
 
     render(){
         return (
-            <h1>Cancel!</h1>
+            <div className="mod-bg">
+                <div className="mod">
+                    <div className="mod-rest-row">
+                            <div className="mod-rest">Your booking has been cancelled!</div>
+                    </div>
+                </div>
+                
+                <div className="flex-row-mod">
+                        <div className="mod-details">You will be redirected to the homepage in 5 seconds.</div>
+                    </div>
+            </div>
         )
     }
 }

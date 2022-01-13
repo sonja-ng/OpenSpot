@@ -7,7 +7,6 @@ import { fillInOneFieldBooking } from '../../actions/booking_actions';
 const mSTP = state => ({
     currentUser: state.entities.users[state.session.id],
     booking: state.entities.bookings.confirmedBookings,
-    restaurant: state.entities.rests[state.entities.bookings.confirmedBookings.rest_id],
     tentativeBooking: state.entities.bookings.tentativeBooking
 });
 

@@ -19,7 +19,7 @@ const tentativeBookingsReducer = (oldState = tentative, action) => {
             nextState[action.cat]= action.value;
             return nextState;
         case CLEAR_TENTATIVE_BOOKING:
-            return {};
+            return nextState;
         default:
             return oldState;
     }

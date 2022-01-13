@@ -72,14 +72,13 @@ class ModifyBooking extends React.Component {
     //    debugger
         return (
             <div className="modify-bg">
-                <div>
                     <div className="flex-row-mod">
                         <div>{this.props.booking.date}</div>
                         <div>{this.props.booking.time.slice(12, 16)}</div>
                         <div>{this.props.booking.party_size}</div>
                     </div>
                 <form>
-                    <DatePicker dateFormat="yyyy-MM-dd" selected={this.state.date} onChange={this.updateDate}/>
+                    <DatePicker className="modify-date" dateFormat="yyyy-MM-dd" selected={this.state.date} onChange={this.updateDate}/>
                     <select name="mod-time" id="mod-time" value={this.state.time} className="dropdown time" onChange={this.updateTime}>
                             <option value="12:00">12:00pm</option>
                             <option value="01:00">1:00pm</option>
@@ -109,7 +108,6 @@ class ModifyBooking extends React.Component {
                         </label> 
                         <button onClick={this.handleSubmit} className="new-submit">Find a new table</button>
                 </form>    
-                </div>
             </div>
         )
     }
