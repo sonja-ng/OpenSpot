@@ -25,7 +25,7 @@ class Confirmation extends React.Component {
                             </div>
                             <div className="confirm-button-row">
                                 <Link to="/modify" onClick={this.props.clearTentativeBooking} className="c-button">Modify</Link>
-                               <button className="c-button">Cancel</button>
+                               <Link to="/cancellation" onClick={()=> this.props.deleteBooking(this.props.booking.id)} className="c-button">Cancel</Link>
                             </div>
                         </div>
                     </div>

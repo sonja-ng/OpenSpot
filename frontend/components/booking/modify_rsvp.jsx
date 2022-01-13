@@ -74,7 +74,7 @@ class ModifyRsvp extends React.Component {
                         <div>{this.props.booking.party_size}</div>
                     </div>
                 <form>
-                    <DatePicker dateFormat="yyyy-MM-dd" selected={new Date(this.state.date)} onChange={this.updateDate}/>
+                    <DatePicker dateFormat="yyyy-MM-dd" selected={this.state.date} onChange={this.updateDate}/>
                     <select name="mod-time" id="mod-time" value={this.state.time} className="dropdown time" onChange={this.updateTime}>
                             <option value="12:00">12:00pm</option>
                             <option value="01:00">1:00pm</option>
@@ -90,7 +90,7 @@ class ModifyRsvp extends React.Component {
                             <option value="10:00">10:00pm</option>
                         </select>
                         <label>
-                            <select className="dropdown party" name="mod-party" id="mod-party" value={this.state.party} onChange={this.updateParty}>
+                            <select className="dropdown party" name="mod-party" id="mod-party" value={this.state.party_size} onChange={this.updateParty}>
                                 <option value="2">2 people</option>
                                 <option value="3">3 people</option>
                                 <option value="4">4 people</option>

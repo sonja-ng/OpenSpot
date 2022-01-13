@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Confirmation from './confirmation';
-import { clearTentativeBooking } from '../../actions/booking_actions';
+import { clearTentativeBooking, deleteBooking } from '../../actions/booking_actions';
 
 const mSTP = state => {
 //    debugger
