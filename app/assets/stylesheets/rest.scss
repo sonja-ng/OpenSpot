@@ -404,16 +404,17 @@
 
 .button-row {
     display: flex;
-    justify-content: center;
     position: absolute;
     bottom: 15px;
-    margin-left: 3px;
+    width: 220px;
+    justify-content: space-around;
+    left: 3px;
 
     .thumbnail-button {
-        width: 70px;
+        width: 65px;
         height: 30px;
         background-color: $red;
-        margin-left: 5px;
+        margin-left: 10px;
         border-radius: 3px;
         color: white;
         font-family: $main-font;

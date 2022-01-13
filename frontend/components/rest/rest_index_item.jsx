@@ -42,8 +42,8 @@ class RestIndexItem extends React.Component {
                 </Link>
                 <div className="button-row">
                 <Link to={whereTo} onClick={this.handleClick}><button className="thumbnail-button">7:15pm</button></Link>
-                    <button className="thumbnail-button">7:30pm</button>
-                    <button className="thumbnail-button">7:45pm</button>
+                <Link to={whereTo} onClick={this.handleClick}><button className="thumbnail-button">7:30pm</button></Link>
+                <Link to={whereTo} onClick={this.handleClick}><button className="thumbnail-button">7:45pm</button></Link>
                 </div>
             </li>
             

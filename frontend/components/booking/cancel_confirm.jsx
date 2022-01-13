@@ -7,7 +7,7 @@ class Cancel extends React.Component {
     }
 
     componentDidMount(){
-        setTimeout(()=>this.props.history.push("/"), 5000);
+        setTimeout(()=>this.props.history.push("/"), 3000);
     }
 
     render(){

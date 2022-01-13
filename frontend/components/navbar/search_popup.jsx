@@ -20,7 +20,7 @@ class SearchPopup extends React.Component {
         this.cuisineList = ["american", "middle eastern", "mexican", "indian", "bakery", "bar", "mediterranean", "soul food", "venezuelan",
         "chinese", "japanese", "thai", "fusion"];
 
-        this.neighborhoodList = ["noho", "williamsburg", "jackson heights", "roosevelt island", "boerum hill", "midtown", "upper west side",
+        this.neighborhoodList = ["williamsburg", "jackson heights", "roosevelt island", "boerum hill", "midtown", "upper west side",
         "east village", "prospect heights", "lower east side", "fresh meadows"]
 
         this.nameList = ["al badawi", "aldama", "angel indian restaurant", "anything at all", "as you are", "bar blondeau", "borrachito", "boulud sud", "cadence",
@@ -124,14 +124,14 @@ class SearchPopup extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        debugger
+        // debugger
 
-        this.props.fillInBooking({
-            date: `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`,
-            time: this.state.time,
-            party_size: parseInt(this.state.party),
-            user_id: this.props.currentUser.id
-        });
+        // this.props.fillInBooking({
+        //     date: `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`,
+        //     time: this.state.time,
+        //     party_size: parseInt(this.state.party),
+        //     user_id: this.props.currentUser.id
+        // });
 
         this.props.closeSearch();
         this.setState({suggestion: false});
