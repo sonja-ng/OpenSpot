@@ -195,7 +195,7 @@ class SearchBar extends React.Component {
                             <ul className={klass} ref={this.dropRef}>
                                 {matches}
                             </ul>
-                            <button onClick={this.handleSubmit} className="search_submit">Let's go</button>
+                            <button onClick={this.handleSubmit} className="new-submit">Let's go</button>
                     </form>
                 </div>
             </div>

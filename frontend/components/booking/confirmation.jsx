@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class Confirmation extends React.Component {
     constructor(props){
@@ -23,13 +24,13 @@ class Confirmation extends React.Component {
                                 </div>  
                             </div>
                             <div className="confirm-button-row">
-                                <button className="c-button">Modify</button>
+                                <Link to="/modify" onClick={this.props.clearTentativeBooking} className="c-button">Modify</Link>
                                <button className="c-button">Cancel</button>
                             </div>
                         </div>
                     </div>
                     <aside className="user-info">
-                        <div className="user-fname"><i className="far fa-user"></i>{this.props.currentUser.fname}
+                        <div className="user-fname"><i className="far fa-user"></i>{this.props.currentUser.fname}&#160;
                         {this.props.currentUser.lname}</div>
                     </aside>
                 </div>

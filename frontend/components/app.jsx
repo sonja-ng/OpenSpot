@@ -10,6 +10,7 @@ import BookingFormContainer from './booking/booking_form_container';
 import { ProtectedRoute } from '../util/protected_route_util';
 import RestShowContainer from './rest/rest_show_container';
 import SearchBarContainer from './search/searchbar_container';
+import ModifyRsvpContainer from './booking/modify_rsvp_container';
 
 
 const App = () => (
@@ -36,6 +37,7 @@ const App = () => (
             <Route exact path={"/search"} component={SearchIndexContainer} />
             <ProtectedRoute exact path={"/booking"} component={BookingFormContainer} />
             <ProtectedRoute exact path={"/confirmation"} component={ConfirmationContainer} />
+            <ProtectedRoute exact path={"/modify"} component={ModifyRsvpContainer} />
         </div>
         <footer>
             <div className="footer_maintitle">This project is a clone of OpenTable.</div>
