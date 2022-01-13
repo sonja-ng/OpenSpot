@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SearchIndexItem = ({ rest }) => {
+const SearchIndexItem = ({ rest, fillInOneFieldBooking }) => {
     const image = rest.photos[2].url;
+    debugger
     return (
             <li className="search-result-index">
                 {/* <img src={image} className="result-img"/> */}
@@ -17,7 +18,7 @@ const SearchIndexItem = ({ rest }) => {
                     </div>
                     <div className="booked"><span><i className="fas fa-chart-line"></i>Booked 10 times today</span></div>
                     <div className="result-button-row">
-                        <button className="result-button">2:15pm</button>
+                        <Link to="/booking" onClick={()=> fillInOneFieldBooking("restId", rest.id)}><button className="result-button">2:15pm</button></Link>
                         <button className="result-button">5:30pm</button>
                         <button className="result-button">6:45pm</button>
                         <button className="result-button">7:30pm</button>

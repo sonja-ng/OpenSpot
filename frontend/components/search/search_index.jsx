@@ -120,8 +120,8 @@ class SearchIndex extends React.Component {
     render(){
         if(!this.props.rests) return null;
         const klass = this.state.suggestion ? "search-suggestion" : "hidden";
-        const { rests } = this.props;
-        const restList = rests.map(rest => <SearchIndexItem key={rest.id} rest={rest}/>);
+        const { rests, fillInOneFieldBooking } = this.props;
+        const restList = rests.map(rest => <SearchIndexItem key={rest.id} rest={rest} fillInOneFieldBooking={fillInOneFieldBooking} />);
         const msg = rests.length === 15 ? (
             <h1>Your search did not return any results, see below for suggestions!</h1>
         ) : (

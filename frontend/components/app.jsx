@@ -8,7 +8,7 @@ import ReviewIndexContainer from './review/review_index_container';
 import UserEditFormContainer from './user/user_editform_container';
 import { Link, Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
-import BookingCalendar from './calendar/calendar';
+import BookingFormContainer from './booking/booking_form_container';
 import { ProtectedRoute } from '../util/protected_route_util';
 import RestShowContainer from './rest/rest_show_container';
 import SearchBarContainer from './search/searchbar_container';
@@ -36,7 +36,7 @@ const App = () => (
             <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
             <Route path={"/rests/:restId"} component={RestShowContainer} />
             <Route exact path={"/search"} component={SearchIndexContainer} />
-            <Route exact path={"/calendar"} component={BookingCalendar} />
+            <Route exact path={"/booking"} component={BookingFormContainer} />
            
         </div>
         <footer>

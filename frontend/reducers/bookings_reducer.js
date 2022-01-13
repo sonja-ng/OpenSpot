@@ -1,4 +1,4 @@
-import { RECEIVE_BOOKING, REMOVE_BOOKING, RECEIVE_BOOKINGS, CLEAR_BOOKINGS, FILL_IN_BOOKING } from '../actions/booking_actions';
+import { RECEIVE_BOOKING, REMOVE_BOOKING, RECEIVE_BOOKINGS, CLEAR_BOOKINGS, FILL_IN_BOOKING, FILL_IN_ONE_FIELD_BOOKING } from '../actions/booking_actions';
 
 const bookingsReducer = (oldState = {}, action) => {
     // debugger
@@ -15,6 +15,9 @@ const bookingsReducer = (oldState = {}, action) => {
             return nextState;
         case FILL_IN_BOOKING:
             return action.booking;
+        case FILL_IN_ONE_FIELD_BOOKING:
+            nextState[action.cat]= action.value;
+            return nextState;
         case CLEAR_BOOKINGS:
             return {};
         default:

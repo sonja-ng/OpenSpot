@@ -6,6 +6,7 @@ export const RECEIVE_BOOKING_ERRORS = 'RECEIVE_BOOKING_ERRORS';
 export const REMOVE_BOOKING_ERRORS = 'REMOVE_BOOKING_ERRORS';
 export const REMOVE_BOOKING = 'REMOVE_BOOKING';
 export const FILL_IN_BOOKING = 'FILL_IN_BOOKING';
+export const FILL_IN_ONE_FIELD_BOOKING = 'FILL_IN_ONE_FIELD_BOOKING';
 export const CLEAR_BOOKINGS = 'CLEAR_BOOKINGS';
 
 
@@ -32,6 +33,12 @@ export const fillInBooking = booking => ({
     type: FILL_IN_BOOKING,
     booking
 });
+
+export const fillInOneFieldBooking = (cat, value) => ({
+    type: FILL_IN_ONE_FIELD_BOOKING,
+    cat, 
+    value
+})
 
 export const receiveBookingErrors = errors => {
     // debugger
@@ -65,4 +72,3 @@ export const updateBooking = booking => dispatch => (
 export const deleteBooking = bookingId => dispatch => (
     BookingApiUtils.deleteBooking(bookingId).then(bookingId => dispatch(removeBooking(bookingId)))
 );
-
