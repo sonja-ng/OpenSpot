@@ -4,9 +4,29 @@ class BookingForm extends React.Component {
     constructor(props){
         super(props);
 
+        this.state={
+                occasion: "",
+                phone: "",
+                special: ""
+        }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.updatePhone = this.updatePhone.bind(this);
+        this.updateOccasion = this.updateOccasion.bind(this);
+        this.updateSpecial = this.updateSpecial.bind(this);
     }
+    updatePhone(e){
+        this.setState({phone: e.target.value})
+    }
+
+    updateOccasion(e){
+        this.setState({occasion: e.target.value})
+    }
+
+    updateSpecial(e){
+        this.setState({special: e.target.value})
+    }
+
 
     handleSubmit(e){
         e.preventDefault();
@@ -23,7 +43,7 @@ class BookingForm extends React.Component {
                         <div className="rest-name">{restaurant.name}</div>
                         <div className="booking-details">
                             <div className="booking-value"><i className="far fa-calendar"></i>{booking.date}</div>
-                            <div className="booking-value"><i className="far fa-clock"></i>{booking.time}</div>
+                            <div className="booking-value"><i className="far fa-clock"></i>{booking.time} PM</div>
                             <div className="booking-value"><i className="far fa-user"></i>{booking.party_size} people</div>
                         </div>
                     </div>
@@ -32,19 +52,19 @@ class BookingForm extends React.Component {
                         <form className="rsvp-form">
                             {currentUser.fname}
                             <div className="row-1">
-                                <input className="phone" type="text" value={currentUser.phone} />
-                                <input className="email" type="text" value={currentUser.email}/>
+                                <input className="phone" type="text" value={currentUser.phone} onChange={this.updatePhone}/>
+                                <div className="email">{currentUser.email}</div>
                             </div>
                             <div className="row-2">
-                                <select className="occasion" name="occasion" id="occasion">
-                                    <option value="" disabled selected>Select an occasion(optional)</option>
+                                <select className="occasion" name="occasion" id="occasion" defaultValue="Select an occasion" onChange={this.updateOccasion}>
+                                    <option value="Select an occasion" disabled>Select an occasion(optional)</option>
                                     <option value="Birthday">Birthday</option>
                                     <option value="Anniversary">Anniversary</option>
                                     <option value="Date Night">Date Night</option>
                                     <option value="Business Meal">Business Meal</option>
                                     <option value="Celebration">Celebration</option>
                                 </select>
-                                <textarea placeholder="Add a special request (optional)"/>
+                                <textarea placeholder="Add a special request (optional)" onChange={this.updateSpecial}/>
                             </div>
                             <button className="rsvp-button" onClick={this.handleSubmit}>Complete Reservation</button>
                         </form>

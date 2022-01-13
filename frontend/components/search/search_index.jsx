@@ -123,7 +123,9 @@ class SearchIndex extends React.Component {
         const { rests, fillInOneFieldBooking, currentUser, openModal } = this.props;
         const restList = rests.map(rest => <SearchIndexItem key={rest.id} rest={rest} fillInOneFieldBooking={fillInOneFieldBooking} currentUser={currentUser} openModal={openModal}/>);
         const msg = rests.length === 15 ? (
-            <h1>Your search did not return any results, see below for suggestions!</h1>
+            <div className="alert">
+                <h1>Your search did not return any results, see below for suggestions!</h1>
+            </div>
         ) : (
             null
         )

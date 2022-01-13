@@ -15,8 +15,8 @@ class SearchBar extends React.Component {
             name: "",
             suggestion: false,
             date: new Date(),
-            time: "",
-            party: ""
+            time: "12:00",
+            party: 2
         }
 
         this.cuisineList = ["american", "middle eastern", "mexican", "indian", "bakery", "bar", "mediterranean", "soul food", "venezuelan",
@@ -162,14 +162,29 @@ class SearchBar extends React.Component {
                     <form className="main-search-form">
                         <DatePicker dateFormat="yyyy-MM-dd" selected={this.state.date} onChange={this.updateDate}/>
                         <select name="time" id="time" value={this.state.time} className="dropdown time" onChange={this.updateTime}>
-                            <option value="1:00">1:00pm</option>
-                            <option value="2:00">2:00pm</option>
+                            <option value="12:00">12:00pm</option>
+                            <option value="01:00">1:00pm</option>
+                            <option value="02:00">2:00pm</option>
+                            <option value="03:00">3:00pm</option>
+                            <option value="04:00">4:00pm</option>
+                            <option value="05:00">5:00pm</option>
+                            <option value="06:00">6:00pm</option>
+                            <option value="07:00">7:00pm</option>
+                            <option value="08:00">8:00pm</option>
+                            <option value="09:00">9:00pm</option>
+                            <option value="10:00">10:00pm</option>
                         </select>
                             <label>
                             <select className="dropdown party" name="party" id="party" value={this.state.party} onChange={this.updateParty}>
                                 <option value="2">2 people</option>
                                 <option value="3">3 people</option>
                                 <option value="4">4 people</option>
+                                <option value="5">5 people</option>
+                                <option value="6">6 people</option>
+                                <option value="7">7 people</option>
+                                <option value="8">8 people</option>
+                                <option value="9">9 people</option>
+                                <option value="10">10 people</option>
                             </select>
                             </label> 
                             <span className="font_search">

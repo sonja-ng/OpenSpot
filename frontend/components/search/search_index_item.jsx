@@ -12,6 +12,7 @@ class SearchIndexItem extends React.Component {
         if (this.props.currentUser) {
             this.props.fillInOneFieldBooking("rest_id", this.props.rest.id);
             this.props.fillInOneFieldBooking("user_id", this.props.currentUser.id);
+            this.props.fillInOneFieldBooking("time", e.target.innerText.slice(0, 4));
         } else {
             this.props.openModal("login");
         }
@@ -37,10 +38,10 @@ class SearchIndexItem extends React.Component {
                     <div className="booked"><span><i className="fas fa-chart-line"></i>Booked 10 times today</span></div>
                     <div className="result-button-row">
                         <Link to={whereTo} onClick={this.handleClick}><button className="result-button">2:15pm</button></Link>
-                        <button className="result-button">5:30pm</button>
-                        <button className="result-button">6:45pm</button>
-                        <button className="result-button">7:30pm</button>
-                        <button className="result-button">8:45pm</button>
+                        <Link to={whereTo} onClick={this.handleClick}><button className="result-button">5:30pm</button></Link>
+                        <Link to={whereTo} onClick={this.handleClick}><button className="result-button">6:45pm</button></Link>
+                        <Link to={whereTo} onClick={this.handleClick}><button className="result-button">7:30pm</button></Link>
+                        <Link to={whereTo} onClick={this.handleClick}><button className="result-button">8:45pm</button></Link>
                     </div>
                 </div>
             </li>
