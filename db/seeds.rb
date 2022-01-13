@@ -10,6 +10,7 @@ require 'open-uri'
 User.destroy_all
 Rest.destroy_all
 Review.destroy_all
+Booking.destroy_all
 
 user1 = User.create(username:'gracie235', fname:'Grace', lname:'See', email:'gsee@gmail.com', phone:'123456', password: 'password')
 user2 = User.create(username:'eloise09', fname:'Eloise', lname:'Koh', email:'ekoh@gmail.com', phone:'0000000', password: 'password')
@@ -1096,4 +1097,20 @@ review30 = Review.create!(
     service: 4, 
     ambience: 5,
     overall: 5
+)
+
+booking1 = Booking.create!(
+    user_id: demo.id,
+    rest_id: rest3.id,
+    date: "2022-02-20",
+    time: "08:00",
+    party_size: 4
+)
+
+booking2 = Booking.create!(
+    user_id: demo.id,
+    rest_id: rest10.id,
+    date: "2022-03-15",
+    time: "06:00",
+    party_size: 2
 )
