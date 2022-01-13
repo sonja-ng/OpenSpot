@@ -8,6 +8,7 @@ import ReviewIndexContainer from './review/review_index_container';
 import UserEditFormContainer from './user/user_editform_container';
 import { Link, Route } from 'react-router-dom';
 import { AuthRoute } from '../util/route_util';
+import ConfirmationContainer from './booking/confirmation_container';
 import BookingFormContainer from './booking/booking_form_container';
 import { ProtectedRoute } from '../util/protected_route_util';
 import RestShowContainer from './rest/rest_show_container';
@@ -31,13 +32,13 @@ const App = () => (
             <NavBarContainer />
         </header>
         <div className="main_content">
-            <Route exact path={"/"} component={SearchBarContainer} />
-            <Route exact path={"/"} component={RestIndexContainer} />
+            <Route exact path="/" component={SearchBarContainer} />
+            <Route exact path="/" component={RestIndexContainer} />
             <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
             <Route path={"/rests/:restId"} component={RestShowContainer} />
             <Route exact path={"/search"} component={SearchIndexContainer} />
             <ProtectedRoute exact path={"/booking"} component={BookingFormContainer} />
-           
+            <ProtectedRoute exact path={"/confirmation"} component={ConfirmationContainer} />
         </div>
         <footer>
             <div className="footer_maintitle">This project is a clone of OpenTable.</div>
