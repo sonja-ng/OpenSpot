@@ -331,7 +331,7 @@ header {
 .font_search i {
     position: absolute;
     left: 5px;
-    top: 2px;
+    top: 17px;
 }
 
 .main-search-form {
@@ -474,6 +474,7 @@ header {
 
 .white-search-form {
     position: relative;
+    display: flex;
 }
 
 .white-search-suggestion {

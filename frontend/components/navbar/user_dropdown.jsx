@@ -14,7 +14,7 @@ class UserDropDown extends React.Component{
                    <div className="dropdown_title">Hello, {currentUser.fname}!</div>
                    <ul>
                    <li><Link to={`/users/${currentUser.id}/account`} onClick={toggle}>My Profile</Link></li>
-                   <li onClick={toggle}>My Reservations</li>
+                   <li><Link to={`/users/${currentUser.id}/bookings`} onClick={toggle}>My Reservations</Link></li>
                    <li><Link to={`/users/${currentUser.id}/reviews`} onClick={toggle}>My Reviews</Link></li>
                    <li onClick={logout}>Sign Out</li>
                    </ul>

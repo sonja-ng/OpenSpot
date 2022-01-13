@@ -10,7 +10,8 @@ class UserBookingIndexItem extends React.Component {
     render(){
         // debugger
         const { booking, currentUser, deleteBooking, updateBooking } = this.props;
-        if (!booking) return null;
+        if (!booking || !booking.restaurant) return null;
+
         return (
             <div>
                 <li className="user-rsvp-row">

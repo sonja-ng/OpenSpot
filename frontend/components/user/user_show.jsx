@@ -13,7 +13,7 @@ const UserShow = ({ currentUser }) => {
                     <ul>
                         <Link to={`/users/${currentUser.id}/account`}>Account Details</Link>
                         <Link to={`/users/${currentUser.id}/bookings`}>Reservations</Link>
-                        <Link to={`/users/${currentUser.id}/fav`}>Saved Restaurants</Link>
+                        {/* <Link to={`/users/${currentUser.id}/fav`}>Saved Restaurants</Link> */}
                         <Link to={`/users/${currentUser.id}/reviews`}>Reviews</Link>
                     </ul>
                 </aside>

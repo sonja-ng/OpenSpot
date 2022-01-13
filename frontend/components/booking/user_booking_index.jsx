@@ -9,19 +9,20 @@ class UserBookingIndex extends React.Component {
     componentDidMount(){
         // debugger
             this.props.clearBookings();
-            this.props.fetchBookings({["user_id"]: this.props.currentUser.id});
+            this.props.fetchBookings({["userId"]: this.props.currentUser.id});
     }
 
     componentDidUpdate(prevProps){
-        // debugger
+        debugger
         if (this.props.bookings.length !== prevProps.bookings.length){
-            this.props.fetchBookings({["user_id"]: this.props.currentUser.id});
+            this.props.fetchBookings({["userId"]: this.props.currentUser.id});
         }    
     }
 
     render(){
         if (!this.props.bookings) return null;
         // debugger
+
         const { bookings, currentUser, deleteBooking } = this.props;
         const bookingList = bookings.map((booking, idx) => <UserBookingIndexItem key={idx} 
         booking={booking} currentUser={currentUser} deleteBooking={deleteBooking} />)
