@@ -5,6 +5,7 @@ import Gallery from './gallery';
 import Map from './map';
 import ReviewIndexContainer from '../review/review_index_container';
 import ReviewFormContainer from '../form/review_form_container';
+import RestBookingContainer from '../booking/rest_booking_container';
 import ReviewEditFormContainer from '../form/review_edit_form_container';
 import { receiveCurrentUser } from '../../actions/session_actions';
 
@@ -104,7 +105,7 @@ class RestShow extends React.Component {
                     </div>
                     <aside className="right-content">
                         <div className="rsvp-container">
-                            RSVP component
+                            <RestBookingContainer />
                         </div>
                         <div className="order-takeout">
                             Takeout?

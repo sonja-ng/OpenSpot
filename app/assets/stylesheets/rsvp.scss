@@ -4,10 +4,21 @@
     width: max-content;
 }
 .react-datepicker__input-container{
-    input {
+    .search-date {
         border: none;
         width: 171px;
         height: 50px;
+        border-radius: 3px 0 0 3px;
+        padding: 0 0 0 10px;
+        box-sizing: border-box;
+        }
+}
+
+.react-datepicker__input-container{
+    .rest-date {
+        border: none;
+        width: 150px;
+        height: 30px;
         border-radius: 3px 0 0 3px;
         padding: 0 0 0 10px;
         box-sizing: border-box;

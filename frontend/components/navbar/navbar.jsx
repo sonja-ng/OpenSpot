@@ -54,6 +54,7 @@ class Navbar extends React.Component {
     }
 
     render(){
+        debugger
         const { currentUser, logout, updateFilter } = this.props;
         const display = currentUser ? (
             <UserNavBar logout={logout} enableScrolling={this.enableScrolling} currentUser={currentUser} updateFilter={updateFilter}/>

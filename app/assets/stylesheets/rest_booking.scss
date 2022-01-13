@@ -1,0 +1,21 @@
+.rest-party {
+    width: 287px;
+    height: 33px;
+    border: none;
+}
+
+.rest-date {
+    border: 1px solid black;
+}
+
+.rest-time {
+    height: 50px;
+    width: 100px;
+    border: none;
+}
+
+.rest-bookform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import DatePicker from 'react-datepicker';
 
 class SearchPopup extends React.Component {
     constructor(props){
@@ -11,6 +12,9 @@ class SearchPopup extends React.Component {
             neighborhood: "",
             name: "",
             suggestion: false,
+            date: new Date(),
+            time: "12:00",
+            party: 2
         }
 
         this.cuisineList = ["american", "middle eastern", "mexican", "indian", "bakery", "bar", "mediterranean", "soul food", "venezuelan",
@@ -23,7 +27,7 @@ class SearchPopup extends React.Component {
         "casa ora", "cheli", "chuko", "dhamaka", "soothr", "pecking house"];
 
         this.allItems = ["American", "Middle Eastern", "Mexican", "Indian", "Bakery", "Bar", "Mediterranean", "Soul food", "Venezuelan",
-        "Chinese", "Japanese", "Thai", "Fusion", "NoHo", "Williamsburg", "Jackson Heights", "Roosevelt Island", "Boerum Hill", "Midtown", "Upper West Side",
+        "Chinese", "Japanese", "Thai", "Fusion", "Williamsburg", "Jackson Heights", "Roosevelt Island", "Boerum Hill", "Midtown", "Upper West Side",
         "East Village", "Prospect Heights", "Lower East Side", "Fresh Meadows", "Al Badawi", "Aldama", "Angel Indian Restaurant", "Anything At All", "As You Are", 
         "Bar Blondeau", "Borrachito", "Boulud Sud", "Cadence", "Casa Ora", "Cheli", "Chuko", "Dhamaka", "Soothr", "Pecking House" ];
 
@@ -33,6 +37,23 @@ class SearchPopup extends React.Component {
         this.reset = this.reset.bind(this);
         this.removeDropDown = this.removeDropDown.bind(this);
         this.dropRef = React.createRef();
+        this.updateDate = this.updateDate.bind(this);
+        this.updateTime = this.updateTime.bind(this);
+        this.updateParty = this.updateParty.bind(this);
+    }
+
+    updateDate(d){
+        this.setState({date: d});
+    }
+
+    updateTime(e){
+        e.preventDefault();
+        this.setState({time: e.target.value})
+    }
+
+    updateParty(e){
+        e.preventDefault();
+        this.setState({party: e.target.value})
     }
 
     componentDidMount(){
@@ -103,8 +124,14 @@ class SearchPopup extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        // console.log('test');
-        // debugger
+        debugger
+
+        this.props.fillInBooking({
+            date: `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`,
+            time: this.state.time,
+            party_size: parseInt(this.state.party),
+            user_id: this.props.currentUser.id
+        });
 
         this.props.closeSearch();
         this.setState({suggestion: false});
@@ -143,16 +170,32 @@ class SearchPopup extends React.Component {
                             <button onClick={this.reset} className="search-x">X</button>
                         <div className="search-slogan">Find your table for any occasion</div>
                             <form className="white-search-form">
-                                <input type="date" className="search-date-white"/>
-                                <select name="time" id="time3" className="white-dropdown clock">
-                                    <option value="1:00">1:00pm</option>
-                                    <option value="2:00">2:00pm</option>
+                                <DatePicker dateFormat="yyyy-MM-dd" className="search-date-white"
+                                selected={this.state.date} onChange={this.updateDate}/>
+                                <select name="time3" id="time3" className="white-dropdown clock" value={this.state.time} onChange={this.updateTime}>
+                                    <option value="12:00">12:00pm</option>
+                                    <option value="01:00">1:00pm</option>
+                                    <option value="02:00">2:00pm</option>
+                                    <option value="03:00">3:00pm</option>
+                                    <option value="04:00">4:00pm</option>
+                                    <option value="05:00">5:00pm</option>
+                                    <option value="06:00">6:00pm</option>
+                                    <option value="07:00">7:00pm</option>
+                                    <option value="08:00">8:00pm</option>
+                                    <option value="09:00">9:00pm</option>
+                                    <option value="10:00">10:00pm</option>
                                 </select>
                                 <label>
-                                    <select className="white-dropdown party" name="party" id="party3">
+                                    <select className="white-dropdown party" name="party3" id="party3" value={this.state.party} onChange={this.updateParty}>
                                         <option value="2">2 people</option>
                                         <option value="3">3 people</option>
-                                        <option value="4">4 people</option>        
+                                        <option value="4">4 people</option>
+                                        <option value="5">5 people</option>
+                                        <option value="6">6 people</option>
+                                        <option value="7">7 people</option>
+                                        <option value="8">8 people</option>
+                                        <option value="9">9 people</option>
+                                        <option value="10">10 people</option>    
                                     </select>
                                 </label> 
                                 <span className="font_search">
@@ -163,7 +206,7 @@ class SearchPopup extends React.Component {
                                 <ul className={klass3} ref={this.dropRef}>
                                     {matches}
                                 </ul>
-                                <button className="search_submit" onClick={this.handleSubmit}>Let's go</button>
+                                <button className="new-submit" onClick={this.handleSubmit}>Let's go</button>
                             </form>
                     </div>
             </div>

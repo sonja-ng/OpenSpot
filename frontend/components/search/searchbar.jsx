@@ -160,7 +160,7 @@ class SearchBar extends React.Component {
                 <div className="form_container">
                     <div className="slogan">Find your table for any occasion</div>
                     <form className="main-search-form">
-                        <DatePicker dateFormat="yyyy-MM-dd" selected={this.state.date} onChange={this.updateDate}/>
+                        <DatePicker dateFormat="yyyy-MM-dd" className="search-date"selected={this.state.date} onChange={this.updateDate}/>
                         <select name="time" id="time" value={this.state.time} className="dropdown time" onChange={this.updateTime}>
                             <option value="12:00">12:00pm</option>
                             <option value="01:00">1:00pm</option>

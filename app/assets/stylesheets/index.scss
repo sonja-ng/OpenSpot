@@ -428,6 +428,10 @@ header {
         padding-left: 5px;
     }
 
+    .search-date-white:focus {
+        outline: none;
+    }
+
     .white-dropdown.party {
         height: 50px;
         border-radius: 0px 3px 3px 0px;
