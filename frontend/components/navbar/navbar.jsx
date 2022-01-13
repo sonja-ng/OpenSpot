@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, withRouter } from 'react-router-dom';
 import UserNavBar from "./user_navbar";
-import SearchPopup from './search_popup';
+// import SearchPopupContainer from './search_popup_container';
 
 class Navbar extends React.Component {
     constructor(props){
@@ -54,7 +54,7 @@ class Navbar extends React.Component {
     }
 
     render(){
-        debugger
+        // debugger
         const { currentUser, logout, updateFilter } = this.props;
         const display = currentUser ? (
             <UserNavBar logout={logout} enableScrolling={this.enableScrolling} currentUser={currentUser} updateFilter={updateFilter}/>
@@ -76,7 +76,7 @@ class Navbar extends React.Component {
         return (
             <div>
                 {display}
-                <SearchPopup closeSearch={this.closeSearch} searchOut={this.state.searchOut} updateFilter={updateFilter}/>
+                {/* <SearchPopupContainer closeSearch={this.closeSearch} searchOut={this.state.searchOut} updateFilter={updateFilter}/> */}
             </div>
         )
     }
