@@ -4,12 +4,11 @@ class Api::BookingsController < ApplicationController
     def index
         if user_id 
             bookings = Booking.where("user_id = ?", user_id)
-            bookings.includes(:restaurant)
         else
             bookings = Booking.all
         end
 
-        @bookings = bookings
+        @bookings = bookings.includes(:restaurant)
         render :index
     end
 

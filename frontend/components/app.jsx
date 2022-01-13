@@ -11,6 +11,7 @@ import { ProtectedRoute } from '../util/protected_route_util';
 import RestShowContainer from './rest/rest_show_container';
 import SearchBarContainer from './search/searchbar_container';
 import ModifyRsvpContainer from './booking/modify_rsvp_container';
+import ModifyBookingContainer from './booking/modify_booking_container';
 import Cancel from './booking/cancel_confirm';
 
 
@@ -39,6 +40,7 @@ const App = () => (
             <ProtectedRoute exact path={"/booking"} component={BookingFormContainer} />
             <ProtectedRoute exact path={"/confirmation"} component={ConfirmationContainer} />
             <ProtectedRoute exact path={"/modify"} component={ModifyRsvpContainer} />
+            <ProtectedRoute exact path={"/modify/:bookingId"} component={ModifyBookingContainer} />
             <ProtectedRoute exact path={"/cancellation"} component={Cancel} />
             
         </div>

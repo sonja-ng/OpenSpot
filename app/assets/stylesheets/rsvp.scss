@@ -177,3 +177,42 @@
     font-family: $main-font;
     cursor: pointer;
 }
+
+.my-bookings {
+    margin: 22px;
+}
+
+.confirm-button-row {
+    .c-button {
+        height: 20px;
+        line-height: 20px;
+    }
+}
+
+.user-rsvp-row {
+    height: 120px;
+    width: 600px;
+    margin: 0 auto;
+    display: flex;
+    border-bottom: 1px solid $border-color;
+    margin-top: 40px;
+
+    .rsvp-rest {
+        height: 120px;
+        width: 100px;
+        text-align: center;
+        margin-right: 50px;
+
+        .rest-info {
+            font-size: 12px;
+            font-family: $main_font;
+            color: rgb(167, 167, 167);
+            margin-top: 10px;
+        }
+    }
+
+    .rsvp-content {
+        height: 120px;
+        width: 400px;
+    }
+}

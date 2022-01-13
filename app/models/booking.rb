@@ -14,12 +14,12 @@
 class Booking < ApplicationRecord
     validates :date, :time, :party_size, :user_id, :rest_id, presence: true
 
-    has_many :bookers,
+    belongs_to :booker,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: :User
 
-    has_many :restaurants,
+    belongs_to :restaurant,
     primary_key: :id,
     foreign_key: :rest_id,
     class_name: :Rest

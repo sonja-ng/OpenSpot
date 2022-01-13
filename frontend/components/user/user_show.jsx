@@ -2,7 +2,7 @@ import React from 'react';
 import UserEditFormContainer from './user_editform_container';
 import { Route, Link } from 'react-router-dom';
 import UserReviewIndexContainer from '../review/user_review_index_container';
-import UserRsvpIndexContainer from '../booking/user_rsvp_index_container';
+import UserBookingIndexContainer from '../booking/user_booking_index_container';
 
 const UserShow = ({ currentUser }) => {
     return (
@@ -12,7 +12,7 @@ const UserShow = ({ currentUser }) => {
                 <aside className="left">
                     <ul>
                         <Link to={`/users/${currentUser.id}/account`}>Account Details</Link>
-                        <Link to={`/users/${currentUser.id}/rsvp`}>Reservations</Link>
+                        <Link to={`/users/${currentUser.id}/bookings`}>Reservations</Link>
                         <Link to={`/users/${currentUser.id}/fav`}>Saved Restaurants</Link>
                         <Link to={`/users/${currentUser.id}/reviews`}>Reviews</Link>
                     </ul>
@@ -21,7 +21,7 @@ const UserShow = ({ currentUser }) => {
                     <div className="user_row"></div>
                     <Route exact path={`/users/:userId/account`} component={UserEditFormContainer} />
                     <Route exact path={`/users/:userId/reviews`} component={UserReviewIndexContainer} />
-                    <Route exact path={`/users/:userId/rsvp`} component={UserRsvpIndexContainer} />
+                    <Route exact path={`/users/:userId/bookings`} component={UserBookingIndexContainer} />
                 </div>
                 <aside className="right">
                 </aside >
