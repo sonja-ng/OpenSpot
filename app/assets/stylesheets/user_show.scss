@@ -62,6 +62,10 @@ $manrope: 'Manrope', sans-serif;
     margin-bottom: 24px;
 }
 
+.left a:hover {
+    color: $red;
+}
+
 .user_row {
     height: 24px;
     width: 824px;

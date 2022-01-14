@@ -230,6 +230,10 @@ header {
     cursor: pointer;
 }
 
+.dropdown_ul a:hover {
+    color: $red;
+}
+
 .dropdown_title {
     font-family: $manrope;
     font-weight: 600;

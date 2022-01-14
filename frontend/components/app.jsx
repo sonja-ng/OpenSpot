@@ -49,7 +49,7 @@ const App = () => (
             <div className="footer_row">
                 <div className="footer_col_left">
                     <ul>
-                        <div className="footer_title">Technologies Used:</div>
+                        <div className="footer_title">Technologies</div>
                         <li>React</li>
                         <li>Redux</li>
                         <li>Ruby on Rails</li>
@@ -59,7 +59,7 @@ const App = () => (
                 </div>
                 <div className="footer_col_right">
                     <ul>
-                        <div className="footer_title">Links:</div>
+                        <div className="footer_title">Links</div>
                         <li><a href="https://github.com/sonja-ng" target="_blank">GitHub</a></li>
                         <li><a href="https://www.linkedin.com/in/sonja-ng-a22aa513/" target="_blank">LinkedIn</a></li>
                         <li><a href="https://github.com/sonja-ng/OpenSpot" target="_blank">Image Credits</a></li>

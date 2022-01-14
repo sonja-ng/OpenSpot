@@ -142,13 +142,3 @@ class SignupForm extends React.Component {
 }
 
 export default SignupForm;
-
-    // renderErrors(){
-    //     return (
-    //         <ul className="form_errors">
-    //             {this.props.errors.map((error, idx) => (
-    //                 <li key={idx}>{error}</li>
-    //             ))}
-    //         </ul>
-    //     );
-    // }

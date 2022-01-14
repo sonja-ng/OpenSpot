@@ -59,14 +59,6 @@ class LoginForm extends React.Component {
         });
     }
 
-    // goBack(e){
-    //     e.preventDefault();
-    //     // debugger
-    //     // if (this.formRef && !this.formRef.current.contains(e.target)){
-    //     //     return this.props.history.goBack();
-    //     // };
-    //  }
-
     renderErrors(){
         return (
             <ul className="form_errors">

@@ -49,12 +49,6 @@ class UserEditForm extends React.Component {
         });
     }
 
-    // test(e){
-    //     debugger
-    //     e.preventDefault();
-    //     console.log('test');
-    // }
-
     render(){
         // debugger
 

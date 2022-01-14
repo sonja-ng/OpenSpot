@@ -62,7 +62,6 @@ class ReviewForm extends React.Component {
 
     render(){
         // debugger
-        console.log(this.state);
         const formErrors = this.props.errors ? (
             <div className="review-form-errors">{this.props.errors[0]}</div>
         ) : (

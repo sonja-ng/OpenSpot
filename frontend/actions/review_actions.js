@@ -15,7 +15,7 @@ export const receiveReviews = reviews => ({
 });
 
 export const receiveReview = review => {
-    debugger
+    // debugger
     return {
     type: RECEIVE_REVIEW,
     review
