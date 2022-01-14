@@ -50,7 +50,6 @@ Open Spot is an Open Table clone where users can search, make reservations, and 
 //rest_index_item.jsx
 
       handleClick(e){
-        // debugger
         e.stopPropagation();
         if (this.props.currentUser) {
             this.props.fillInOneFieldBooking("rest_id", this.props.rest.id);
@@ -93,10 +92,10 @@ Open Spot is an Open Table clone where users can search, make reservations, and 
 ```
 
 
-
-
 ## Future Features
 - Allow users to bookmark favorite restaurants 
 - Add carousel features to restaurant list on homepage
+- Make available booking time more dynamic based on users' search
+- Show restaurant ratings based on average of user ratings
 - Show upcoming and past bookings as a dropdown alert in the navbar
 - Add filter functionality to search results
