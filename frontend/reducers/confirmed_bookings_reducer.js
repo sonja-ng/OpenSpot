@@ -10,7 +10,7 @@ const confirmedBookingsReducer = (oldState = {}, action) => {
         case RECEIVE_BOOKING:
             return action.booking;
         case REMOVE_BOOKING:
-            delete nextState[action.bookingId];
+            delete nextState[action.booking.id];
             return nextState;
         case CLEAR_BOOKINGS:
             return {};

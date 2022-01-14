@@ -21,9 +21,9 @@ export const receiveBooking = booking => ({
     booking
 });
 
-export const removeBooking = bookingId => ({
+export const removeBooking = booking => ({
     type: REMOVE_BOOKING,
-    bookingId
+    booking
 });
 
 export const clearBookings = () => ({
@@ -75,5 +75,5 @@ export const updateBooking = booking => dispatch => (
 );
 
 export const deleteBooking = bookingId => dispatch => (
-    BookingApiUtils.deleteBooking(bookingId).then(bookingId => dispatch(removeBooking(bookingId)))
+    BookingApiUtils.deleteBooking(bookingId).then(booking => dispatch(removeBooking(booking)))
 );

@@ -29,7 +29,7 @@ class UserBookingIndexItem extends React.Component {
                             </div>
                             <div className="confirm-button-row">
                                 <Link to={`/modify/${booking.id}`} onClick={this.props.clearTentativeBooking} className="c-button">Modify</Link>
-                                <button onClick={()=> deleteBooking(booking.id).then(()=>this.props.history.push("/cancellation"))} className="c-button">Cancel</button>
+                                <button onClick={()=> deleteBooking(booking.id)} className="c-button">Cancel</button>
                             </div>
                         </div>
                     {/* <BookingEditFormContainer bookingOut={this.state.bookingOut} closeBooking={this.closeBooking} booking={booking}/> */}

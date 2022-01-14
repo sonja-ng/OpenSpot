@@ -20,7 +20,7 @@ class ModifyRsvp extends React.Component {
         this.updateParty = this.updateParty.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+    // 
     updateDate(d){
         this.setState({date: d},()=> this.props.fillInOneFieldBooking("date", `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`));
         // debugger
@@ -75,7 +75,7 @@ class ModifyRsvp extends React.Component {
                     </div>
                     <div className="flex-row-mod">
                         <div className="mod-details">On {this.props.booking.date}</div>
-                        <div className="mod-details">at {this.props.booking.time.slice(12, 16)}</div>
+                        <div className="mod-details">at {this.props.booking.time.slice(12, 16)} PM</div>
                         <div className="mod-details">for {this.props.booking.party_size} people</div>
                     </div>
                     </div>

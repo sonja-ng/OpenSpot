@@ -47,7 +47,7 @@ class ReviewEditForm extends React.Component {
                 <form className={klass}>
                     <button className="x_button" onClick={this.props.closeEditReview}><i className="fas fa-times"></i></button>
                     <div className="review-form-header">Edit your review</div>
-                    <div className="rating-row">
+                    <div className="rating-edit-row">
                     <label>Food
                         <select value={this.state.food} onChange={this.update("food")}>
                             <option value="1">1</option>
@@ -86,7 +86,7 @@ class ReviewEditForm extends React.Component {
                     </label>
                     </div>
                     <label>Comment<span className="red">*</span><br/>
-                        <textarea value={this.state.comment} onChange={this.update("comment")}/>
+                        <textarea className="edit-textarea" value={this.state.comment} onChange={this.update("comment")}/>
                     </label>
                     {formErrors}
                     <button className="edit-review-submit" onClick={this.handleSubmit}>Submit</button>

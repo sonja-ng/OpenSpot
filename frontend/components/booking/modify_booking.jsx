@@ -75,7 +75,7 @@ class ModifyBooking extends React.Component {
             <div className="modify-bg">
                     <div className="flex-row-mod">
                         <div>{this.props.booking.date}</div>
-                        <div>{this.props.booking.time.slice(12, 16)}</div>
+                        <div>{this.props.booking.time.slice(12, 16)} PM</div>
                         <div>{this.props.booking.party_size}</div>
                     </div>
                 <form>

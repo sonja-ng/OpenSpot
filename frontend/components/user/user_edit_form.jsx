@@ -6,7 +6,7 @@ class UserEditForm extends React.Component {
         super(props);
         this.state = this.props.currentUser;
         this.handleSubmit = this.handleSubmit.bind(this);
-        // this.test = this.test.bind(this);
+        this.success = React.createRef();
     }
 
     componentDidMount(){
@@ -44,7 +44,9 @@ class UserEditForm extends React.Component {
         // debugger
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        return this.props.updateUser(user).then();
+        return this.props.updateUser(user).then(()=> {
+            this.success.current.classList.remove("hidden")
+        });
     }
 
     // test(e){
@@ -100,6 +102,7 @@ class UserEditForm extends React.Component {
                     
                         {/* <input type="submit" value="Save Changes"/>   */}
                     <button onClick={this.handleSubmit} className="long_submit">Save Changes</button>
+                    <div className="success hidden" ref={this.success}>Your changes are saved!</div>
                 </form> 
             </div>
         )
