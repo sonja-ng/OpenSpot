@@ -16,8 +16,6 @@ Open Spot is an Open Table clone where users can search, make reservations, and 
 ## Autocomplete Search Function 
 ![Search Bar](./app/assets/images/search.png)
 
-
-
 ## Technology
 - React/Redux
 - Javascript
@@ -26,35 +24,10 @@ Open Spot is an Open Table clone where users can search, make reservations, and 
 - Google Map API
 - PostgreSQL
 
-## Implementation
-- 
-```js
-//game.js
-
-   isCorrect() { 
-    const currentArtwork = this.artwork[0];
-    if (currentArtwork.status === -1) {
-      if (this.currentKey === currentArtwork.keys[0]) {
-        currentArtwork.updateStatus();
-        return true;
-      } else if (this.currentKey !== currentArtwork.keys[0] && this.wrapper.includes(this.currentKey)) {
-         return false;
-      }
-    } else if (currentArtwork.status === 0) {
-      if (this.currentKey === currentArtwork.keys[1]) {
-        currentArtwork.updateStatus();
-        return true;
-      } else if (this.currentKey !== currentArtwork.keys[1] && this.wrapper.includes(this.currentKey)) {
-         return false;
-      }
-    }
-}
-```
-
 ## MVP
 
 ### Splash/User Authentication
-- Everyone can view the landing page and restaurant pages, but only logged-in users can make reservations and write/edit/delete reviews.
+- While everyone can search for and view restaurant pages, only logged-in users can make reservations or write reviews.
 - Users can sign up, update their account info, log in, and log out of their accounts.
 - Users have the option to log in with a demo account to access all site functionalities.
 
@@ -69,6 +42,57 @@ Open Spot is an Open Table clone where users can search, make reservations, and 
 - Reviews of a restaurant are viewable by the public
 - Logged-in users can write a review
 - Users can view, edit, and delete their own reviews in their profile
+
+## Implementation
+- As the user navigates the site, the tentative reservation redux state continously updates its info like date, time, restaurant, based on which buttons the user clicks. 
+
+```js
+//rest_index_item.jsx
+
+      handleClick(e){
+        // debugger
+        e.stopPropagation();
+        if (this.props.currentUser) {
+            this.props.fillInOneFieldBooking("rest_id", this.props.rest.id);
+            this.props.fillInOneFieldBooking("user_id", this.props.currentUser.id);
+            this.props.fillInOneFieldBooking("time", e.target.innerText.slice(0, 4));
+        } else {
+            this.props.openModal("login");
+        }
+    }
+
+    render(){
+        const { rest } = this.props;
+
+        if (rest.photos.length === 0) return null; 
+        const image = rest.photos[0].url;
+        const whereTo = this.props.currentUser ? "/booking" : "/";
+        return (
+            <li className="rest-index-thumbnail">
+                <Link to={`rests/${rest.id}`}>
+                <img src={image} className="thumbnail-img"/>
+                <div className="thumbnail-text">
+                    <h1>{rest.name}</h1>
+                    <div className="stars"><img src={window.starsURL}/></div>
+                    <div className="thumbnail-detail">
+                        <span>{rest.cuisine}</span>
+                        <div className="price">$$$</div>
+                        <span>{rest.neighborhood}</span>
+                    </div>
+                </div>
+                </Link>
+                <div className="button-row">
+                <Link to={whereTo} onClick={this.handleClick}><button className="thumbnail-button">7:15pm</button></Link>
+                <Link to={whereTo} onClick={this.handleClick}><button className="thumbnail-button">7:30pm</button></Link>
+                <Link to={whereTo} onClick={this.handleClick}><button className="thumbnail-button">7:45pm</button></Link>
+                </div>
+            </li>
+            
+        )
+    }
+```
+
+
 
 
 ## Future Features
