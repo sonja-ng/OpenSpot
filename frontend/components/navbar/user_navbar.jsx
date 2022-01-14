@@ -52,7 +52,7 @@ class UserNavBar extends React.Component {
     }
 
     render() {
-
+    // debugger
         return (
             <div className="right_navbar">
                 <div className="dropdown_container" ref={this.dropRef}>

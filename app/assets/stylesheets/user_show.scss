@@ -25,14 +25,14 @@ $manrope: 'Manrope', sans-serif;
 
 .flex_container .form_section {
     background-color: white;
-    height: 500px;
+    // height: 1000px;
     width: 824px;
 }
 
 .user_show_main .left {
     background-color: $background-color;
     width: 490px;
-    height: 794px;
+    height: 994px;
     font-family: $roboto;
     font-weight: 300;
     font-size: 13px;
@@ -44,11 +44,11 @@ $manrope: 'Manrope', sans-serif;
 .user_show_main .right {
     background-color: $background-color;
     width: 289px;
-    height: 794px;
+    height: 994px;
 }
 
 .user_show_main {
-    height: 800px;
+    height: 1000px;
     width: inherit;
 }
 

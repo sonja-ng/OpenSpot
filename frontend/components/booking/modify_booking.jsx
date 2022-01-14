@@ -70,6 +70,7 @@ class ModifyBooking extends React.Component {
 
     render(){
     //    debugger
+        if (!this.props.booking) return null;
         return (
             <div className="modify-bg">
                     <div className="flex-row-mod">
