@@ -20,7 +20,7 @@ class Cancel extends React.Component {
                 </div>
                 
                 <div className="flex-row-mod">
-                        <div className="mod-details">You are being redirected back to the homepage.</div>
+                        <div className="mod-details">You are being redirected to the homepage.</div>
                     </div>
             </div>
         )

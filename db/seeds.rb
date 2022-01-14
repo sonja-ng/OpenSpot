@@ -1101,7 +1101,7 @@ review30 = Review.create!(
 
 booking1 = Booking.create!(
     user_id: demo.id,
-    rest_id: rest3.id,
+    rest_id: rest2.id,
     date: "2022-02-20",
     time: "08:00",
     party_size: 4
