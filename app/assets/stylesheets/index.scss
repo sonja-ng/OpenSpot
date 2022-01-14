@@ -570,3 +570,10 @@ footer {
     @extend %footer_col;
     border-left: 1px solid grey;
 }
+
+footer {
+    a {
+        color: white;
+        size: 20px;
+    }
+}
