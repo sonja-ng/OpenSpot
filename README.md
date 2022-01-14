@@ -99,3 +99,19 @@ Open Spot is an Open Table clone where users can search, make reservations, and 
 - Show restaurant ratings based on average of user ratings
 - Show upcoming and past bookings as a dropdown alert in the navbar
 - Add filter functionality to search results
+
+## Image Credits
+
+- All images belong to the respective restaurants unless otherwise specified.
+- Al Badawi header (Adam Friedlander, Eater NY)
+- Aldama header (Adam Friedlander, Eater NY)
+- Angel Indian Restaurant header (James Park, Eater NY)
+- Anything At All header and homepage search banner (Steve Freihon, Graduate Hotel)
+- As You Are header (Alex Staniloff, Eater NY)
+- Bar Blondeau header (Liz Clayman)
+- Boulud Sud header (Evan Sung, Dinex Group)
+- Cadence header (Eric Medsker, Cadence)
+- CheLi header (An Rong Xu, New Yorker)
+- Dhamaka header (Adam Friedlander, Eater NY)
+- Pecking House header (David A Lee)
+- Soothr search thumbnail (Timeout)
