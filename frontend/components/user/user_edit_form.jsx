@@ -92,9 +92,7 @@ class UserEditForm extends React.Component {
                     <label>Change password
                         <input type="password" className="edit_form_input" value={this.state.password} onChange={this.update("password")}/>
                         {this.renderError("Password")}
-                    </label> 
-                    
-                        {/* <input type="submit" value="Save Changes"/>   */}
+                    </label>
                     <button onClick={this.handleSubmit} className="long_submit">Save Changes</button>
                     <div className="success hidden" ref={this.success}>Your changes are saved!</div>
                 </form> 
