@@ -28,12 +28,13 @@ class ReviewEditForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        // debugger
-        this.props.closeEditReview();
-        this.props.updateReview(this.state);
+        debugger
+        // this.props.closeEditReview();
+        this.props.updateReview(this.state).then(this.props.closeEditReview);
     }
 
     render(){
+        debugger
         const formErrors = this.props.errors ? (
             <div className="review-form-errors">{this.props.errors[0]}</div>
         ) : (

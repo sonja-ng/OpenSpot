@@ -7,7 +7,8 @@ const mSTP = (state,ownProps) => {
     return {
     currentUser: state.entities.users[state.session.id],
     reviewEditOut: ownProps.reviewEditOut,
-    review: ownProps.review
+    review: ownProps.review,
+    errors: state.errors.reviews
 }};
 
 
