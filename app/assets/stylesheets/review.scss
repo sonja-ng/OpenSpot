@@ -43,6 +43,16 @@
     .stars {
         display: flex;
         padding-top: 10px;
+        font-size: 13px;
+        margin-right: 10px;
+        
+        .full{
+            color: $red;
+        }
+        
+        .empty{
+            color:rgb(160, 160, 160);
+        }
     }
 
     .review-header {

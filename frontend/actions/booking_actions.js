@@ -41,12 +41,10 @@ export const fillInOneFieldBooking = (cat, value) => ({
     value
 })
 
-export const receiveBookingErrors = errors => {
-    // debugger
-    return {
+export const receiveBookingErrors = errors => ({
     type: RECEIVE_BOOKING_ERRORS,
     errors
-}};
+});
 
 export const removeBookingErrors = () => ({
     type: REMOVE_BOOKING_ERRORS

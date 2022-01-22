@@ -5,6 +5,10 @@ class RestIndexItem extends React.Component {
     constructor(props){
         super(props);
 
+        this.state={
+            starRating: [...Array(this.props.rest.avg_rating).keys()]
+        }
+
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -20,11 +24,26 @@ class RestIndexItem extends React.Component {
         }
     }
 
+    renderStars(){
+        let fullStars;
+        let emptyStars;
+
+        if (this.state.starRating.length === 5){
+            return (this.state.starRating.map((rating, idx) => <span className="index-star" key={idx}>&#9733;</span>));
+        } else {
+            fullStars = this.state.starRating.map((rating, idx) => <span className="index-star" key={idx}>&#9733;</span>);
+            const remainStars = [...Array(5 - this.state.starRating.length).keys()];
+            emptyStars = remainStars.map((remain, idx) => <span className="index-empty-star" key={idx}>&#9733;</span>);
+            return (<div>{fullStars}{emptyStars}</div>)
+        }
+    } 
+
+
     render(){
         const { rest } = this.props;
-
+        debugger
         if (rest.photos.length === 0) return null; 
-        const image = rest.photos[0].url;
+        // const image = rest.photos[0].url;
         const whereTo = this.props.currentUser ? "/booking" : "/";
         return (
             <li className="rest-index-thumbnail">
@@ -33,7 +52,7 @@ class RestIndexItem extends React.Component {
                 <div className="thumbnail-img"></div>
                 <div className="thumbnail-text">
                     <h1>{rest.name}</h1>
-                    <div className="stars"><img src={window.starsURL}/></div>
+                    <div className="stars">{ this.renderStars()}</div>
                     <div className="thumbnail-detail">
                         <span>{rest.cuisine}</span>
                         <div className="price">$$$</div>

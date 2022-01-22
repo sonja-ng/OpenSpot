@@ -54,11 +54,6 @@
             border-bottom: 2px solid $red;
             color: $red;
         }
-
-        // .content-button:active {
-        //     border-bottom: 2px solid $red;
-        //     color: $red;
-        // }
     }
 
     .rest-title {
@@ -79,6 +74,16 @@
         .text {
             margin-left: 9px;
         }
+    }
+
+    .full-rest{
+        color: $red;
+        font-size: 15px;
+    }
+    
+    .empty-rest{
+        color:rgb(160, 160, 160);
+        font-size: 15px;
     }
 
     .rest-icons {
@@ -388,6 +393,16 @@
 
 .stars {
     margin-top: 5px;
+
+    .index-star{
+        color: $red;
+        font-size: 20px;
+    }
+    
+    .index-empty-star{
+        color:rgb(160, 160, 160);
+        font-size: 20px;
+    }
 }
 
 .thumbnail-detail {

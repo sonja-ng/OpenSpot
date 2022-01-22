@@ -15,6 +15,7 @@ class RestShow extends React.Component {
 
         this.state={
             reviewOut: false,
+            starRating: []
         }
 
         this.openReview = this.openReview.bind(this);
@@ -22,9 +23,18 @@ class RestShow extends React.Component {
     }
 
     componentDidMount(){
-        // debugger
         window.scrollTo(0,0);
         this.props.fetchRest(this.props.match.params.restId);
+    }
+
+    componentDidUpdate(prevProps){
+        if ((prevProps.rest !== this.props.rest) || (prevProps.rest.avg_rating !== this.props.rest.avg_rating)) {
+            const fillRating = []
+            for(let i = 0; i < this.props.rest.avg_rating; i++){
+                fillRating.push(1);
+            }
+            this.setState({ starRating: fillRating});
+        }
     }
 
     openReview(){
@@ -34,6 +44,20 @@ class RestShow extends React.Component {
     closeReview(){
         this.setState({reviewOut: false});
     }
+
+    renderStars(){
+        let fullStars;
+        let emptyStars;
+
+        if (this.state.starRating.length === 5){
+            return (this.state.starRating.map((rating, idx) => <span className="full-rest" key={idx}>&#9733;&#160;</span>));
+        } else {
+            fullStars = this.state.starRating.map((rating, idx) => <span className="full-rest" key={idx}>&#9733;&#160;</span>);
+            const remainStars = [...Array(5 - this.state.starRating.length).keys()];
+            emptyStars = remainStars.map((remain, idx) => <span className="empty-rest" key={idx}>&#9733;&#160;</span>);
+            return (<div>{fullStars}{emptyStars}</div>)
+        }
+    } 
 
 
     render(){
@@ -62,8 +86,8 @@ class RestShow extends React.Component {
                             {rest.name}
                         </div>
                         <div className="rest-info">
-                            <img src={window.starsURL}/>
-                            <div>4.5</div>
+                            <div>{ this.renderStars() }</div>
+                            <div>&#160;{ rest.avg_rating }</div>
                             <div className="rest-icons"><i className="far fa-comment-alt"></i><div className="text">{ this.props.reviews.length } reviews</div></div>
                             <div className="rest-icons"><i className="far fa-money-bill-alt"></i><div className="text">30 and under</div></div>
                             <div className="rest-icons"><i className="fas fa-utensils"></i><div className="text">{rest.cuisine}</div></div>
@@ -107,9 +131,6 @@ class RestShow extends React.Component {
                         <div className="rsvp-container">
                             <RestBookingContainer />
                         </div>
-                        {/* <div className="order-takeout">
-                            Takeout?
-                        </div> */}
                         <div>
                         <Map rest={rest} />
                         <div className="address">{rest.address},&#160;{rest.city},&#160;{rest.state}&#160;{rest.zip}</div>

@@ -15,7 +15,6 @@ export const receiveReviews = reviews => ({
 });
 
 export const receiveReview = review => {
-    // debugger
     return {
     type: RECEIVE_REVIEW,
     review
@@ -26,14 +25,12 @@ export const clearReviews = () => ({
 });
 
 export const removeReview = reviewId => {
-    // debugger
     return {
     type: REMOVE_REVIEW,
     reviewId
 }};
 
 export const receiveReviewErrors = errors => {
-    // debugger
     return {
     type: RECEIVE_REVIEW_ERRORS,
     errors
@@ -44,7 +41,6 @@ export const removeReviewErrors = () => ({
 });
 
 export const createReview = review => dispatch => {
-    // debugger
     return reviewApiUtil.createReview(review).then(review => dispatch(receiveReview(review)), errors => dispatch(receiveReviewErrors(errors.responseJSON)))
 }
 
