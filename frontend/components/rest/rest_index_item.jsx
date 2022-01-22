@@ -29,8 +29,8 @@ class RestIndexItem extends React.Component {
         return (
             <li className="rest-index-thumbnail">
                 <Link to={`rests/${rest.id}`}>
-                <img src={image} className="thumbnail-img"/>
-                {/* <div className="thumbnail-img"></div> */}
+                {/* <img src={image} className="thumbnail-img"/> */}
+                <div className="thumbnail-img"></div>
                 <div className="thumbnail-text">
                     <h1>{rest.name}</h1>
                     <div className="stars"><img src={window.starsURL}/></div>

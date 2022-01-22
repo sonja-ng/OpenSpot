@@ -64,7 +64,7 @@ class ModifyRsvp extends React.Component {
     }
 
     render(){
-    //    debugger
+       debugger
         return (
             <div className="modify-bg">
                 <div>

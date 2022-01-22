@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ModifyRsvp from './modify_rsvp';
+import ModifyBooking from './modify_booking';
 import { updateBooking, fillInBooking } from '../../actions/booking_actions';
 import { fillInOneFieldBooking, clearBookings, fetchBooking } from '../../actions/booking_actions';
 
@@ -20,4 +20,4 @@ const mDTP = dispatch => ({
     
 });
 
-export default connect(mSTP, mDTP)(ModifyRsvp);
+export default connect(mSTP, mDTP)(ModifyBooking);

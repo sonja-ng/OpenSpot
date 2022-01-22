@@ -28,7 +28,7 @@ class UserBookingIndexItem extends React.Component {
                                 </div>  
                             </div>
                             <div className="confirm-button-row">
-                                <Link to={`/modify/${booking.id}`} onClick={this.props.clearTentativeBooking} className="c-button">Modify</Link>
+                                <Link to={`/update/${booking.id}`} onClick={this.props.clearTentativeBooking} className="c-button">Modify</Link>
                                 <button onClick={()=> deleteBooking(booking.id)} className="c-button">Cancel</button>
                             </div>
                         </div>

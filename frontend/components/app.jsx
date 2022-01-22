@@ -40,7 +40,7 @@ const App = () => (
             <ProtectedRoute exact path={"/booking"} component={BookingFormContainer} />
             <ProtectedRoute exact path={"/confirmation"} component={ConfirmationContainer} />
             <ProtectedRoute exact path={"/modify"} component={ModifyRsvpContainer} />
-            <ProtectedRoute exact path={"/modify/:bookingId"} component={ModifyBookingContainer} />
+            <ProtectedRoute exact path={"/update/:bookingId"} component={ModifyBookingContainer} />
             <ProtectedRoute exact path={"/cancellation"} component={Cancel} />
             
         </div>

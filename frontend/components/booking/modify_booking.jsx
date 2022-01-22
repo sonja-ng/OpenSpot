@@ -21,10 +21,10 @@ class ModifyBooking extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentDidUpdate(){
-        this.props.clearBooking();
-        this.props.fetchBooking(this.props.match.params.bookingId)
-    }
+    // componentDidUpdate(){
+    //     this.props.clearBookings();
+    //     this.props.fetchBooking(this.props.match.params.bookingId)
+    // }
 
     updateDate(d){
         this.setState({date: d},()=> this.props.fillInOneFieldBooking("date", `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`));
@@ -69,18 +69,24 @@ class ModifyBooking extends React.Component {
     }
 
     render(){
-    //    debugger
+       debugger
         if (!this.props.booking) return null;
         return (
             <div className="modify-bg">
-                    <div className="flex-row-mod">
-                        <div>{this.props.booking.date}</div>
-                        <div>{this.props.booking.time.slice(12, 16)} PM</div>
-                        <div>{this.props.booking.party_size}</div>
+                    <div className="mod">
+                    <div>Your reservation Details</div>
+                    <div className="mod-rest-row">
+                        <div className="mod-rest">{this.props.booking.restaurant.name}</div>
                     </div>
-                <form>
-                    <DatePicker className="modify-date" dateFormat="yyyy-MM-dd" selected={this.state.date} onChange={this.updateDate}/>
-                    <select name="mod-time" id="mod-time" value={this.state.time} className="dropdown time" onChange={this.updateTime}>
+                    </div>
+                    <div className="flex-row-mod">
+                        <div className="mod-details" >On {this.props.booking.date}</div>
+                        <div className="mod-details" >at {this.props.booking.time.slice(12, 16)} PM</div>
+                        <div className="mod-details" >for {this.props.booking.party_size} people</div>
+                    </div>
+                <form className="modify-form">
+                    <DatePicker className="search-date" dateFormat="yyyy-MM-dd" selected={this.state.date} onChange={this.updateDate}/>
+                    <select name="mod-time" id="mod-time-2" value={this.state.time} className="dropdown time" onChange={this.updateTime}>
                             <option value="12:00">12:00pm</option>
                             <option value="01:00">1:00pm</option>
                             <option value="02:00">2:00pm</option>
@@ -95,7 +101,7 @@ class ModifyBooking extends React.Component {
                             <option value="10:00">10:00pm</option>
                         </select>
                         <label>
-                            <select className="dropdown party" name="mod-party" id="mod-party" value={this.state.party_size} onChange={this.updateParty}>
+                            <select className="dropdown party" name="mod-party" id="mod-party2" value={this.state.party_size} onChange={this.updateParty}>
                                 <option value="2">2 people</option>
                                 <option value="3">3 people</option>
                                 <option value="4">4 people</option>
