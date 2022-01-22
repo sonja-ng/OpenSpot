@@ -69,7 +69,7 @@ class ModifyRsvp extends React.Component {
             <div className="modify-bg">
                 <div>
                     <div className="mod">
-                    <div>Your reservation Details</div>
+                    <div>Your reservation details</div>
                     <div className="mod-rest-row">
                         <div className="mod-rest">{this.props.booking.restaurant.name}</div>
                     </div>

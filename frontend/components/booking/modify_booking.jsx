@@ -69,12 +69,11 @@ class ModifyBooking extends React.Component {
     }
 
     render(){
-       debugger
         if (!this.props.booking) return null;
         return (
             <div className="modify-bg">
                     <div className="mod">
-                    <div>Your reservation Details</div>
+                    <div>Your reservation details</div>
                     <div className="mod-rest-row">
                         <div className="mod-rest">{this.props.booking.restaurant.name}</div>
                     </div>

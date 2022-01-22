@@ -6,7 +6,6 @@ class ReviewEditForm extends React.Component {
         super(props);
 
         this.state = this.props.review
-    
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -14,27 +13,16 @@ class ReviewEditForm extends React.Component {
         this.props.fetchReview(this.props.review.id);
     }
 
-    // componentDidUpdate(prevProps){
-    //     if (!this.props.currentUser) {
-    //         this.setState({["author_id"]: ""})
-    //     } else if (this.props.currentUser !== prevProps.currentUser) {
-    //         this.setState({["author_id"]: this.props.currentUser})
-    //     }
-    // }
-
     update(field){
         return e => this.setState({[field]: e.target.value})
     }
 
     handleSubmit(e){
         e.preventDefault();
-        debugger
-        // this.props.closeEditReview();
         this.props.updateReview(this.state).then(this.props.closeEditReview);
     }
 
     render(){
-        debugger
         const formErrors = this.props.errors ? (
             <div className="review-form-errors">{this.props.errors[0]}</div>
         ) : (
@@ -42,7 +30,6 @@ class ReviewEditForm extends React.Component {
         )
         const klass = this.props.reviewEditOut ? "review-form" : "hidden";
         const klass2 = this.props.reviewEditOut ? "review-form-bg" : "hidden";
-        // debugger
         return (
             <div className={klass2}>
                 <form className={klass}>

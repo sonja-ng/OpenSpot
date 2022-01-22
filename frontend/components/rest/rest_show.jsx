@@ -64,7 +64,7 @@ class RestShow extends React.Component {
                         <div className="rest-info">
                             <img src={window.starsURL}/>
                             <div>4.5</div>
-                            <div className="rest-icons"><i className="far fa-comment-alt"></i><div className="text">50 reviews</div></div>
+                            <div className="rest-icons"><i className="far fa-comment-alt"></i><div className="text">{ this.props.reviews.length } reviews</div></div>
                             <div className="rest-icons"><i className="far fa-money-bill-alt"></i><div className="text">30 and under</div></div>
                             <div className="rest-icons"><i className="fas fa-utensils"></i><div className="text">{rest.cuisine}</div></div>
                         </div>
@@ -97,7 +97,7 @@ class RestShow extends React.Component {
                         </div>
                         <div id="reviews"></div>
                         <div className="subheader">
-                            What people are saying
+                            What { this.props.reviews.length } people are saying
                         </div>
                         <div className="write-review"><button className="write-review-button" onClick={formAction}>Write a review</button></div>
                         <ReviewFormContainer reviewOut={this.state.reviewOut} closeReview={this.closeReview}/>

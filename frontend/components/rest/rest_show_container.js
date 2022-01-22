@@ -4,14 +4,13 @@ import { fetchRest } from '../../actions/rest_actions';
 import { openModal } from '../../actions/modal_actions';
 
 const mSTP = (state, ownProps) => {
-        // debugger
     return {
     rest: state.entities.rests[ownProps.match.params.restId],
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    reviews: Object.values(state.entities.reviews)
 }};
 
 const mDTP = dispatch => {
-    // debugger
     return {
     fetchRest: (id) => dispatch(fetchRest(id)),
     openModal: (modal) => dispatch(openModal(modal))
