@@ -113,6 +113,16 @@
 
     .result-stars {
         margin-top: 13px;
+
+        .result-star{
+            color: $red;
+            font-size: 20px;
+        }
+
+        .result-empty-star{
+            color:rgb(160, 160, 160);
+            font-size: 20px;
+        }
     }
 
     .booked {

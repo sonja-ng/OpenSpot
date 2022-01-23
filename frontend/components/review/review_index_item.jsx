@@ -46,7 +46,7 @@ class ReviewIndexItem extends React.Component {
     } 
 
     render(){
-        debugger
+    
         const { review, currentUser, deleteReview } = this.props;
         const edit = !currentUser || currentUser.id !== review.author_id ? (
             null    

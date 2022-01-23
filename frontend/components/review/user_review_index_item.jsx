@@ -8,11 +8,18 @@ class UserReviewIndexItem extends React.Component {
         super(props);
 
         this.state = {
-            reviewEditOut: false
+            reviewEditOut: false,
+            starRating: []
         }
 
         this.openEditReview = this.openEditReview.bind(this);
         this.closeEditReview = this.closeEditReview.bind(this);
+        this.renderStars = this.renderStars.bind(this);
+    }
+
+    componentDidMount(){
+        const fillRating = [...Array(this.props.review.overall).keys()]
+        this.setState({ starRating: fillRating});
     }
 
     openEditReview(){
@@ -23,6 +30,20 @@ class UserReviewIndexItem extends React.Component {
     closeEditReview(){
         this.setState({reviewEditOut: false});
     }
+
+    renderStars(){
+        let fullStars;
+        let emptyStars;
+
+        if (this.state.starRating.length === 5){
+            return (this.state.starRating.map((rating, idx) => <span className="full" key={idx}>&#9733;&#160;</span>));
+        } else {
+            fullStars = this.state.starRating.map((rating, idx) => <span className="full" key={idx}>&#9733;&#160;</span>);
+            const remainStars = [...Array(5 - this.state.starRating.length).keys()];
+            emptyStars = remainStars.map((remain, idx) => <span className="empty" key={idx}>&#9733;&#160;</span>);
+            return (<div>{fullStars}{emptyStars}</div>)
+        }
+    } 
 
     render(){
         // debugger
@@ -36,8 +57,6 @@ class UserReviewIndexItem extends React.Component {
             </div>
         )
             
-       
-        
         return (
             <div>
                 <li className="user-review-row">
@@ -47,7 +66,7 @@ class UserReviewIndexItem extends React.Component {
                     <div className="review-cuisine">{review.restaurant.neighborhood}</div>
                     </div>
                     <div className="review-content">
-                        <div className="stars"><img src={window.starsURL} alt="stars"/></div>
+                        <div className="stars">{ this.renderStars() }</div>
                         <div className="review-header">
                             <div className="rating-cat">Overall</div>
                             <div className="rating-value">{review.overall}</div>

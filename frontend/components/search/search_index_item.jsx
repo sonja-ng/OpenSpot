@@ -5,8 +5,35 @@ class SearchIndexItem extends React.Component {
     constructor(props){
         super(props);   
     
+        this.state= {
+            starRating: []
+        }
+
         this.handleClick = this.handleClick.bind(this);
     }
+
+    componentDidMount(){
+        this.setState({ starRating: [...Array(this.props.rest.avg_rating).keys()] });
+    }
+
+    componentDidUpdate(prevProps){
+        if (this.props.rest.avg_rating && prevProps.rest.avg_rating && this.props.rest.avg_rating !== prevProps.rest.avg_rating)
+        this.setState({ starRating: [...Array(this.props.rest.avg_rating).keys()] })
+    }
+
+    renderStars(){
+        let fullStars;
+        let emptyStars;
+
+        if (this.state.starRating.length === 5){
+            return (this.state.starRating.map((rating, idx) => <span className="result-star" key={idx}>&#9733;&#160;</span>));
+        } else {
+            fullStars = this.state.starRating.map((rating, idx) => <span className="result-star" key={idx}>&#9733;&#160;</span>);
+            const remainStars = [...Array(5 - this.state.starRating.length).keys()];
+            emptyStars = remainStars.map((remain, idx) => <span className="result-empty-star" key={idx}>&#9733;&#160;</span>);
+            return (<div>{fullStars}{emptyStars}</div>)
+        }
+    } 
 
     handleClick(e){
         if (this.props.currentUser) {
@@ -29,7 +56,7 @@ class SearchIndexItem extends React.Component {
                 <div className="result-img"></div>
                 <div className="result">
                     <Link className="result-text" to={`/rests/${rest.id}`}>{rest.name}</Link>
-                    <div className="result-stars"><img src={window.starsURL}/></div>
+                    <div className="result-stars">{ this.renderStars()}</div>
                     <div className="thumbnail-detail">
                         <div className="price">$$$ &#8226;</div>
                         <div>{rest.cuisine} &#8226;</div>
