@@ -34,10 +34,12 @@ class UserReviewIndex extends React.Component {
         const reviewList = reviews.map((review, idx) => <UserReviewIndexItem key={idx} review={review} currentUser={currentUser} deleteReview={deleteReview} />)
         const header = !this.props.match.params.restId ? "my-reviews" : "hidden";
         return (
-            <ul>
-                <div className={header}><h3>My Reviews</h3></div>
-                {reviewList}
-            </ul>
+            <div className="review-bg">
+                <ul>
+                    <div className={header}><h3>My Reviews</h3></div>
+                    {reviewList}
+                </ul>
+            </div>
         )
     }
 

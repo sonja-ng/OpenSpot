@@ -55,7 +55,7 @@ class UserEditForm extends React.Component {
         if (!this.props.currentUser) return null;
 
         return (
-            <div>
+            <div className="review-bg">
                   <form onSubmit={this.test} className="edit_form">
                         <h3>About me</h3>
                     <div className="form_row">

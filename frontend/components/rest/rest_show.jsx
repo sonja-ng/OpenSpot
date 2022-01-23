@@ -75,15 +75,15 @@ class RestShow extends React.Component {
             <div className="rest_index">
                 {/* <img src={rest.photos[1].url} className="rest_header"/>  */}
                 <div className="rest_header"></div>
-                <div className="rest_body">
-                    <div className="main_rest_content">
+                <div className="rest_body">    
+                <div className="main_rest_content">
                     <div id="overview"></div>
                         <div className="rest-navbar">
                             <HashLink to={`/rests/${rest.id}#overview`} className="content-button">Overview</HashLink>
                             <HashLink to={`/rests/${rest.id}#photos`}  className="content-button">Photos</HashLink>
                             <HashLink to={`/rests/${rest.id}#menu`} className="content-button">Menu</HashLink>
                             <HashLink to={`/rests/${rest.id}#reviews`} className="content-button">Reviews</HashLink>
-                        </div>
+                        </div>                    
                         <div className="rest-title">
                             {rest.name}
                         </div>

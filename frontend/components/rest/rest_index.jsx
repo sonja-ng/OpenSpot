@@ -27,7 +27,7 @@ class RestIndex extends React.Component {
         fillInOneFieldBooking={fillInOneFieldBooking} currentUser={currentUser} openModal={openModal} />);
  
         return (
-            <div>
+            <div className="homepage-rest-list">
                 <div>
                     <div className="theme-header">Book for dinner tonight</div>
                         <ul className="index-row">

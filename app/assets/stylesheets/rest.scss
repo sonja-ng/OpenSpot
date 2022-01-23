@@ -21,6 +21,31 @@
     // bottom: -200px;
 }
 
+.rest-navbar {
+    display: flex;
+    border-bottom: 1px solid $border-color;
+    font-size: 15px;
+    font-family: $manrope;
+    color: rgb(80, 80, 80);
+    background-color: white;
+    padding-top: 17px;
+    height: 32px;
+    position: sticky;
+    top: 0;
+    width: 642px;
+
+    .content-button {
+        margin-right: 36px;
+        padding-bottom: 10px;
+        color: black;
+    }
+
+    .content-button:hover, .content-button:active, .content-button:focus {
+        border-bottom: 2px solid $red;
+        color: $red;
+    }
+}
+
 .main_rest_content {
     width: 642px;
     background-color: white;
@@ -33,28 +58,6 @@
     padding: 0px 13px 17px 17px;
     box-sizing: border-box;
 
-    .rest-navbar {
-        display: flex;
-        border-bottom: 1px solid $border-color;
-        font-size: 15px;
-        color: rgb(80, 80, 80);
-        background-color: white;
-        padding-top: 17px;
-        height: 32px;
-        position: sticky;
-        top: 0;
-    
-        .content-button {
-            margin-right: 36px;
-            padding-bottom: 10px;
-            color: black;
-        }
-
-        .content-button:hover, .content-button:active, .content-button:focus {
-            border-bottom: 2px solid $red;
-            color: $red;
-        }
-    }
 
     .rest-title {
         padding-bottom: 32px;
@@ -339,6 +342,10 @@
 
 //rest index page
 
+.homepage-rest-list{
+    margin-bottom: 60px;
+}
+
 .rest-index-thumbnail {
     width: 237px;
     height: 270px;
@@ -369,7 +376,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 18px;
-    width: 1216px;
+    width: 1265px;
     margin-left: 172px;
 }
 

@@ -28,10 +28,12 @@ class UserBookingIndex extends React.Component {
         booking={booking} currentUser={currentUser} deleteBooking={deleteBooking} />)
 
         return (
-            <ul>
-                <div className="my-bookings"><h3>My Reservations</h3></div>
-                {bookingList}
-            </ul>
+            <div className="review-bg">
+                <ul>
+                    <div className="my-bookings"><h3>My Reservations</h3></div>
+                    {bookingList}
+                </ul>
+            </div>
         )
     }
 
