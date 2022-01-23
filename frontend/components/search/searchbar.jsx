@@ -153,7 +153,6 @@ class SearchBar extends React.Component {
     render(){
         const klass = this.state.suggestion ? "main-search-suggestion" : "hidden";
         const matches = this.findMatch().map((item, idx) => <li onClick={this.selectMatch} key={idx}>{item}</li>)
-           console.log(this.state);
         // className="search_date_main"
         return (
             <div className="search_bar">
