@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import Gallery from './gallery';
 import Map from './map';
@@ -27,12 +26,15 @@ class RestShow extends React.Component {
         this.props.fetchRest(this.props.match.params.restId);
     }
 
-    componentDidUpdate(prevProps){
-        if ((prevProps.rest !== this.props.rest) || (prevProps.rest.avg_rating !== this.props.rest.avg_rating)) {
-            const fillRating = []
-            for(let i = 0; i < this.props.rest.avg_rating; i++){
-                fillRating.push(1);
-            }
+    componentDidUpdate(prevProps){ 
+        // debugger
+        if (prevProps.reviews.length > 0 && this.props.reviews.length > 0 && (prevProps.reviews !== this.props.reviews)) {
+            let sum = 0;
+            const overAll = this.props.reviews.map(review => review.overall)
+            overAll.forEach(score => sum += score)
+            // debugger
+            const avg = Math.floor(sum / this.props.reviews.length);
+            const fillRating = [...Array(avg).keys()]
             this.setState({ starRating: fillRating});
         }
     }
@@ -87,7 +89,7 @@ class RestShow extends React.Component {
                         </div>
                         <div className="rest-info">
                             <div>{ this.renderStars() }</div>
-                            <div>&#160;{ rest.avg_rating }</div>
+                            <div>&#160;{ this.state.starRating.length }</div>
                             <div className="rest-icons"><i className="far fa-comment-alt"></i><div className="text">{ this.props.reviews.length } reviews</div></div>
                             <div className="rest-icons"><i className="far fa-money-bill-alt"></i><div className="text">30 and under</div></div>
                             <div className="rest-icons"><i className="fas fa-utensils"></i><div className="text">{rest.cuisine}</div></div>

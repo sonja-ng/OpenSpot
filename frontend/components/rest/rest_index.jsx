@@ -26,7 +26,6 @@ class RestIndex extends React.Component {
         const list3a = list3.map(rest => <RestIndexItem key={rest.id} rest={rest} 
         fillInOneFieldBooking={fillInOneFieldBooking} currentUser={currentUser} openModal={openModal} />);
  
-        // debugger
         return (
             <div>
                 <div>

@@ -6,11 +6,15 @@ class RestIndexItem extends React.Component {
         super(props);
 
         this.state={
-            starRating: [...Array(this.props.rest.avg_rating).keys()]
+            starRating: []
         }
 
         this.handleClick = this.handleClick.bind(this);
     }
+
+   componentDidMount(){
+       this.setState({ starRating: [...Array(this.props.rest.avg_rating).keys()] })
+   }
 
     handleClick(e){
         // debugger
@@ -41,7 +45,7 @@ class RestIndexItem extends React.Component {
 
     render(){
         const { rest } = this.props;
-        debugger
+        // debugger
         if (rest.photos.length === 0) return null; 
         // const image = rest.photos[0].url;
         const whereTo = this.props.currentUser ? "/booking" : "/";
