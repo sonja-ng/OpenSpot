@@ -18,10 +18,7 @@ class ReviewIndexItem extends React.Component {
     }
 
     componentDidMount(){
-        const fillRating = []
-        for(let i = 0; i < this.props.review.overall; i++){
-            fillRating.push(1);
-        }
+        const fillRating = [...Array(this.props.review.overall).keys()]
         this.setState({ starRating: fillRating});
     }
 
@@ -49,7 +46,7 @@ class ReviewIndexItem extends React.Component {
     } 
 
     render(){
-        // debugger
+        debugger
         const { review, currentUser, deleteReview } = this.props;
         const edit = !currentUser || currentUser.id !== review.author_id ? (
             null    

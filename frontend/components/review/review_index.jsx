@@ -20,9 +20,9 @@ class ReviewIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps){
-        // debugger
-        
-        if ( this.props.reviews.length !== prevProps.reviews.length || this.props.history.location.pathname !== prevProps.history.location.pathname) {
+        debugger
+        // this.props.reviews.length !== prevProps.reviews.length ||
+        if ( this.props.history.location.pathname !== prevProps.history.location.pathname) {
                 this.props.fetchReviews({["restId"]: this.props.match.params.restId});
             } 
     }
@@ -32,7 +32,7 @@ class ReviewIndex extends React.Component {
         if (!this.props.reviews) return null;
     
         const { reviews, currentUser, deleteReview } = this.props;
-        const reviewList = reviews.map((review, idx) => <ReviewIndexItem key={idx} review={review} currentUser={currentUser} deleteReview={deleteReview} />)
+        const reviewList = reviews.map((review, idx) => <ReviewIndexItem key={idx} review={review} reviewId={review.id} currentUser={currentUser} deleteReview={deleteReview} />)
         const header = !this.props.match.params.restId ? "my-reviews" : "hidden";
         return (
             <ul>
