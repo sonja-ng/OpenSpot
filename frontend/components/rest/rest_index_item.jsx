@@ -12,7 +12,12 @@ class RestIndexItem extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-   componentDidMount(){
+    componentDidMount(){
+        this.setState({ starRating: [...Array(this.props.rest.avg_rating).keys()] });
+    }
+
+   componentDidUpdate(prevProps){
+       if (this.props.rest.avg_rating && prevProps.rest.avg_rating && this.props.rest.avg_rating !== prevProps.rest.avg_rating)
        this.setState({ starRating: [...Array(this.props.rest.avg_rating).keys()] })
    }
 
