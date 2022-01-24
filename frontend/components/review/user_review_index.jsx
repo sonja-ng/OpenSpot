@@ -10,24 +10,15 @@ class UserReviewIndex extends React.Component {
     }
 
     componentDidMount(){
-        // debugger
             this.props.clearReviews();
             this.props.fetchReviews({["authorId"]: this.props.currentUser.id});
     }
-
-    // componentDidUpdate(prevProps){
-    //     debugger
-    //     if (this.props.reviews.length !== prevProps.reviews.length) {
-    //             this.props.fetchReviews({["authorId"]: this.props.currentUser.id})
-    //     }
-    // }
 
     componentWillUnmount(){
         this.props.clearReviews();
     }
 
     render(){
-        // debugger
         if (!this.props.reviews) return null;
     
         const { reviews, currentUser, deleteReview } = this.props;

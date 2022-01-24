@@ -8,12 +8,11 @@ const mSTP = state => ({
     errors: state.errors.session
 });
 
-const mDTP = dispatch => {
-   return {
+const mDTP = dispatch => ({
     login: user => dispatch(login(user)),
     removeUserErrors: ()=> dispatch(removeUserErrors()),
     otherForm: ()=> dispatch(openModal('signup')),
     closeModal: () => dispatch(closeModal())
-}};
+});
 
 export default connect(mSTP, mDTP)(LoginForm);

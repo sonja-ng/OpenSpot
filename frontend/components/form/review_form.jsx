@@ -20,14 +20,12 @@ class ReviewForm extends React.Component {
     }
 
     componentDidMount(){
-        // debugger
         if (this.props.currentUser) {
             this.setState({author_id: this.props.currentUser.id})
         };
     }
 
     componentDidUpdate(prevProps){
-        // debugger
         if (this.props.currentUser) {
             if (this.props.currentUser !== prevProps.currentUser) {
                 this.setState({author_id: this.props.currentUser.id})
@@ -48,20 +46,15 @@ class ReviewForm extends React.Component {
     }
 
     update(field){
-        // debugger
         return e => this.setState({[field]: e.target.value})
     }
 
     handleSubmit(e){
         e.preventDefault();
-        // debugger
-        // this.setState({author_id: this.props.currentUser.id});
-        this.props.createReview(this.state).then(this.resetFields);
-        
+        this.props.createReview(this.state).then(this.resetFields); 
     }
 
     render(){
-        // debugger
         const formErrors = this.props.errors ? (
             <div className="review-form-errors">{this.props.errors[0]}</div>
         ) : (

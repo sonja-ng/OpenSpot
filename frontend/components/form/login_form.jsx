@@ -14,13 +14,11 @@ class LoginForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
         this.resetUserErrors = this.resetUserErrors.bind(this);
-        // this.goBack = this.goBack.bind(this);
         this.enableScrolling = this.enableScrolling.bind(this);
         this.disableScrolling = this.disableScrolling.bind(this);
     }
 
     componentDidMount(){
-        // document.addEventListener("click", this.goBack);
         this.disableScrolling();
     }
 

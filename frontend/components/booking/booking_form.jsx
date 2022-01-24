@@ -35,7 +35,6 @@ class BookingForm extends React.Component {
 
 
     handleSubmit(e){
-        // debugger
         e.preventDefault();
         this.props.createBooking(this.props.booking).then(()=>this.props.history.push("/confirmation"))
     }

@@ -2,8 +2,6 @@ import React from 'react';
 import BookingCalendar from '../calendar/calendar';
 import DatePicker from 'react-datepicker';
 
-
-
 class SearchBar extends React.Component {
     constructor(props){
         super(props);
@@ -73,7 +71,6 @@ class SearchBar extends React.Component {
     }
 
     update(e){
-        // debugger
         this.setState({suggestion: true});
         // if (this.state.general.length === 0) this.setState({suggestion: false});
         this.setState({ general: e.target.value }, ()=> {
@@ -105,7 +102,6 @@ class SearchBar extends React.Component {
     }
 
     selectMatch(e){
-        // debugger
         this.setState({ general: e.currentTarget.innerText, suggestion: false }, ()=> {
                 const lowerCase = this.state.general.toLowerCase();
             if (this.cuisineList.includes(lowerCase)) {
@@ -120,8 +116,6 @@ class SearchBar extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        // debugger
-
         const user = this.props.currentUser ? this.props.currentUser.id : "";
         this.props.fillInBooking({
             date: `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`,

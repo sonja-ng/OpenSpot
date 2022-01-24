@@ -3,7 +3,6 @@ import React from 'react';
 class Map extends React.Component {
 
     componentDidMount(){
-        // debugger
         const thisLat = this.props.rest.lat;
         const thisLng = this.props.rest.lng;
 

@@ -8,8 +8,6 @@ const restErrorsReducer = (oldState = [], action) => {
             return action.errors
         case RECEIVE_REST:
             return [];
-        // case REMOVE_USER_ERRORS:
-        //     return [];
         default:
             return oldState;
     }

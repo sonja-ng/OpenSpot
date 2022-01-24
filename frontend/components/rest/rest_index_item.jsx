@@ -22,7 +22,6 @@ class RestIndexItem extends React.Component {
    }
 
     handleClick(e){
-        // debugger
         e.stopPropagation();
         if (this.props.currentUser) {
             this.props.fillInOneFieldBooking("rest_id", this.props.rest.id);
@@ -50,15 +49,14 @@ class RestIndexItem extends React.Component {
 
     render(){
         const { rest } = this.props;
-        // debugger
         if (rest.photos.length === 0) return null; 
-        // const image = rest.photos[0].url;
+        const image = rest.photos[0].url;
         const whereTo = this.props.currentUser ? "/booking" : "/";
         return (
             <li className="rest-index-thumbnail">
                 <Link to={`rests/${rest.id}`}>
-                {/* <img src={image} className="thumbnail-img"/> */}
-                <div className="thumbnail-img"></div>
+                <img src={image} className="thumbnail-img"/>
+                {/* <div className="thumbnail-img"></div> */}
                 <div className="thumbnail-text">
                     <h1>{rest.name}</h1>
                     <div className="stars">{ this.renderStars()}</div>

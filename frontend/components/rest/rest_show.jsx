@@ -5,8 +5,6 @@ import Map from './map';
 import ReviewIndexContainer from '../review/review_index_container';
 import ReviewFormContainer from '../form/review_form_container';
 import RestBookingContainer from '../booking/rest_booking_container';
-import ReviewEditFormContainer from '../form/review_edit_form_container';
-import { receiveCurrentUser } from '../../actions/session_actions';
 
 class RestShow extends React.Component {
     constructor(props){
@@ -27,12 +25,10 @@ class RestShow extends React.Component {
     }
 
     componentDidUpdate(prevProps){ 
-        // debugger
         if (prevProps.reviews.length > 0 && this.props.reviews.length > 0 && (prevProps.reviews !== this.props.reviews)) {
             let sum = 0;
             const overAll = this.props.reviews.map(review => review.overall)
             overAll.forEach(score => sum += score)
-            // debugger
             const avg = Math.floor(sum / this.props.reviews.length);
             const fillRating = [...Array(avg).keys()]
             this.setState({ starRating: fillRating});
@@ -70,11 +66,10 @@ class RestShow extends React.Component {
        ) : (
            this.openReview
        )
-        // debugger
         return (
             <div className="rest_index">
-                {/* <img src={rest.photos[1].url} className="rest_header"/>  */}
-                <div className="rest_header"></div>
+                <img src={rest.photos[1].url} className="rest_header"/> 
+                {/* <div className="rest_header"></div> */}
                 <div className="rest_body">    
                 <div className="main_rest_content">
                     <div id="overview"></div>

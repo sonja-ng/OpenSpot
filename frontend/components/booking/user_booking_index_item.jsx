@@ -1,5 +1,4 @@
 import React from 'react';
-// import BookingEditFormContainer from '../form/booking_edit_form_container';
 import { withRouter, Link } from 'react-router-dom';
 
 class UserBookingIndexItem extends React.Component {
@@ -8,7 +7,6 @@ class UserBookingIndexItem extends React.Component {
     }
 
     render(){
-        // debugger
         const { booking, currentUser, deleteBooking, updateBooking } = this.props;
         if (!booking || !booking.restaurant) return null;
 
@@ -32,7 +30,6 @@ class UserBookingIndexItem extends React.Component {
                                 <button onClick={()=> deleteBooking(booking.id)} className="c-button">Cancel</button>
                             </div>
                         </div>
-                    {/* <BookingEditFormContainer bookingOut={this.state.bookingOut} closeBooking={this.closeBooking} booking={booking}/> */}
                 </li>
             </div> 
         )

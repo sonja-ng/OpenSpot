@@ -9,7 +9,6 @@ const tentative = {
 }
 
 const tentativeBookingsReducer = (oldState = tentative, action) => {
-    // debugger
     Object.freeze(oldState);
     const nextState = Object.assign({}, oldState);
     switch(action.type) {

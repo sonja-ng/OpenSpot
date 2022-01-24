@@ -20,19 +20,16 @@ class ModifyRsvp extends React.Component {
         this.updateParty = this.updateParty.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    // 
+ 
     updateDate(d){
         this.setState({date: d},()=> this.props.fillInOneFieldBooking("date", `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`));
-        // debugger
         this.props.fillInOneFieldBooking("rest_id", this.props.booking.restaurant.id);
         this.props.fillInOneFieldBooking("user_id", this.props.currentUser.id); 
     }
 
     updateTime(e){
-        // debugger
         e.preventDefault();
         this.setState({time: e.target.value},()=> this.props.fillInOneFieldBooking("time", this.state.time));
-        // console.log(this.state.time);
         
         this.props.fillInOneFieldBooking("rest_id", this.props.booking.restaurant.id);
         this.props.fillInOneFieldBooking("user_id", this.props.currentUser.id);
@@ -41,7 +38,7 @@ class ModifyRsvp extends React.Component {
     updateParty(e){
         e.preventDefault();
         this.setState({party_size: parseInt(e.target.value)},() => this.props.fillInOneFieldBooking("party", this.state.party_size));
-        // console.log(this.state.party_size);
+
         this.props.fillInOneFieldBooking("rest_id", this.props.booking.restaurant.id);
         this.props.fillInOneFieldBooking("user_id", this.props.currentUser.id);
     }
@@ -49,7 +46,6 @@ class ModifyRsvp extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        // debugger
         this.props.updateBooking(
             {   
                 date: `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`,
@@ -64,7 +60,6 @@ class ModifyRsvp extends React.Component {
     }
 
     render(){
-       debugger
         return (
             <div className="modify-bg">
                 <div>

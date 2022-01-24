@@ -3,7 +3,6 @@ import { RECEIVE_USER_INFO } from "../actions/user_actions";
 import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 const usersReducer = (oldState = {}, action) => {
-    // debugger
     Object.freeze(oldState);
     switch(action.type) {
         case RECEIVE_USER_INFO:

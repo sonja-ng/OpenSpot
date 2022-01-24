@@ -2,14 +2,12 @@ import { connect } from 'react-redux';
 import ReviewEditForm from './review_edit_form';
 import { updateReview, fetchReview } from '../../actions/review_actions';
 
-const mSTP = (state,ownProps) => {
-//    debugger
-    return {
+const mSTP = (state,ownProps) => ({
     currentUser: state.entities.users[state.session.id],
     reviewEditOut: ownProps.reviewEditOut,
     review: ownProps.review,
     errors: state.errors.reviews
-}};
+});
 
 
 const mDTP = (dispatch, ownProps) => ({

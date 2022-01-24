@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import UserNavBar from "./user_navbar";
 import SearchPopupContainer from './search_popup_container';
 
@@ -44,9 +44,7 @@ class Navbar extends React.Component {
     }
 
     showSearch(){
-        // debugger
         this.setState({ searchOut: true });
-        // debugger
     }
 
     closeSearch(){
@@ -54,7 +52,6 @@ class Navbar extends React.Component {
     }
 
     render(){
-        // debugger
         const { currentUser, logout, updateFilter } = this.props;
         const display = currentUser ? (
             <UserNavBar logout={logout} enableScrolling={this.enableScrolling} currentUser={currentUser} updateFilter={updateFilter}/>

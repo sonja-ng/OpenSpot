@@ -23,7 +23,6 @@ class UserReviewIndexItem extends React.Component {
     }
 
     openEditReview(){
-        // debugger
         this.setState({reviewEditOut: true });
     }
 
@@ -46,7 +45,6 @@ class UserReviewIndexItem extends React.Component {
     } 
 
     render(){
-        // debugger
         const { review, currentUser, deleteReview } = this.props;
         const edit = !currentUser || currentUser.id !== review.author_id ? (
             null    

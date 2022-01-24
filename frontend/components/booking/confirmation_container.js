@@ -2,13 +2,11 @@ import { connect } from 'react-redux';
 import Confirmation from './confirmation';
 import { clearTentativeBooking, deleteBooking } from '../../actions/booking_actions';
 
-const mSTP = state => {
-//    debugger
-    return {
+const mSTP = state => ({
     currentUser: state.entities.users[state.session.id],
     booking: state.entities.bookings.confirmedBookings,
     restaurant: state.entities.rests[state.entities.bookings.confirmedBookings.rest_id]
-}};
+});
 
 const mDTP = dispatch => ({
     updateBooking: booking => dispatch(updateBooking(booking)),

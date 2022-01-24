@@ -72,7 +72,6 @@ class SearchIndex extends React.Component {
     }
 
     update(e){
-        // debugger
         this.setState({suggestion: true});
         this.setState({ general: e.target.value }, ()=> {
                 const lowerCase = this.state.general.toLowerCase();
@@ -104,7 +103,6 @@ class SearchIndex extends React.Component {
     }
 
     selectMatch(e){
-        // debugger
         this.setState({ general: e.currentTarget.innerText, suggestion: false }, ()=> {
                 const lowerCase = this.state.general.toLowerCase();
             if (this.cuisineList.includes(lowerCase)) {
@@ -120,9 +118,6 @@ class SearchIndex extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        // console.log('test');
-        // debugger
-
         const user = this.props.currentUser ? this.props.currentUser.id : "";
         this.props.fillInBooking({
             date: `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`,

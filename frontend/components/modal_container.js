@@ -2,16 +2,12 @@ import { closeModal } from '../actions/modal_actions';
 import { connect } from 'react-redux';
 import Modal from './modal';
 
-const mapStateToProps = state => {
-    return {
+const mapStateToProps = state => ({
       modal: state.ui.modal
-    };
-  };
+});
   
-  const mapDispatchToProps = dispatch => {
-    return {
+const mapDispatchToProps = dispatch => ({
       closeModal: () => dispatch(closeModal())
-    };
-  };
+});
   
-  export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);

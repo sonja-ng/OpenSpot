@@ -10,9 +10,7 @@ class UserEditForm extends React.Component {
     }
 
     componentDidMount(){
-        // debugger
-        this.props.receiveUserInfo(this.props.id);
-      
+        this.props.receiveUserInfo(this.props.id);      
     }
 
     update(field){
@@ -41,7 +39,6 @@ class UserEditForm extends React.Component {
     }
 
     handleSubmit(e){
-        // debugger
         e.preventDefault();
         const user = Object.assign({}, this.state);
         return this.props.updateUser(user).then(()=> {
@@ -50,8 +47,6 @@ class UserEditForm extends React.Component {
     }
 
     render(){
-        // debugger
-
         if (!this.props.currentUser) return null;
 
         return (
@@ -102,8 +97,3 @@ class UserEditForm extends React.Component {
 }
 
 export default UserEditForm;
-
-{/* <form onSubmit={this.test.bind(this)}>
-<input type="text" value="hi" />
-<input type="button" value="save"/>
-</form> */}

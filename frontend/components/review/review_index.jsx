@@ -6,29 +6,23 @@ import { withRouter } from 'react-router-dom';
 class ReviewIndex extends React.Component {
     constructor(props){
         super(props);
-
     }
 
     componentDidMount(){
-        // debugger
             this.props.fetchReviews({["restId"]: this.props.match.params.restId});
     }
 
     componentWillUnmount(){
-        // debugger
         this.props.clearReviews();
     }
 
     componentDidUpdate(prevProps){
-        debugger
-        // this.props.reviews.length !== prevProps.reviews.length ||
         if ( this.props.history.location.pathname !== prevProps.history.location.pathname) {
                 this.props.fetchReviews({["restId"]: this.props.match.params.restId});
             } 
     }
 
     render(){
-        // debugger
         if (!this.props.reviews) return null;
     
         const { reviews, currentUser, deleteReview } = this.props;

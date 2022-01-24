@@ -1,7 +1,6 @@
 import { RECEIVE_BOOKING, REMOVE_BOOKING, RECEIVE_BOOKINGS, CLEAR_BOOKINGS } from '../actions/booking_actions';
 
 const confirmedBookingsReducer = (oldState = {}, action) => {
-    // debugger
     Object.freeze(oldState);
     const nextState = Object.assign({}, oldState);
     switch(action.type) {

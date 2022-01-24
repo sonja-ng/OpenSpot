@@ -11,13 +11,12 @@ const mSTP = state => ({
     sessionErrors: state.errors.session
 });
 
-const mDTP = dispatch => {
-    return {
+const mDTP = dispatch => ({
     logout: ()=> dispatch(logout()),
     removeSessionErrors: ()=> dispatch(removeSessionErrors()),
     removeUserErrors: ()=> dispatch(removeUserErrors()),
     openModal: modal => dispatch(openModal(modal)),
     updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
-}};
+});
 
 export default connect(mSTP, mDTP)(Navbar);

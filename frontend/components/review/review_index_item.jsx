@@ -1,7 +1,6 @@
 import React from 'react';
-import { updateReview } from '../../util/review_api_utils';
 import ReviewEditFormContainer from '../form/review_edit_form_container';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class ReviewIndexItem extends React.Component {
     constructor(props){

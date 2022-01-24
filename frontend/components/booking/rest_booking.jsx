@@ -34,7 +34,6 @@ class RestBooking extends React.Component {
 
     handleSubmit(e){
         e.preventDefault();
-        // debugger
         if (this.props.currentUser) {
             this.props.fillInBooking({
                 date: `${this.state.date.getFullYear()}-${this.state.date.getMonth()+1}-${this.state.date.getDate()}`,
@@ -52,8 +51,6 @@ class RestBooking extends React.Component {
     }
 
     render(){
-        // const whereTo = this.props.currentUser ? "/booking" : `/rests/${this.props.match.params.restId}`;
-
         return (
             <div className="sticky-rsvp">
                 <header>Make a reservation</header>

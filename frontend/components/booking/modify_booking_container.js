@@ -7,7 +7,7 @@ import { fillInOneFieldBooking, clearBookings, fetchBooking } from '../../action
 const mSTP = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
     booking: state.entities.bookings.confirmedBookings[ownProps.match.params.bookingId],
-    restaurant: state.entities.rests[state.entities.bookings.confirmedBookings.rest_id],
+    restaurants: state.entities.rests,
     tentativeBooking: state.entities.bookings.tentativeBooking
 });
 
