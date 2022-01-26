@@ -5,7 +5,7 @@ Open Spot is an Open Table clone where users can search, make reservations, and 
 [Live Demo](http://openspot-aa.herokuapp.com/)
 
 ## Homepage
-![Homepage](./app/assets/images/screenshot1.png)
+![Homepage](./app/assets/images/openspot_intro.gif)
 
 ## Restaurant Profile
 ![Restaurant Profile](./app/assets/images/restaurant.png)
