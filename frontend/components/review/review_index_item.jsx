@@ -21,8 +21,14 @@ class ReviewIndexItem extends React.Component {
         this.setState({ starRating: fillRating});
     }
 
+    componentDidUpdate(prevProps){
+        if (this.props.review.overall !== prevProps.review.overall) {
+            const fillNewRating = [...Array(this.props.review.overall).keys()]
+            this.setState({ starRating: fillNewRating })
+        }
+    }
+
     openEditReview(){
-        // debugger
         this.setState({reviewEditOut: true });
     }
 
@@ -55,7 +61,7 @@ class ReviewIndexItem extends React.Component {
                 <button className="review-delete-button" onClick={()=> deleteReview(review.id)}>Delete</button>
             </div>
         )
-        // debugger    
+         
         return (
             <div>
                 <li className="review-row">

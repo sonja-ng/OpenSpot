@@ -8,7 +8,6 @@ class Modal extends React.Component {
         super(props);
         this.enableScrolling = this.enableScrolling.bind(this);
     }
-// } = ({modal, closeModal}) => {
 
     enableScrolling(){
         document.body.classList.remove("disable_scroll");
