@@ -96,7 +96,6 @@ Open Spot is an Open Table clone where users can search, make reservations, and 
 - Allow users to bookmark favorite restaurants 
 - Add carousel features to restaurant list on homepage
 - Make available booking time more dynamic based on users' search
-- Show restaurant ratings based on average of user ratings
 - Show upcoming and past bookings as a dropdown alert in the navbar
 - Add filter functionality to search results
 

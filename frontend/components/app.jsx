@@ -55,15 +55,13 @@ const App = () => (
                         <li>Ruby on Rails</li>
                         <li>AWS S3</li>
                         <li>HTML5/SASS</li>
+                        <button className="footer-btn-credit" onClick={()=> window.open("https://github.com/sonja-ng/OpenSpot#image-credits")}>Image Attribution</button>
                     </ul>
                 </div>
-                <div className="footer_col_right">
-                    <ul>
-                        <div className="footer_title">Links</div>
-                        <li><a href="https://github.com/sonja-ng" target="_blank">GitHub</a></li>
-                        <li><a href="https://www.linkedin.com/in/sonja-ng-a22aa513/" target="_blank">LinkedIn</a></li>
-                        <li><a href="https://github.com/sonja-ng/OpenSpot" target="_blank">Image Credits</a></li>
-                    </ul>
+                <div className="footer-btn-row">
+                    <button className="footer-btn" onClick={()=> window.open("https://github.com/sonja-ng")}><i className="fab fa-github-square"></i></button>
+                    <button className="footer-btn" onClick={()=> window.open("https://www.linkedin.com/in/sonja-ng-a22aa513/")}><i className="fab fa-linkedin"></i></button>
+                    <button className="footer-btn" onClick={()=> window.open("https://angel.co/u/sonja-ng")}><i className="fab fa-angellist"></i></button>
                 </div>
             </div>
         </footer>

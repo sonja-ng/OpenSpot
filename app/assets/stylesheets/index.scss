@@ -525,59 +525,88 @@ footer {
 
 .footer_row {
     width: inherit;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     height: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer_maintitle {
     font-family: $main_font;
     color: white;
     font-size: 30px;
-    margin: 0 auto;
+    margin: 0 auto 80px auto;
     width: max-content;
 }
 
 .footer_title {
     font-family: $main_font;
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 20px;
 }
 
-.footer_col_left > ul > li, .footer_col_right > ul > li {
+.footer_col_left > ul > li {
     font-family: $main_font;
     color: white;
     font-size: 20px;
     margin: 10px 0;
 }
 
-.footer_col_left ul, .footer_col_right ul {
+.footer_col_left ul {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: space-between;
 }
 
-%footer_col {
-    width: 50%;
-    padding-top: 30px;
-    height: 60%;
-}
 
 .footer_col_left {
-    @extend %footer_col;
+    width: 60%;
+    padding-top: 30px;
+    height: 300px;
+    margin-bottom: 30px;
 }
 
-.footer_col_right {
-    @extend %footer_col;
-    border-left: 1px solid grey;
+
+.footer-btn {
+    color: white;
+    font-size: 50px;
+    height: 60px;
+    width: 60px;
+    border: none;
+    transition: all .5s;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-footer {
-    a {
-        color: white;
-        size: 20px;
-    }
+.footer-btn:hover {
+    color: rgb(0, 211, 248);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.footer-btn-credit {
+    color: white;
+    font-size: 20px;
+    height: 50px;
+    width: 200px;
+    border: none;
+    transition: all .5s;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.footer-btn-credit:hover {
+    color: rgb(255, 159, 159);
+    font-style: underline;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.footer-btn-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
 }
