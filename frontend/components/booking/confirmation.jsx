@@ -11,6 +11,9 @@ class Confirmation extends React.Component {
     }
 
     render(){
+        const dateParts = this.props.booking.date.split('-');
+        const dateObj = new Date(dateParts[0], dateParts[1]-1, dateParts[2]);
+
         return(
             <div className="confirmation-container">
                 <div className="confirm-bg">
@@ -24,7 +27,7 @@ class Confirmation extends React.Component {
                             <div className="flex-details">
                                 <div className="confirm-items"><i className="far fa-user"></i>{this.props.booking.party_size}</div>
                                 <div className="confirm-items">
-                                <i className="far fa-calendar"></i>{this.props.booking.date} at {this.props.booking.time.slice(12, 16)}PM
+                                <i className="far fa-calendar"></i>{dateObj.toDateString()} at {this.props.booking.time.slice(12, 16)}PM
                                 </div>  
                             </div>
                             <div className="confirm-button-row">

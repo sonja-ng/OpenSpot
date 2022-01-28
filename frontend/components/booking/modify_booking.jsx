@@ -62,6 +62,9 @@ class ModifyBooking extends React.Component {
 
     render(){
         if (!this.props.booking) return null;
+        const dateParts = this.props.booking.date.split('-');
+        const dateObj = new Date(dateParts[0], dateParts[1]-1, dateParts[2]);
+
         return (
             <div className="modify-bg">
                     <div className="mod">
@@ -71,7 +74,7 @@ class ModifyBooking extends React.Component {
                     </div>
                     </div>
                     <div className="flex-row-mod">
-                        <div className="mod-details" >On {this.props.booking.date}</div>
+                        <div className="mod-details" >On {dateObj.toDateString()}</div>
                         <div className="mod-details" >at {this.props.booking.time.slice(12, 16)} PM</div>
                         <div className="mod-details" >for {this.props.booking.party_size} people</div>
                     </div>

@@ -9,6 +9,8 @@ class UserBookingIndexItem extends React.Component {
     render(){
         const { booking, currentUser, deleteBooking, updateBooking } = this.props;
         if (!booking || !booking.restaurant) return null;
+        const dateParts = booking.date.split('-');
+        const dateObj = new Date(dateParts[0], dateParts[1]-1, dateParts[2]);
 
         return (
             <div>
@@ -22,7 +24,7 @@ class UserBookingIndexItem extends React.Component {
                         <div className="flex-details">
                                 <div className="confirm-items"><i className="far fa-user"></i>{booking.party_size}</div>
                                 <div className="confirm-items">
-                                <i className="far fa-calendar"></i>{booking.date} at {booking.time.slice(12, 16)}PM
+                                <i className="far fa-calendar"></i>{dateObj.toDateString()} at {booking.time.slice(12, 16)}PM
                                 </div>  
                             </div>
                             <div className="confirm-button-row">
