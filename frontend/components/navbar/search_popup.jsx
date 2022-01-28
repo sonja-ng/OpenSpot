@@ -170,15 +170,25 @@ class SearchPopup extends React.Component {
                                 selected={this.state.date} onChange={this.updateDate}/>
                                 <select name="time3" id="time3" className="white-dropdown clock" value={this.state.time} onChange={this.updateTime}>
                                     <option value="12:00">12:00pm</option>
+                                    <option value="12:00">12:30pm</option>
                                     <option value="01:00">1:00pm</option>
+                                    <option value="01:00">1:30pm</option>
                                     <option value="02:00">2:00pm</option>
+                                    <option value="02:00">2:30pm</option>
                                     <option value="03:00">3:00pm</option>
+                                    <option value="03:00">3:30pm</option>
                                     <option value="04:00">4:00pm</option>
+                                    <option value="04:00">4:30pm</option>
                                     <option value="05:00">5:00pm</option>
+                                    <option value="05:00">5:30pm</option>
                                     <option value="06:00">6:00pm</option>
+                                    <option value="06:00">6:30pm</option>
                                     <option value="07:00">7:00pm</option>
+                                    <option value="07:00">7:30pm</option>
                                     <option value="08:00">8:00pm</option>
+                                    <option value="08:00">8:30pm</option>
                                     <option value="09:00">9:00pm</option>
+                                    <option value="09:00">9:30pm</option>
                                     <option value="10:00">10:00pm</option>
                                 </select>
                                 <label>
