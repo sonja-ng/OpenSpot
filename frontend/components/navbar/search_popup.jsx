@@ -166,7 +166,7 @@ class SearchPopup extends React.Component {
                             <button onClick={this.reset} className="search-x">X</button>
                         <div className="search-slogan">Find your table for any occasion</div>
                             <form className="white-search-form">
-                                <DatePicker dateFormat="yyyy-MM-dd" className="search-date-white"
+                                <DatePicker dateFormat="yyyy-MM-dd" className="search-date-white" minDate={new Date()}
                                 selected={this.state.date} onChange={this.updateDate}/>
                                 <select name="time3" id="time3" className="white-dropdown clock" value={this.state.time} onChange={this.updateTime}>
                                     <option value="12:00">12:00pm</option>

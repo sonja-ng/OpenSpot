@@ -160,7 +160,7 @@ class SearchIndex extends React.Component {
             <div>
                 <div className="search-header">
                     <form className="search-form">
-                    <DatePicker dateFormat="yyyy-MM-dd" className="search-date" selected={this.state.date} onChange={this.updateDate}/>
+                    <DatePicker dateFormat="yyyy-MM-dd" minDate={new Date()} className="search-date" selected={this.state.date} onChange={this.updateDate}/>
                         <select name="time" className="dropdown time" value={this.state.time} id="time2" onChange={this.updateTime}>
                             <option value="12:00">12:00pm</option>
                             <option value="01:00">1:00pm</option>
