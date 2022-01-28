@@ -12,6 +12,13 @@ class UserBookingIndexItem extends React.Component {
         const dateParts = booking.date.split('-');
         const dateObj = new Date(dateParts[0], dateParts[1]-1, dateParts[2]);
 
+        const editOption = dateObj < new Date() ? (null) : (
+        <div className="confirm-button-row">
+        <Link to={`/update/${booking.id}`} onClick={this.props.clearTentativeBooking} className="c-button">Modify</Link>
+        <button onClick={()=> deleteBooking(booking.id)} className="c-button">Cancel</button>
+        </div>
+        )
+
         return (
             <div>
                 <li className="user-rsvp-row">
@@ -27,10 +34,7 @@ class UserBookingIndexItem extends React.Component {
                                 <i className="far fa-calendar"></i>{dateObj.toDateString()} at {booking.time.slice(12, 16)}PM
                                 </div>  
                             </div>
-                            <div className="confirm-button-row">
-                                <Link to={`/update/${booking.id}`} onClick={this.props.clearTentativeBooking} className="c-button">Modify</Link>
-                                <button onClick={()=> deleteBooking(booking.id)} className="c-button">Cancel</button>
-                            </div>
+                            {editOption}
                         </div>
                 </li>
             </div> 

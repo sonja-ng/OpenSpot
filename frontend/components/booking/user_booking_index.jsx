@@ -21,14 +21,23 @@ class UserBookingIndex extends React.Component {
         if (!this.props.bookings) return null;
 
         const { bookings, currentUser, deleteBooking } = this.props;
-        const bookingList = bookings.map((booking, idx) => <UserBookingIndexItem key={idx} 
+        const upcomingBookings = bookings.filter(booking => new Date(booking.date) > new Date());
+        
+        const upcomingBookingList = upcomingBookings.map((booking, idx) => <UserBookingIndexItem key={idx} 
+        booking={booking} currentUser={currentUser} deleteBooking={deleteBooking} />)
+
+        const pastBookings = bookings.filter(booking => new Date(booking.date) < new Date());
+
+        const pastBookingList = pastBookings.map((booking, idx) => <UserBookingIndexItem key={idx} 
         booking={booking} currentUser={currentUser} deleteBooking={deleteBooking} />)
 
         return (
             <div className="review-bg">
                 <ul>
-                    <div className="my-bookings"><h3>My Reservations</h3></div>
-                    {bookingList}
+                    <div className="my-bookings"><h3>My Upcoming Reservations</h3></div>
+                    {upcomingBookingList}
+                    <div className="my-bookings"><h3>My Past Reservations</h3></div>
+                    {pastBookingList}
                 </ul>
             </div>
         )

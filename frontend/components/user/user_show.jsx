@@ -1,6 +1,6 @@
 import React from 'react';
 import UserEditFormContainer from './user_editform_container';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, withRouter } from 'react-router-dom';
 import UserReviewIndexContainer from '../review/user_review_index_container';
 import UserBookingIndexContainer from '../booking/user_booking_index_container';
 
@@ -30,4 +30,4 @@ const UserShow = ({ currentUser }) => {
     )
 };
 
-export default UserShow;
+export default withRouter(UserShow);
