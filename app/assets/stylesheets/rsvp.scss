@@ -235,3 +235,18 @@
     }
 }
 
+.no-content {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+}
+
+.sub-header-booking {
+    color: rgb(190, 190, 190);
+    font-family: $manrope;
+    width: inherit;
+    display: flex;
+    font-size: 18px;
+    padding-left: 35px;
+    margin-bottom: 15px;
+}

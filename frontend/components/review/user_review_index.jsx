@@ -22,7 +22,8 @@ class UserReviewIndex extends React.Component {
         if (!this.props.reviews) return null;
     
         const { reviews, currentUser, deleteReview } = this.props;
-        const reviewList = reviews.map((review, idx) => <UserReviewIndexItem key={idx} review={review} currentUser={currentUser} deleteReview={deleteReview} />)
+        const reviewList = reviews.length > 1 ? (reviews.map((review, idx) => <UserReviewIndexItem key={idx} review={review} currentUser={currentUser} deleteReview={deleteReview} />))
+        : (<div className="no-content"><h3>You have no reviews</h3></div>)
         const header = !this.props.match.params.restId ? "my-reviews" : "hidden";
         return (
             <div className="review-bg">
