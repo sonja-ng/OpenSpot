@@ -132,19 +132,21 @@
     right: 0;
 
     .review-edit-button, .review-delete-button {
-        background-color: $red;
-        width: 70px;
+        background-color: white;
+        width: 20px;
         height: 30px;
         border: none;
-        color: white;
+        font-size: 18px;
+        color: $red;
         border-radius: 3px;
         font-family: $roboto;
-        margin-right: 5px;
+        margin-right: 10px;
+        transition: all .5s;
         cursor: pointer;
     }
 
     .review-edit-button:hover, .review-delete-button:hover {
-        background-color: rgb(136, 1, 1);
+        color: rgb(136, 1, 1);
         cursor: pointer;
     }
 }

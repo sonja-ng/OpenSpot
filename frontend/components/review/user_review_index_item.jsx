@@ -57,8 +57,8 @@ class UserReviewIndexItem extends React.Component {
             null    
         ) : (
             <div className="review-buttons">
-                <button className="review-edit-button" onClick={this.openEditReview}>Edit</button>  
-                <button className="review-delete-button" onClick={()=> deleteReview(review.id)}>Delete</button>
+                <button className="review-edit-button" onClick={this.openEditReview}><i className="far fa-edit"></i></button>  
+                <button className="review-delete-button" onClick={()=> deleteReview(review.id)}><i className="far fa-trash-alt"></i></button>
             </div>
         )
             // debugger
