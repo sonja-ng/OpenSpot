@@ -32,7 +32,8 @@
     height: 32px;
     position: sticky;
     top: 0;
-    width: 642px;
+    z-index: 10;
+    width: 612px;
 
     .content-button {
         margin-right: 36px;
