@@ -381,11 +381,12 @@ header {
 .white-searchbar {
     width: 1600px;
     height: 416px;
-    position: absolute;
-    top: 28px;
-    left: 8%;
+    position: fixed;
+    top: 30.4%;
+    left: 50%;
     padding-top: 140px;
     // padding-left: 329px;
+    transform: translate(-50%, -50%);
     background-color: white;
     box-sizing: border-box;
     display: flex;
