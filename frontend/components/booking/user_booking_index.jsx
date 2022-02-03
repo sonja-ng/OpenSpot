@@ -22,7 +22,7 @@ class UserBookingIndex extends React.Component {
 
         const { bookings, currentUser, deleteBooking } = this.props;
         const upcomingBookings = bookings.filter(booking => new Date(booking.date) > new Date());
-        debugger
+        // debugger
         const upcomingBookingList = upcomingBookings.length > 0 ? (upcomingBookings.map((booking, idx) => <UserBookingIndexItem key={idx} 
         booking={booking} currentUser={currentUser} deleteBooking={deleteBooking} />)) : (<div className="no-content"><h3>You have no upcoming reservations</h3></div>)
 

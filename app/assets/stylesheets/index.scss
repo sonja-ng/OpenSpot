@@ -529,13 +529,14 @@ footer {
     height: 300px;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .footer_maintitle {
     font-family: $main_font;
     color: white;
     font-size: 30px;
-    margin: 0 auto 80px auto;
+    margin: 0 auto 30px auto;
     width: max-content;
 }
 
@@ -563,7 +564,7 @@ footer {
 
 .footer_col_left {
     width: 60%;
-    padding-top: 30px;
+    // padding-top: 20px;
     height: 300px;
     margin-bottom: 30px;
 }
@@ -599,7 +600,7 @@ footer {
 }
 
 .footer-btn-credit:hover {
-    color: rgb(255, 159, 159);
+    color: rgb(0, 211, 248);
     font-style: underline;
     border: none;
     background-color: transparent;
