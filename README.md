@@ -1,6 +1,6 @@
-# Open Spot
+# OpenSpot
 
-Open Spot is an Open Table clone where users can search, make reservations, and write reviews for dining spots across New York City.
+OpenSpot is an OpenTable clone where users can search, make reservations, and write reviews for dining spots across New York City.
 
 [Live Demo](http://openspot-aa.herokuapp.com/)
 
