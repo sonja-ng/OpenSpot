@@ -50,11 +50,11 @@ const App = () => (
                 <div className="footer_col_left">
                     <ul>
                         <div className="footer_title">Technologies</div>
-                        <li>React</li>
-                        <li>Redux</li>
+                        <li>React | Redux</li>
                         <li>Ruby on Rails</li>
+                        <li>PostgreSQL</li>
                         <li>AWS S3</li>
-                        <li>HTML5/SASS</li>
+                        <li>HTML5 | SASS</li>
                         <button className="footer-btn-credit" onClick={()=> window.open("https://github.com/sonja-ng/OpenSpot#image-credits")}>Image Attribution</button>
                     </ul>
                 </div>
