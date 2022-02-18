@@ -7,7 +7,10 @@ import { openModal } from '../../actions/modal_actions';
 
 const mSTP = state => ({
     rests: Object.values(state.entities.rests),
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    searchTerms: Object.values(state.entities.search).map(search => search.toLowerCase()),
+    capTerms: Object.values(state.entities.search),
+    tentativeBooking: state.entities.bookings.tentativeBooking
 });
 
 const mDTP = dispatch => ({

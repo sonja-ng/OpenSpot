@@ -5,7 +5,10 @@ import { updateFilter } from '../../actions/search_actions';
 
 const mSTP = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    searchOut: ownProps.searchOut
+    searchOut: ownProps.searchOut,
+    tentativeBooking: state.entities.bookings.tentativeBooking,
+    searchTerms: Object.values(state.entities.search).map(search => search.toLowerCase()),
+    capTerms: Object.values(state.entities.search)
 });
 
 const mDTP = (dispatch, ownProps) => ({

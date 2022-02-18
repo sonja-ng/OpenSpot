@@ -46,7 +46,6 @@ class RestIndexItem extends React.Component {
         }
     } 
 
-
     render(){
         const { rest } = this.props;
         if (rest.photos.length === 0) return null; 
@@ -72,11 +71,9 @@ class RestIndexItem extends React.Component {
                 <Link to={whereTo} onClick={this.handleClick}><button className="thumbnail-button">7:30pm</button></Link>
                 <Link to={whereTo} onClick={this.handleClick}><button className="thumbnail-button">7:45pm</button></Link>
                 </div>
-            </li>
-            
+            </li>      
         )
     }
-
 };
  
 export default RestIndexItem;

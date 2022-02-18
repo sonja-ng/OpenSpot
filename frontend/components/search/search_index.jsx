@@ -8,9 +8,7 @@ class SearchIndex extends React.Component {
 
         this.state = {
             general: "",
-            cuisine: "",
-            neighborhood: "",
-            name: "",
+            search: "",
             suggestion: false,
             date: new Date(),
             time: "12:00",
@@ -18,21 +16,6 @@ class SearchIndex extends React.Component {
         }
 
         this.dropRef = React.createRef();
-
-        this.cuisineList = ["american", "middle eastern", "mexican", "indian", "bakery", "bar", "mediterranean", "soul food", "venezuelan",
-        "chinese", "japanese", "thai", "fusion"];
-
-        this.neighborhoodList = ["williamsburg", "jackson heights", "roosevelt island", "boerum hill", "midtown", "upper west side",
-        "east village", "prospect heights", "lower east side", "fresh meadows"];
-
-        this.nameList = ["al badawi", "aldama", "angel indian restaurant", "anything at all", "as you are", "bar blondeau", "borrachito", "boulud sud", "cadence",
-        "casa ora", "cheli", "chuko", "dhamaka", "soothr", "pecking house"];
-
-        this.allItems = ["American", "Middle Eastern", "Mexican", "Indian", "Bakery", "Bar", "Mediterranean", "Soul food", "Venezuelan",
-        "Chinese", "Japanese", "Thai", "Fusion", "Williamsburg", "Jackson Heights", "Roosevelt Island", "Boerum Hill", "Midtown", "Upper West Side",
-        "East Village", "Prospect Heights", "Lower East Side", "Fresh Meadows", "Al Badawi", "Aldama", "Angel Indian Restaurant", "Anything At All", "As You Are", 
-        "Bar Blondeau", "Borrachito", "Boulud Sud", "Cadence", "Casa Ora", "Cheli", "Chuko", "Dhamaka", "Soothr", "Pecking House" ];
-
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
         this.selectMatch = this.selectMatch.bind(this);
@@ -72,49 +55,39 @@ class SearchIndex extends React.Component {
     }
 
     update(e){
-        this.setState({suggestion: true});
-        this.setState({ general: e.target.value }, ()=> {
-                const lowerCase = this.state.general.toLowerCase();
-            if (this.cuisineList.includes(lowerCase)) {
-                this.setState({ cuisine: lowerCase, neighborhood: "", name: "" });
-            } else if (this.neighborhoodList.includes(lowerCase)) {
-                this.setState({ neighborhood: lowerCase, cuisine: "", name: "" });
-            } else if (this.nameList.includes(lowerCase)) {
-                this.setState({ name: lowerCase, cuisine: "", neighborhood: "" });
-            } else if (this.state.general === "") {
-                this.setState({suggestion: false});
-            }
-        });
+        this.setState({ general: e.target.value, suggestion: true }, ()=> {
+            const searchItem = this.state.general.toLowerCase();
+        if (this.props.searchTerms.includes(searchItem)) {
+            this.setState({ search: searchItem });
+        } else if (this.state.general === "") {
+            this.setState({suggestion: false});
+        }});
     }
-
 
     findMatch(){
         const match = [];
+        const suggestions = new Set();
+        this.props.capTerms.forEach(term => suggestions.add(term));
+
         if (this.state.general.length > 0) {
-            this.allItems.forEach(el => {
+            suggestions.forEach(el => {
                 const dup = el.slice(0, this.state.general.length);
                 if (dup.toLowerCase() === this.state.general.toLowerCase()){
                     match.push(el);
                 }
             })
         }
-
         return match;
     }
 
     selectMatch(e){
         this.setState({ general: e.currentTarget.innerText, suggestion: false }, ()=> {
-                const lowerCase = this.state.general.toLowerCase();
-            if (this.cuisineList.includes(lowerCase)) {
-                this.setState({ cuisine: lowerCase, neighborhood: "", name: "" });
-            } else if (this.neighborhoodList.includes(lowerCase)) {
-                this.setState({ neighborhood: lowerCase, cuisine: "", name: "" });
-            } else if (this.nameList.includes(lowerCase)) {
-                this.setState({ name: lowerCase, cuisine: "", neighborhood: "" });
+                const searchItem = this.state.general.toLowerCase();
+            if (this.props.searchTerms.includes(searchItem)) {
+                this.setState({ search: searchItem });
             }
         });
     }
-   
 
     handleSubmit(e){
         e.preventDefault();
@@ -127,19 +100,12 @@ class SearchIndex extends React.Component {
         });
 
         this.setState({suggestion: false});
-        if (this.state.cuisine) {
-            this.props.updateFilter("cuisine", this.state.cuisine);
-            this.setState({ general: "", cuisine: ""});
-        } else if (this.state.neighborhood) {
-            this.props.updateFilter("neighborhood", this.state.neighborhood);
-            this.setState({ general: "", neighborhood: "" });
-        } else if (this.state.name) {
-            this.props.updateFilter("name", this.state.name);
-            this.setState({ general: "", name: "" });
+        if (this.state.search) {
+            this.props.updateFilter("search", this.state.search);
         } else {
             this.props.updateFilter("general", this.state.general);
-            this.setState({ general: ""});
         }
+        this.setState({ general: "", search: "" });
     }
 
     render(){
@@ -163,15 +129,25 @@ class SearchIndex extends React.Component {
                     <DatePicker dateFormat="yyyy-MM-dd" minDate={new Date()} className="search-date" selected={this.state.date} onChange={this.updateDate}/>
                         <select name="time" className="dropdown time" value={this.state.time} id="time2" onChange={this.updateTime}>
                             <option value="12:00">12:00pm</option>
+                            <option value="12:00">12:30pm</option>
                             <option value="01:00">1:00pm</option>
+                            <option value="01:00">1:30pm</option>
                             <option value="02:00">2:00pm</option>
+                            <option value="02:00">2:30pm</option>
                             <option value="03:00">3:00pm</option>
+                            <option value="03:00">3:30pm</option>
                             <option value="04:00">4:00pm</option>
+                            <option value="04:00">4:30pm</option>
                             <option value="05:00">5:00pm</option>
+                            <option value="05:00">5:30pm</option>
                             <option value="06:00">6:00pm</option>
+                            <option value="06:00">6:30pm</option>
                             <option value="07:00">7:00pm</option>
+                            <option value="07:00">7:30pm</option>
                             <option value="08:00">8:00pm</option>
+                            <option value="08:00">8:30pm</option>
                             <option value="09:00">9:00pm</option>
+                            <option value="09:00">9:30pm</option>
                             <option value="10:00">10:00pm</option>
                         </select>
                         <label>
@@ -185,6 +161,11 @@ class SearchIndex extends React.Component {
                                 <option value="8">8 people</option>
                                 <option value="9">9 people</option>
                                 <option value="10">10 people</option>  
+                                <option value="10">11 people</option>  
+                                <option value="10">12 people</option>  
+                                <option value="10">13 people</option>  
+                                <option value="10">14 people</option>  
+                                <option value="10">15 people</option>  
                         </select>
                         </label>
                         <span className="font_search" >

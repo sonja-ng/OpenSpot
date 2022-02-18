@@ -2,7 +2,6 @@ import React from 'react';
 import ReviewIndexItem from './review_index_item';
 import { withRouter } from 'react-router-dom';
 
-
 class ReviewIndex extends React.Component {
     constructor(props){
         super(props);
