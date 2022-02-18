@@ -1,12 +1,7 @@
 class Api::RestsController < ApplicationController
     def index
-        # debugger
-        if cuisine
-            rests = Rest.match_cuisine(cuisine)
-        elsif neighborhood
-            rests = Rest.match_neighborhood(neighborhood)
-        elsif name
-            rests = Rest.match_name(name)
+        if search
+            rests = Rest.match_search(search)
         else 
             rests = Rest.all
         end
@@ -35,8 +30,8 @@ class Api::RestsController < ApplicationController
         params.require(:rest).permit(:name, :description, :address, :city, :state, :zip, :cuisine, :neighborhood, :owner_id)
     end
 
-    def cuisine
-        params[:cuisine]
+    def search
+        params[:search]
     end
 
     def neighborhood

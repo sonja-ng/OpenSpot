@@ -1,5 +1,4 @@
 import React from 'react';
-import BookingCalendar from '../calendar/calendar';
 import DatePicker from 'react-datepicker';
 
 class SearchBar extends React.Component {
@@ -8,28 +7,12 @@ class SearchBar extends React.Component {
 
         this.state = {
             general: "",
-            cuisine: "",
-            neighborhood: "",
-            name: "",
+            search: "",
             suggestion: false,
             date: new Date(),
             time: "12:00",
             party: 2
         }
-
-        this.cuisineList = ["american", "middle eastern", "mexican", "indian", "bakery", "bar", "mediterranean", "soul food", "venezuelan",
-        "chinese", "japanese", "thai", "fusion"];
-
-        this.neighborhoodList = [ "williamsburg", "jackson heights", "roosevelt island", "boerum hill", "midtown", "upper west side",
-        "east village", "prospect heights", "lower east side", "fresh meadows"]
-
-        this.nameList = ["al badawi", "aldama", "angel indian restaurant", "anything at all", "as you are", "bar blondeau", "borrachito", "boulud sud", "cadence",
-        "casa ora", "cheli", "chuko", "dhamaka", "soothr", "pecking house"];
-
-        this.allItems = ["American", "Middle Eastern", "Mexican", "Indian", "Bakery", "Bar", "Mediterranean", "Soul food", "Venezuelan",
-        "Chinese", "Japanese", "Thai", "Fusion", "Williamsburg", "Jackson Heights", "Roosevelt Island", "Boerum Hill", "Midtown", "Upper West Side",
-        "East Village", "Prospect Heights", "Lower East Side", "Fresh Meadows", "Al Badawi", "Aldama", "Angel Indian Restaurant", "Anything At All", "As You Are", 
-        "Bar Blondeau", "Borrachito", "Boulud Sud", "Cadence", "Casa Ora", "CheLi", "Chuko", "Dhamaka", "Soothr", "Pecking House" ];
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.update = this.update.bind(this);
@@ -71,45 +54,36 @@ class SearchBar extends React.Component {
     }
 
     update(e){
-        this.setState({suggestion: true});
-        // if (this.state.general.length === 0) this.setState({suggestion: false});
-        this.setState({ general: e.target.value }, ()=> {
-                const lowerCase = this.state.general.toLowerCase();
-            if (this.cuisineList.includes(lowerCase)) {
-                this.setState({ cuisine: lowerCase, neighborhood: "", name: "" });
-            } else if (this.neighborhoodList.includes(lowerCase)) {
-                this.setState({ neighborhood: lowerCase, cuisine: "", name: "" });
-            } else if (this.nameList.includes(lowerCase)) {
-                this.setState({ name: lowerCase, cuisine: "", neighborhood: "" });
-            } else if (this.state.general === "") {
-                this.setState({suggestion: false});
-            }
-        });
+        this.setState({ general: e.target.value, suggestion: true }, ()=> {
+            const searchItem = this.state.general.toLowerCase();
+        if (this.props.searchTerms.includes(searchItem)) {
+            this.setState({ search: searchItem });
+        } else if (this.state.general === "") {
+            this.setState({suggestion: false});
+        }});
     }
 
     findMatch(){
         const match = [];
+        const suggestions = new Set();
+        this.props.capTerms.forEach(term => suggestions.add(term));
+
         if (this.state.general.length > 0) {
-            this.allItems.forEach(el => {
+            suggestions.forEach(el => {
                 const dup = el.slice(0, this.state.general.length);
                 if (dup.toLowerCase() === this.state.general.toLowerCase()){
                     match.push(el);
                 }
             })
         }
-
         return match;
     }
 
     selectMatch(e){
         this.setState({ general: e.currentTarget.innerText, suggestion: false }, ()=> {
-                const lowerCase = this.state.general.toLowerCase();
-            if (this.cuisineList.includes(lowerCase)) {
-                this.setState({ cuisine: lowerCase, neighborhood: "", name: "" });
-            } else if (this.neighborhoodList.includes(lowerCase)) {
-                this.setState({ neighborhood: lowerCase, cuisine: "", name: "" });
-            } else if (this.nameList.includes(lowerCase)) {
-                this.setState({ name: lowerCase, cuisine: "", neighborhood: "" });
+                const searchItem = this.state.general.toLowerCase();
+            if (this.props.searchTerms.includes(searchItem)) {
+                this.setState({ search: searchItem });
             }
         });
     }
@@ -125,29 +99,19 @@ class SearchBar extends React.Component {
         });
 
         this.setState({suggestion: false});
-        if (this.state.cuisine) {
-            this.props.history.push('/search/');
-            this.props.updateFilter("cuisine", this.state.cuisine);
-            this.setState({ general: ""});
-        } else if (this.state.neighborhood) {
-            this.props.history.push('/search/');
-            this.props.updateFilter("neighborhood", this.state.neighborhood);
-            this.setState({ general: ""});
-        } else if (this.state.name) {
-            this.props.history.push('/search/');
-            this.props.updateFilter("name", this.state.name);
-            this.setState({ general: ""});
+        if (this.state.search) {
+            this.props.updateFilter("search", this.state.search);
         } else {
-            this.props.history.push('/search/');
             this.props.updateFilter("general", this.state.general);
-            this.setState({ general: ""});
         }
+        this.setState({ general: "" });
+        this.props.history.push('/search/');
     }
 
     render(){
         const klass = this.state.suggestion ? "main-search-suggestion" : "hidden";
         const matches = this.findMatch().map((item, idx) => <li onClick={this.selectMatch} key={idx}>{item}</li>)
-        // className="search_date_main"
+        
         return (
             <div className="search_bar">
                 <div className="form_container">
