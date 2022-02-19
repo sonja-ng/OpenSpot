@@ -3,6 +3,7 @@ import RestIndex from './rest_index';
 import { fetchRests } from '../../actions/rest_actions';
 import { fillInOneFieldBooking } from '../../actions/booking_actions';
 import { openModal } from '../../actions/modal_actions';
+import { fetchFavorites } from '../../actions/favorite_actions';
 
 const mSTP = state => ({
     rests: Object.values(state.entities.rests),
@@ -12,7 +13,8 @@ const mSTP = state => ({
 const mDTP = dispatch => ({
     fetchRests: () => dispatch(fetchRests()),
     fillInOneFieldBooking: (cat, value) => dispatch(fillInOneFieldBooking(cat, value)),
-    openModal: (modal) => dispatch(openModal(modal))
+    openModal: (modal) => dispatch(openModal(modal)),
+    fetchFavorites: id => dispatch(fetchFavorites(id))
 });
 
 export default connect(mSTP, mDTP)(RestIndex);

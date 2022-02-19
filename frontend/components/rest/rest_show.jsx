@@ -17,6 +17,7 @@ class RestShow extends React.Component {
 
         this.openReview = this.openReview.bind(this);
         this.closeReview = this.closeReview.bind(this);
+        this.toggleFavorite = this.toggleFavorite.bind(this);
     }
 
     componentDidMount(){
@@ -55,21 +56,36 @@ class RestShow extends React.Component {
             emptyStars = remainStars.map((remain, idx) => <span className="empty-rest" key={idx}>&#9733;&#160;</span>);
             return (<div>{fullStars}{emptyStars}</div>)
         }
-    } 
+    }
 
+    toggleFavorite(){
+        
+    }
 
     render(){
        if (!this.props.rest) return null;
-       const { rest, currentUser } = this.props;
+       const { rest, currentUser,favorites, removeFavorite, addFavorite } = this.props;
        const formAction = !currentUser ? (
         ()=> this.props.openModal("login")
        ) : (
            this.openReview
        )
+
+        const favRestKey = {};
+        favorites.map(favorite => favRestKey[favorite.rest_id]= favorite.id);
+        
+        const favoriteRestList = Object.keys(favRestKey);
+        const favoriteButton = favoriteRestList.includes(this.props.match.params.restId) ?
+             (
+            <button onClick={()=> removeFavorite(favRestKey[this.props.match.params.restId])} className="del-fav"><i className="fas fa-bookmark"></i>Restaurant Saved!</button>
+         ) : (
+            <button onClick={()=> addFavorite({user_id: this.props.currentUser.id, rest_id: this.props.match.params.restId})} className="add-fav"><i className="fas fa-bookmark"></i>Save this restaurant</button>  
+        )
         return (
             <div className="rest-index">
-                <img src={rest.photos[1].url} className="rest-header"/> 
+                <img src={rest.photos[1].url} className="rest-header"/>
                 {/* <div className="rest_header"></div> */}
+                {favoriteButton}
                 <div className="rest-body">
                 <div className="main-rest-content">
                     <div id="overview"></div>

@@ -2,7 +2,7 @@
 
 //restaurant show page
 .rest-index {
-    // position: relative;
+    position: relative;
     height: max-content;
 }
 
@@ -441,3 +441,40 @@
     }
 }
 
+%fav-button {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    height: 48px;
+    width: 236px;
+    font-size: 15px;
+    background-color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.add-fav {
+    @extend %fav-button;
+    i {
+        margin-right: 10px;
+    }
+}
+
+.add-fav:hover {
+    border: 2px solid $red;
+    background-color: rgb(243, 243, 243);
+}
+
+.del-fav {
+    @extend %fav-button;
+    i {
+        margin-right: 10px;
+        color: $red;
+    }
+}
+
+.del-fav:hover {
+    border: 2px solid $red;
+    background-color: rgb(243, 243, 243);
+}

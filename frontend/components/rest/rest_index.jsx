@@ -1,5 +1,6 @@
 import React from 'react';
 import RestIndexItem from './rest_index_item';
+import { withRouter } from 'react-router-dom';
 
 class RestIndex extends React.Component {
     constructor(props){
@@ -8,6 +9,7 @@ class RestIndex extends React.Component {
 
     componentDidMount(){
         this.props.fetchRests();
+        this.props.fetchFavorites({["userId"]:this.props.currentUser.id});
     }
 
     render(){
