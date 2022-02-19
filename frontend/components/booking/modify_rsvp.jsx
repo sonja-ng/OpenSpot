@@ -77,19 +77,48 @@ class ModifyRsvp extends React.Component {
                     </div>
                     </div>
                 <form className="modify-form">
-                    <DatePicker dateFormat="yyyy-MM-dd" className="search-date" selected={this.state.date} onChange={this.updateDate}/>
+                    <DatePicker dateFormat="yyyy-MM-dd" className="modify-date" minDate={new Date()} selected={this.state.date} onChange={this.updateDate}/>
                     <select name="mod-time" id="mod-time" value={this.state.time} className="dropdown time" onChange={this.updateTime}>
                             <option value="12:00">12:00pm</option>
+                            <option value="12:15">12:15pm</option>
+                            <option value="12:30">12:30pm</option>
+                            <option value="12:45">12:45pm</option>
                             <option value="01:00">1:00pm</option>
+                            <option value="01:15">1:15pm</option>
+                            <option value="01:30">1:30pm</option>
+                            <option value="01:45">1:45pm</option>
                             <option value="02:00">2:00pm</option>
                             <option value="02:15">2:15pm</option>
+                            <option value="02:30">2:30pm</option>
+                            <option value="02:45">2:45pm</option>
                             <option value="03:00">3:00pm</option>
+                            <option value="03:15">3:15pm</option>
+                            <option value="03:30">3:30pm</option>
+                            <option value="03:45">3:45pm</option>
                             <option value="04:00">4:00pm</option>
+                            <option value="04:15">4:15pm</option>
+                            <option value="04:30">4:30pm</option>
+                            <option value="04:45">4:45pm</option>
                             <option value="05:00">5:00pm</option>
+                            <option value="05:15">5:15pm</option>
+                            <option value="05:30">5:30pm</option>
+                            <option value="05:45">5:45pm</option>
                             <option value="06:00">6:00pm</option>
+                            <option value="06:15">6:15pm</option>
+                            <option value="06:30">6:30pm</option>
+                            <option value="06:45">6:45pm</option>
                             <option value="07:00">7:00pm</option>
+                            <option value="07:15">7:15pm</option>
+                            <option value="07:30">7:30pm</option>
+                            <option value="07:45">7:45pm</option>
                             <option value="08:00">8:00pm</option>
+                            <option value="08:15">8:15pm</option>
+                            <option value="08:30">8:30pm</option>
+                            <option value="08:45">8:45pm</option>
                             <option value="09:00">9:00pm</option>
+                            <option value="09:15">9:15pm</option>
+                            <option value="09:30">9:30pm</option>
+                            <option value="09:45">9:45pm</option>
                             <option value="10:00">10:00pm</option>
                         </select>
                         <label>
@@ -103,6 +132,11 @@ class ModifyRsvp extends React.Component {
                                 <option value="8">8 people</option>
                                 <option value="9">9 people</option>
                                 <option value="10">10 people</option>
+                                <option value="11">11 people</option>
+                                <option value="12">12 people</option>
+                                <option value="13">13 people</option>
+                                <option value="14">14 people</option>
+                                <option value="15">15 people</option>
                             </select>
                         </label> 
                         <button onClick={this.handleSubmit} className="new-submit">Find a new table</button>

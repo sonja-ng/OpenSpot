@@ -1,4 +1,4 @@
-@import './index.scss';
+@import "./variables.scss";
 
 .modify-bg {
     width: 1600px;
@@ -26,6 +26,17 @@
     font-size: 20px;
     width: 700px;
     margin: 0 auto;
+
+    .react-datepicker__input-container{
+        .modify-date {
+            // border: 1px solid $border-color;
+            width: 171px;
+            height: 50px;
+            border-radius: 3px 0 0 3px;
+            padding: 0 0 0 10px;
+            box-sizing: border-box;
+        }
+    }
 }
 
 .mod-rest {
@@ -37,7 +48,6 @@
     height: 20px;
     margin-bottom: 20px;
 }
-
 
 .modify-form {
     width: 660px;
@@ -52,7 +62,8 @@
         input {
             height: 50px;
             border-radius: 3px;
-            border: 1px solid $border-color;
+            // border: 1px solid $border-color;
+            border: none;
         }
 }
 
@@ -63,16 +74,4 @@
 .mod-bg {
     height: 500px;
     width: 1600px;
-}
-
-.react-datepicker__input-container{
-    .modify-date {
-        border: 1px solid $border-color;
-        width: 171px;
-        height: 50px;
-        border-radius: 3px 0 0 3px;
-        padding: 0 0 0 10px;
-        box-sizing: border-box;
-        }
-
 }

@@ -33,7 +33,7 @@ class ReviewEditForm extends React.Component {
         return (
             <div className={klass2}>
                 <form className={klass}>
-                    <button className="x_button" onClick={this.props.closeEditReview}><i className="fas fa-times"></i></button>
+                    <button className="x-button" onClick={this.props.closeEditReview}><i className="fas fa-times"></i></button>
                     <div className="review-form-header">Edit your review</div>
                     <div className="rating-edit-row">
                     <label>Food

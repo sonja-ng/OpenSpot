@@ -1,39 +1,4 @@
-@import './index.scss';
-
-.rest-party {
-    width: 287px;
-    height: 33px;
-    border: none;
-    border-bottom: 1px solid $border-color;
-    margin-bottom: 11px;
-    margin-top: 11px;
-    box-sizing: border-box;
-}
-
-.react-datepicker__input-container{
-    .rest-date-sticky {
-        border: none;
-        border-bottom: 1px solid $border-color;
-        width: 140px;
-        margin-bottom: 16px;
-        height: 30px;
-        padding: none;
-        box-sizing: border-box;
-        margin-top: 11px;
-        box-sizing: border-box;
-    }
-}
-
-.rest-time {
-    width: 140px;
-    border: none;
-    height: 30px;
-    border-bottom: 1px solid $border-color;
-    margin-bottom: 16px;
-    margin-top: 11px;
-    margin-left: 10px;
-    box-sizing: border-box;
-}
+@import "./variables.scss";
 
 .rest-bookform{
     display: flex;
@@ -63,22 +28,58 @@
     .date-time-container {
         display: flex;
     }
-}
 
-.sticky-party {
-    label {
-        font-size: 13px;
+    .react-datepicker__input-container{
+        .rest-date-sticky {
+            border: none;
+            border-bottom: 1px solid $border-color;
+            width: 140px;
+            margin-bottom: 16px;
+            height: 30px;
+            padding: none;
+            box-sizing: border-box;
+            margin-top: 11px;
+            box-sizing: border-box;
+        }
+    }
+
+    .rest-party {
+        width: 287px;
+        height: 33px;
+        border: none;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 11px;
+        margin-top: 11px;
+        box-sizing: border-box;
+    }
+
+    .rest-time {
+        width: 140px;
+        border: none;
+        height: 30px;
+        border-bottom: 1px solid $border-color;
+        margin-bottom: 16px;
+        margin-top: 11px;
+        margin-left: 10px;
+        box-sizing: border-box;
+    }
+
+    .sticky-party {
+        label {
+            font-size: 13px;
+        }
+    }
+    
+    .sticky-submit {
+        height: 48px;
+        width: 288px;
+        background-color: $red;
+        color: white;
+        font-family: $main_font;
+        font-size: 15px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
     }
 }
 
-.sticky-submit {
-    height: 48px;
-    width: 288px;
-    background-color: $red;
-    color: white;
-    font-family: $main_font;
-    font-size: 15px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}

@@ -52,15 +52,15 @@ class UserNavBar extends React.Component {
 
     render() {
         return (
-            <div className="right_navbar">
-                <div className="dropdown_container" ref={this.dropRef}>
-                    <button onClick={this.toggleDropDown} className="user_icon"><i className="fas fa-user-circle"></i></button>
+            <div className="right-navbar">
+                <div className="dropdown-container" ref={this.dropRef}>
+                    <button onClick={this.toggleDropDown} className="user-icon"><i className="fas fa-user-circle"></i></button>
                     <UserDropDown selected={this.state.selected} logout={this.props.logout} currentUser={this.props.currentUser} toggle={this.toggleDropDown} />
                 </div>
-                {/* <span className="calendar_icon"><i className="far fa-calendar"></i></span>
-                <span className="bell_icon"><i className="far fa-bell"></i></span> */}
+                {/* <span className="calendar-icon"><i className="far fa-calendar"></i></span>
+                <span className="bell-icon"><i className="far fa-bell"></i></span> */}
                 <div>
-                    <button className="search_icon" onClick={this.showSearch}><i className="fas fa-search"></i></button>
+                    <button className="search-icon" onClick={this.showSearch}><i className="fas fa-search"></i></button>
                 </div>
                 <SearchPopupContainer closeSearch={this.closeSearch} searchOut={this.state.searchOut} />
             </div>

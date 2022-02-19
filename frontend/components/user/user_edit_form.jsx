@@ -21,7 +21,7 @@ class UserEditForm extends React.Component {
     renderError(field){
         const error = this.props.errors.filter(error => error.includes(field));
         return (
-            <div className="edit_form_errors">
+            <div className="edit-form-errors">
                 {error[0]}
             </div>
         )
@@ -31,7 +31,7 @@ class UserEditForm extends React.Component {
         const error = this.props.errors.filter(error => error.includes(field));
         if (error.length > 0) {
             return (
-                <div className="form_errors">
+                <div className="form-errors">
                     {error[0].replace(field, newField)}
                 </div>
             )
@@ -51,44 +51,44 @@ class UserEditForm extends React.Component {
 
         return (
             <div className="review-bg">
-                  <form onSubmit={this.test} className="edit_form">
+                  <form onSubmit={this.test} className="edit-form">
                         <h3>About me</h3>
-                    <div className="form_row">
+                    <div className="form-row">
                         <label>First name
-                            <input type="text" className="edit_form_input" value={this.state.fname} onChange={this.update("fname")}/>
+                            <input type="text" className="edit-form-input" value={this.state.fname} onChange={this.update("fname")}/>
                             {this.renderNameError("Fname", "First name")}
                         </label>
                         <label>Last name
-                            <input type="text" className="edit_form_input" value={this.state.lname} onChange={this.update("lname")}/>
+                            <input type="text" className="edit-form-input" value={this.state.lname} onChange={this.update("lname")}/>
                             {this.renderNameError("Lname", "Last name")}
                         </label>
                     </div>
                     <br>
                     </br>
                     <label>Username
-                        <input type="text" className="edit_form_input" value={this.state.username} onChange={this.update("username")}/>
+                        <input type="text" className="edit-form-input" value={this.state.username} onChange={this.update("username")}/>
                         {this.renderError("Username")}
                     </label>
                     
                     <br></br>
                     <label>Email address
-                        <input type="text" className="edit_form_input" value={this.state.email} onChange={this.update("email")}/>
+                        <input type="text" className="edit-form-input" value={this.state.email} onChange={this.update("email")}/>
                         {this.renderError("Email")}
                     </label>
                     
                     <br></br>
                     <label>Phone
-                        <input type="text" className="edit_form_input" value={this.state.phone} onChange={this.update("phone")}/>
+                        <input type="text" className="edit-form-input" value={this.state.phone} onChange={this.update("phone")}/>
                         {this.renderError("Phone")}
                     </label>
                     
                     <input type="hidden" value={this.state.id}/>
                     <br></br>
                     <label>Change password
-                        <input type="password" className="edit_form_input" value={this.state.password} onChange={this.update("password")}/>
+                        <input type="password" className="edit-form-input" value={this.state.password} onChange={this.update("password")}/>
                         {this.renderError("Password")}
                     </label>
-                    <button onClick={this.handleSubmit} className="long_submit">Save Changes</button>
+                    <button onClick={this.handleSubmit} className="long-submit">Save Changes</button>
                     <div className="success hidden" ref={this.success}>Your changes are saved!</div>
                 </form> 
             </div>

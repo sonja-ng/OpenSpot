@@ -1,11 +1,4 @@
-$background-color: #f6f6f6;
-$html_greytop: #eff0f2;
-$main_font: 'DM Sans', sans-serif;
-$red: #e03744;
-$border-color: #d2d4d6;
-$turquoise: #007492;
-$roboto: 'Roboto', sans-serif;
-$manrope: 'Manrope', sans-serif;
+@import "variables.scss";
 
 html {
     height: 100%;
@@ -16,7 +9,7 @@ body {
     height: 100%;
 }
 
-.disable_scroll {
+.disable-scroll {
     overflow: hidden;
 }
 
@@ -28,7 +21,7 @@ body {
     height: inherit;
 }
 
-.main_index {
+.main-index {
     background-color: #ffffff;
     width: 1600px;
     height: max-content;
@@ -68,22 +61,18 @@ header {
     justify-content: space-between;
 }
 
-.top_bar {
+.top-bar {
     background-color: $html_greytop;
     height: 28px;
     width: inherit;
 }
 
-// .navbar-main {
-//     height: 55px;
-// }
-
-.left_navbar {
+.left-navbar {
     display: flex;
     margin-left: 23px;
 }
 
-.logo_bar {
+.logo-bar {
     width: 172px;
     height: 38px;
     background-color: transparent;   
@@ -91,19 +80,19 @@ header {
     padding-right: 14px;
 }
 
-.location_nav {
+.location-nav {
     height: 30px;
     line-height: 30px;
     margin-top: 5px;
 }
 
-.right_navbar {
+.right-navbar {
     display: flex;
     margin-right: 20px;
     margin-top: 1px;
 }
 
-%rightnav_button {
+%rightnav-button {
     text-decoration: none;
     display: block;
     font-family: $main_font;
@@ -117,15 +106,15 @@ header {
     cursor: pointer;
 }
 
-.login_button {
-    @extend %rightnav_button;
+.login-button {
+    @extend %rightnav-button;
     border: 1px solid $border-color;
     background: white;
     color: grey;
 }
 
-.signup_button {
-    @extend %rightnav_button;
+.signup-button {
+    @extend %rightnav-button;
     border: 1px solid $turquoise;
     background: $turquoise;
     color: white;
@@ -141,7 +130,7 @@ header {
     background-color: transparent;
 }
 
-%search_and_marker_icon {
+%search-and-marker-icon {
     @extend %icon;
     width: 30px;
     height: 28px;
@@ -150,8 +139,8 @@ header {
     margin-top: 5px;
     color: black;
 }
-.search_icon {
-    @extend %search_and_marker_icon;
+.search-icon {
+    @extend %search-and-marker-icon;
     border-left: 1px solid $border-color;
     margin-left: 10px;
     padding-left: 8px;
@@ -159,7 +148,7 @@ header {
 }
 
 
-.marker_icon {
+.marker-icon {
     width: 30px;
     height: 28px;
     font-size: 16px;
@@ -173,7 +162,7 @@ header {
     cursor: not-allowed;
 }
 
-.calendar_icon, .bell_icon {
+.calendar-icon, .bell-icon {
     @extend %icon;
     width: 25px;
     height: 28px;
@@ -183,7 +172,7 @@ header {
     cursor: not-allowed;
 }
 
-.user_icon {
+.user-icon {
     @extend %icon;
     height: 30px;
     width: 30px;
@@ -192,11 +181,11 @@ header {
     cursor: pointer
 }
 
-.dropdown_container {
+.dropdown-container {
     position: relative;
 }
 
-.dropdown_ul {
+.dropdown-ul {
     display: block;
     width: 318px;
     height: 300x;
@@ -209,7 +198,7 @@ header {
     z-index: 100;
 }
 
-.dropdown_ul li {
+.dropdown-ul li {
     height: 27px;
     margin-left: 11px;
     font-family: $roboto;
@@ -220,21 +209,21 @@ header {
     color:rgb(59, 59, 59);
 }
 
-.dropdown_ul li:first-child {
+.dropdown-ul li:first-child {
     border-top: 1px solid $border-color;
     padding-top: 20px;
 }
 
-.dropdown_ul li:last-child {
+.dropdown-ul li:last-child {
     color: $red;
     cursor: pointer;
 }
 
-.dropdown_ul a:hover {
+.dropdown-ul a:hover {
     color: $red;
 }
 
-.dropdown_title {
+.dropdown-title {
     font-family: $manrope;
     font-weight: 600;
     color: rgb(59, 59, 59);
@@ -244,18 +233,67 @@ header {
 
 //search bar
 
-.main_content {
+.main-content {
     width: inherit;
     height: max-content;
-    // margin-bottom:60px;
 }
 
-.search_bar {
+.search-bar {
     width: inherit;
     height: 416px;
     background-image: asset-url('searchbanner.jpg');
     padding-top: 159px;
     box-sizing: border-box;
+
+    .search-input {
+        height: 50px;
+        border: none;
+        border-radius: 3px;
+        width: 292px;
+        padding-left: 30px;
+        margin-right: 12px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .search-suggestion {
+        @extend %search;
+        width: 292px;
+        right: 156px;
+    
+        li {
+            background-color: white;
+            color: grey;
+            font-family: $roboto;
+            font-weight: 300;
+            padding: 10px;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+    
+        li:hover {
+            background-color: $red;
+            color: white;
+            font-family: $main_font;
+        }
+    }
+
+    .react-datepicker__input-container{
+        .search-date {
+            height: 48px;
+            border-radius: 3px 0px 0px 3px;
+            border: 0px ;
+            width: 170px;
+            padding-left: 10px;
+        }
+    }
+}
+
+.search-form {
+    position: relative;
+    width: max-content;
+    display: flex;
 }
 
 .new-submit {
@@ -265,7 +303,6 @@ header {
     font-size: 15px;
     border: none;
     width: 144px;
-    // margin-top: 10px;
     border-radius: 3px;
     height: 48px;
     cursor: pointer;
@@ -284,71 +321,43 @@ header {
     border: none;
 }
 
-%dropdown_input {
+%dropdown-input {
     border-left: 1px solid $border-color;
 }
 
 .party {
-    @extend %dropdown_input;
+    @extend %dropdown-input;
     border-radius: 0px 3px 3px 0px;
     margin-right: 12px;
     box-sizing: border-box;
 }
 
 .time {
-    @extend %dropdown_input;
+    @extend %dropdown-input;
 }
 
-.search_date_main {
-    height: 50px;
-    border-radius: 3px 0px 0px 3px;
-    border: 0px ;
-    width: 170px;
-    padding-left: 10px;
-}
-
-.search_input {
-    height: 50px;
-    border: none;
-    border-radius: 3px;
-    width: 292px;
-    padding-left: 30px;
-    margin-right: 12px;
-    font-size: 14px;
-    box-sizing: border-box;
-}
-
-.search_input:focus {
+.search-input:focus {
     outline: none;
 }
 
-.search_input::placeholder {
+.search-input::placeholder {
     font-size: 13px;
     font-family: $manrope;
     color:rgb(163, 163, 163);
 }
 
-.font_search {
+.font-search {
     position: relative;
+    i {
+        position: absolute;
+        left: 5px;
+        top: 17px;
+    }
 }
 
-.font_search i {
-    position: absolute;
-    left: 5px;
-    top: 17px;
-}
-
-.main-search-form {
-    position: relative;
-    width: max-content;
-    display: flex;
-}
-
-.main-search-suggestion {
+%search {
     height: max-content;
-    width: 292px;
     position: absolute;
-    right: 156px;
     top: 48px;
     border-radius: 3px;
     background-color: white;
@@ -357,8 +366,9 @@ header {
     border-right: 1px solid $border-color;
     box-sizing: border-box;
     z-index: 3;
+}
 
-    li {
+%search-li {
         background-color: white;
         color: grey;
         font-family: $roboto;
@@ -367,16 +377,16 @@ header {
         height: 30px;
         line-height: 30px;
         cursor: pointer;
-    }
-
-    li:hover {
-        background-color: $red;
-        color: white;
-        font-family: $main_font;
-    }
 }
 
-////for WHITE SEARCH POPUP
+%search-li-hover {
+    background-color: $red;
+    color: white;
+    font-family: $main_font;
+}
+
+
+//search pop-up
 
 .white-searchbar {
     width: 1600px;
@@ -385,7 +395,6 @@ header {
     top: 30.4%;
     left: 50%;
     padding-top: 140px;
-    // padding-left: 329px;
     transform: translate(-50%, -50%);
     background-color: white;
     box-sizing: border-box;
@@ -393,6 +402,62 @@ header {
     flex-direction: column;
     align-items: center;
 
+    .search-input {
+        height: 50px;
+        border-radius: 3px;
+        width: 289px;
+        border: 1px solid $border-color;
+        padding-left: 30px;
+        box-sizing: border-box;
+        margin-right: 16px;
+        font-family: $manrope;
+        font-size: 14px;
+        color: #272d37;
+    }
+
+    .dropdown.party {
+        height: 50px;
+        border-radius: 0px 3px 3px 0px;
+        width: 158px;
+        border: 1px solid $border-color;
+    }
+
+    .dropdown.time {
+        height: 50px;
+        width: 151px;
+        border-top: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        border-left: none;
+        border-right: none;
+    }
+    .react-datepicker__input-container{
+        .search-date {
+            height: 50px;
+            border-radius: 3px 0px 0px 3px;
+            width: 172px;
+            border: 1px solid $border-color;
+            box-sizing: border-box;
+            padding-left: 5px;
+        }
+    }
+
+    .search-date:focus {
+        outline: none;
+    }
+    
+    .search-suggestion {
+        @extend %search;
+        width: 289px;
+        right: 160px;
+        
+        li {
+            @extend %search-li;
+        }
+    
+        li:hover{
+            @extend %search-li-hover;
+        }  
+    }
 }
 
 .search-background {
@@ -423,95 +488,6 @@ header {
         color: #272d37;
         margin-bottom: 32px;
     }
-
-    .search-date-white {
-        height: 50px;
-        border-radius: 3px 0px 0px 3px;
-        width: 172px;
-        border: 1px solid $border-color;
-        box-sizing: border-box;
-        padding-left: 5px;
-    }
-
-    .search-date-white:focus {
-        outline: none;
-    }
-
-    .white-dropdown.party {
-        height: 50px;
-        border-radius: 0px 3px 3px 0px;
-        width: 158px;
-        border: 1px solid $border-color;
-    }
-
-    .white-dropdown.clock {
-        height: 50px;
-        width: 151px;
-        border-top: 1px solid $border-color;
-        border-bottom: 1px solid $border-color;
-        border-left: none;
-        border-right: none;
-    }
-
-    .white-search_input {
-        height: 50px;
-        border-radius: 3px;
-        width: 289px;
-        border: 1px solid $border-color;
-        padding-left: 30px;
-        box-sizing: border-box;
-        margin-right: 16px;
-        font-family: $manrope;
-        font-size: 14px;
-        color: #272d37;
-    }
-
-    .white-search_input::placeholder {
-        font-family: $manrope;
-        font-size: 13px;
-        color: rgb(163, 163, 163);
-    }
-
-    .white-search_input:focus {
-        outline: none;
-    }
-}
-
-.white-search-form {
-    position: relative;
-    display: flex;
-}
-
-.white-search-suggestion {
-    height: max-content;
-    width: 289px;
-    position: absolute;
-    right: 160px;
-    top: 48px;
-    border-radius: 3px;
-    background-color: white;
-    border-left: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
-    border-right: 1px solid $border-color;
-    box-sizing: border-box;
-    z-index: 3;
-    
-    li {
-        background-color: white;
-        color: grey;
-        font-family: $roboto;
-        font-weight: 300;
-        padding: 10px;
-        height: 30px;
-        line-height: 30px;
-        cursor: pointer;
-    }
-
-    li:hover {
-        background-color: $red;
-        color: white;
-        font-family: $main_font;
-    }
 }
 
 
@@ -524,7 +500,7 @@ footer {
     // margin-top: 60px;
 }
 
-.footer_row {
+.footer-row {
     width: inherit;
     height: 300px;
     display: flex;
@@ -532,7 +508,7 @@ footer {
     align-items: center;
 }
 
-.footer_maintitle {
+.footer-maintitle {
     font-family: $main_font;
     color: white;
     font-size: 30px;
@@ -540,21 +516,21 @@ footer {
     width: max-content;
 }
 
-.footer_title {
+.footer-title {
     font-family: $main_font;
     color: white;
     font-size: 25px;
     margin-bottom: 20px;
 }
 
-.footer_col_left > ul > li {
+.footer-col > ul > li {
     font-family: $main_font;
     color: white;
     font-size: 20px;
     margin: 10px 0;
 }
 
-.footer_col_left ul {
+.footer-col ul {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -562,9 +538,8 @@ footer {
 }
 
 
-.footer_col_left {
+.footer-col {
     width: 60%;
-    // padding-top: 20px;
     height: 300px;
     margin-bottom: 30px;
 }

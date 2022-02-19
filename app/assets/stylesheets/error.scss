@@ -1,22 +1,19 @@
-$main_font: 'DM Sans', sans-serif;
-$border-color: #d2d4d6;
-$background-color: #f6f6f6;
-$red: #e03744;
+@import "./variables.scss";
 
-%errors_shared {
+%errors-shared {
     font-family: $main_font;
     color: $red;
     font-size: 11px;
     position: absolute;
     left: 0px;
 }
-.form_errors {
-    @extend %errors_shared;
+.form-errors {
+    @extend %errors-shared;
     bottom: -25px;
 }
 
-.edit_form_errors {
-    @extend %errors_shared;
+.edit-form-errors {
+    @extend %errors-shared;
     bottom: 18px;
     width: 200px;
 }

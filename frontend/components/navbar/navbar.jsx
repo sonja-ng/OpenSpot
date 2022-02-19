@@ -30,7 +30,7 @@ class Navbar extends React.Component {
     }
 
     enableScrolling(){
-        document.body.classList.remove("disable_scroll");
+        document.body.classList.remove("disable-scroll");
     }
 
     resetUserErrors(){
@@ -40,7 +40,7 @@ class Navbar extends React.Component {
     }
 
     preventScrolling(){
-        document.body.classList.add("disable_scroll");
+        document.body.classList.add("disable-scroll");
     }
 
     showSearch(){
@@ -57,15 +57,15 @@ class Navbar extends React.Component {
             <UserNavBar logout={logout} enableScrolling={this.enableScrolling} currentUser={currentUser} updateFilter={updateFilter}/>
         ) : 
         (
-            <div className="right_navbar">
+            <div className="right-navbar">
                 <div>
-                    <button className="signup_button" onClick={this.resetUserErrors}>Sign Up</button>
+                    <button className="signup-button" onClick={this.resetUserErrors}>Sign Up</button>
                 </div>
                 <div>
-                    <button className="login_button" onClick={this.resetSessionErrors}>Login</button>
+                    <button className="login-button" onClick={this.resetSessionErrors}>Login</button>
                 </div>
                 <div>
-                    <button className="search_icon" onClick={this.showSearch}><i className="fas fa-search"></i></button>
+                    <button className="search-icon" onClick={this.showSearch}><i className="fas fa-search"></i></button>
                 </div>
             </div>
         )

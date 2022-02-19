@@ -1,11 +1,6 @@
-$main_font: 'DM Sans', sans-serif;
-$border-color: #d2d4d6;
-$background-color: #f6f6f6;
-$red: #e03744;
-$roboto: 'Roboto', sans-serif;
-$manrope: 'Manrope', sans-serif;
+@import "./variables.scss";
 
-%form_input_shared {
+%form-input-shared {
     border: 1px solid $border-color;
     color: gray;
     border-radius: 3px;
@@ -15,13 +10,13 @@ $manrope: 'Manrope', sans-serif;
     box-sizing: border-box;
 }
 
-.session_form_input {
-    @extend %form_input_shared;
+.session-form-input {
+    @extend %form-input-shared;
     margin: 3px 5px 23px 0px;
     width: 260px;
 }
 
-.form_background {
+.form-background {
     z-index: 20;
     position: fixed;
     left: 0;
@@ -32,7 +27,7 @@ $manrope: 'Manrope', sans-serif;
     overflow: hidden;
 }
 
-%session_form {
+%session-form {
     position: fixed;
     width: 360px;
     background-color: $background-color;
@@ -42,16 +37,16 @@ $manrope: 'Manrope', sans-serif;
 }
 
 .login {
-    @extend %session_form;
+    @extend %session-form;
     height: 540px;
 }
 
 .signup {
-    @extend %session_form;
+    @extend %session-form;
     height: 840px;
 }
 
-.form_header{
+.form-header{
     font-family: $main_font;
     font-size: 32px;
     height: 71px;
@@ -62,7 +57,7 @@ $manrope: 'Manrope', sans-serif;
     padding-top: 20px;
 }
 
-.form_logo_header{
+.form-logo-header{
     height: 40px;
     background-color: white;
     position: relative;
@@ -70,9 +65,7 @@ $manrope: 'Manrope', sans-serif;
     align-items: center;
 }
 
-
-
-%form_body {
+%form-body {
     background-color: white;
     height: inherit;
     width: 330px;
@@ -82,8 +75,8 @@ $manrope: 'Manrope', sans-serif;
     position: relative;
 }
 
-.login_form {
-    @extend %form_body;
+.login-form {
+    @extend %form-body;
     height: 365px;
 
     label {
@@ -93,8 +86,8 @@ $manrope: 'Manrope', sans-serif;
     }
 }
 
-.signup_form {
-    @extend %form_body;
+.signup-form {
+    @extend %form-body;
     height: 665px;
 
     label {
@@ -104,7 +97,7 @@ $manrope: 'Manrope', sans-serif;
     }
 }
 
-.form_body_header {
+.form-body-header {
     margin-bottom: 18px;
 }
 
@@ -114,7 +107,7 @@ $manrope: 'Manrope', sans-serif;
     font-size: 10px;
 }
 
-.session_button {
+.session-button {
     background-color: $red;
     color: white;
     font-family: $main_font;
@@ -126,14 +119,13 @@ $manrope: 'Manrope', sans-serif;
     cursor: pointer;
 }
 
-.demo_button {
+.demo-button {
     display: inline;
     background-color: transparent;
     border: none;
     cursor: pointer;
     font-family: $main_font;
     color: $red;
-    // width: 110px;
     padding: 0px;
     font-size: 11px;
     font-weight: 500;
@@ -141,13 +133,13 @@ $manrope: 'Manrope', sans-serif;
     font-weight: 700;
 }
 
-.form_msg {
+.form-msg {
     font-family: $main_font;
     font-size: 11px;
     line-height: 1.5;
 }
 
-%form_buttons {
+%form-buttons {
     position: absolute;
     left: 32px;
     display: flex;
@@ -155,26 +147,26 @@ $manrope: 'Manrope', sans-serif;
     justify-content: space-between;
 }
 
-.login_buttons {
-    @extend %form_buttons;
+.login-buttons {
+    @extend %form-buttons;
     top: 200px;
     height: 80px; 
 }
 
-.signup_buttons {
-    @extend %form_buttons;
+.signup-buttons {
+    @extend %form-buttons;
     left: 32px;
     height: 105px;
     bottom: 10px;
 }
 
-.form_container {
+.form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.x_button {
+.x-button {
     position: absolute;
     right: 7px;
     top: 5px;

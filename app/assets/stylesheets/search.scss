@@ -1,4 +1,4 @@
-@import './index.scss';
+@import "variables.scss";
 
 .search-header {
     width: 1600px;
@@ -15,7 +15,7 @@
         display: flex;
 
 
-        .banner-submit {
+        .new-submit {
             background-color: $red;
             color: white;
             font-family: $main_font;
@@ -27,7 +27,7 @@
             cursor: pointer;
         }
 
-        .banner-input {
+        .search-input {
             height: 50px;
             border: none;
             border-radius: 3px;
@@ -38,39 +38,49 @@
             box-sizing: border-box;
         }
 
-        .banner-input:focus {
+        .search-input:focus {
             outline: none;
         }
+
+        .react-datepicker__input-container{
+            .search-date {
+                height: 48px;
+                border-radius: 3px 0px 0px 3px;
+                border: 0px ;
+                width: 170px;
+                padding-left: 10px;
+            }
+        }
     }
-}
 
-.search-suggestion {
-    height: max-content;
-    width: 292px;
-    position: absolute;
-    right: 156px;
-    top: 50px;
-    background-color: white;
-    border-left: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
-    border-right: 1px solid $border-color;
-    box-sizing: border-box;
-
-    li {
+    .search-suggestion {
+        height: max-content;
+        width: 292px;
+        position: absolute;
+        right: 156px;
+        top: 50px;
         background-color: white;
-        color: grey;
-        font-family: $roboto;
-        font-weight: 300;
-        padding: 10px;
-        height: 30px;
-        line-height: 30px;
-        cursor: pointer;
-    }
-
-    li:hover {
-        background-color: $red;
-        color: white;
-        font-family: $main_font;
+        border-left: 1px solid $border-color;
+        border-bottom: 1px solid $border-color;
+        border-right: 1px solid $border-color;
+        box-sizing: border-box;
+    
+        li {
+            background-color: white;
+            color: grey;
+            font-family: $roboto;
+            font-weight: 300;
+            padding: 10px;
+            height: 30px;
+            line-height: 30px;
+            cursor: pointer;
+        }
+    
+        li:hover {
+            background-color: $red;
+            color: white;
+            font-family: $main_font;
+        }
     }
 }
 
@@ -87,7 +97,6 @@
     width: 797px;
     height: 277px;
     display: flex;
-    // background: yellow;
     border-bottom: 1px solid $border-color;
 
     .result-img {
@@ -96,7 +105,6 @@
         margin-top: 28px;
         margin-right: 18px;
         border-radius: 3px;
-        // background-color: grey;
     }
 
     .result {

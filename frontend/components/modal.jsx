@@ -10,7 +10,7 @@ class Modal extends React.Component {
     }
 
     enableScrolling(){
-        document.body.classList.remove("disable_scroll");
+        document.body.classList.remove("disable-scroll");
         this.props.closeModal();
     };
 
@@ -36,7 +36,7 @@ class Modal extends React.Component {
         }
       
         return (
-          <div className="form_background" onClick={this.enableScrolling}>
+          <div className="form-background" onClick={this.enableScrolling}>
             <div className="modal-child" onClick={e => e.stopPropagation()}>
               { component }
             </div>

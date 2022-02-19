@@ -1,28 +1,7 @@
-@import './index.scss';
+@import "./variables.scss";
 
 .react-datepicker-wrapper {
     width: max-content;
-}
-.react-datepicker__input-container{
-    .search-date {
-        border: none;
-        width: 171px;
-        height: 50px;
-        border-radius: 3px 0 0 3px;
-        padding: 0 0 0 10px;
-        box-sizing: border-box;
-        }
-}
-
-.react-datepicker__input-container{
-    .modify-date {
-        border: 1px solid $border-color;
-        width: 171px;
-        height: 50px;
-        border-radius: 3px 0 0 3px;
-        padding: 0 0 0 10px;
-        box-sizing: border-box;
-        }
 }
 
 .react-datepicker__input-container{
@@ -33,7 +12,7 @@
         border-radius: 3px 0 0 3px;
         padding: 0 0 0 10px;
         box-sizing: border-box;
-        }
+    }
 }
 
 .rsvp-main {
@@ -89,7 +68,6 @@
         font-family: $roboto;
         font-size: 13px;
         width: 314px;
-        // height: 800px;
         color:rgb(59, 59, 59);
         background-color: white;
         padding-top: 30px;

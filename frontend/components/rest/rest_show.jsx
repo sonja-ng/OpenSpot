@@ -67,11 +67,11 @@ class RestShow extends React.Component {
            this.openReview
        )
         return (
-            <div className="rest_index">
-                <img src={rest.photos[1].url} className="rest_header"/> 
+            <div className="rest-index">
+                <img src={rest.photos[1].url} className="rest-header"/> 
                 {/* <div className="rest_header"></div> */}
-                <div className="rest_body">
-                <div className="main_rest_content">
+                <div className="rest-body">
+                <div className="main-rest-content">
                     <div id="overview"></div>
                     <div className="rest-navbar">
                         <HashLink to={`/rests/${rest.id}#overview`} className="content-button">Overview</HashLink>

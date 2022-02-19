@@ -67,7 +67,7 @@ class ReviewForm extends React.Component {
         return (
             <div className={klass2}>
                 <form className={klass}>
-                    <button className="x_button" onClick={this.resetFields}><i className="fas fa-times"></i></button>
+                    <button className="x-button" onClick={this.resetFields}><i className="fas fa-times"></i></button>
                     <div className="review-form-header">Leave a review</div>
                     <div className="rating-row">
                     <label>Food

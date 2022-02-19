@@ -1,13 +1,6 @@
-$background-color: #f6f6f6;
-$html_greytop: #eff0f2;
-$main_font: 'DM Sans', sans-serif;
-$red: #e03744;
-$border-color: #d2d4d6;
-$turquoise: #007492;
-$roboto: 'Roboto', sans-serif;
-$manrope: 'Manrope', sans-serif;
+@import "variables.scss";
 
-.show_header {
+.show-header {
     height: 66px;
     background: white;
     border-top: 1px solid $border-color;
@@ -19,20 +12,19 @@ $manrope: 'Manrope', sans-serif;
     box-sizing: border-box;
 }
 
-.flex_container {
+.flex-container {
     display: flex;
 }
 
-.flex_container .form_section {
+.flex-container .form-section {
     background-color: white;
     width: 824px;
     height: max-content;
 }
 
-.user_show_main .left {
+.user-show-main .left {
     background-color: $background-color;
     width: 490px;
-    // height: 994px;
     font-family: $roboto;
     font-weight: 300;
     font-size: 13px;
@@ -41,13 +33,12 @@ $manrope: 'Manrope', sans-serif;
     box-sizing: border-box;
 }
 
-.user_show_main .right {
+.user-show-main .right {
     background-color: $background-color;
     width: 289px;
-    // height: 994px;
 }
 
-.user_show_main {
+.user-show-main {
     height: max-content;
     width: inherit;
     background-color: #f6f6f6;
@@ -67,13 +58,13 @@ $manrope: 'Manrope', sans-serif;
     color: $red;
 }
 
-.user_row {
+.user-row {
     height: 24px;
     width: 824px;
     background-color: $background-color;
 }
 
-.edit_form {
+.edit-form {
     margin-left: 22px;
     margin-top: 23px;
     margin-right: 22px;
@@ -86,14 +77,14 @@ label {
     position: relative;
 }
 
-.form_row {
+.form-row {
     display: flex;
     width: 776px;
     justify-content: space-between;
     margin-top: 23px;
 }
 
-%form_input_shared {
+%form-input-shared {
     border: 1px solid $border-color;
     color: gray;
     border-radius: 3px;
@@ -103,19 +94,19 @@ label {
     box-sizing: border-box;
 }
 
-.edit_form_input {
-    @extend %form_input_shared;
+.edit-form-input {
+    @extend %form-input-shared;
     width: 776px;
     margin-bottom: 18px;
     margin-top: 15px;
 }
 
-.form_row .edit_form_input {
+.form-row .edit-form-input {
     width: 383px;
     margin-top: 15px;
 }
 
-.long_submit {
+.long-submit {
     width: 776px;
     background-color: $red;
     color: white;

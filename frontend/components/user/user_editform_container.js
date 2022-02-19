@@ -3,7 +3,7 @@ import { receiveUserInfo, updateUser } from '../../actions/user_actions'
 import UserEditForm from './user_edit_form';
 import { withRouter } from 'react-router-dom';
 
-const mSTP = (state, ownProps) => ({
+const mSTP = (state) => ({
     currentUser: state.entities.users[state.session.id],
     errors: state.errors.users,
     id: state.session.id

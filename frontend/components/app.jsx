@@ -16,22 +16,22 @@ import Cancel from './booking/cancel_confirm';
 
 
 const App = () => (
-    <div className="main_index">
+    <div className="main-index">
         <ModalContainer />
         <header>
-            <div className="top_bar"></div>
-            <div className="left_navbar">
-                <Link to="/" className="logo_bar">
+            <div className="top-bar"></div>
+            <div className="left-navbar">
+                <Link to="/" className="logo-bar">
                     <img src={window.logoURL}/>
                 </Link>
-                <span className="marker_icon">
+                <span className="marker-icon">
                     <i className="fas fa-map-marker-alt"></i>
                 </span>
-                <div className="location_nav"><p>New York / Tri-State Area</p></div>
+                <div className="location-nav"><p>New York / Tri-State Area</p></div>
             </div>
             <NavBarContainer />
         </header>
-        <div className="main_content">
+        <div className="main-content">
             <Route exact path="/" component={SearchBarContainer} />
             <Route exact path="/" component={RestIndexContainer} />
             <ProtectedRoute path="/users/:userId" component={UserShowContainer} />
@@ -45,11 +45,11 @@ const App = () => (
             
         </div>
         <footer>
-            <div className="footer_maintitle">This project is a clone of OpenTable.</div>
-            <div className="footer_row">
-                <div className="footer_col_left">
+            <div className="footer-maintitle">This project is a clone of OpenTable.</div>
+            <div className="footer-row">
+                <div className="footer-col">
                     <ul>
-                        <div className="footer_title">Technologies</div>
+                        <div className="footer-title">Technologies</div>
                         <li>React | Redux</li>
                         <li>Ruby on Rails</li>
                         <li>PostgreSQL</li>

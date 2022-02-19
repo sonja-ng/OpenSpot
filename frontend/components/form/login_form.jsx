@@ -29,12 +29,12 @@ class LoginForm extends React.Component {
     }
 
     disableScrolling(){
-        document.body.classList.add("disable_scroll");
+        document.body.classList.add("disable-scroll");
     }
 
     enableScrolling(){
         this.props.closeModal();
-        document.body.classList.remove("disable_scroll"); 
+        document.body.classList.remove("disable-scroll"); 
     }
 
     resetUserErrors(){
@@ -59,7 +59,7 @@ class LoginForm extends React.Component {
 
     renderErrors(){
         return (
-            <ul className="form_errors">
+            <ul className="form-errors">
                 {this.props.errors.map((error, idx) => (
                    <li key={idx}>{error}</li>
                    )
@@ -71,27 +71,27 @@ class LoginForm extends React.Component {
     render(){
         return (
             <form onSubmit={this.handleSubmit} className="login" ref={this.formRef}>
-                <div className="form_logo_header">
+                <div className="form-logo-header">
                     <img src={window.logoURL}/>
-                    <button className="x_button" onClick={this.enableScrolling}><i className="fas fa-times"></i></button>
+                    <button className="x-button" onClick={this.enableScrolling}><i className="fas fa-times"></i></button>
                 </div>
-                <div className="form_header"><h2>Login</h2></div>
-                <div className="login_form">
+                <div className="form-header"><h2>Login</h2></div>
+                <div className="login-form">
                     <label>Username
                         <br></br>
-                        <input type="text" className="session_form_input" value={this.state.username} onChange={this.update("username")}/>
+                        <input type="text" className="session-form-input" value={this.state.username} onChange={this.update("username")}/>
                     </label>
                     <label>Password
                         <br></br>
-                        <input type="password" className="session_form_input" value={this.state.password} onChange={this.update("password")}/>
+                        <input type="password" className="session-form-input" value={this.state.password} onChange={this.update("password")}/>
                         {this.renderErrors()}
                     </label>
-                    <div className="login_buttons">
-                        <input type="submit" className="session_button" value="Login"/>
-                        <div className="form_msg">Don't have an account? <button className="demo_button" onClick={this.resetUserErrors}>Signup</button>
+                    <div className="login-buttons">
+                        <input type="submit" className="session-button" value="Login"/>
+                        <div className="form-msg">Don't have an account? <button className="demo-button" onClick={this.resetUserErrors}>Signup</button>
                             <br></br>
                             Don't want to create an account?
-                            <button className="demo_button" onClick={this.handleDemoSubmit}>&#160;Login as Guest</button>
+                            <button className="demo-button" onClick={this.handleDemoSubmit}>&#160;Login as Guest</button>
                         </div>
                     </div>
                 </div>

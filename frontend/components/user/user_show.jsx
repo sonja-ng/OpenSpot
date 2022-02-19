@@ -6,9 +6,9 @@ import UserBookingIndexContainer from '../booking/user_booking_index_container';
 
 const UserShow = ({ currentUser }) => {
     return (
-        <div className="user_show_main">
-            <div className="show_header"><h1>{currentUser.fname}</h1></div>
-            <div className="flex_container">
+        <div className="user-show-main">
+            <div className="show-header"><h1>{currentUser.fname}</h1></div>
+            <div className="flex-container">
                 <aside className="left">
                     <ul>
                         <Link to={`/users/${currentUser.id}/account`}>Account Details</Link>
@@ -17,8 +17,8 @@ const UserShow = ({ currentUser }) => {
                         <Link to={`/users/${currentUser.id}/reviews`}>Reviews</Link>
                     </ul>
                 </aside>
-                <div className="form_section">
-                    <div className="user_row"></div>
+                <div className="form-section">
+                    <div className="user-row"></div>
                     <Route exact path={`/users/:userId/account`} component={UserEditFormContainer} />
                     <Route exact path={`/users/:userId/reviews`} component={UserReviewIndexContainer} />
                     <Route exact path={`/users/:userId/bookings`} component={UserBookingIndexContainer} />
