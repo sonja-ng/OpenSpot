@@ -1,0 +1,69 @@
+@import './variables.scss';
+
+.fav-item {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    padding-left: 100px;
+    box-sizing: border-box;
+    i {
+        color: $red;
+    }
+}
+
+.saved-rest-name {
+    font-family: $main_font;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.saved-rest-cuisine, .saved-rest-neighborhood {
+    font-family: $roboto;
+    font-weight: 300;
+    font-size: 14px;
+    color: $gray-color;
+}
+
+button.remove-fav {
+    border: none;
+    background-color: transparent;
+    color: black;
+    padding: none;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+button.remove-fav {
+    color: $red;
+}
+
+.reserve-now {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 50px;
+    background-color: $red;
+    color: white;
+    font-family: $main_font;
+    font-size: 13px;
+    border: none;
+    width: 126px;
+    border-radius: 3px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.remove {
+    color: black;
+}
+
+.remove:hover {
+    color: $red;
+}
+
+.reserve-now:hover {
+    background-color: rgb(143, 0, 0);
+}
