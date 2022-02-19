@@ -32,6 +32,15 @@ class User < ApplicationRecord
         through: :reviews,
         source: :Rest
 
+    has_many :favorites,
+        primary_key: :id,
+        foreign_key: :user_id,
+        class_name: :Favorite
+    
+    has_many :favorite_restaurants,
+        through: :favorites,
+        source: :Rest
+
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         if user && user.is_password?(password)

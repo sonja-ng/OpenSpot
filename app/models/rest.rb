@@ -32,6 +32,15 @@ class Rest < ApplicationRecord
     through: :reviews,
     source: :User
 
+    has_many :favorites,
+    primary_key: :id,
+    foreign_key: :rest_id,
+    class_name: :Favorite
+
+    has_many :users_who_favorite,
+    through: :favorites,
+    source: :User
+
     def self.match_search(search)
         self.where("cuisine ILIKE :search OR name ILIKE :search OR neighborhood ILIKE :search", search: "%#{search.titleize}%")
     end
