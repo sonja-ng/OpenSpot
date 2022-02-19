@@ -1,11 +1,17 @@
 import React from 'react';
 import FavIndexItem from './fav_index_item';
 
-const UserFavIndex = ({ favorites, currentUser, removeFavorite }) => {
-    if (!favorites) return null;
+class UserFavIndex extends React.Component {
+    componentDidMount(){
+        this.props.fetchFavorites({["userId"]: this.props.currentUser.id});
+    }
+
+    render(){ 
+        const { favorites, removeFavorite } = this.props; 
+        if (!favorites) return null;
     
         const favList = favorites.length > 0 ? (
-            favorites.map((favorite, idx) => <FavIndexItem key={idx} favorite={favorite} currentUser={currentUser} removeFavorite={removeFavorite} />)
+            favorites.map((favorite, idx) => <FavIndexItem key={idx} favorite={favorite} removeFavorite={removeFavorite} />)
         )
         : (
             <div className="no-content"><h3>You have no saved restaurants</h3></div>
@@ -19,6 +25,8 @@ const UserFavIndex = ({ favorites, currentUser, removeFavorite }) => {
                 </ul>
             </div>
         )
+    }
+
 }
 
 export default UserFavIndex;

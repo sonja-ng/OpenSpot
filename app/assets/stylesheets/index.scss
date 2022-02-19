@@ -305,7 +305,12 @@ header {
     width: 144px;
     border-radius: 3px;
     height: 48px;
+    transition: all .3s;
     cursor: pointer;
+}
+
+.new-submit:hover {
+    background-color: $dark-red;
 }
 
 .slogan {

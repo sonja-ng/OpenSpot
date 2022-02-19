@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const FavIndexItem = ({ currentUser, favorite, removeFavorite }) => {
+const FavIndexItem = ({ favorite, removeFavorite }) => {
     return (
         <li className="fav-item">
             <div className="saved-rest-name">{favorite.restaurant.name}</div>

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { removeFavorite } from '../../actions/favorite_actions';
+import { removeFavorite, fetchFavorites } from '../../actions/favorite_actions';
 import UserFavIndex from './user_fav_index';
 
 const mSTP = state => ({
@@ -8,7 +8,8 @@ const mSTP = state => ({
 });
 
 const mDTP = dispatch => ({
-    removeFavorite: id => dispatch(removeFavorite(id))
+    removeFavorite: id => dispatch(removeFavorite(id)),
+    fetchFavorites: id => dispatch(fetchFavorites(id))
 })
 
 export default connect(mSTP, mDTP)(UserFavIndex);
