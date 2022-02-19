@@ -9,7 +9,9 @@ class RestIndex extends React.Component {
 
     componentDidMount(){
         this.props.fetchRests();
-        this.props.fetchFavorites({["userId"]:this.props.currentUser.id});
+        if (this.props.currentUser){
+            this.props.fetchFavorites({["userId"]:this.props.currentUser.id});
+        }
     }
 
     render(){

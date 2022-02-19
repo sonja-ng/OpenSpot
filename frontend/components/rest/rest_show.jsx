@@ -75,11 +75,17 @@ class RestShow extends React.Component {
         favorites.map(favorite => favRestKey[favorite.rest_id]= favorite.id);
         
         const favoriteRestList = Object.keys(favRestKey);
+        const favoriteAction = !currentUser ? (
+            ()=> this.props.openModal("login")
+        ) : (
+            ()=> addFavorite({user_id: this.props.currentUser.id, rest_id: this.props.match.params.restId})
+        )
+        
         const favoriteButton = favoriteRestList.includes(this.props.match.params.restId) ?
              (
             <button onClick={()=> removeFavorite(favRestKey[this.props.match.params.restId])} className="del-fav"><i className="fas fa-bookmark"></i>Restaurant Saved!</button>
          ) : (
-            <button onClick={()=> addFavorite({user_id: this.props.currentUser.id, rest_id: this.props.match.params.restId})} className="add-fav"><i className="fas fa-bookmark"></i>Save this restaurant</button>  
+            <button onClick={favoriteAction} className="add-fav"><i className="fas fa-bookmark"></i>Save this restaurant</button>  
         )
         return (
             <div className="rest-index">
