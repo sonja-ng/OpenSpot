@@ -64,34 +64,39 @@ class RestShow extends React.Component {
 
     render(){
        if (!this.props.rest) return null;
-       const { rest, currentUser,favorites, removeFavorite, addFavorite } = this.props;
+       const { rest, currentUser, favorites, removeFavorite, addFavorite, openModal } = this.props;
+
        const formAction = !currentUser ? (
         ()=> this.props.openModal("login")
        ) : (
            this.openReview
        )
 
-        const favRestKey = {};
-        favorites.map(favorite => favRestKey[favorite.rest_id]= favorite.id);
+        const favRestIdx = {};
+        favorites.map(favorite => favRestIdx[favorite.rest_id] = favorite.id);
+
+        const restaurant = this.props.match.params.restId;
+        let bookmarkAction;
+        let bookmarkText = "Save this restaurant";
+        let bookmarkClass = "add-fav";
         
-        const favoriteRestList = Object.keys(favRestKey);
-        const favoriteAction = !currentUser ? (
-            ()=> this.props.openModal("login")
-        ) : (
-            ()=> addFavorite({user_id: this.props.currentUser.id, rest_id: this.props.match.params.restId})
-        )
-        
-        const favoriteButton = favoriteRestList.includes(this.props.match.params.restId) ?
-             (
-            <button onClick={()=> removeFavorite(favRestKey[this.props.match.params.restId])} className="del-fav"><i className="fas fa-bookmark"></i>Restaurant Saved!</button>
-         ) : (
-            <button onClick={favoriteAction} className="add-fav"><i className="fas fa-bookmark"></i>Save this restaurant</button>  
-        )
+        if (!currentUser) {
+            bookmarkAction = () => openModal("login");
+        } else {
+            if (restaurant in favRestIdx) {
+                bookmarkAction = () => removeFavorite(favRestIdx[restaurant]);
+                bookmarkText = "Restaurant Saved!";
+                bookmarkClass = "del-fav";
+            } else {
+                bookmarkAction = () => addFavorite({user_id: currentUser.id, rest_id: restaurant});
+            }
+        }
+
         return (
             <div className="rest-index">
                 <img src={rest.photos[1].url} className="rest-header"/>
                 {/* <div className="rest_header"></div> */}
-                {favoriteButton}
+                <button onClick={bookmarkAction} className={bookmarkClass}><i className="fas fa-bookmark"></i>{bookmarkText}</button>
                 <div className="rest-body">
                 <div className="main-rest-content">
                     <div id="overview"></div>

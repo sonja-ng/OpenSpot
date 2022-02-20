@@ -18,9 +18,8 @@ OpenSpot is a full-stack OpenTable clone where users can search, make reservatio
 
 ### User Authentication
 - User authentication is implemented on both frontend and backend. Presence validations and uniqueness contraints (for username and email) are enforced in models and database. Upon a successful signup, the password is hashed using BCrypt and saved to the database as a password digest.
-- Users will be able to stay logged in after leaving the page.
-- Users can sign up, update their account info, log in, and log out of their accounts.
-- Error messages are displayed next to the respective fields as part of frontend error-handling.
+- Users can sign up, update their account info, log in, and log out of their accounts; they will stay logged in after leaving the page.
+- Error messages are displayed next to the respective fields in the signup form as part of frontend error-handling.
 
 ![alt text](./app/assets/images/signup.png)
 
@@ -37,7 +36,7 @@ OpenSpot is a full-stack OpenTable clone where users can search, make reservatio
 ![User Reviews](./app/assets/images/review.png)
 
 ## Reservation CRUD
-- Logged-in users can choose available time slots and make bookings directly from the homepage and on the restaurant profile.
+- Logged-in users can choose available time slots and make bookings directly from the homepage or on the restaurant page.
 - Confirmed bookings are viewable in the user profile, with options to edit or cancel.
 
 ![alt text](./app/assets/images/booking.gif)
@@ -48,29 +47,33 @@ OpenSpot is a full-stack OpenTable clone where users can search, make reservatio
 ![alt text](./app/assets/images/fav2.gif)
 
 ## Implementation
-- In the below code for the bookmark button, depending on the user's logged-in status, the button will either bookmark the restaurant and save it to database, or show a login pop-up. The button will also toggle between adding and deleting the bookmark based on whether the restaurant is already in the user's Redux's 'favorites' slice of state.
+- Several layers of logic are used to keep the bookmark button dynamic. Depending on the user's logged-in status, it will either ask the user to log in or check whether the restaurant id is already in the user's 'favorites' slice of state in Redux. If there is a current user, it will toggle between creating and deleting the user-restaurant record in the 'favorites' table on the backend.
 
 ```js
 //rest_show.jsx
-       const { currentUser, openModal, favorites, removeFavorite, addFavorite } = this.props;
+        const { currentUser, favorites, removeFavorite, addFavorite, openModal } = this.props;
 
-        const favRestKey = {};
-        favorites.map(favorite => favRestKey[favorite.rest_id]= favorite.id);
+        const favRestIdx = {};
+        favorites.map(favorite => favRestIdx[favorite.rest_id] = favorite.id);
+
+        const restaurant = this.props.match.params.restId;
+        let bookmarkAction;
+        let bookmarkText = "Save this restaurant";
+        let bookmarkClass = "add-fav";
         
-        const favoriteRestList = Object.keys(favRestKey);
-        const favoriteAction = !currentUser ? (
-            ()=> openModal("login")
-        ) : (
-            ()=> addFavorite({user_id: this.props.currentUser.id, rest_id: this.props.match.params.restId})
-        )
-        
-        const favoriteButton = favoriteRestList.includes(this.props.match.params.restId) ?
-         (
-            <button onClick={()=> removeFavorite(favRestKey[this.props.match.params.restId])} className="del-fav">
-            <i className="fas fa-bookmark"></i>Restaurant Saved!</button>
-         ) : (
-            <button onClick={favoriteAction} className="add-fav"><i className="fas fa-bookmark"></i>Save this restaurant</button>  
-         )
+        if (!currentUser) {
+            bookmarkAction = () => openModal("login");
+        } else {
+            if (restaurant in favRestIdx) {
+                bookmarkAction = () => removeFavorite(favRestIdx[restaurant]);
+                bookmarkText = "Restaurant Saved!";
+                bookmarkClass = "del-fav";
+            } else {
+                bookmarkAction = () => addFavorite({user_id: currentUser.id, rest_id: restaurant});
+            }
+        }
+    // rendered output
+        <button onClick={bookmarkAction} className={bookmarkClass}><i className="fas fa-bookmark"></i>{bookmarkText}</button>
 ```
 
 ## Future Features
