@@ -32,16 +32,19 @@ OpenSpot is a full-stack OpenTable clone where users can search, make reservatio
 
 ## Reviews CRUD
 - A restaurant review is viewable by the public but can only be edited and deleted by its author.
-- Frontend and backend user authentication are utilized to cater to a more customized experience for logged-in users, who can view, edit, and delete their own reviews in their profile and on the restaurant's page. 
-![User Reviews](./app/assets/images/reviews.png)
+- Frontend and backend user authentication are utilized to cater to a more customized experience for logged-in users, who can view, edit, and delete their own reviews in their profile and on the restaurant's page.
+
+![User Reviews](./app/assets/images/review.png)
 
 ## Reservation CRUD
 - Logged-in users can choose available time slots and make bookings directly from the homepage and on the restaurant profile.
 - Confirmed bookings are viewable in the user profile, with options to edit or cancel.
+
 ![alt text](./app/assets/images/booking.gif)
 
 ## Bookmark a Restaurant
-- Logged-in users can bookmark any restaurants they like, with the information saved to the database and available next time they log in. 
+- Logged-in users can bookmark any restaurants they like, with the information saved to the database and available next time they log in.
+
 ![alt text](./app/assets/images/fav2.gif)
 
 ## Implementation
