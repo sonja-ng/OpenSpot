@@ -48,53 +48,30 @@ OpenSpot is a full-stack OpenTable clone where users can search, make reservatio
 ![alt text](./app/assets/images/fav2.gif)
 
 ## Implementation
-- As the user navigates the site, the tentative reservation redux state continously updates its info like date, time, restaurant, based on which buttons the user clicks. 
+- In the below code for the bookmark button, depending on the user's logged-in status, the button will either bookmark the restaurant and save it to database, or show a login pop-up. The button will also toggle between adding and deleting the bookmark based on whether the restaurant is already in the user's Redux's 'favorites' slice of state.
 
 ```js
-//rest_index_item.jsx
+//rest_show.jsx
+       const { currentUser, openModal, favorites, removeFavorite, addFavorite } = this.props;
 
-      handleClick(e){
-        e.stopPropagation();
-        if (this.props.currentUser) {
-            this.props.fillInOneFieldBooking("rest_id", this.props.rest.id);
-            this.props.fillInOneFieldBooking("user_id", this.props.currentUser.id);
-            this.props.fillInOneFieldBooking("time", e.target.innerText.slice(0, 4));
-        } else {
-            this.props.openModal("login");
-        }
-    }
-
-    render(){
-        const { rest } = this.props;
-
-        if (rest.photos.length === 0) return null; 
-        const image = rest.photos[0].url;
-        const whereTo = this.props.currentUser ? "/booking" : "/";
-        return (
-            <li className="rest-index-thumbnail">
-                <Link to={`rests/${rest.id}`}>
-                <img src={image} className="thumbnail-img"/>
-                <div className="thumbnail-text">
-                    <h1>{rest.name}</h1>
-                    <div className="stars"><img src={window.starsURL}/></div>
-                    <div className="thumbnail-detail">
-                        <span>{rest.cuisine}</span>
-                        <div className="price">$$$</div>
-                        <span>{rest.neighborhood}</span>
-                    </div>
-                </div>
-                </Link>
-                <div className="button-row">
-                <Link to={whereTo} onClick={this.handleClick}><button className="thumbnail-button">7:15pm</button></Link>
-                <Link to={whereTo} onClick={this.handleClick}><button className="thumbnail-button">7:30pm</button></Link>
-                <Link to={whereTo} onClick={this.handleClick}><button className="thumbnail-button">7:45pm</button></Link>
-                </div>
-            </li>
-            
+        const favRestKey = {};
+        favorites.map(favorite => favRestKey[favorite.rest_id]= favorite.id);
+        
+        const favoriteRestList = Object.keys(favRestKey);
+        const favoriteAction = !currentUser ? (
+            ()=> openModal("login")
+        ) : (
+            ()=> addFavorite({user_id: this.props.currentUser.id, rest_id: this.props.match.params.restId})
         )
-    }
+        
+        const favoriteButton = favoriteRestList.includes(this.props.match.params.restId) ?
+         (
+            <button onClick={()=> removeFavorite(favRestKey[this.props.match.params.restId])} className="del-fav">
+            <i className="fas fa-bookmark"></i>Restaurant Saved!</button>
+         ) : (
+            <button onClick={favoriteAction} className="add-fav"><i className="fas fa-bookmark"></i>Save this restaurant</button>  
+         )
 ```
-
 
 ## Future Features
 - Add carousel features to restaurant list on homepage
