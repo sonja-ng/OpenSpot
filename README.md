@@ -1,47 +1,48 @@
-# OpenSpot
+# OpenSpot | [LIVE](http://openspot-aa.herokuapp.com/)
 
-OpenSpot is an OpenTable clone where users can search, make reservations, and write reviews for dining spots across New York City.
+OpenSpot is a full-stack OpenTable clone where users can search, make reservations, and write reviews for dining spots across New York City.
 
-[Live Demo](http://openspot-aa.herokuapp.com/)
+![alt text](./app/assets/images/openspot_intro.gif)
 
-## Homepage
-![Homepage](./app/assets/images/openspot_intro.gif)
-
-## Restaurant Profile
-![Restaurant Profile](./app/assets/images/restaurant.png)
-
-## User Reviews 
-![User Reviews](./app/assets/images/reviews.png)
-
-## Autocomplete Search Function 
-![Search Bar](./app/assets/images/search.png)
-
-## Technology
-- React/Redux
-- Javascript
+## Technologies
+- React
+- Redux
+- JavaScript
 - Ruby on Rails
 - AWS S3
 - Google Map API
 - PostgreSQL
+- Webpack
 
-## MVP
+## Features
 
-### Splash/User Authentication
-- While everyone can search for and view restaurant pages, only logged-in users can make reservations or write reviews.
+### User Authentication
+- User authentication is implemented on both frontend and backend. Presence validations and uniqueness contraints (for username and email) are enforced in models and database. Upon a successful signup, the password is hashed using BCrypt and saved to the database as a password digest.
+- Users will be able to stay logged in after leaving the page.
 - Users can sign up, update their account info, log in, and log out of their accounts.
-- Users have the option to log in with a demo account to access all site functionalities.
+- Error messages are displayed next to the respective fields as part of frontend error-handling.
 
-### Search Function
-- The site comes with a search bar with autocomplete suggestions for cuisine, neighborhood, and restaurant name.
+![alt text](./app/assets/images/signup.png)
 
-### Reservation
-- Logged in users can choose available time slots and make bookings from the homepage, on the restaurant profile, as well as from the popup search bar.
-- Confirmed bookings are viewable in the user profile. Users have the option to edit or cancel their reservations.
+## Autocomplete Search Function
+- OpenSpot comes with a modular search bar component with autocomplete suggestions on the main page, as a popup, and on the search index page. 
+- Searches are sent to the backend and processed through Active Record queries. 
 
-### Review
-- Reviews of a restaurant are viewable by the public
-- Logged-in users can write a review
-- Users can view, edit, and delete their own reviews in their profile
+![Search Bar](./app/assets/images/auto2.gif)
+
+## Reviews CRUD
+- A restaurant review is viewable by the public but can only be edited and deleted by its author.
+- Frontend and backend user authentication are utilized to cater to a more customized experience for logged-in users, who can view, edit, and delete their own reviews in their profile and on the restaurant's page. 
+![User Reviews](./app/assets/images/reviews.png)
+
+## Reservation CRUD
+- Logged-in users can choose available time slots and make bookings directly from the homepage and on the restaurant profile.
+- Confirmed bookings are viewable in the user profile, with options to edit or cancel.
+![alt text](./app/assets/images/booking.gif)
+
+## Bookmark a Restaurant
+- Logged-in users can bookmark any restaurants they like, with the information saved to the database and available next time they log in. 
+![alt text](./app/assets/images/fav2.gif)
 
 ## Implementation
 - As the user navigates the site, the tentative reservation redux state continously updates its info like date, time, restaurant, based on which buttons the user clicks. 
@@ -93,9 +94,7 @@ OpenSpot is an OpenTable clone where users can search, make reservations, and wr
 
 
 ## Future Features
-- Allow users to bookmark favorite restaurants 
 - Add carousel features to restaurant list on homepage
-- Make available booking time more dynamic based on users' search
 - Show upcoming and past bookings as a dropdown alert in the navbar
 - Add filter functionality to search results
 
