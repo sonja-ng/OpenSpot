@@ -5,10 +5,10 @@ databases:
 
 services:
   - type: web
-    name: rails
+    name: open-spot
     env: ruby
     plan: free
-    buildCommand: "./bin/render-build.sh"
+    buildCommand: ./bin/render-build.sh
     startCommand: bundle exec rails s
     envVars: 
       - key: RAILS_MASTER_KEY
