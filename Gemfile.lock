@@ -89,8 +89,8 @@ GEM
     bindex (0.8.1)
     binding_of_caller (1.0.0)
       debug_inspector (>= 0.0.1)
-    bootsnap (1.9.3)
-      msgpack (~> 1.0)
+    bootsnap (1.16.0)
+      msgpack (~> 1.2)
     builder (3.2.4)
     byebug (11.1.3)
     capybara (3.36.0)
@@ -137,7 +137,7 @@ GEM
     mini_mime (1.1.2)
     mini_portile2 (2.8.2)
     minitest (5.15.0)
-    msgpack (1.4.2)
+    msgpack (1.7.0)
     nio4r (2.5.8)
     nokogiri (1.14.3)
       mini_portile2 (~> 2.8.0)
@@ -228,7 +228,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.5.3)
+    zeitwerk (2.6.8)
 
 PLATFORMS
   ruby
