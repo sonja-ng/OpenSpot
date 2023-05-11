@@ -81,7 +81,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  
   database: openspot_production
   username: openspot
   password: <%= ENV['OPENSPOT_DATABASE_PASSWORD'] %>
