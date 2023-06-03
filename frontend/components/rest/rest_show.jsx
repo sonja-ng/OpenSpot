@@ -1,7 +1,6 @@
 import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 import Gallery from './gallery';
-import Map from './map';
 import ReviewIndexContainer from '../review/review_index_container';
 import ReviewFormContainer from '../form/review_form_container';
 import RestBookingContainer from '../booking/rest_booking_container';
@@ -158,7 +157,6 @@ class RestShow extends React.Component {
                         <RestBookingContainer />
                     </div>
                     <div>
-                    <Map rest={rest} />
                     <div className="address">{rest.address},&#160;{rest.city},&#160;{rest.state}&#160;{rest.zip}</div>
                     </div>
                     <div className="misc">
