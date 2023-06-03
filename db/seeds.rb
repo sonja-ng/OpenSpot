@@ -125,7 +125,7 @@ file2k = URI.open('https://openspot-seeds.s3.amazonaws.com/aldama/aldama9.jpg')
 rest2.photos.attach(io: file2k, filename: 'aldama9.jpg')
 
 rest3 = Rest.create!(
-    name: 'Angel Indian Restaurant', 
+    name: 'Angel Indian', 
     description: 'Compact, unassuming eatery specializing in vegetarian North Indian dishes & street food staples.', 
     address: '7414 37th Rd', 
     city: 'Queens', 
