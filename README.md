@@ -1,4 +1,4 @@
-# OpenSpot
+# OpenSpot | [LIVE](https://openspot-aa.herokuapp.com)
 
 OpenSpot is a full-stack OpenTable clone where users can search, make reservations, and write reviews for dining spots across New York City.
 
